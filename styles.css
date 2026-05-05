@@ -78,7 +78,6 @@ button {
 .section-heading h2,
 .service-row,
 .service-row p,
-.profile-card,
 .timeline-row,
 .timeline-row h3,
 .timeline-row ul,
@@ -408,42 +407,6 @@ button {
   color: var(--muted);
   font-size: 13px;
   line-height: 1.28;
-}
-
-.profile-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-}
-
-.profile-card {
-  min-height: 180px;
-  padding: 30px 28px;
-  border-right: 1px solid var(--line);
-}
-
-.profile-card:last-child {
-  border-right: 0;
-}
-
-.profile-card span {
-  display: block;
-  margin-bottom: 30px;
-  color: var(--accent);
-  font-size: 12px;
-  font-weight: 650;
-}
-
-.profile-card h3 {
-  margin: 0 0 10px;
-  font-size: 18px;
-  line-height: 1.2;
-}
-
-.profile-card p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.36;
 }
 
 .recommendation {
@@ -791,14 +754,6 @@ button {
     border-right: 0;
   }
 
-  .profile-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .profile-card:nth-child(2n) {
-    border-right: 0;
-  }
-
   .timeline-row {
     padding-left: 34px;
   }
@@ -852,8 +807,7 @@ button {
 
   .profile-stats,
   .logo-list,
-  .metric-grid,
-  .profile-grid {
+  .metric-grid {
     grid-template-columns: 1fr;
   }
 
@@ -869,13 +823,6 @@ button {
   .metric {
     min-height: auto;
     padding: 24px 0;
-  }
-
-  .profile-card,
-  .profile-card:nth-child(2n) {
-    min-height: auto;
-    padding: 24px 0;
-    border-right: 0;
   }
 
   .section {
