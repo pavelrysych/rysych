@@ -98,8 +98,8 @@ button {
 .mark,
 .footer-mark {
   display: block;
-  width: 118px;
-  height: 34px;
+  width: 156px;
+  height: 48px;
   text-decoration: none;
 }
 
@@ -116,8 +116,8 @@ button {
 }
 
 .footer-mark {
-  width: 128px;
-  height: 40px;
+  width: 168px;
+  height: 52px;
 }
 
 .nav {
@@ -287,10 +287,10 @@ button {
 .logo-list {
   list-style: none;
   padding: 0;
-  margin: 20px 0 0;
+  margin: 16px 0 0;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px 30px;
+  gap: 15px 22px;
   align-items: center;
 }
 
@@ -301,12 +301,12 @@ button {
 
 .logo-forbes {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 34px;
+  font-size: 25px;
   font-weight: 700;
 }
 
 .logo-pymnts {
-  font-size: 28px;
+  font-size: 20px;
   font-weight: 500;
   letter-spacing: -0.02em;
 }
@@ -316,12 +316,12 @@ button {
   align-items: center;
   gap: 6px;
   color: var(--accent);
-  font-size: 26px;
+  font-size: 18px;
   font-weight: 760;
 }
 
 .logo-bi {
-  font-size: 24px;
+  font-size: 17px;
   font-weight: 800;
   letter-spacing: -0.03em;
   text-transform: uppercase;
