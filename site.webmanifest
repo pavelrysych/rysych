@@ -1,0 +1,21 @@
+{
+  "name": "Pavel Rysych",
+  "short_name": "Rysych",
+  "description": "Design, product, and growth consulting by Pavel Rysych.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/assets/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
