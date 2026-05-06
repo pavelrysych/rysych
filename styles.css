@@ -799,18 +799,32 @@ button {
   }
 
   .site-header {
-    min-height: 94px;
-    display: grid;
+    min-height: 72px;
+    display: flex;
   }
 
   .nav {
-    justify-content: flex-start;
-    gap: 14px 16px;
-    font-size: 12px;
+    display: none;
   }
 
   .hero {
-    padding-top: 48px;
+    padding-top: 18px;
+  }
+
+  .hero-copy {
+    order: -1;
+  }
+
+  .hero-side {
+    display: contents;
+  }
+
+  .portrait-frame {
+    order: -2;
+  }
+
+  .featured {
+    order: 0;
   }
 
   .hero h1 {
