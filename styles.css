@@ -531,11 +531,12 @@ button {
   gap: 10px;
   border: 1px dashed #bdbdb8;
   color: var(--muted);
+  text-decoration: none;
 }
 
 .app-slot-featured {
   border: 0;
-  background: #f4ecff;
+  background: var(--bg);
 }
 
 .app-slot-featured img {
