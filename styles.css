@@ -562,7 +562,8 @@ button {
 
 .site-footer {
   min-height: 130px;
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
   justify-content: flex-end;
   gap: 36px;
   align-items: center;
