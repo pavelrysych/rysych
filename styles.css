@@ -562,8 +562,8 @@ button {
 
 .site-footer {
   min-height: 130px;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto auto auto;
+  display: flex;
+  justify-content: flex-end;
   gap: 36px;
   align-items: center;
   padding: 28px 0 42px;
@@ -785,7 +785,9 @@ button {
   }
 
   .site-footer {
+    display: grid;
     gap: 20px;
+    justify-content: stretch;
   }
 
   .footer-links {
