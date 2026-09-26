@@ -49,33 +49,11 @@
           });
         };
 
-        document.addEventListener('DOMContentLoaded', () => {
-          const video = document.querySelector('.portrait-video');
-          const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-
-          video.addEventListener('playing', () => root.classList.add('video-ready'));
-          video.addEventListener('error', () => root.classList.remove('video-ready'));
-
-          const updatePlayback = () => {
-            if (reducedMotion.matches) {
-              video.pause();
-              root.classList.remove('video-ready');
-              return;
-            }
-
-            if (!video.hasAttribute('src')) video.src = video.dataset.src;
-            video.play().catch(() => {
-              // Keep the first frame visible when autoplay is unavailable.
-            });
-          };
-
-          reducedMotion.addEventListener('change', updatePlayback);
-          updatePlayback();
-          reveal();
-        }, { once: true });
+        if (document.readyState === 'complete') reveal();
+        else window.addEventListener('load', reveal, { once: true });
       })();
     </script>
-    <link rel="stylesheet" href="/styles.css?v=3">
+    <link rel="stylesheet" href="/styles.css?v=2">
   </head>
   <body>
     <main class="portrait" aria-labelledby="name">
@@ -83,24 +61,12 @@
         <img class="portrait-preview" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAAqAEADASIAAhEBAxEB/8QAGgAAAQUBAAAAAAAAAAAAAAAABgECAwQFB//EADQQAAIABQEFBgMIAwAAAAAAAAECAAMEESESBQYxQVETFCJxkfBhocEHFSMyQlJigZKx0f/EABgBAAMBAQAAAAAAAAAAAAAAAAABAwIE/8QAHxEAAgICAgMBAAAAAAAAAAAAAAECEQMhBDESE0Ey/9oADAMBAAIRAxEAPwAxK3hAmYUOp5w7UIqmSaJUW0TaMQJ1G362l25KpXMte2qElpTmSzEyy2nXrFgDYMeeLDiYLg4iayKV0WlicKv6M7OEKQ8sOsNJg8jNERWGMMRKTEbEW4wmwoGTtQKbduv+RP0jD3l34+5aWWtKqzqyaTYPfSoFrk5BJzgY+WRl62ymWzlrHi7EAekC235rz9opMJUqZYC2FuvzicM7m6H60tmtP3+2zMqZVUJqrVpMZkmKgChTjTptnHMkmx6gEHu732jttKg1VlMoqEcrMEg4ta4IU5HTjyJ+EcyO6O3u4rWdwZpTp2qhJqM5U/xBLf1a8O3cnd0FUJss+IqMjAIvg+sKUlGLcSjUteSOzJvfTOAzS50tSL6mX/kSzt66GRK7SZOBHRfEfQRzNa8u/wCAqgcwRx9/D6wveXP5xL5+Iri/n64jmfIkKkHD79UxkTpoRl7M2txvfgf9wK7w77TdqylkyyJUm+VH6uHHJjGnV8lg11lm4AIC8T7tGb3vVcS6dUHVV4nrBHI3tg66Ihcrki1x198or7VYCQo1avGbHmbRYlAEMbZAJB6cIo7W4ST8W+kax/tAytJ2jWU9K9LKqZiyJltSBsYN8dM9I2KEino5Vl8LC5Ock24/KB3lHQHRVWWqqAonaQAMAAkW8rRrkukgjcu2Za1bBwssqLjDEqPfrDVmuCWmy1Zzcdm18mx4m4IsbY5w0AFgCMaB9ItV4ErZ1G0sBGYTAxXBObZ/rEcukBRKoFZ5xyMgX659+cRNUErrlgIi/t9+7RBWkiYACQAxtbyhjYVmGGAJBHEHEVjH6ZXdH//Z" alt="" aria-hidden="true">
         <img
           class="portrait-photo"
-          src="/assets/pavel-rysych-video-f5c0e867.jpg"
+          src="/assets/pavel-rysych-5a79ceb8.jpg"
           alt="Pavel Rysych standing in a misty mountain landscape"
-          width="1168"
-          height="768"
+          width="2560"
+          height="1706"
           fetchpriority="high"
         >
-        <video
-          class="portrait-video"
-          data-src="/assets/pavel-rysych-f5c0e867.mp4"
-          poster="/assets/pavel-rysych-video-f5c0e867.jpg"
-          autoplay
-          muted
-          loop
-          playsinline
-          preload="metadata"
-          aria-hidden="true"
-          tabindex="-1"
-        ></video>
       </div>
       <div class="identity">
         <h1 id="name">Pavel Rysych</h1>

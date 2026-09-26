@@ -31,7 +31,6 @@ body {
 }
 
 .portrait-photo,
-.portrait-video,
 .portrait-preview {
   position: absolute;
   inset: 0;
@@ -46,8 +45,7 @@ body {
   transform: scale(1.06);
 }
 
-.portrait-photo,
-.portrait-video {
+.portrait-photo {
   filter: blur(0);
   transform: scale(1);
   opacity: 1;
@@ -57,17 +55,7 @@ body {
     opacity 0.5s ease;
 }
 
-.portrait-video {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.video-ready .portrait-video {
-  opacity: 1;
-}
-
-.is-loading .portrait-photo,
-.is-loading .portrait-video {
+.is-loading .portrait-photo {
   filter: blur(20px);
   transform: scale(1.06);
   opacity: 0;
@@ -112,7 +100,6 @@ p {
 
 @media (max-aspect-ratio: 1/1) {
   .portrait-photo,
-  .portrait-video,
   .portrait-preview {
     object-position: 23% center;
   }
@@ -136,12 +123,7 @@ p {
 
 @media (prefers-reduced-motion: reduce) {
   .portrait-photo,
-  .portrait-video,
   .identity {
     transition: none;
-  }
-
-  .portrait-video {
-    visibility: hidden;
   }
 }
