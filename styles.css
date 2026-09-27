@@ -89,7 +89,7 @@ button, input, textarea { font: inherit; }
 .section-heading h2, .leadership h2, .about h2, .contact h2 { margin: 20px 0 0; font: 700 clamp(82px, 9.4vw, 170px)/.84 "Barlow Condensed", "Arial Narrow", sans-serif; letter-spacing: -.015em; text-transform: uppercase; }
 .section-heading__note { max-width: 250px; margin: 0 0 10px; font-size: 14px; line-height: 1.7; }
 .work-list { margin-top: clamp(55px, 7vw, 120px); border-top: 1px solid var(--line-light); }
-.work-row { display: grid; grid-template-columns: 70px minmax(0,1fr) 210px 190px 34px; align-items: center; column-gap: 20px; min-height: 140px; padding: 22px 20px; border-bottom: 1px solid var(--line-light); text-decoration: none; transition: background .2s ease, padding-inline .2s ease; }
+.work-row { display: grid; grid-template-columns: 70px minmax(0,1fr) 180px 260px 34px; align-items: center; column-gap: 20px; min-height: 172px; padding: 22px 20px; border-bottom: 1px solid var(--line-light); text-decoration: none; transition: background .2s ease, padding-inline .2s ease; }
 .work-row:hover { background: rgba(27,29,27,.055); padding-left: 28px; padding-right: 12px; }
 .work-row__number, .work-row__role, .work-row__main small { font: 500 11px/1.5 "IBM Plex Mono", monospace; letter-spacing: .035em; text-transform: uppercase; }
 .work-row__number { align-self: start; margin-top: 11px; color: var(--oxide); }
@@ -97,15 +97,15 @@ button, input, textarea { font: inherit; }
 .work-row__main strong { font: 700 clamp(48px, 5.3vw, 82px)/.92 "Barlow Condensed", "Arial Narrow", sans-serif; text-transform: uppercase; letter-spacing: -.012em; }
 .work-row__main small { color: #52534f; }
 .work-row__role { color: #41423e; }
-.work-row__thumb { width: 100%; height: 96px; object-fit: cover; filter: saturate(.65) brightness(.9); transition: filter .3s ease, transform .3s ease; }
-.work-row:hover .work-row__thumb { filter: saturate(1) brightness(1); transform: scale(1.025); }
+.work-row__thumb { width: 100%; height: 130px; object-fit: cover; filter: contrast(1.02); transition: filter .3s ease, transform .3s ease; }
+.work-row:hover .work-row__thumb { filter: contrast(1.08); transform: scale(1.025); }
 .work-row__arrow { font-size: 27px; line-height: 1; text-align: right; transition: transform .2s ease, color .2s ease; }
 .work-row:hover .work-row__arrow { color: var(--oxide); transform: translate(3px, -3px); }
 .subskim-banner { position: relative; display: flex; align-items: center; min-height: 470px; margin-top: clamp(80px, 9vw, 145px); overflow: hidden; color: var(--ivory); background: #1c2222; text-decoration: none; }
-.subskim-banner::before { position: absolute; z-index: 1; inset: 0; content: ""; background: linear-gradient(90deg, rgba(10,13,14,.96) 0%, rgba(10,13,14,.85) 43%, rgba(10,13,14,.1) 100%); }
+.subskim-banner::before { position: absolute; z-index: 1; inset: 0; content: ""; background: linear-gradient(90deg, #0b0d0e 0%, #0b0d0e 58%, rgba(11,13,14,.88) 63%, rgba(11,13,14,.02) 82%); }
 .subskim-banner::after { position: absolute; z-index: 2; inset: 0; content: ""; background: url("/assets/grain.svg") repeat; opacity: .15; pointer-events: none; }
-.subskim-banner > img { position: absolute; inset: 0 0 0 auto; width: 63%; height: 100%; object-fit: cover; object-position: center; filter: saturate(.78) contrast(1.05) brightness(.77); transition: transform .5s ease, filter .5s ease; }
-.subskim-banner:hover > img { transform: scale(1.035); filter: saturate(.95) contrast(1.06) brightness(.84); }
+.subskim-banner > img { position: absolute; inset: 0 0 0 auto; width: 70%; height: 100%; object-fit: cover; object-position: right center; filter: contrast(1.02); transition: transform .5s ease, filter .5s ease; }
+.subskim-banner:hover > img { transform: scale(1.035); filter: contrast(1.07); }
 .subskim-banner__copy { position: relative; z-index: 3; width: min(66%, 760px); padding: clamp(40px, 5vw, 78px); }
 .subskim-banner__label, .subskim-banner__link { font: 500 11px/1.5 "IBM Plex Mono", monospace; letter-spacing: .08em; text-transform: uppercase; }
 .subskim-banner__label { color: #ed9a7b; }
@@ -163,6 +163,11 @@ button, input, textarea { font: inherit; }
 .case-hero__image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; filter: saturate(.76) brightness(.62) contrast(1.04); }
 .case-hero::before { position: absolute; z-index: 1; inset: 0; content: ""; background: linear-gradient(90deg, rgba(8,10,12,.7), rgba(8,10,12,.22) 62%, rgba(8,10,12,.38)), linear-gradient(0deg, rgba(8,10,12,.68), transparent 72%); pointer-events: none; }
 .case-hero::after { position: absolute; z-index: 2; inset: 0; content: ""; background: url("/assets/grain.svg") repeat; opacity: .12; pointer-events: none; }
+.case-hero--product .case-hero__image { filter: none; }
+.case-hero--product::before { background: linear-gradient(90deg, rgba(8,10,12,.83) 0%, rgba(8,10,12,.48) 37%, rgba(8,10,12,.04) 72%), linear-gradient(0deg, rgba(8,10,12,.7) 0%, transparent 58%); }
+.case-hero--fundraise.case-hero--product::before { background: linear-gradient(90deg, rgba(8,10,12,.88) 0%, rgba(8,10,12,.58) 39%, rgba(8,10,12,.08) 78%), linear-gradient(0deg, rgba(8,10,12,.73) 0%, transparent 62%); }
+.case-hero--subskim.case-hero--product::before { background: linear-gradient(90deg, #0b0d0e 0%, #0b0d0e 43%, rgba(11,13,14,.9) 48%, rgba(11,13,14,.05) 65%), linear-gradient(0deg, rgba(8,10,12,.72) 0%, transparent 62%); }
+.case-hero--subskim .case-hero__deck { max-width: 600px; }
 .case-hero--admirals { --case-bg: #1b2840; --case-glow: rgba(109,148,184,.28); }
 .case-hero--mechanism { --case-bg: #24272b; --case-glow: rgba(215,92,55,.2); }
 .case-hero--subskim { --case-bg: #27302d; --case-glow: rgba(215,92,55,.27); }
@@ -199,6 +204,8 @@ button, input, textarea { font: inherit; }
 .case-art img { display: block; width: 100%; height: auto; }
 .case-art figcaption { display: flex; justify-content: space-between; gap: 24px; margin-top: 16px; color: #5d6059; font: 500 11px/1.6 "IBM Plex Mono", monospace; letter-spacing: .03em; text-transform: uppercase; }
 .case-art__idea { color: var(--oxide); }
+.case-art figcaption a { text-underline-offset: 3px; }
+.case-art figcaption a:hover { color: var(--oxide); }
 .case-figure { margin: 0 0 85px; }
 .case-figure img { display: block; width: 100%; height: auto; }
 .case-figure figcaption { max-width: 900px; margin-top: 17px; color: #5d6059; font: 500 11px/1.7 "IBM Plex Mono", monospace; }
@@ -216,9 +223,14 @@ button, input, textarea { font: inherit; }
 .mechanism-products__grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 0 40px; border-top: 1px solid var(--line-light); }
 .mechanism-product { display: flex; flex-direction: column; align-items: flex-start; min-height: 260px; padding: 30px 0 35px; border-bottom: 1px solid var(--line-light); }
 .mechanism-product__number { color: var(--oxide); font: 500 11px/1.5 "IBM Plex Mono", monospace; }
+.mechanism-product__image { display: block; width: 100%; aspect-ratio: 16 / 9; margin-top: 20px; object-fit: cover; object-position: top; border: 1px solid var(--line-light); }
 .mechanism-product h3 { margin: 22px 0 14px; font: 700 clamp(42px,4vw,65px)/.95 "Barlow Condensed", "Arial Narrow", sans-serif; text-transform: uppercase; }
 .mechanism-product p { max-width: 430px; margin: 0 0 25px; font-size: 15px; line-height: 1.75; }
 .mechanism-product .text-link { margin-top: auto; }
+
+@media (min-width: 761px) {
+  .case-hero--product h1 { max-width: 830px; font-size: clamp(100px, 10.5vw, 176px); }
+}
 
 @media (max-width: 1100px) {
   .page-width { width: min(calc(100% - 72px), 1550px); }
@@ -263,8 +275,8 @@ button, input, textarea { font: inherit; }
   .work-row__thumb { display: none; }
   .work-row__arrow { font-size: 21px; }
   .subskim-banner { min-height: 510px; align-items: flex-end; }
-  .subskim-banner > img { width: 100%; height: 100%; }
-  .subskim-banner::before { background: linear-gradient(0deg, rgba(9,12,13,.98) 0%, rgba(9,12,13,.91) 30%, rgba(9,12,13,.13) 100%); }
+  .subskim-banner > img { width: 100%; height: 58%; }
+  .subskim-banner::before { background: linear-gradient(90deg, #0b0d0e 0%, rgba(11,13,14,.75) 22%, transparent 55%), linear-gradient(0deg, #0b0d0e 10%, rgba(11,13,14,.97) 35%, rgba(11,13,14,.08) 71%, rgba(11,13,14,.4) 100%); }
   .subskim-banner__copy { width: 100%; padding: 34px; }
   .subskim-banner h3 { font-size: clamp(74px, 17vw, 125px); }
   .subskim-banner p { margin-bottom: 28px; }
@@ -281,6 +293,9 @@ button, input, textarea { font: inherit; }
   .contact h2 { font-size: clamp(88px,14vw,150px); }
   .case-hero, .case-hero__inner { min-height: 590px; }
   .case-hero__image { filter: saturate(.7) brightness(.5); }
+  .case-hero--product .case-hero__image { height: 58%; object-position: right center; filter: none; }
+  .case-hero--fundraise.case-hero--product .case-hero__image { object-position: center; }
+  .case-hero--product::before, .case-hero--fundraise.case-hero--product::before, .case-hero--subskim.case-hero--product::before { background: linear-gradient(0deg, var(--case-bg) 8%, rgba(8,10,12,.96) 31%, rgba(8,10,12,.08) 64%, rgba(8,10,12,.52) 100%); }
   .case-hero__inner { padding-top: 130px; padding-bottom: 55px; }
   .case-hero h1 { font-size: clamp(80px,16vw,160px); }
   .case-facts { grid-template-columns: 1fr 1fr; row-gap: 30px; }
@@ -326,6 +341,7 @@ button, input, textarea { font: inherit; }
 }
 @media (max-width: 360px) {
   .case-hero--mechanism h1 { font-size: 64px; }
+  .case-hero--fundraise h1 { font-size: 62px; overflow-wrap: normal; }
   .case-next h2 { font-size: 64px; overflow-wrap: anywhere; }
 }
 @media (prefers-reduced-motion: reduce) {
