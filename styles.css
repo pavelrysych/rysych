@@ -89,7 +89,7 @@ button, input, textarea { font: inherit; }
 .section-heading h2, .leadership h2, .about h2, .contact h2 { margin: 20px 0 0; font: 700 clamp(82px, 9.4vw, 170px)/.84 "Barlow Condensed", "Arial Narrow", sans-serif; letter-spacing: -.015em; text-transform: uppercase; }
 .section-heading__note { max-width: 250px; margin: 0 0 10px; font-size: 14px; line-height: 1.7; }
 .work-list { margin-top: clamp(55px, 7vw, 120px); border-top: 1px solid var(--line-light); }
-.work-row { display: grid; grid-template-columns: 70px minmax(0,1fr) 240px 34px; align-items: center; column-gap: 24px; min-height: 140px; padding: 22px 20px; border-bottom: 1px solid var(--line-light); text-decoration: none; transition: background .2s ease, padding-inline .2s ease; }
+.work-row { display: grid; grid-template-columns: 70px minmax(0,1fr) 210px 190px 34px; align-items: center; column-gap: 20px; min-height: 140px; padding: 22px 20px; border-bottom: 1px solid var(--line-light); text-decoration: none; transition: background .2s ease, padding-inline .2s ease; }
 .work-row:hover { background: rgba(27,29,27,.055); padding-left: 28px; padding-right: 12px; }
 .work-row__number, .work-row__role, .work-row__main small { font: 500 11px/1.5 "IBM Plex Mono", monospace; letter-spacing: .035em; text-transform: uppercase; }
 .work-row__number { align-self: start; margin-top: 11px; color: var(--oxide); }
@@ -97,6 +97,8 @@ button, input, textarea { font: inherit; }
 .work-row__main strong { font: 700 clamp(48px, 5.3vw, 82px)/.92 "Barlow Condensed", "Arial Narrow", sans-serif; text-transform: uppercase; letter-spacing: -.012em; }
 .work-row__main small { color: #52534f; }
 .work-row__role { color: #41423e; }
+.work-row__thumb { width: 100%; height: 96px; object-fit: cover; filter: saturate(.65) brightness(.9); transition: filter .3s ease, transform .3s ease; }
+.work-row:hover .work-row__thumb { filter: saturate(1) brightness(1); transform: scale(1.025); }
 .work-row__arrow { font-size: 27px; line-height: 1; text-align: right; transition: transform .2s ease, color .2s ease; }
 .work-row:hover .work-row__arrow { color: var(--oxide); transform: translate(3px, -3px); }
 .work-footnote { display: flex; justify-content: space-between; gap: 30px; margin-top: 50px; }
@@ -143,13 +145,14 @@ button, input, textarea { font: inherit; }
 /* Case studies */
 .case-page { background: var(--paper); }
 .case-hero { position: relative; overflow: hidden; min-height: 680px; color: var(--ivory); background: var(--case-bg, #26302d); }
-.case-hero::before { position: absolute; inset: -12% -9%; content: ""; background: radial-gradient(circle at 78% 48%, var(--case-glow, rgba(190,100,65,.3)), transparent 39%), linear-gradient(130deg, transparent 46%, rgba(0,0,0,.3)); pointer-events: none; }
-.case-hero::after { position: absolute; inset: 0; content: ""; background: url("/assets/grain.svg") repeat; opacity: .12; pointer-events: none; }
+.case-hero__image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; filter: saturate(.76) brightness(.62) contrast(1.04); }
+.case-hero::before { position: absolute; z-index: 1; inset: 0; content: ""; background: linear-gradient(90deg, rgba(8,10,12,.7), rgba(8,10,12,.22) 62%, rgba(8,10,12,.38)), linear-gradient(0deg, rgba(8,10,12,.68), transparent 72%); pointer-events: none; }
+.case-hero::after { position: absolute; z-index: 2; inset: 0; content: ""; background: url("/assets/grain.svg") repeat; opacity: .12; pointer-events: none; }
 .case-hero--admirals { --case-bg: #1b2840; --case-glow: rgba(109,148,184,.28); }
 .case-hero--subskim { --case-bg: #27302d; --case-glow: rgba(215,92,55,.27); }
 .case-hero--metamap { --case-bg: #153b42; --case-glow: rgba(61,164,151,.27); }
 .case-hero--fundraise { --case-bg: #412526; --case-glow: rgba(193,91,87,.3); }
-.case-hero__inner { position: relative; z-index: 1; display: flex; flex-direction: column; justify-content: flex-end; min-height: 680px; padding-top: 165px; padding-bottom: 76px; }
+.case-hero__inner { position: relative; z-index: 3; display: flex; flex-direction: column; justify-content: flex-end; min-height: 680px; padding-top: 165px; padding-bottom: 76px; }
 .case-hero__top { display: flex; justify-content: space-between; gap: 30px; padding-bottom: 45px; border-bottom: 1px solid var(--line-dark); }
 .case-hero__top span { color: var(--oxide); font: 500 12px/1.5 "IBM Plex Mono", monospace; }
 .case-hero h1 { max-width: 1350px; margin: 45px 0 20px; font: 700 clamp(100px, 15vw, 260px)/.77 "Barlow Condensed", "Arial Narrow", sans-serif; letter-spacing: -.024em; text-transform: uppercase; }
@@ -176,12 +179,10 @@ button, input, textarea { font: inherit; }
 .case-proof div + div { border-left: 1px solid var(--line-light); padding-left: 30px; }
 .case-proof strong { display: block; font: 700 clamp(42px,5vw,84px)/.92 "Barlow Condensed", "Arial Narrow", sans-serif; text-transform: uppercase; }
 .case-proof span { display: block; max-width: 230px; margin-top: 10px; color: #555850; font: 500 11px/1.6 "IBM Plex Mono", monospace; text-transform: uppercase; }
-.case-visual { display: grid; grid-template-columns: 1fr 1fr; min-height: 460px; margin: 45px 0 85px; color: var(--ivory); background: var(--case-bg,#202820); overflow: hidden; }
-.case-visual__panel { display: flex; flex-direction: column; justify-content: space-between; padding: clamp(32px,5vw,75px); border-right: 1px solid rgba(255,255,255,.16); }
-.case-visual__panel:last-child { border-right: 0; background: rgba(0,0,0,.15); }
-.case-visual__label { color: #d7dad4; font: 500 11px/1.5 "IBM Plex Mono", monospace; letter-spacing: .08em; text-transform: uppercase; }
-.case-visual__word { overflow-wrap: anywhere; font: 700 clamp(66px,7vw,130px)/.82 "Barlow Condensed", "Arial Narrow", sans-serif; text-transform: uppercase; }
-.case-visual__copy { max-width: 380px; margin: auto 0 0; font-size: clamp(18px,1.8vw,27px); line-height: 1.4; }
+.case-art { margin: 45px 0 85px; }
+.case-art img { display: block; width: 100%; height: auto; }
+.case-art figcaption { display: flex; justify-content: space-between; gap: 24px; margin-top: 16px; color: #5d6059; font: 500 11px/1.6 "IBM Plex Mono", monospace; letter-spacing: .03em; text-transform: uppercase; }
+.case-art__idea { color: var(--oxide); }
 .case-figure { margin: 0 0 85px; }
 .case-figure img { display: block; width: 100%; height: auto; }
 .case-figure figcaption { max-width: 900px; margin-top: 17px; color: #5d6059; font: 500 11px/1.7 "IBM Plex Mono", monospace; }
@@ -201,7 +202,8 @@ button, input, textarea { font: inherit; }
   .hero__copy h1 { font-size: clamp(66px,7.7vw,91px); }
   .hero__side { left: -19px; }
   .section-heading { grid-template-columns: 1fr 220px; }
-  .work-row { grid-template-columns: 45px minmax(0,1fr) 150px 30px; }
+  .work-row { grid-template-columns: 45px minmax(0,1fr) 145px 140px 30px; column-gap: 16px; }
+  .work-row__thumb { height: 84px; }
   .leadership__grid, .about__grid, .quote-section__inner { gap: 8%; }
 }
 @media (max-width: 760px) {
@@ -233,6 +235,7 @@ button, input, textarea { font: inherit; }
   .work-row__main strong { font-size: clamp(46px,9vw,71px); }
   .work-row__main small { font-size: 10px; }
   .work-row__role { display: none; }
+  .work-row__thumb { display: none; }
   .work-row__arrow { font-size: 21px; }
   .work-footnote { display: block; }
   .work-footnote span { display: block; margin-top: 20px; white-space: normal; }
@@ -246,6 +249,7 @@ button, input, textarea { font: inherit; }
   .about__copy { padding-top: 55px; }
   .contact h2 { font-size: clamp(88px,14vw,150px); }
   .case-hero, .case-hero__inner { min-height: 590px; }
+  .case-hero__image { filter: saturate(.7) brightness(.5); }
   .case-hero__inner { padding-top: 130px; padding-bottom: 55px; }
   .case-hero h1 { font-size: clamp(80px,16vw,160px); }
   .case-facts { grid-template-columns: 1fr 1fr; row-gap: 30px; }
@@ -256,8 +260,9 @@ button, input, textarea { font: inherit; }
   .case-proof div { padding-left: 0; border-bottom: 1px solid var(--line-light); }
   .case-proof div + div { border-left: 0; padding-left: 0; }
   .case-proof div:last-child { border-bottom: 0; }
-  .case-visual { grid-template-columns: 1fr; }
-  .case-visual__panel { min-height: 310px; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.16); }
+  .case-art figcaption { display: block; }
+  .case-art figcaption span { display: block; }
+  .case-art figcaption span + span { margin-top: 6px; }
   .case-next__inner { display: block; }
   .case-next__actions { margin-top: 40px; }
 }
@@ -272,7 +277,7 @@ button, input, textarea { font: inherit; }
   .work-row { min-height: 111px; }
   .work-row__main strong { font-size: 43px; }
   .work-row__main small { font-size: 9px; }
-  .leadership h2, .about h2 { font-size: 72px; }
+  .leadership h2, .about h2 { font-size: clamp(62px, 18vw, 72px); }
   .leadership__lead { font-size: 24px; }
   .contact h2 { font-size: clamp(77px, 17vw, 95px); }
   .contact > .page-width > p:not(.eyebrow) { margin-top: 32px; }
