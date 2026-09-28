@@ -15,11 +15,15 @@ document.querySelectorAll('.mobile-nav').forEach((menu) => {
 
 const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
 document.querySelectorAll('video[data-case-autoplay]').forEach((video) => {
-  if (!motionPreference.matches) {
-    video.play().catch(() => {});
-  }
+  const syncPlayback = (reduceMotion) => {
+    video.autoplay = !reduceMotion;
+    if (reduceMotion) video.pause();
+    else video.play().catch(() => {});
+  };
+
+  syncPlayback(motionPreference.matches);
 
   motionPreference.addEventListener('change', (event) => {
-    if (event.matches) video.pause();
+    syncPlayback(event.matches);
   });
 });
