@@ -4,8 +4,8 @@
   "description": "Pavel Rysych — Product Design Leader.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#121416",
-  "theme_color": "#121416",
+  "background_color": "#f3f3f3",
+  "theme_color": "#f3f3f3",
   "icons": [
     {
       "src": "/assets/favicon-192.png",
