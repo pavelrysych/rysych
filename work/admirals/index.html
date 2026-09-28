@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/styles.css?v=8">
+    <link rel="stylesheet" href="/styles.css?v=9">
     <script src="/site.js?v=8" defer></script>
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Pavel Rysych">
@@ -39,6 +39,11 @@
     </header>
     <main id="main">
       <section class="case-hero case-hero--admirals case-hero--film" aria-labelledby="case-title">
+        <div class="case-film" aria-hidden="true">
+          <video class="case-film__video" data-case-autoplay autoplay muted loop playsinline disablepictureinpicture disableremoteplayback preload="auto" poster="/assets/admirals-website-film-v2-poster.jpg" width="1600" height="1012" tabindex="-1">
+            <source src="/assets/admirals-website-film-v2.mp4" type="video/mp4">
+          </video>
+        </div>
         <div class="page-width case-hero__inner">
           <div class="case-hero__top"><span>01 / SELECTED WORK</span><a class="text-link text-link--light" href="/#work">All projects <span aria-hidden="true">↗</span></a></div>
           <div class="case-hero__heading">
@@ -46,12 +51,6 @@
             <p class="case-hero__deck">Helping Admirals attract experienced traders through positioning, design and client-value analytics.</p>
           </div>
         </div>
-        <figure class="case-film">
-          <video class="case-film__video" data-case-autoplay autoplay muted loop playsinline disablepictureinpicture disableremoteplayback preload="auto" poster="/assets/admirals-website-film-v2-poster.jpg" width="1600" height="1012" aria-label="Admirals web experience for experienced traders">
-            <source src="/assets/admirals-website-film-v2.mp4" type="video/mp4">
-            <p><a href="/assets/admirals-website-film-v2.mp4">Watch the Admirals website recording</a>.</p>
-          </video>
-        </figure>
       </section>
       <div class="page-width">
         <dl class="case-facts">
