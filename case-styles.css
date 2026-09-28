@@ -53,7 +53,7 @@
 .case-film-stage { scroll-margin-top: 96px; }
 .case-film__video { display: block; width: 100%; height: auto; margin: 0; border: 0; background: #e3e3e3; }
 
-.case-facts { display: grid; grid-template-columns: .75fr .9fr 1.5fr; gap: 32px; margin: 0; padding: 38px 4px; border-bottom: 1px solid var(--line); }
+.case-facts { display: grid; grid-template-columns: .75fr .9fr .85fr 1.5fr; gap: 32px; margin: 0; padding: 38px 4px; border-bottom: 1px solid var(--line); }
 .case-facts > div { min-width: 0; }
 .case-facts dt { margin: 0 0 10px; color: var(--muted); font: 400 10px/1.5 "IBM Plex Mono", monospace; letter-spacing: .045em; text-transform: uppercase; }
 .case-facts dd { margin: 0; font-size: 14px; line-height: 1.8; color: var(--text); }
@@ -129,6 +129,8 @@
 
 @media (max-width: 1050px) {
   .case-impact__grid--five { grid-template-columns: repeat(3,minmax(0,1fr)); }
+  .case-facts { grid-template-columns: 1fr 1fr; gap: 25px; }
+  .case-facts > div:last-child { grid-column: 1/-1; }
   .case-hero__heading { grid-template-columns: 1fr; gap: 25px; }
   .case-hero__deck { max-width: 720px; }
   .case-hero__top { margin-bottom: 44px; }

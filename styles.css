@@ -111,6 +111,7 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
 .work-card__proof { color: var(--cover-caption); font-size: clamp(11px,2.65cqw,14px); font-weight: 600; line-height: 1.5; }
 .work-card__body { padding: 24px 30px 30px; }
 .work-card__role { color: var(--orange-ink); font: 500 10px/1.6 "IBM Plex Mono",monospace; letter-spacing: .03em; text-transform: uppercase; }
+.work-card__date { display: block; margin-top: 4px; color: var(--muted); font: 400 10px/1.5 "IBM Plex Mono",monospace; letter-spacing: .02em; }
 .work-card__title { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 11px; }
 .work-card__title h3 { margin: 0; font-family: var(--font-display); font-size: 40px; font-weight: 400; line-height: 1.1; letter-spacing: -.01em; }
 .work-card__title > span { display: grid; place-items: center; width: 35px; height: 35px; color: var(--text); font-size: 22px; }
