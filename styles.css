@@ -97,10 +97,12 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
 .work-list { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 32px; margin-top: 44px; }
 .work-card { position: relative; overflow: hidden; min-width: 0; border: 1px solid var(--line); border-radius: 3px; background: #fff; text-decoration: none; transition: border-color .2s; }
 .work-card:hover { border-color: var(--text); }
-.work-card__visual { position: relative; display: flex; align-items: center; justify-content: center; height: 318px; margin: 0; padding: 30px; overflow: hidden; background: #e7e7e7; border-bottom: 1px solid var(--line); }
-.work-card__visual img { width: auto; max-width: 100%; max-height: 270px; height: auto; object-fit: contain; border-radius: 2px; box-shadow: 0 8px 22px rgba(0,0,0,.08); border: 1px solid rgba(21,21,21,.1); transition: transform .3s; }
-.work-card:hover .work-card__visual img { transform: translateY(-3px); }
-.work-card--metamap .work-card__visual img { width: auto; max-width: 100%; }
+.work-card--admirals { --cover-bg: #679bea; --cover-ink: #3e72c4; }
+.work-card--mechanism { --cover-bg: #b58b70; --cover-ink: #885f49; }
+.work-card--metamap { --cover-bg: #edce62; --cover-ink: #bc9d34; }
+.work-card--fundraise { --cover-bg: #94c99a; --cover-ink: #65a471; }
+.work-card__visual { position: relative; container-type: inline-size; display: flex; align-items: center; justify-content: center; aspect-ratio: 1.65; margin: 0; padding: clamp(20px,3vw,40px); overflow: hidden; background: var(--cover-bg); color: var(--cover-ink); border-bottom: 1px solid var(--line); }
+.work-card__brand { display: block; font-family: "Manrope",Arial,sans-serif; font-size: clamp(32px,5.5vw,104px); font-size: clamp(32px,16cqw,104px); font-weight: 800; line-height: 1.05; letter-spacing: -.065em; white-space: nowrap; }
 .work-card__body { padding: 24px 30px 30px; }
 .work-card__role { color: var(--orange-ink); font: 500 10px/1.6 "IBM Plex Mono",monospace; letter-spacing: .03em; text-transform: uppercase; }
 .work-card__title { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 11px; }
@@ -161,8 +163,6 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
   .hero__copy h1 { font-size: clamp(43px,5.3vw,60px); }
   .hero__footer > div { gap: 25px; font-size: 14px; }
   .section-heading { gap: 18px 45px; grid-template-columns: 1fr 300px; }
-  .work-card__visual { height: 264px; padding: 22px; }
-  .work-card__visual img { max-height: 230px; }
   .work-card__body { padding: 22px; }
   .work-card__title h3 { font-size: 36px; }
   .subskim-banner { padding: 34px; }
@@ -188,8 +188,6 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
   .section-heading h2 { margin-top: 16px; }
   .section-heading__note { max-width: 500px; margin-top: 18px; font-size: 13px; }
   .work-list { grid-template-columns: 1fr; gap: 20px; margin-top: 30px; }
-  .work-card__visual { height: auto; aspect-ratio: 1.65; padding: 24px; }
-  .work-card__visual img { max-height: 100%; }
   .work-card__body { padding: 22px 24px 26px; }
   .work-card__title h3 { font-size: 38px; }
   .subskim-banner { grid-template-columns: 1fr; gap: 26px; padding: 28px; }
