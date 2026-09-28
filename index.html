@@ -17,9 +17,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="preload" href="/assets/minimal-hero-film-v1-poster.jpg" as="image" fetchpriority="high">
-    <link rel="stylesheet" href="/styles.css?v=13">
+    <link rel="stylesheet" href="/styles.css?v=14">
     <link rel="stylesheet" href="/feature-visuals.css?v=2">
-    <script src="/site.js?v=8" defer></script>
+    <script src="/site.js?v=10" defer></script>
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="Pavel Rysych">
@@ -29,10 +29,10 @@
     <meta property="og:image" content="https://www.rysych.com/assets/minimal-hero-film-v1-poster.jpg">
     <meta name="twitter:card" content="summary_large_image">
   </head>
-  <body>
+  <body class="home-page">
     <a class="skip-link" href="#main">Skip to content</a>
-    <header class="site-header site-header--overlay">
-      <a class="wordmark" href="/" aria-label="Pavel Rysych, home">PAVEL RYSYCH<span class="wordmark__mark">/</span></a>
+    <header class="site-header site-header--overlay site-header--home">
+      <a class="wordmark" href="/" aria-label="Pavel Rysych, home">Pavel Rysych<span class="wordmark__mark">/</span></a>
       <nav class="desktop-nav" aria-label="Main navigation">
         <a href="#work">Work</a>
         <a href="#ai">AI</a>
@@ -53,9 +53,9 @@
     </header>
     <main id="main">
       <section class="hero" aria-labelledby="hero-title">
-        <div class="hero__inner page-width">
+        <div class="hero__inner">
           <div class="hero__copy">
-            <p class="eyebrow eyebrow--light">Pavel Rysych <span class="eyebrow__slash">/</span> Product Design Leader</p>
+            <p class="eyebrow eyebrow--light">Product Design Leader</p>
             <h1 id="hero-title">I build products<br>and the design teams<br><span>behind them<span class="accent-dot">.</span></span></h1>
             <p class="hero__intro">I lead product design and bring AI into everyday work — from prototypes and design systems to implementation. My experience across design, product and growth helps me connect decisions with the needs of the business.</p>
             <div class="text-actions">
@@ -63,11 +63,13 @@
               <a class="text-link text-link--light" href="#contact">Get in touch <span aria-hidden="true">↗</span></a>
             </div>
           </div>
-          <div class="hero__image">
-            <video class="hero__video" width="960" height="1216" poster="/assets/minimal-hero-film-v1-poster.jpg" autoplay muted loop playsinline preload="auto" disablepictureinpicture data-case-autoplay aria-label="Pavel Rysych wearing dark glasses against a light grey studio background">
-              <source src="/assets/minimal-hero-film-v1.mp4" type="video/mp4">
+          <div class="hero__image" role="group" tabindex="0" aria-label="Interactive portrait of Pavel Rysych" aria-describedby="portrait-instructions">
+            <video class="hero__video" width="960" height="1216" poster="/assets/minimal-hero-film-v1-poster.jpg" muted playsinline preload="auto" disablepictureinpicture data-portrait-scrub data-scrub-start="0.9" data-scrub-end="2.9" aria-label="Pavel Rysych wearing dark glasses against a light grey studio background">
+              <source src="/assets/minimal-hero-film-v2.mp4" type="video/mp4">
               <img src="/assets/minimal-hero-film-v1-poster.jpg" alt="Pavel Rysych wearing dark glasses against a light grey studio background" width="960" height="1216">
             </video>
+            <span class="portrait-hint" aria-hidden="true"><span class="portrait-hint__mouse">Move your cursor</span><span class="portrait-hint__touch">Drag to explore</span> <span>↔</span></span>
+            <span class="visually-hidden" id="portrait-instructions">Move your mouse horizontally or drag across the portrait to turn it. With the portrait focused, use the left and right arrow keys, Home or End. The portrait stays still when reduced motion is enabled.</span>
           </div>
         </div>
         <div class="hero__footer page-width"><span>Experience across</span><div><span>Admirals</span><span>Mechanism</span><span>MetaMap</span><span>Fundraise Up</span></div><a href="#work" aria-label="Scroll to selected work">↓</a></div>
