@@ -18,6 +18,8 @@
 .case-impact { margin-top: 40px; padding: 24px 0 0; border-top: 1px solid var(--line); }
 .case-impact > .eyebrow { color: var(--case-label); font-size: 10px; }
 .case-impact__grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 28px; margin: 24px 0 0; }
+.case-impact__grid--five { grid-template-columns: repeat(5,minmax(0,1fr)); gap: 24px; }
+.case-impact__grid--five .case-impact__value { font-size: clamp(32px,3.4vw,52px); }
 .case-impact__grid--three { grid-template-columns: repeat(3,minmax(0,1fr)); }
 .case-impact__grid--two { grid-template-columns: repeat(2,minmax(0,1fr)); }
 .case-impact__grid--single { grid-template-columns: minmax(0,1fr); }
@@ -78,6 +80,10 @@
 .case-art, .case-figure { position: relative; margin: 28px 0; padding: clamp(16px,3vw,38px); border: 1px solid var(--line); border-radius: 4px; background: #e6e6e6; overflow: hidden; }
 .case-art > img, .case-figure > img { display: block; width: 100%; height: auto; max-width: 1060px; margin-inline: auto; border: 1px solid rgba(21,21,21,.12); border-radius: 2px; box-shadow: 0 8px 24px rgba(0,0,0,.06); }
 .case-art figcaption, .case-figure figcaption { margin: 22px auto 0; max-width: 1060px; color: var(--muted); font-size: 11px; line-height: 1.8; }
+.case-figure--video { scroll-margin-top: 32px; }
+.case-figure--video .case-film__video { max-width: 1040px; margin-inline: auto; border: 1px solid rgba(21,21,21,.12); border-radius: 2px; box-shadow: 0 8px 24px rgba(0,0,0,.06); }
+.case-figure--video figcaption { max-width: 1040px; }
+.case-figure--video figcaption strong { color: var(--text); font-weight: 600; }
 .case-art figcaption { display: flex; justify-content: space-between; align-items: baseline; gap: 24px; }
 .case-art__idea { flex-shrink: 0; color: var(--case-label); font: 500 10px/1.8 "IBM Plex Mono", monospace; }
 
@@ -114,6 +120,7 @@
 .case-next__actions .text-link { font-size: 12px; }
 
 @media (max-width: 1050px) {
+  .case-impact__grid--five { grid-template-columns: repeat(3,minmax(0,1fr)); }
   .case-hero__heading { grid-template-columns: 1fr; gap: 25px; }
   .case-hero__deck { max-width: 720px; }
   .case-hero__top { margin-bottom: 44px; }

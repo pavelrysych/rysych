@@ -15,17 +15,38 @@ document.querySelectorAll('.mobile-nav').forEach((menu) => {
 
 const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
 document.querySelectorAll('video[data-case-autoplay]').forEach((video) => {
-  const syncPlayback = (reduceMotion) => {
-    video.autoplay = !reduceMotion;
-    if (reduceMotion) video.pause();
-    else video.play().catch(() => {});
+  const lazy = video.hasAttribute('data-case-lazy');
+  let nearViewport = !lazy;
+  const syncPlayback = () => {
+    const shouldPlay = !motionPreference.matches && nearViewport && !document.hidden;
+    video.autoplay = shouldPlay;
+    if (!shouldPlay) {
+      video.pause();
+      return;
+    }
+    const deferredSources = video.querySelectorAll('source[data-src]');
+    if (deferredSources.length) {
+      deferredSources.forEach((source) => {
+        source.src = source.dataset.src;
+        source.removeAttribute('data-src');
+      });
+      video.load();
+    }
+    video.play().catch(() => {});
   };
 
-  syncPlayback(motionPreference.matches);
-
-  motionPreference.addEventListener('change', (event) => {
-    syncPlayback(event.matches);
-  });
+  if (lazy && 'IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(([entry]) => {
+      nearViewport = entry.isIntersecting;
+      syncPlayback();
+    }, { rootMargin: '200px 0px' });
+    observer.observe(video);
+  } else {
+    nearViewport = true;
+  }
+  syncPlayback();
+  motionPreference.addEventListener('change', syncPlayback);
+  document.addEventListener('visibilitychange', syncPlayback);
 });
 
 document.querySelectorAll('video[data-portrait-scrub]').forEach((video) => {
