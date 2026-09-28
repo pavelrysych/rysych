@@ -52,6 +52,14 @@
 .case-hero__image { height: auto; display: block; }
 .case-film-stage { scroll-margin-top: 96px; }
 .case-film__video { display: block; width: 100%; height: auto; margin: 0; border: 0; background: #e3e3e3; }
+.case-film-stage figcaption { max-width: 1040px; margin: 20px auto 0; color: var(--muted); font-size: 12px; line-height: 1.8; }
+.case-film-stage figcaption strong { color: var(--text); font-weight: 600; }
+.case-player__play { position: absolute; top: 50%; left: 50%; z-index: 1; display: grid; place-items: center; width: clamp(64px,7vw,88px); aspect-ratio: 1; padding: 0; transform: translate(-50%,-50%); border: 0; border-radius: 50%; background: var(--orange); color: #fff; box-shadow: 0 6px 28px rgba(0,0,0,.24); cursor: pointer; transition: background .15s ease, box-shadow .15s ease; }
+.case-player__play[hidden] { display: none; }
+.case-player__play:hover { background: #de4614; box-shadow: 0 8px 32px rgba(0,0,0,.3); }
+.case-player__play:focus-visible { outline: 3px solid var(--orange); outline-offset: 5px; }
+.case-player__play:disabled { cursor: progress; }
+.case-player__play svg { width: 34%; height: 34%; margin-left: 4%; }
 
 .case-facts { display: grid; grid-template-columns: .75fr .9fr .85fr 1.5fr; gap: 32px; margin: 0; padding: 38px 4px; border-bottom: 1px solid var(--line); }
 .case-facts > div { min-width: 0; }

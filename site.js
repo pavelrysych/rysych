@@ -14,6 +14,32 @@ document.querySelectorAll('.mobile-nav').forEach((menu) => {
 });
 
 const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+document.querySelectorAll('[data-click-to-play]').forEach((player) => {
+  const video = player.querySelector('video');
+  const playButton = player.querySelector('.case-player__play');
+  if (!video || !playButton) return;
+
+  let hasStarted = false;
+  playButton.hidden = false;
+  video.addEventListener('playing', () => {
+    hasStarted = true;
+    playButton.hidden = true;
+    playButton.disabled = false;
+  });
+  playButton.addEventListener('click', async () => {
+    playButton.disabled = true;
+    try {
+      await video.play();
+    } catch {
+      playButton.disabled = false;
+    }
+  });
+  video.addEventListener('error', () => {
+    playButton.disabled = false;
+    playButton.hidden = hasStarted;
+  });
+});
+
 document.querySelectorAll('video[data-case-autoplay]').forEach((video) => {
   const lazy = video.hasAttribute('data-case-lazy');
   let nearViewport = !lazy;

@@ -16,8 +16,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles.css?v=22">
-    <link rel="stylesheet" href="/case-styles.css?v=6">
-    <script src="/site.js?v=13" defer></script>
+    <link rel="stylesheet" href="/case-styles.css?v=7">
+    <link rel="stylesheet" href="/assets/fundraise-case.css?v=1">
+    <script src="/site.js?v=14" defer></script>
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Pavel Rysych">
     <meta property="og:title" content="Fundraise Up — Pavel Rysych">
@@ -48,8 +49,9 @@
           </div>
           <section class="case-impact" aria-labelledby="case-impact-title">
             <h2 class="eyebrow" id="case-impact-title">Key outcomes</h2>
-            <dl class="case-impact__grid case-impact__grid--three">
+            <dl class="case-impact__grid fundraise-impact">
               <div><dt>Widget conversion</dt><dd><strong class="case-impact__value">2.8×</strong><span class="case-impact__detail">Through a gamified donation experience.</span></dd></div>
+              <div><dt>Donor satisfaction</dt><dd><strong class="case-impact__value">~98%</strong><span class="case-impact__detail">CSAT for the donation experience.</span></dd></div>
               <div><dt>Growth capital</dt><dd><strong class="case-impact__value">$70M</strong><span class="case-impact__detail">Company funding milestone announced in 2025.</span></dd></div>
               <div><dt>Team growth</dt><dd><strong class="case-impact__value case-impact__value--change" role="img" aria-label="From 12 to 350 or more">12 <svg class="icon-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h16M14 6l6 6-6 6"/></svg> 350+</strong><span class="case-impact__detail">From an early public team snapshot to the current company-reported headcount.</span></dd></div>
             </dl>
@@ -89,12 +91,101 @@
           <p>I also worked on the product surfaces used by nonprofits. The campaign overview brought donations, recurring gifts and supporters into one clear operating view.</p>
         </div>
       </section>
+      <section class="case-section fundraise-gamification">
+        <p class="case-section__aside">03 / GAMIFICATION</p>
+        <div>
+          <h2>Small interactions. A much easier way to give.</h2>
+          <p>I used gamification and motion to guide the donation journey: a clear choice between one-time and monthly giving, responsive amount selection and small moments of positive feedback. This increased conversion into <strong>monthly payments</strong> and made recurring giving easy to understand from the start.</p>
+          <p>The donation button carried the experience from processing to a clear success state. Immediate animated feedback reduced the perceived wait and removed the feeling of a long loading screen while the payment was being processed.</p>
+          <p>The overall donation conversion increased <strong>2.8×</strong>, with donor satisfaction at around <strong>98% CSAT</strong>. The compact experience helped a small company compete with much larger, established platforms whose donation journeys relied on large, lengthy forms.</p>
+        </div>
+      </section>
+      <figure class="case-figure case-figure--video fundraise-motion-film" id="fundraise-gamification-video">
+        <video class="case-film__video" controls playsinline preload="metadata" poster="/assets/fundraise-up-donation-flow-poster.jpg" width="1432" height="830" aria-label="Fundraise Up prototype showing animated feedback when a donor chooses to cover transaction costs">
+          <source src="/assets/fundraise-up-donation-flow.mp4" type="video/mp4">
+          <p>Your browser does not support this video. <a href="/assets/fundraise-up-donation-flow.mp4">Open the video</a>.</p>
+        </video>
+        <figcaption><strong>Positive feedback in the payment flow.</strong> Original prototype: a small celebratory response when donors choose to cover transaction costs.</figcaption>
+      </figure>
+      <div class="fundraise-motion-grid" aria-label="Original Fundraise Up interaction prototypes">
+        <figure class="fundraise-motion-card fundraise-motion-card--monthly">
+          <img src="/assets/fundraise-up-gamification-monthly.gif" width="930" height="830" loading="lazy" decoding="async" alt="Animated donation form switching from Give once to Monthly and adapting the suggested amounts">
+          <figcaption><span class="case-art__idea">01 / MONTHLY GIVING</span><span>Make the recurring option visible and adapt the suggested amounts to the donor’s choice.</span></figcaption>
+        </figure>
+        <figure class="fundraise-motion-card fundraise-motion-card--donate">
+          <img src="/assets/fundraise-up-gamification-donate.gif" width="672" height="182" loading="lazy" decoding="async" alt="Donate button changing from the selected amount through processing to a green success checkmark">
+          <figcaption><span class="case-art__idea">02 / PERCEIVED WAIT</span><span>Turn the button into immediate feedback, then confirm a successful payment.</span></figcaption>
+        </figure>
+        <figure class="fundraise-motion-card fundraise-motion-card--mobile">
+          <img src="/assets/fundraise-up-gamification-mobile.gif" width="800" height="600" loading="lazy" decoding="async" alt="Animated presentation of the mobile donation journey, including payment, monthly giving and confirmation screens">
+          <figcaption><span class="case-art__idea">03 / MOBILE EXPERIENCE</span><span>Keep each decision focused and make the journey comfortable on a small screen.</span></figcaption>
+        </figure>
+      </div>
+      <section class="fundraise-form-comparison" aria-labelledby="fundraise-longform-title">
+        <div class="fundraise-form-comparison__copy">
+          <p class="eyebrow">The established pattern</p>
+          <h2 id="fundraise-longform-title">A donation should not feel like paperwork.</h2>
+          <p>Larger competitors often presented donation details, donor information, billing and payment fields together in one long form. Donors had to face all the work before making their first decision.</p>
+          <p>Our design focused attention on the next useful choice and used feedback to keep the journey moving. That clarity became a competitive advantage for a much smaller company.</p>
+          <p class="fundraise-form-comparison__note">Illustration of a traditional long-form pattern.</p>
+        </div>
+        <div class="fundraise-longform" role="img" aria-label="Illustrative long single-page donation form with donation details, donor identity, billing address, payment information and optional gift details before the submit button">
+          <div class="fundraise-longform__header"><span>Make a donation</span><small>Fields marked * are required</small></div>
+          <div class="fundraise-longform__section">
+            <h3>01. Donation details</h3>
+            <div class="fundraise-longform__row">
+              <div class="fundraise-longform__field"><span>Donation amount *</span><i>$ 50.00</i></div>
+              <div class="fundraise-longform__field"><span>Frequency *</span><i>One-time <b>⌄</b></i></div>
+            </div>
+            <div class="fundraise-longform__field"><span>Designate your gift *</span><i>Select a fund <b>⌄</b></i></div>
+          </div>
+          <div class="fundraise-longform__section">
+            <h3>02. Your information</h3>
+            <div class="fundraise-longform__row">
+              <div class="fundraise-longform__field"><span>First name *</span><i></i></div>
+              <div class="fundraise-longform__field"><span>Last name *</span><i></i></div>
+            </div>
+            <div class="fundraise-longform__field"><span>Email address *</span><i></i></div>
+            <div class="fundraise-longform__field"><span>Phone number</span><i></i></div>
+          </div>
+          <div class="fundraise-longform__section">
+            <h3>03. Billing address</h3>
+            <div class="fundraise-longform__field"><span>Street address *</span><i></i></div>
+            <div class="fundraise-longform__field"><span>Apartment, suite or unit</span><i></i></div>
+            <div class="fundraise-longform__row">
+              <div class="fundraise-longform__field"><span>City *</span><i></i></div>
+              <div class="fundraise-longform__field"><span>State / Province *</span><i>Select <b>⌄</b></i></div>
+            </div>
+            <div class="fundraise-longform__row">
+              <div class="fundraise-longform__field"><span>Postal code *</span><i></i></div>
+              <div class="fundraise-longform__field"><span>Country *</span><i>Select <b>⌄</b></i></div>
+            </div>
+          </div>
+          <div class="fundraise-longform__section">
+            <h3>04. Payment information</h3>
+            <div class="fundraise-longform__field"><span>Cardholder name *</span><i></i></div>
+            <div class="fundraise-longform__field"><span>Card number *</span><i>0000 0000 0000 0000</i></div>
+            <div class="fundraise-longform__row">
+              <div class="fundraise-longform__field"><span>Expiration date *</span><i>MM / YY</i></div>
+              <div class="fundraise-longform__field"><span>Security code *</span><i></i></div>
+            </div>
+          </div>
+          <div class="fundraise-longform__section">
+            <h3>05. Additional details</h3>
+            <div class="fundraise-longform__field"><span>Employer matching</span><i>Search employer</i></div>
+            <div class="fundraise-longform__field"><span>Gift in honor or memory</span><i></i></div>
+            <div class="fundraise-longform__check"><b></b><span>Make my donation anonymous</span></div>
+            <div class="fundraise-longform__check"><b></b><span>Keep me informed by email</span></div>
+          </div>
+          <div class="fundraise-longform__submit">Submit donation</div>
+        </div>
+      </section>
       <figure class="case-figure">
         <img src="/assets/fundraise-up-product-checkout.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="Current Fundraise Up Checkout demo showing a donation form">
         <figcaption>Current public <a href="https://fundraiseup.com/features/checkout/" target="_blank" rel="noopener noreferrer">Fundraise Up Checkout <svg class="icon-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></a>, shown as a separate donation-flow reference from the campaign dashboard above.</figcaption>
       </figure>
       <section class="case-section">
-        <p class="case-section__aside">03 / EARLY-STAGE DESIGN</p>
+        <p class="case-section__aside">04 / EARLY-STAGE DESIGN</p>
         <div>
           <h2>Build beyond the screen</h2>
           <p>Founding design included early pitch and marketing materials as well as the interface itself. That breadth taught me how design can help a company explain what it is building before its product and team are fully formed.</p>
