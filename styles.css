@@ -78,7 +78,7 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
 .hero__copy h1 > span { color: var(--text); font-style: italic; }
 .hero__intro { max-width: 570px; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.85; }
 .hero__image { position: relative; isolation: isolate; width: 100%; height: 100svh; margin: 0; overflow: hidden; background: var(--bg); touch-action: pan-y; }
-.hero__video { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; mix-blend-mode: multiply; }
+.hero__video { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; mix-blend-mode: multiply; }
 .portrait-hint { position: absolute; right: 24px; bottom: 24px; display: none; align-items: center; gap: 16px; padding: 8px 11px; background: rgba(243,243,243,.9); color: var(--text); font: 400 10px/1.5 "IBM Plex Mono",monospace; pointer-events: none; }
 .hero__image[data-portrait-ready="true"] .portrait-hint { display: flex; }
 .portrait-hint > span:last-child { color: var(--orange-ink); font-size: 18px; line-height: 1; }
@@ -234,7 +234,8 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
   .home-page .mobile-nav nav { position: absolute; top: 91px; left: 0; right: 0; display: flex; flex-direction: column; padding: 16px 20px 22px; border-bottom: 1px solid var(--line); background: var(--bg); }
   .home-page .mobile-nav nav a { padding: 14px 0; color: var(--text); text-decoration: none; border-bottom: 1px solid var(--line); font-size: 14px; }
   .hero__inner { display: flex; flex-direction: column; }
-  .hero__image { order: -1; margin-top: 92px; height: var(--portrait-mobile-height,calc(100svh - 92px)); min-height: 240px; }
+  .hero__image { order: -1; flex: none; min-width: 0; margin-top: 92px; height: var(--portrait-mobile-height,calc(100svh - 92px)); min-height: 240px; }
+  .hero__video { height: var(--portrait-mobile-height,calc(100svh - 92px)); min-height: 240px; }
   .hero__copy { min-height: 0; padding: 54px 20px 44px; }
   .hero__copy h1 { font-size: clamp(40px,7.7vw,66px); }
 }

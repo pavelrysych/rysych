@@ -42,8 +42,13 @@ document.querySelectorAll('video[data-portrait-scrub]').forEach((video) => {
     portraitViewportWidth = width;
     surface.style.removeProperty('--portrait-mobile-height');
     if (mobilePortrait.matches) {
-      // Browser chrome changes height while scrolling; only a new width reframes the portrait.
-      surface.style.setProperty('--portrait-mobile-height', `${surface.getBoundingClientRect().height}px`);
+      const headerHeight = document.querySelector('.site-header--home')?.getBoundingClientRect().height || 0;
+      const visualViewport = window.visualViewport;
+      const viewportHeight = visualViewport?.scale === 1
+        ? Math.min(window.innerHeight, visualViewport.height)
+        : window.innerHeight;
+      // Measure the viewport, never the media: its intrinsic size must not become the height lock.
+      surface.style.setProperty('--portrait-mobile-height', `${Math.max(240, viewportHeight - headerHeight)}px`);
     }
   };
   syncPortraitHeight();
