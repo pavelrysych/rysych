@@ -12,3 +12,14 @@ document.querySelectorAll('.mobile-nav').forEach((menu) => {
     }
   });
 });
+
+const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+document.querySelectorAll('video[data-case-autoplay]').forEach((video) => {
+  if (!motionPreference.matches) {
+    video.play().catch(() => {});
+  }
+
+  motionPreference.addEventListener('change', (event) => {
+    if (event.matches) video.pause();
+  });
+});
