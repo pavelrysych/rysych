@@ -97,12 +97,12 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
 .work-list { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 32px; margin-top: 44px; }
 .work-card { position: relative; overflow: hidden; min-width: 0; border: 1px solid var(--line); border-radius: 3px; background: #fff; text-decoration: none; transition: border-color .2s; }
 .work-card:hover { border-color: var(--text); }
-.work-card--admirals { --cover-bg: #679bea; --cover-ink: #3e72c4; --cover-caption: #17304f; }
-.work-card--mechanism { --cover-bg: #b58b70; --cover-ink: #885f49; --cover-caption: #3b261b; }
+.work-card--admirals { --cover-bg: #0080ff; --cover-ink: #005fc0; --cover-caption: #061525; }
+.work-card--mechanism { --cover-bg: #857255; --cover-ink: #5f503a; --cover-caption: #000000; }
 .work-card--metamap { --cover-bg: #edce62; --cover-ink: #bc9d34; --cover-caption: #584706; }
-.work-card--fundraise { --cover-bg: #94c99a; --cover-ink: #65a471; --cover-caption: #244b30; }
+.work-card--fundraise { --cover-bg: #2ab077; --cover-ink: #187b51; --cover-caption: #0d3020; }
 .work-card__visual { position: relative; container-type: inline-size; display: grid; grid-template-rows: auto 1fr auto; gap: 12px; align-items: center; aspect-ratio: 1.65; margin: 0; padding: clamp(20px,3vw,40px); overflow: hidden; background: var(--cover-bg); color: var(--cover-ink); border-bottom: 1px solid var(--line); }
-.work-card__brand { display: block; justify-self: center; text-align: center; font-family: "Manrope",Arial,sans-serif; font-size: clamp(32px,5.5vw,104px); font-size: clamp(32px,16cqw,104px); font-weight: 800; line-height: 1.05; letter-spacing: -.065em; white-space: nowrap; }
+.work-card__brand { display: block; justify-self: start; text-align: left; font-family: "Manrope",Arial,sans-serif; font-size: clamp(32px,5.5vw,104px); font-size: clamp(32px,16cqw,104px); font-weight: 800; line-height: 1.05; letter-spacing: -.065em; white-space: nowrap; }
 .work-card__brand-suffix { display: block; margin-top: 6px; font-size: clamp(12px,3cqw,20px); font-weight: 600; line-height: 1.2; letter-spacing: .04em; }
 .work-card__category { color: var(--cover-caption); font: 500 clamp(9px,2.2cqw,11px)/1.5 "IBM Plex Mono",monospace; letter-spacing: .02em; text-transform: uppercase; }
 .work-card__proof { color: var(--cover-caption); font-size: clamp(11px,2.65cqw,14px); font-weight: 600; line-height: 1.5; }
