@@ -33,8 +33,35 @@ document.querySelectorAll('video[data-portrait-scrub]').forEach((video) => {
   const hero = video.closest('.hero');
   if (!surface || !hero) return;
 
+  const mobilePortrait = window.matchMedia('(max-width: 900px)');
+  let portraitViewportWidth = null;
+  let portraitResizeTimer = null;
+  const syncPortraitHeight = () => {
+    const width = window.innerWidth;
+    if (width === portraitViewportWidth) return;
+    portraitViewportWidth = width;
+    surface.style.removeProperty('--portrait-mobile-height');
+    if (mobilePortrait.matches) {
+      // Browser chrome changes height while scrolling; only a new width reframes the portrait.
+      surface.style.setProperty('--portrait-mobile-height', `${surface.getBoundingClientRect().height}px`);
+    }
+  };
+  syncPortraitHeight();
+  window.addEventListener('resize', () => {
+    if (window.innerWidth === portraitViewportWidth && portraitResizeTimer === null) return;
+    window.clearTimeout(portraitResizeTimer);
+    // Let both dimensions settle after rotation, without reacting to browser chrome alone.
+    portraitResizeTimer = window.setTimeout(() => {
+      portraitResizeTimer = null;
+      syncPortraitHeight();
+    }, 150);
+  });
+
   let progress = 0;
   let activePointer = null;
+  let pointerStartX = 0;
+  let pointerStartY = 0;
+  let pointerScrubbing = false;
   let hasInput = false;
   const lastFrameDuration = 1 / 30;
 
@@ -77,19 +104,33 @@ document.querySelectorAll('video[data-portrait-scrub]').forEach((video) => {
   });
 
   surface.addEventListener('pointerdown', (event) => {
-    if (event.pointerType === 'mouse' || !event.isPrimary || motionPreference.matches) return;
+    if (event.pointerType === 'mouse' || !event.isPrimary || motionPreference.matches || activePointer !== null) return;
     activePointer = event.pointerId;
-    surface.setPointerCapture(event.pointerId);
-    followPointer(event, surface);
+    pointerStartX = event.clientX;
+    pointerStartY = event.clientY;
+    pointerScrubbing = false;
   });
 
   surface.addEventListener('pointermove', (event) => {
-    if (event.pointerId === activePointer) followPointer(event, surface);
+    if (event.pointerId !== activePointer) return;
+    if (!pointerScrubbing) {
+      const horizontalDistance = Math.abs(event.clientX - pointerStartX);
+      const verticalDistance = Math.abs(event.clientY - pointerStartY);
+      if (verticalDistance >= 8 && verticalDistance >= horizontalDistance) {
+        endDrag(event);
+        return;
+      }
+      if (horizontalDistance < 8 || horizontalDistance <= verticalDistance) return;
+      pointerScrubbing = true;
+      surface.setPointerCapture(event.pointerId);
+    }
+    followPointer(event, surface);
   });
 
   const endDrag = (event) => {
     if (event.pointerId !== activePointer) return;
     activePointer = null;
+    pointerScrubbing = false;
     if (surface.hasPointerCapture(event.pointerId)) surface.releasePointerCapture(event.pointerId);
   };
   surface.addEventListener('pointerup', endDrag);
@@ -119,6 +160,7 @@ document.querySelectorAll('video[data-portrait-scrub]').forEach((video) => {
     hasInput = false;
     if (activePointer !== null && surface.hasPointerCapture(activePointer)) surface.releasePointerCapture(activePointer);
     activePointer = null;
+    pointerScrubbing = false;
   });
 
   surface.dataset.portraitReady = 'true';

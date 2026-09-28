@@ -234,7 +234,7 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
   .home-page .mobile-nav nav { position: absolute; top: 91px; left: 0; right: 0; display: flex; flex-direction: column; padding: 16px 20px 22px; border-bottom: 1px solid var(--line); background: var(--bg); }
   .home-page .mobile-nav nav a { padding: 14px 0; color: var(--text); text-decoration: none; border-bottom: 1px solid var(--line); font-size: 14px; }
   .hero__inner { display: flex; flex-direction: column; }
-  .hero__image { order: -1; margin-top: 92px; height: calc(100svh - 92px); min-height: 240px; }
+  .hero__image { order: -1; margin-top: 92px; height: var(--portrait-mobile-height,calc(100svh - 92px)); min-height: 240px; }
   .hero__copy { min-height: 0; padding: 54px 20px 44px; }
   .hero__copy h1 { font-size: clamp(40px,7.7vw,66px); }
 }
