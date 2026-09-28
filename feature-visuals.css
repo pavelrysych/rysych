@@ -1,0 +1,143 @@
+/* Small, purposeful interfaces for the AI capability cards. */
+.ai-visual {
+  --av-light: 134, 168, 255;
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  color: #eef1f8;
+  font-family: "Manrope", sans-serif;
+  background: radial-gradient(ellipse at 50% 31%, rgba(var(--av-light), .07), transparent 65%);
+  user-select: none;
+}
+.ai-visual::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 150px;
+  height: 180px;
+  top: -100px;
+  left: 58%;
+  border-radius: 50%;
+  background: rgba(var(--av-light), .34);
+  filter: blur(45px);
+  transform: rotate(-28deg);
+}
+.ai-visual::after {
+  content: "";
+  position: absolute;
+  z-index: 5;
+  pointer-events: none;
+  inset: auto 0 0;
+  height: 54px;
+  background: linear-gradient(transparent, #0c0e12);
+}
+.ai-visual *, .ai-visual *::before, .ai-visual *::after { box-sizing: border-box; }
+.av-scene { position: absolute; inset: 0; width: min(100%, 420px); margin: 0 auto; }
+.av-panel {
+  position: absolute;
+  border: 1px solid rgba(200, 216, 255, .17);
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(34, 40, 56, .95), rgba(13, 16, 23, .98) 70%);
+  box-shadow: 0 20px 48px #0008, inset 0 1px 0 #ffffff08;
+}
+.av-panel::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 12%;
+  right: 12%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(var(--av-light), .85), transparent);
+  box-shadow: 0 0 12px rgba(var(--av-light), .5);
+}
+.av-eyebrow { font: 500 8px/1.4 "IBM Plex Mono", monospace; color: #a3adc1; letter-spacing: .09em; text-transform: uppercase; }
+.av-title { display: block; font-size: 12px; line-height: 1.5; font-weight: 650; letter-spacing: -.025em; }
+.av-line { display: block; height: 4px; border-radius: 4px; background: #ffffff12; }
+.av-dots { display: flex; gap: 4px; }
+.av-dots i { width: 4px; height: 4px; border-radius: 50%; background: #778096; opacity: .6; }
+.av-icon { display: grid; place-items: center; flex: 0 0 auto; width: 29px; height: 29px; border: 1px solid #ffffff16; border-radius: 7px; background: #ffffff05; }
+.av-icon svg { display: block; width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.5; }
+
+/* 01 — a brief becomes something people can try. */
+.ai-visual--prototype { --av-light: 187, 118, 250; }
+.av-brief { width: 172px; height: 144px; top: 47px; left: 9%; padding: 15px; transform: rotate(-7deg); opacity: .6; }
+.av-brief .av-title { margin: 12px 0 13px; }
+.av-brief .av-line { margin: 7px 0; }
+.av-brief .av-line:nth-last-child(2) { width: 81%; }
+.av-brief .av-line:last-child { width: 61%; }
+.av-prototype { width: 226px; height: 177px; top: 45px; right: 10%; padding: 13px 14px; transform: rotate(3deg); }
+.av-windowbar { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #ffffff0b; padding-bottom: 10px; }
+.av-prototype-body { display: grid; grid-template-columns: 31px 1fr; gap: 12px; padding-top: 13px; }
+.av-sidebar { border-right: 1px solid #ffffff0c; display: flex; flex-direction: column; gap: 10px; padding-right: 10px; }
+.av-sidebar i { height: 12px; border-radius: 3px; background: #ffffff08; }
+.av-sidebar i:first-child { background: #c69efa43; box-shadow: 0 0 12px #a56ee31f; }
+.av-preview .av-title { font-size: 11px; }
+.av-preview .av-line { width: 70%; margin-top: 7px; }
+.av-preview-tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-top: 12px; }
+.av-preview-tile { height: 42px; border: 1px solid #ffffff10; border-radius: 5px; background: #ffffff03; }
+.av-preview-tile:first-child { background: linear-gradient(135deg, #9d69d828, #9d69d808); border-color: #c697ff40; }
+.av-preview-tile span { display: block; width: 15px; height: 15px; margin: 11px; border: 1px solid #c2a3ed88; border-radius: 4px; }
+.av-preview-button { width: 65px; height: 14px; border-radius: 4px; margin-top: 10px; background: linear-gradient(100deg, #9872c4, #c2a1e9); box-shadow: 0 0 17px #b681f228; }
+.av-cursor { position: absolute; right: 4%; bottom: 47px; display: flex; align-items: center; gap: 5px; color: #d3b4fc; transform: rotate(-3deg); }
+.av-cursor svg { width: 18px; height: 22px; fill: #c89efa; filter: drop-shadow(0 0 6px #b277f650); }
+.av-cursor span { padding: 5px 8px; border: 1px solid #c69bfc60; border-radius: 5px; background: #3c294f; font-size: 8px; font-weight: 600; }
+
+/* 02 — tokens, components, and a consistent interface. */
+.ai-visual--system { --av-light: 91, 207, 243; }
+.ai-visual--system::before { left: 28%; }
+.av-system-wire { position: absolute; left: 11%; top: 53px; width: 77%; height: 133px; overflow: visible; }
+.av-system-wire path { fill: none; stroke: #72d8f54a; stroke-width: 1; }
+.av-system-wire circle { fill: #a7eeff; filter: drop-shadow(0 0 5px #8edfff); }
+.av-tokens { width: 121px; top: 35px; left: 12%; padding: 11px; }
+.av-swatches { display: flex; gap: 6px; margin-top: 10px; }
+.av-swatches i { width: 18px; height: 18px; border-radius: 50%; border: 1px solid #ffffff22; background: #8edcff; box-shadow: 0 0 10px #89d6fc22; }
+.av-swatches i:nth-child(2) { background: #597d9e; }
+.av-swatches i:nth-child(3) { background: #253a51; }
+.av-component { width: 178px; top: 95px; right: 12%; padding: 13px; box-shadow: 0 12px 36px #0008, 0 0 28px #66d9ff08; }
+.av-component .av-eyebrow { display: block; margin-bottom: 11px; }
+.av-component-button { display: flex; align-items: center; justify-content: space-between; padding: 9px 11px; color: #c7f1ff; font-size: 10px; font-weight: 650; border: 1px solid #82d7f06a; border-radius: 6px; background: linear-gradient(135deg, #65cff026, #51b7e10c); box-shadow: inset 0 1px 0 #ceefff16, 0 0 16px #78d9ff0d; }
+.av-component-button b { font-size: 13px; font-weight: 400; }
+.av-code { left: 16%; top: 178px; display: flex; align-items: center; gap: 9px; padding: 9px 12px; color: #7abacf; font: 400 9px/1.5 "IBM Plex Mono", monospace; border-radius: 8px; }
+.av-code span { color: #c0d7e4; }
+.av-code svg { width: 13px; height: 13px; fill: none; stroke: #76dcf2; stroke-width: 1.3; }
+
+/* 03 — one connected process from design to review. */
+.ai-visual--team { --av-light: 141, 141, 255; }
+.ai-visual--team::before { width: 110px; left: 13%; height: 220px; top: -124px; }
+.av-flow { position: absolute; top: 42px; left: 15%; right: 12%; }
+.av-flow::before { content: ""; position: absolute; width: 1px; left: -18px; top: 20px; bottom: 21px; background: linear-gradient(#8a93fb14, #a1b1ff99, #8a93fb14); }
+.av-flow-row { position: relative; display: flex; align-items: center; gap: 12px; height: 51px; margin-bottom: 10px; padding: 10px 13px; border: 1px solid #c7cdff12; border-radius: 9px; background: linear-gradient(100deg, #9ea8ff0a, #9ea8ff02); color: #697587; }
+.av-flow-row::before { content: ""; position: absolute; width: 5px; height: 5px; left: -21px; top: 23px; border-radius: 50%; background: #364255; }
+.av-flow-row--active { border-color: #b5c3ff57; color: #e2eaff; background: linear-gradient(105deg, #889afa2a, #6984ed05); box-shadow: -5px -4px 16px #9aabff17, inset 0 1px 0 #c2d4ff24; }
+.av-flow-row--active::before { background: #d7e3ff; box-shadow: 0 0 5px #d6e2ff, 0 0 16px #83a0ff; }
+.av-flow-row--active::after { content: ""; position: absolute; top: -1px; left: 10%; width: 65%; height: 1px; background: linear-gradient(90deg, #dce7ff, transparent); box-shadow: 0 0 10px #a7bcff; }
+.av-flow-copy { flex: 1; }
+.av-flow-copy .av-title { font-size: 11px; }
+.av-flow-copy .av-line { width: 64%; height: 3px; margin-top: 5px; background: currentColor; opacity: .2; }
+.av-flow-row--active .av-icon { color: #bed0ff; background: #8ea8ff14; border-color: #adbbfb30; }
+.av-flow-shortcut { font: 400 9px/1 "IBM Plex Mono", monospace; opacity: .5; }
+
+/* 04 — AI detects; a person reviews and confirms. */
+.ai-visual--review { --av-light: 241, 171, 91; }
+.ai-visual--review::before { top: -81px; left: 64%; background: #e5a94360; }
+.av-detected { top: 37px; left: 13%; width: 210px; height: 121px; padding: 12px; opacity: .47; transform: rotate(-5deg); }
+.av-detected-row { display: flex; gap: 10px; align-items: center; margin-top: 11px; }
+.av-detected-row > i { width: 21px; height: 21px; background: #ffffff0d; border: 1px solid #ffffff12; border-radius: 5px; }
+.av-detected-row .av-line { width: 93px; }
+.av-review { top: 77px; right: 11%; width: 230px; padding: 14px; transform: rotate(2deg); }
+.av-review .av-windowbar { padding-bottom: 11px; }
+.av-review .av-title { font-size: 11px; margin: 12px 0 5px; }
+.av-review-hint { display: block; color: #95999f; font-size: 9px; line-height: 1.5; }
+.av-review-action { display: flex; justify-content: space-between; align-items: center; margin-top: 13px; padding: 10px 11px; border: 1px solid #e7b56c58; border-radius: 6px; background: linear-gradient(100deg, #b87b283d, #be8d391d); box-shadow: inset 0 1px 0 #f6d79814; color: #f5d7a3; font-size: 10px; font-weight: 650; }
+.av-review-action svg { width: 13px; height: 13px; fill: none; stroke: #f5d7a3; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.av-review-dot { width: 5px; height: 5px; background: #e6b66f; border-radius: 50%; box-shadow: 0 0 8px #e6b66f80; }
+
+@media (max-width: 420px) {
+  .ai-visual { height: 230px; }
+  .av-scene { width: 360px; left: 50%; right: auto; margin: 0; transform: translateX(-50%) scale(.88); transform-origin: 50% 28%; }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .av-panel { background: #141923; }
+}
