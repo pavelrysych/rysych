@@ -1116,7 +1116,6 @@ button.pill { border: 0; font-family: inherit; cursor: pointer; }
 .contact {
   padding: clamp(110px, 13vw, 180px) 0 40px;
   background:
-    radial-gradient(50% 32% at 55% 58%, rgba(210, 69, 42, 0.3), rgba(210, 69, 42, 0) 70%),
     radial-gradient(40% 30% at 15% 50%, rgba(169, 168, 173, 0.18), rgba(169, 168, 173, 0) 70%),
     var(--graphite);
   overflow: hidden;
