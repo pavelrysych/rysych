@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/home.css?v=2">
     <link rel="stylesheet" href="/assets/fundraise-case.css?v=1">
-    <link rel="stylesheet" href="/case.css?v=7">
+    <link rel="stylesheet" href="/case.css?v=9">
     <script src="/site.js?v=14" defer></script>
     <script src="/home.js?v=4" defer></script>
     <meta property="og:type" content="article">
@@ -88,62 +88,14 @@
           <p class="eyebrow">The story / In brief</p>
           <h2>As founding designer, I worked across the donation experience and early product foundations.</h2>
         </div>
-      <section class="case-section">
-        <p class="case-section__aside">01 / FOUNDATION</p>
-        <div>
-          <h2>Make the product real</h2>
-          <p>I designed across the core experience and early product surfaces, helping turn a promising concept into something people could actually use.</p>
-          <p>In a small team, the work moved between interface detail, product priorities and communication without a large structure around it.</p>
-        </div>
-      </section>
-      <section class="case-section">
-        <p class="case-section__aside">02 / DONATION FLOW</p>
-        <div>
-          <h2>Work on the moment of giving</h2>
-          <p>The donation journey was central: the interaction had to be clear and simple enough to support a real decision, while giving nonprofits a useful product to offer supporters.</p>
-          <p>I also worked on the product surfaces used by nonprofits. The campaign overview brought donations, recurring gifts and supporters into one clear operating view.</p>
-        </div>
-      </section>
-      <section class="case-section fundraise-gamification">
-        <p class="case-section__aside">03 / GAMIFICATION</p>
-        <div>
-          <h2>Small interactions. A much easier way to give.</h2>
-          <p>I used gamification and motion to guide the donation journey: a clear choice between one-time and monthly giving, responsive amount selection and small moments of positive feedback. This increased conversion into <strong>monthly payments</strong> and made recurring giving easy to understand from the start.</p>
-          <p>The donation button carried the experience from processing to a clear success state. Immediate animated feedback reduced the perceived wait and removed the feeling of a long loading screen while the payment was being processed.</p>
-          <p>The overall donation conversion increased <strong>2.8×</strong>, with donor satisfaction at around <strong>98% CSAT</strong>. The compact experience helped a small company compete with much larger, established platforms whose donation journeys relied on large, lengthy forms.</p>
-        </div>
-      </section>
-      <div class="fundraise-motion-grid" aria-label="Original Fundraise Up interaction prototypes">
-        <div class="fundraise-motion-col">
-          <figure class="fundraise-motion-card fundraise-motion-card--monthly">
-            <img src="/assets/fundraise-up-gamification-monthly.gif" width="930" height="830" loading="lazy" decoding="async" alt="Animated donation form switching from Give once to Monthly and adapting the suggested amounts">
-            <figcaption><span class="case-art__idea">01 / MONTHLY GIVING</span><span>Make the recurring option visible and adapt the suggested amounts to the donor’s choice.</span></figcaption>
-          </figure>
-          <figure class="fundraise-motion-card fundraise-motion-card--donate">
-            <img src="/assets/fundraise-up-gamification-donate.gif" width="672" height="182" loading="lazy" decoding="async" alt="Donate button changing from the selected amount through processing to a green success checkmark">
-            <figcaption><span class="case-art__idea">02 / PERCEIVED WAIT</span><span>Turn the button into immediate feedback, then confirm a successful payment.</span></figcaption>
-          </figure>
-        </div>
-        <div class="fundraise-motion-col">
-          <figure class="fundraise-motion-card fundraise-motion-card--costs" id="fundraise-gamification-video">
-            <video data-case-autoplay data-case-lazy muted loop playsinline disablepictureinpicture disableremoteplayback preload="none" poster="/assets/fundraise-up-donation-flow-poster.jpg" width="1432" height="830" aria-label="Fundraise Up prototype showing animated feedback when a donor chooses to cover transaction costs">
-              <source data-src="/assets/fundraise-up-donation-flow.mp4" type="video/mp4">
-            </video>
-            <figcaption><span class="case-art__idea">03 / COVERING COSTS</span><span>Positive feedback in the payment flow: a small celebratory response when donors choose to cover transaction costs.</span></figcaption>
-          </figure>
-          <figure class="fundraise-motion-card fundraise-motion-card--mobile">
-            <img src="/assets/fundraise-up-gamification-mobile.gif" width="800" height="600" loading="lazy" decoding="async" alt="Animated presentation of the mobile donation journey, including payment, monthly giving and confirmation screens">
-            <figcaption><span class="case-art__idea">04 / MOBILE EXPERIENCE</span><span>Keep each decision focused and make the journey comfortable on a small screen.</span></figcaption>
-          </figure>
-        </div>
-      </div>
       <section class="fundraise-form-comparison" aria-labelledby="fundraise-longform-title">
         <div class="fundraise-form-comparison__copy">
           <p class="eyebrow">The established pattern</p>
-          <h2 id="fundraise-longform-title">A donation should not feel like paperwork.</h2>
-          <p>Larger competitors often presented donation details, donor information, billing and payment fields together in one long form. Donors had to face all the work before making their first decision.</p>
-          <p>Our design focused attention on the next useful choice and used feedback to keep the journey moving. That clarity became a competitive advantage for a much smaller company.</p>
-          <p class="fundraise-form-comparison__note">Illustration of a traditional long-form pattern.</p>
+          <h2 id="fundraise-longform-title">The industry standard: a donation that feels like paperwork.</h2>
+          <p>When Fundraise Up started, the accepted way to donate online was one long page: donation details, personal information, billing address, payment and extra options, all at once. Donors had to face every field before making their first real decision — how much to give.</p>
+          <p>Every extra field is another reason to hesitate, and on a phone the form turns into an endless scroll.</p>
+          <p>So we did the opposite: a compact widget that opens on the nonprofit’s own page and asks for one decision at a time — amount and frequency first, payment details after. Feedback at every step keeps the journey moving. That clarity became a competitive advantage for a much smaller company.</p>
+          <p class="fundraise-form-comparison__note">Illustration of the traditional long-form pattern.</p>
         </div>
         <div class="fundraise-longform" role="img" aria-label="Illustrative long single-page donation form with donation details, donor identity, billing address, payment information and optional gift details before the submit button">
           <div class="fundraise-longform__header"><span>Make a donation</span><small>Fields marked * are required</small></div>
@@ -196,6 +148,55 @@
           <div class="fundraise-longform__submit">Submit donation</div>
         </div>
       </section>
+      <section class="case-section">
+        <p class="case-section__aside">01 / FOUNDATION</p>
+        <div>
+          <h2>Make the product real</h2>
+          <p>I designed across the core experience and early product surfaces, helping turn a promising concept into something people could actually use.</p>
+          <p>In a small team, the work moved between interface detail, product priorities and communication without a large structure around it.</p>
+        </div>
+      </section>
+      <section class="case-section">
+        <p class="case-section__aside">02 / DONATION FLOW</p>
+        <div>
+          <h2>Work on the moment of giving</h2>
+          <p>The donation journey was central: the interaction had to be clear and simple enough to support a real decision, while giving nonprofits a useful product to offer supporters.</p>
+          <p>I also worked on the product surfaces used by nonprofits. The campaign overview brought donations, recurring gifts and supporters into one clear operating view.</p>
+        </div>
+      </section>
+      <section class="case-section fundraise-gamification">
+        <p class="case-section__aside">03 / GAMIFICATION</p>
+        <div>
+          <h2>Small interactions. A much easier way to give.</h2>
+          <p>I used gamification and motion to guide the donation journey: a clear choice between one-time and monthly giving, responsive amount selection and small moments of positive feedback. This increased conversion into <strong>monthly payments</strong> and made recurring giving easy to understand from the start.</p>
+          <p>The donation button carried the experience from processing to a clear success state. Immediate animated feedback reduced the perceived wait and removed the feeling of a long loading screen while the payment was being processed.</p>
+          <p>The overall donation conversion increased <strong>2.8×</strong>, with donor satisfaction at around <strong>98% CSAT</strong>. The compact experience helped a small company compete with much larger, established platforms whose donation journeys relied on large, lengthy forms.</p>
+        </div>
+      </section>
+      <div class="fundraise-motion-grid" aria-label="Original Fundraise Up interaction prototypes">
+        <div class="fundraise-motion-col">
+          <figure class="fundraise-motion-card fundraise-motion-card--monthly">
+            <img src="/assets/fundraise-up-gamification-monthly.gif" width="930" height="830" loading="lazy" decoding="async" alt="Animated donation form switching from Give once to Monthly and adapting the suggested amounts">
+            <figcaption><span class="case-art__idea">01 / MONTHLY GIVING</span><span>Make the recurring option visible and adapt the suggested amounts to the donor’s choice.</span></figcaption>
+          </figure>
+          <figure class="fundraise-motion-card fundraise-motion-card--donate">
+            <img src="/assets/fundraise-up-gamification-donate.gif" width="672" height="182" loading="lazy" decoding="async" alt="Donate button changing from the selected amount through processing to a green success checkmark">
+            <figcaption><span class="case-art__idea">02 / PERCEIVED WAIT</span><span>Turn the button into immediate feedback, then confirm a successful payment.</span></figcaption>
+          </figure>
+        </div>
+        <div class="fundraise-motion-col">
+          <figure class="fundraise-motion-card fundraise-motion-card--costs" id="fundraise-gamification-video">
+            <video data-case-autoplay data-case-lazy muted loop playsinline disablepictureinpicture disableremoteplayback preload="none" poster="/assets/fundraise-up-donation-flow-poster.jpg" width="1432" height="830" aria-label="Fundraise Up prototype showing animated feedback when a donor chooses to cover transaction costs">
+              <source data-src="/assets/fundraise-up-donation-flow.mp4" type="video/mp4">
+            </video>
+            <figcaption><span class="case-art__idea">03 / COVERING COSTS</span><span>Positive feedback in the payment flow: a small celebratory response when donors choose to cover transaction costs.</span></figcaption>
+          </figure>
+          <figure class="fundraise-motion-card fundraise-motion-card--mobile">
+            <img src="/assets/fundraise-up-gamification-mobile.gif" width="800" height="600" loading="lazy" decoding="async" alt="Animated presentation of the mobile donation journey, including payment, monthly giving and confirmation screens">
+            <figcaption><span class="case-art__idea">04 / MOBILE EXPERIENCE</span><span>Keep each decision focused and make the journey comfortable on a small screen.</span></figcaption>
+          </figure>
+        </div>
+      </div>
       <section class="case-section">
         <p class="case-section__aside">04 / EARLY-STAGE DESIGN</p>
         <div>
