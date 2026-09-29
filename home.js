@@ -45,6 +45,8 @@
     '%': ['11000', '11001', '00010', '00100', '01000', '10011', '00011'],
     '$': ['00100', '01111', '10100', '01110', '00101', '11110', '00100'],
     '+': ['00000', '00100', '00100', '11111', '00100', '00100', '00000'],
+    '€': ['00110', '01001', '11100', '01000', '11100', '01001', '00110'],
+    '~': ['00000', '00000', '01000', '10101', '00010', '00000', '00000'],
     '/': ['00001', '00010', '00010', '00100', '01000', '01000', '10000'],
     '.': ['00', '00', '00', '00', '00', '11', '11'],
     ':': ['0', '0', '1', '0', '1', '0', '0'],
@@ -92,6 +94,8 @@
 
   // Case outcomes become LED readings when their characters allow it.
   document.querySelectorAll('.case-impact__value:not(.case-impact__value--text)').forEach((el) => {
+    // Values with inline markup (an arrow icon between two numbers) keep their set type.
+    if (el.querySelector('*')) return;
     el.classList.add('dm');
     el.setAttribute('data-dm', '');
   });

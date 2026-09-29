@@ -180,7 +180,7 @@
   border-radius: 16px;
   overflow: hidden;
 }
-.case-film__video { display: block; width: 100%; height: auto; background: var(--graphite-2); }
+.case-film__video { display: block; width: 100%; height: auto; background: var(--graphite-2); color: var(--bone); }
 .case-film-stage figcaption,
 .case-product-stage figcaption { margin: 16px 6px 2px; font-size: 14px; color: var(--fog); }
 .case-film-stage figcaption strong { color: var(--bone); font-weight: 600; }
