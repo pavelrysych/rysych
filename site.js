@@ -74,6 +74,23 @@ document.querySelectorAll('[data-click-to-play]').forEach((player) => {
   });
 });
 
+// Posters of films far down the page load only as the film comes near, so they don't compete with the first screen.
+document.querySelectorAll('video[data-poster]').forEach((video) => {
+  const reveal = () => {
+    video.poster = video.dataset.poster;
+    video.removeAttribute('data-poster');
+  };
+  if (!('IntersectionObserver' in window)) {
+    reveal();
+    return;
+  }
+  new IntersectionObserver(([entry], observer) => {
+    if (!entry.isIntersecting) return;
+    observer.disconnect();
+    reveal();
+  }, { rootMargin: '800px 0px' }).observe(video);
+});
+
 document.querySelectorAll('video[data-case-autoplay]').forEach((video) => {
   const lazy = video.hasAttribute('data-case-lazy');
   let nearViewport = !lazy;
@@ -156,6 +173,23 @@ document.querySelectorAll('video[data-portrait-scrub]').forEach((video) => {
 
   video.autoplay = false;
   video.pause();
+
+  // The 3.4 MB scrub film loads only when it can be used: on first touch, hover or focus,
+  // or once the page is idle on a mouse-and-keyboard screen.
+  const warmFilm = () => {
+    if (video.dataset.warmed) return;
+    video.dataset.warmed = 'true';
+    video.preload = 'auto';
+    video.load();
+  };
+  hero.addEventListener('pointerenter', warmFilm, { once: true });
+  surface.addEventListener('pointerdown', warmFilm, { once: true });
+  surface.addEventListener('focus', warmFilm, { once: true });
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    const whenIdle = window.requestIdleCallback || ((callback) => window.setTimeout(callback, 1500));
+    if (document.readyState === 'complete') whenIdle(warmFilm);
+    else window.addEventListener('load', () => whenIdle(warmFilm), { once: true });
+  }
 
   const isVisible = () => {
     const rect = hero.getBoundingClientRect();

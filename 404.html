@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#1a1918">
+    <meta name="author" content="Pavel Rysych">
+    <meta name="robots" content="noindex">
+    <title>Page not found — Pavel Rysych</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png?v=2">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png?v=2">
+    <link rel="icon" type="image/svg+xml" sizes="any" href="/assets/favicon.svg?v=2">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png?v=2">
+    <link rel="manifest" href="/site.webmanifest?v=2">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/home.css?v=52">
+    <script src="/site.js?v=17" defer></script>
+    <script src="/home.js?v=18" defer></script>
+    <style>
+      /* 404: one graphite hall. The lit 404 and the way home on the left, the cases as destinations on the right. */
+      .not-found {
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        min-height: 100svh;
+        padding: 128px 0 40px;
+        background:
+          radial-gradient(48% 42% at 20% 34%, rgba(210, 69, 42, 0.13), rgba(210, 69, 42, 0) 70%),
+          radial-gradient(40% 34% at 86% 82%, rgba(169, 168, 173, 0.12), rgba(169, 168, 173, 0) 70%),
+          var(--graphite);
+      }
+      .not-found__inner {
+        flex: 1;
+        display: grid;
+        grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+        gap: 48px 64px;
+        align-items: end;
+        align-content: center;
+      }
+      .not-found__code { display: flex; margin: 0 0 clamp(32px, 4vw, 56px); }
+      .not-found h1 {
+        font-size: clamp(2.5rem, 5vw, 4.5rem);
+        line-height: 1.02;
+        letter-spacing: -0.03em;
+      }
+      .not-found__note {
+        margin-top: 20px;
+        max-width: 40ch;
+        font-size: clamp(1.25rem, 1.8vw, 1.5rem);
+        line-height: 1.45;
+        color: var(--fog);
+      }
+      .not-found__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
+      .not-found__work {
+        padding-top: 20px;
+      }
+      .not-found__label { font-size: 13px; font-weight: 600; letter-spacing: 0.02em; color: var(--fog); }
+      .not-found__work ul { list-style: none; margin: 10px 0 0; padding: 0; display: grid; }
+      .not-found__work .link-secondary { min-height: 44px; padding: 0; font-size: 18px; }
+      .error-page .case-footer {
+        width: 100%;
+        max-width: var(--max);
+        margin: clamp(64px, 8vw, 112px) auto 0;
+        padding: 0 var(--gutter);
+      }
+      .error-page .case-footer .site-footer { margin-top: 0; }
+
+      @media (max-width: 960px) {
+        .not-found { padding-top: 112px; }
+        .not-found__inner { grid-template-columns: minmax(0, 1fr); align-content: start; }
+      }
+      @media (max-width: 560px) {
+        .not-found__actions .pill { flex: 1 1 auto; }
+      }
+    </style>
+  </head>
+  <body class="error-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="wordmark" href="/" aria-label="Pavel Rysych, Product Design Leader, home">Pavel Rysych<span>Product Design Leader</span></a>
+      <nav class="pill-nav" aria-label="Main navigation">
+        <a href="/#work">Work</a>
+        <a href="/#ai">AI</a>
+        <a href="/#leadership">Leadership</a>
+        <a href="/#about">About</a>
+      </nav>
+      <a class="pill pill--glow pill--compact header-cta" href="/#contact">Contact</a>
+      <details class="mobile-nav">
+        <summary>Menu</summary>
+        <nav aria-label="Mobile navigation">
+          <a href="/#work">Work</a>
+          <a href="/#ai">AI</a>
+          <a href="/#leadership">Leadership</a>
+          <a href="/#about">About</a>
+          <a href="/#contact">Contact</a>
+        </nav>
+      </details>
+    </header>
+    <main id="main">
+      <section class="not-found" aria-labelledby="not-found-title">
+        <div class="page-width not-found__inner">
+          <div class="not-found__copy">
+            <p class="not-found__code"><span class="dm dm--xxl dm--hot" data-dm>404</span></p>
+            <h1 id="not-found-title">This page doesn’t exist.</h1>
+            <p class="not-found__note">The link may be old or mistyped.</p>
+            <div class="not-found__actions">
+              <a class="pill pill--glow" href="/">Back to home</a>
+            </div>
+          </div>
+          <nav class="not-found__work" aria-labelledby="not-found-work">
+            <p class="not-found__label" id="not-found-work">Selected work</p>
+            <ul>
+              <li><a class="link-secondary" href="/work/subskim/">Subskim</a></li>
+              <li><a class="link-secondary" href="/work/admirals/">Admirals</a></li>
+              <li><a class="link-secondary" href="/work/mechanism/">Mechanism Ventures</a></li>
+              <li><a class="link-secondary" href="/work/metamap/">MetaMap</a></li>
+              <li><a class="link-secondary" href="/work/fundraise-up/">Fundraise Up</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="case-footer"><footer class="site-footer"><span>© 2026 Pavel Rysych</span><span class="site-footer__end"><a href="#main">Back to top</a><span class="site-footer__credit">Proudly made with Claude and Codex</span></span></footer></div>
+      </section>
+    </main>
+  </body>
+</html>

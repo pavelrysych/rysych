@@ -1,0 +1,7 @@
+# Internal docs and tooling stay in git but are never deployed or served
+*.md
+.impeccable/
+.claude/
+.superpowers/
+docs/
+tmp/

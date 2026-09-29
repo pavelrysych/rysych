@@ -420,7 +420,7 @@
 .fundraise-longform { border-radius: 14px; color: #2b2b2b; }
 .fundraise-longform__header > span { font-size: 22px; color: #1f1f1f; }
 .fundraise-longform__header small { font-size: 12px; color: #5c5c5c; }
-.fundraise-longform__section h3 { font-size: 13px; color: #1f1f1f; }
+.fundraise-longform__title { font-size: 13px; color: #1f1f1f; }
 .fundraise-longform__field > span { font-size: 12px; color: #595959; }
 .fundraise-longform__field > i {
   min-height: 36px;

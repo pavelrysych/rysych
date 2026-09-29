@@ -1,11 +1,11 @@
 {
   "name": "Pavel Rysych",
   "short_name": "Rysych",
-  "description": "Pavel Rysych — Product Design Leader.",
+  "description": "Pavel Rysych — Product Design Leader and Head of Design.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#f3f3f3",
-  "theme_color": "#f3f3f3",
+  "background_color": "#c9c8cc",
+  "theme_color": "#a9a8ad",
   "icons": [
     {
       "src": "/assets/favicon-192.png?v=2",

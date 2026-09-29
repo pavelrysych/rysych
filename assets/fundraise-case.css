@@ -31,7 +31,7 @@
 .fundraise-longform__header > span { font-size: 20px; font-weight: 600; letter-spacing: -.04em; }
 .fundraise-longform__header small { font-size: 9px; color: #777; }
 .fundraise-longform__section { padding-top: 21px; }
-.fundraise-longform__section h3 { margin: 0 0 13px; font-size: 11px; font-weight: 700; }
+.fundraise-longform__title { margin: 0 0 13px; font-size: 11px; font-weight: 700; }
 .fundraise-longform__row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
 .fundraise-longform__field { min-width: 0; margin-bottom: 11px; }
 .fundraise-longform__field > span { display: block; margin-bottom: 6px; color: #737373; font-size: 9px; line-height: 1.4; }
