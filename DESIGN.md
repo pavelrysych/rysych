@@ -119,7 +119,7 @@ components:
 
 # Design System: rysych.com
 
-<!-- Scope: this system is evidenced by the homepage only (index.html, home.css, home.js). Case pages under work/ still run the previous styles.css / case-styles.css system and have not migrated; they are known drift, not authority. -->
+<!-- Scope: the homepage (index.html, home.css, home.js) and the five case pages under work/ (home.css + case.css, plus assets/fundraise-case.css for Fundraise Up specifics). styles.css and case-styles.css are retired and no longer loaded by any page. -->
 
 ## Overview
 
@@ -158,7 +158,7 @@ A near-monochrome smoke-and-graphite palette with one lit oxide orange.
 - **Hairlines**: `rgba(237, 235, 231, 0.12)` on graphite, `rgba(21, 20, 19, 0.16)` on smoke.
 
 ### Named Rules
-**The Lit Oxide Rule.** Orange means "now" or "act". It marks the current role, the primary action, and the single lead result (CAC −67%). Secondary readings (×3, ×2.8, $300M+) and past roles stay bone or fog. If a second thing on screen wants to be orange, it is not the lead.
+**The Lit Oxide Rule.** Orange means "now" or "act". It marks the current role, the primary action, and one lead result per page: CAC −67% on the homepage, and the first outcome of each case’s outcomes panel. Secondary readings and past roles stay bone or fog. If a second thing on screen wants to be orange, it is not the lead.
 
 **The Glow Pairing Rule.** `oxide-led` never appears without its glow; `oxide` (the flat body colour) never glows on its own except through the primary pill's shadow.
 
@@ -182,7 +182,7 @@ A near-monochrome smoke-and-graphite palette with one lit oxide orange.
 Status and figures are drawn as SVG dot grids at set heights: tiny 11px, status 12px, sm 16px, row 18px, md clamp(34px, 3.4vw, 46px), lg clamp(48px, 4.8vw, 66px), xl clamp(60px, 6.2vw, 88px), xxl clamp(96px, 13vw, 184px). The real text stays in the DOM, visually hidden, for assistive tech; the SVG is `aria-hidden`.
 
 ### Named Rules
-**The Lit Figure Rule.** Years, statuses (NOW, LIVE, SOLO) and headline metrics are dot-matrix; names, roles and prose are Urbanist. Never draw a sentence in dots.
+**The Lit Figure Rule.** Years, statuses (NOW, LIVE, SOLO) and headline metrics are dot-matrix; names, roles and prose are Urbanist. Never draw a sentence in dots. The renderer only draws text it can spell in full (digits, A–Z and − × % $ € ~ → + / . : and space); anything else, or a value containing markup, stays as set type. Write outcomes so they can be lit: −67% rather than ⅓, 2 → 15+ as text rather than an icon between numbers.
 
 **The Thin Display Rule.** Headings are weight 300 with negative tracking and balanced wrap. Weight is spent on labels and actions, not headlines.
 
@@ -195,6 +195,21 @@ Vertical rhythm is generous: dark sections pad clamp(96px, 11–12vw, 150–160p
 The hero overlaps planes on one grid row: copy in columns 1–6, portrait in 5–10 blended into the smoke with `mix-blend-mode: multiply` and edge masks, the reading slab at 9–12 high, the board slab at 9–13 low. Readings are ranked by weight, not boxed: the lead figure takes columns 1–7 across three rows, the rest stack in 8–13, each separated by a top hairline.
 
 Breakpoints: 1180px tightens board columns; 960px collapses to one column (portrait first, headline rising over it, compact reading on the portrait's shoulder, board below), swaps the pill nav for a disclosure menu, and turns board rows into a time/status + destination + route stack; 560px stacks the stage track and makes action pills fill the row.
+
+### Case pages
+A case is a long read that tells one story, in the same world as the homepage.
+
+- **Hero:** smoke ground fading to graphite by ~78% of its height. Right-aligned glass "All projects" pill; h1 (300, clamp(3.5rem, 8vw, 6rem), 1, −0.04em) and a deck (clamp(1.125rem, 1.6vw, 1.375rem), ink-2, max 34ch) on a 7/5 split.
+- **Outcomes panel:** a dark glass slab (0.72 tint, fog raised to #d6d4d0) under the heading, with outcomes on top hairlines in a 2–5 column grid; values are dot-matrix, the first one lit oxide.
+- **Media stage:** a dark glass slab (radius 28px, 14–22px padding) holding the hero screenshot or film at 16px radius, over the case’s own key art as a blurred (12px), masked plane. Screenshots are shown as supplied: never upscaled past their pixels or recompressed.
+- **Facts row:** Project / Role / Dates / Focus on a hairline-bounded row (13px 600 fog labels, 16px bone values).
+- **Long read:** on graphite. The intro is a lede-sized statement of the whole story (clamp(2rem, 3.6vw, 3.25rem)). Chapters are 220px aside + content, separated by top hairlines, not boxed: aside is a 13px 600 fog chapter label, h2 is 300 at clamp(1.75rem, 3vw, 2.5rem), body 17px/1.7 fog, max 66ch.
+- **Figures:** screenshots and films sit in light glass frames (white 0.04, 0.12 border, 28px radius, 12–18px padding, 16px inner image). Comparisons and animation sets keep each asset’s own proportions, in balanced columns; never force equal frames or leave a lone card centred.
+- **Artifact illustrations** (for example the traditional long donation form) sit directly on the ground, not inside a slab, and stay legible (labels 12px+, AA contrast). Their copy column may be sticky while the artifact scrolls.
+- **Next case:** a light glass slab with an oxide radial glow, the next project name at display size and a primary "Next project" pill.
+
+### Named Rules
+**The Story Rule.** Every case, and every project line on the homepage, tells one story in this order: the problem the category or customer had → the idea or bet → how it reached the product → the result → context. Chapters are labelled by role in the story (01 / THE PROBLEM, 02 / THE IDEA …), not by discipline. Results use only confirmed figures; company funding, revenue or acquisitions are framed "for context, not credit".
 
 ## Elevation & Depth
 
@@ -265,4 +280,6 @@ Three stages riding one ticked track, each with a dot-matrix index, a bone mark 
 - **Don't** set display headings heavier than 300 or add a second typeface.
 - **Don't** fake the dot-matrix with a pixel or LED web font; it is a real dot grid.
 - **Don't** lift rows, slabs or chips with hover shadows; hover washes a surface or racks focus (the primary pill's glow lift is the only exception).
-- **Don't** treat the old styles.css / case-styles.css look on the case pages as part of this system.
+- **Don't** load styles.css or case-styles.css; they are retired.
+- **Don't** put an artifact card inside a glass slab, or stretch a screenshot beyond its own pixels.
+- **Don't** label case chapters by discipline (POSITIONING, TEAM); label them by their place in the story.

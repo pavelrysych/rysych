@@ -1,52 +1,299 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-29T12:00:00Z",
+  "generatedAt": "2026-09-29T20:00:00Z",
   "title": "Design System: rysych.com",
   "extensions": {
-    "scope": "Homepage only (index.html, home.css, home.js). Case pages under work/ still use styles.css / case-styles.css and are known drift, not authority.",
+    "scope": "Homepage (index.html, home.css, home.js) and the five case pages under work/ (home.css + case.css, plus assets/fundraise-case.css). styles.css and case-styles.css are retired.",
     "colorMeta": {
-      "oxide": { "role": "primary", "displayName": "Oxide", "canonical": "#d2452a", "tonalRamp": ["#3a0f06", "#5f190b", "#872511", "#ae3219", "#d2452a", "#e06a52", "#eb9a88", "#f6cfc6"] },
-      "oxide-led": { "role": "primary", "displayName": "Oxide LED", "canonical": "#ff6a45", "tonalRamp": ["#4a1206", "#7a200c", "#ad3014", "#e0461f", "#ff6a45", "#ff8e70", "#ffb7a3", "#ffe0d7"] },
-      "smoke-hi": { "role": "neutral", "displayName": "Smoke High", "canonical": "#c9c8cc", "tonalRamp": ["#1f1f21", "#3a393c", "#58575b", "#78777b", "#9a999d", "#b9b8bc", "#c9c8cc", "#ecebee"] },
-      "smoke": { "role": "neutral", "displayName": "Smoke", "canonical": "#a9a8ad", "tonalRamp": ["#1f1f21", "#3a393c", "#58575b", "#78777b", "#a9a8ad", "#c9c8cc", "#dddce0", "#f1f0f3"] },
-      "smoke-lo": { "role": "neutral", "displayName": "Smoke Low", "canonical": "#6e6d71", "tonalRamp": ["#1f1f21", "#353437", "#4d4c50", "#6e6d71", "#8e8d91", "#aeadb1", "#cdccd0", "#ebeaed"] },
-      "slate": { "role": "neutral", "displayName": "Slate", "canonical": "#5e5d5f", "tonalRamp": ["#1c1b1c", "#2f2e30", "#454446", "#5e5d5f", "#7c7b7d", "#9d9c9e", "#c0bfc1", "#e3e2e4"] },
-      "graphite": { "role": "neutral", "displayName": "Warm Graphite", "canonical": "#1a1918", "tonalRamp": ["#1a1918", "#252321", "#353432", "#4c4a47", "#67645f", "#8a8781", "#b3b0aa", "#dcdad5"] },
-      "graphite-2": { "role": "neutral", "displayName": "Graphite Step", "canonical": "#252321", "tonalRamp": ["#1a1918", "#252321", "#353432", "#4c4a47", "#67645f", "#8a8781", "#b3b0aa", "#dcdad5"] },
-      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#151413", "tonalRamp": ["#151413", "#252321", "#353432", "#4c4a47", "#67645f", "#8a8781", "#b3b0aa", "#dcdad5"] },
-      "ink-2": { "role": "neutral", "displayName": "Ink Secondary", "canonical": "#353432", "tonalRamp": ["#151413", "#252321", "#353432", "#4c4a47", "#67645f", "#8a8781", "#b3b0aa", "#dcdad5"] },
-      "bone": { "role": "neutral", "displayName": "Bone", "canonical": "#edebe7", "tonalRamp": ["#2a2927", "#45433f", "#625f5a", "#827f79", "#a3a09a", "#c5c2bd", "#edebe7", "#f8f7f5"] },
-      "fog": { "role": "neutral", "displayName": "Fog", "canonical": "#aeadb1", "tonalRamp": ["#1f1f21", "#3a393c", "#58575b", "#78777b", "#aeadb1", "#c4c3c6", "#d6d4d0", "#eeedf0"] }
+      "oxide": {
+        "role": "primary",
+        "displayName": "Oxide",
+        "canonical": "#d2452a",
+        "tonalRamp": [
+          "#3a0f06",
+          "#5f190b",
+          "#872511",
+          "#ae3219",
+          "#d2452a",
+          "#e06a52",
+          "#eb9a88",
+          "#f6cfc6"
+        ]
+      },
+      "oxide-led": {
+        "role": "primary",
+        "displayName": "Oxide LED",
+        "canonical": "#ff6a45",
+        "tonalRamp": [
+          "#4a1206",
+          "#7a200c",
+          "#ad3014",
+          "#e0461f",
+          "#ff6a45",
+          "#ff8e70",
+          "#ffb7a3",
+          "#ffe0d7"
+        ]
+      },
+      "smoke-hi": {
+        "role": "neutral",
+        "displayName": "Smoke High",
+        "canonical": "#c9c8cc",
+        "tonalRamp": [
+          "#1f1f21",
+          "#3a393c",
+          "#58575b",
+          "#78777b",
+          "#9a999d",
+          "#b9b8bc",
+          "#c9c8cc",
+          "#ecebee"
+        ]
+      },
+      "smoke": {
+        "role": "neutral",
+        "displayName": "Smoke",
+        "canonical": "#a9a8ad",
+        "tonalRamp": [
+          "#1f1f21",
+          "#3a393c",
+          "#58575b",
+          "#78777b",
+          "#a9a8ad",
+          "#c9c8cc",
+          "#dddce0",
+          "#f1f0f3"
+        ]
+      },
+      "smoke-lo": {
+        "role": "neutral",
+        "displayName": "Smoke Low",
+        "canonical": "#6e6d71",
+        "tonalRamp": [
+          "#1f1f21",
+          "#353437",
+          "#4d4c50",
+          "#6e6d71",
+          "#8e8d91",
+          "#aeadb1",
+          "#cdccd0",
+          "#ebeaed"
+        ]
+      },
+      "slate": {
+        "role": "neutral",
+        "displayName": "Slate",
+        "canonical": "#5e5d5f",
+        "tonalRamp": [
+          "#1c1b1c",
+          "#2f2e30",
+          "#454446",
+          "#5e5d5f",
+          "#7c7b7d",
+          "#9d9c9e",
+          "#c0bfc1",
+          "#e3e2e4"
+        ]
+      },
+      "graphite": {
+        "role": "neutral",
+        "displayName": "Warm Graphite",
+        "canonical": "#1a1918",
+        "tonalRamp": [
+          "#1a1918",
+          "#252321",
+          "#353432",
+          "#4c4a47",
+          "#67645f",
+          "#8a8781",
+          "#b3b0aa",
+          "#dcdad5"
+        ]
+      },
+      "graphite-2": {
+        "role": "neutral",
+        "displayName": "Graphite Step",
+        "canonical": "#252321",
+        "tonalRamp": [
+          "#1a1918",
+          "#252321",
+          "#353432",
+          "#4c4a47",
+          "#67645f",
+          "#8a8781",
+          "#b3b0aa",
+          "#dcdad5"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#151413",
+        "tonalRamp": [
+          "#151413",
+          "#252321",
+          "#353432",
+          "#4c4a47",
+          "#67645f",
+          "#8a8781",
+          "#b3b0aa",
+          "#dcdad5"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Ink Secondary",
+        "canonical": "#353432",
+        "tonalRamp": [
+          "#151413",
+          "#252321",
+          "#353432",
+          "#4c4a47",
+          "#67645f",
+          "#8a8781",
+          "#b3b0aa",
+          "#dcdad5"
+        ]
+      },
+      "bone": {
+        "role": "neutral",
+        "displayName": "Bone",
+        "canonical": "#edebe7",
+        "tonalRamp": [
+          "#2a2927",
+          "#45433f",
+          "#625f5a",
+          "#827f79",
+          "#a3a09a",
+          "#c5c2bd",
+          "#edebe7",
+          "#f8f7f5"
+        ]
+      },
+      "fog": {
+        "role": "neutral",
+        "displayName": "Fog",
+        "canonical": "#aeadb1",
+        "tonalRamp": [
+          "#1f1f21",
+          "#3a393c",
+          "#58575b",
+          "#78777b",
+          "#aeadb1",
+          "#c4c3c6",
+          "#d6d4d0",
+          "#eeedf0"
+        ]
+      }
     },
     "typographyMeta": {
-      "display": { "displayName": "Display", "purpose": "Hero statement only; contact and Subskim use larger siblings at the same weight." },
-      "headline": { "displayName": "Headline", "purpose": "Section heads, left of a short fog note." },
-      "title": { "displayName": "Title", "purpose": "Destination names on the departures board." },
-      "body": { "displayName": "Body", "purpose": "Running text at 44-62ch, tabular numerals on." },
-      "label": { "displayName": "Label", "purpose": "Board column heads, reading labels, board header; sentence case, never uppercase." },
-      "dot-matrix": { "displayName": "Dot-matrix", "purpose": "SVG 5x7 dot grid for years, statuses and headline figures. Heights: tiny 11px, status 12px, sm 16px, row 18px, md clamp(34px,3.4vw,46px), lg clamp(48px,4.8vw,66px), xl clamp(60px,6.2vw,88px), xxl clamp(96px,13vw,184px)." }
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero statement only; contact and Subskim use larger siblings at the same weight."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section heads, left of a short fog note."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Destination names on the departures board."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text at 44-62ch, tabular numerals on."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Board column heads, reading labels, board header; sentence case, never uppercase."
+      },
+      "dot-matrix": {
+        "displayName": "Dot-matrix",
+        "purpose": "SVG 5x7 dot grid for years, statuses and headline figures. Heights: tiny 11px, status 12px, sm 16px, row 18px, md clamp(34px,3.4vw,46px), lg clamp(48px,4.8vw,66px), xl clamp(60px,6.2vw,88px), xxl clamp(96px,13vw,184px)."
+      }
     },
     "shadows": [
-      { "name": "glass-slab", "value": "inset 0 1px 0 rgba(255,255,255,0.22), inset 0 -1px 0 rgba(0,0,0,0.25), 0 24px 60px -24px rgba(0,0,0,0.55)", "purpose": "Every glass container." },
-      { "name": "glass-chrome", "value": "inset 0 1px 0 rgba(255,255,255,0.18), 0 12px 30px -16px rgba(0,0,0,0.5)", "purpose": "Wordmark, pill nav, mobile menu trigger." },
-      { "name": "oxide-pill-glow", "value": "inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -10px 18px rgba(110,20,0,0.25), 0 12px 32px -8px rgba(255,106,69,0.65)", "purpose": "Primary pill at rest." },
-      { "name": "oxide-pill-glow-hover", "value": "inset 0 1px 0 rgba(255,255,255,0.45), inset 0 -10px 18px rgba(110,20,0,0.2), 0 16px 44px -8px rgba(255,106,69,0.85)", "purpose": "Primary pill on hover, with a 1px lift." },
-      { "name": "led-glow", "value": "0 0 0 3px rgba(255,106,69,0.18), 0 0 14px 2px rgba(255,106,69,0.55)", "purpose": "ON led; markers and the NOW needle use 0 0 12-14px 2px of the same glow." },
-      { "name": "glass-backdrop", "value": "backdrop-filter: blur(22px) saturate(140%)", "purpose": "Frost on glass slabs (20px on chrome, 16px on glass pills)." }
+      {
+        "name": "glass-slab",
+        "value": "inset 0 1px 0 rgba(255,255,255,0.22), inset 0 -1px 0 rgba(0,0,0,0.25), 0 24px 60px -24px rgba(0,0,0,0.55)",
+        "purpose": "Every glass container."
+      },
+      {
+        "name": "glass-chrome",
+        "value": "inset 0 1px 0 rgba(255,255,255,0.18), 0 12px 30px -16px rgba(0,0,0,0.5)",
+        "purpose": "Wordmark, pill nav, mobile menu trigger."
+      },
+      {
+        "name": "oxide-pill-glow",
+        "value": "inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -10px 18px rgba(110,20,0,0.25), 0 12px 32px -8px rgba(255,106,69,0.65)",
+        "purpose": "Primary pill at rest."
+      },
+      {
+        "name": "oxide-pill-glow-hover",
+        "value": "inset 0 1px 0 rgba(255,255,255,0.45), inset 0 -10px 18px rgba(110,20,0,0.2), 0 16px 44px -8px rgba(255,106,69,0.85)",
+        "purpose": "Primary pill on hover, with a 1px lift."
+      },
+      {
+        "name": "led-glow",
+        "value": "0 0 0 3px rgba(255,106,69,0.18), 0 0 14px 2px rgba(255,106,69,0.55)",
+        "purpose": "ON led; markers and the NOW needle use 0 0 12-14px 2px of the same glow."
+      },
+      {
+        "name": "glass-backdrop",
+        "value": "backdrop-filter: blur(22px) saturate(140%)",
+        "purpose": "Frost on glass slabs (20px on chrome, 16px on glass pills)."
+      }
     ],
     "motion": [
-      { "name": "ease", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "House easing for every transition." },
-      { "name": "state", "value": "250-300ms", "purpose": "Hover washes, pill glow, chip selection." },
-      { "name": "dm-on", "value": "420ms, per-dot random delay 0-520ms", "purpose": "Dot-matrix lights dot by dot the first time it enters view." },
-      { "name": "rack-focus", "value": "900ms opacity/filter, 1200ms transform", "purpose": "Board row racks its key art from 26px blur to 3px behind the glass." },
-      { "name": "now-pulse", "value": "2.4s ease-in-out infinite", "purpose": "The timeline NOW needle breathes." },
-      { "name": "plane-drift", "value": "scroll-linked --depth / --rack", "purpose": "Hero glass planes drift apart (-60px / -24px) and the portrait blurs up to 6px." },
-      { "name": "reduced-motion", "value": "prefers-reduced-motion: reduce", "purpose": "All of the above collapse to static, fully visible states." }
+      {
+        "name": "ease",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "House easing for every transition."
+      },
+      {
+        "name": "state",
+        "value": "250-300ms",
+        "purpose": "Hover washes, pill glow, chip selection."
+      },
+      {
+        "name": "dm-on",
+        "value": "420ms, per-dot random delay 0-520ms",
+        "purpose": "Dot-matrix lights dot by dot the first time it enters view."
+      },
+      {
+        "name": "rack-focus",
+        "value": "900ms opacity/filter, 1200ms transform",
+        "purpose": "Board row racks its key art from 26px blur to 3px behind the glass."
+      },
+      {
+        "name": "now-pulse",
+        "value": "2.4s ease-in-out infinite",
+        "purpose": "The timeline NOW needle breathes."
+      },
+      {
+        "name": "plane-drift",
+        "value": "scroll-linked --depth / --rack",
+        "purpose": "Hero glass planes drift apart (-60px / -24px) and the portrait blurs up to 6px."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "prefers-reduced-motion: reduce",
+        "purpose": "All of the above collapse to static, fully visible states."
+      }
     ],
     "breakpoints": [
-      { "name": "board-tight", "value": "1180px" },
-      { "name": "single-column", "value": "960px" },
-      { "name": "narrow", "value": "560px" }
+      {
+        "name": "board-tight",
+        "value": "1180px"
+      },
+      {
+        "name": "single-column",
+        "value": "960px"
+      },
+      {
+        "name": "narrow",
+        "value": "560px"
+      }
     ]
   },
   "components": [
@@ -112,6 +359,30 @@
       "description": "Hairline scale with a glowing oxide marker; measures a reading.",
       "html": "<div class=\"ds-dark\"><span class=\"ds-ticks\"><i></i></span></div>",
       "css": ".ds-dark { background: #1a1918; padding: 24px; color: #edebe7; } .ds-ticks { position: relative; display: block; max-width: 320px; height: 14px; background: repeating-linear-gradient(90deg, rgba(237,235,231,0.55) 0 1px, transparent 1px 8px) bottom / 100% 6px no-repeat, repeating-linear-gradient(90deg, rgba(237,235,231,0.55) 0 1px, transparent 1px 40px) bottom / 100% 12px no-repeat; } .ds-ticks i { position: absolute; bottom: -3px; left: 67%; width: 3px; height: 20px; margin-left: -1px; border-radius: 2px; background: #ff6a45; box-shadow: 0 0 12px 2px rgba(255,106,69,0.55); }"
+    },
+    {
+      "name": "Case Outcomes Panel",
+      "kind": "container",
+      "refersTo": "case-impact",
+      "description": "Dark glass slab under a case heading; outcomes on top hairlines, dot-matrix values, the first one lit oxide.",
+      "html": "<section class=\"case-impact\"><h2 class=\"eyebrow\">Key outcomes</h2><dl class=\"case-impact__grid case-impact__grid--three\"><div><dt>Widget conversion</dt><dd><strong class=\"case-impact__value\">2.8×</strong><span class=\"case-impact__detail\">Through a gamified donation experience.</span></dd></div></dl></section>",
+      "css": ".case-impact{padding:24px 28px 26px;border-radius:28px;background:rgba(24,23,22,.72);border:1px solid rgba(255,255,255,.16);box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 24px 60px -24px rgba(0,0,0,.55);backdrop-filter:blur(22px) saturate(140%);color:#edebe7}.case-impact__grid>div{padding-top:16px;border-top:1px solid rgba(237,235,231,.12)}.case-impact dt{font-size:13px;font-weight:500;color:#d6d4d0}"
+    },
+    {
+      "name": "Case Media Stage",
+      "kind": "container",
+      "refersTo": "case-product-stage",
+      "description": "Dark glass slab framing the hero screenshot or film over the case key art as a blurred plane.",
+      "html": "<figure class=\"case-product-stage\"><img class=\"case-hero__image\" src=\"shot.png\" alt=\"\"><figcaption><strong>Caption.</strong> Context.</figcaption></figure>",
+      "css": ".case-product-stage{padding:clamp(14px,2vw,22px);border-radius:28px;background:rgba(30,28,27,.5);border:1px solid rgba(255,255,255,.14);box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 30px 80px -30px rgba(0,0,0,.7);backdrop-filter:blur(22px) saturate(140%)}.case-hero__image{width:100%;height:auto;border-radius:16px}"
+    },
+    {
+      "name": "Case Chapter",
+      "kind": "layout",
+      "refersTo": "case-section",
+      "description": "Story chapter: 220px aside label + content, separated by a top hairline, never boxed.",
+      "html": "<section class=\"case-section\"><p class=\"case-section__aside\">01 / THE PROBLEM</p><div><h2>A category built on easy starts</h2><p>Body copy.</p></div></section>",
+      "css": ".case-section{display:grid;grid-template-columns:220px minmax(0,1fr);gap:24px 56px;padding:clamp(40px,5vw,64px) 0;border-top:1px solid rgba(237,235,231,.12)}.case-section__aside{font-size:13px;font-weight:600;letter-spacing:.04em;color:#aeadb1}.case-section h2{font-weight:300;font-size:clamp(1.75rem,3vw,2.5rem);letter-spacing:-.025em;color:#edebe7}.case-section p{font-size:17px;line-height:1.7;color:#aeadb1;max-width:66ch}"
     }
   ],
   "narrative": {
@@ -127,11 +398,31 @@
       "Depth by planes and rack focus, not by stacked cards."
     ],
     "rules": [
-      { "name": "The Lit Oxide Rule", "body": "Orange means \"now\" or \"act\". It marks the current role, the primary action, and the single lead result (CAC −67%). Secondary readings (×3, ×2.8, $300M+) and past roles stay bone or fog. If a second thing on screen wants to be orange, it is not the lead.", "section": "colors" },
-      { "name": "The Glow Pairing Rule", "body": "oxide-led never appears without its glow; oxide (the flat body colour) never glows on its own except through the primary pill's shadow.", "section": "colors" },
-      { "name": "The Lit Figure Rule", "body": "Years, statuses (NOW, LIVE, SOLO) and headline metrics are dot-matrix; names, roles and prose are Urbanist. Never draw a sentence in dots.", "section": "typography" },
-      { "name": "The Thin Display Rule", "body": "Headings are weight 300 with negative tracking and balanced wrap. Weight is spent on labels and actions, not headlines.", "section": "typography" },
-      { "name": "The Planes Not Cards Rule", "body": "Depth is a stack of blurred planes behind frosted glass. Do not lift rows, slabs or chips with shadows on hover; hover lightens a surface or racks focus instead. The primary pill's 1px glow lift is the one exception.", "section": "elevation" }
+      {
+        "name": "The Lit Oxide Rule",
+        "body": "Orange means \"now\" or \"act\". It marks the current role, the primary action, and the single lead result (CAC −67%). Secondary readings (×3, ×2.8, $300M+) and past roles stay bone or fog. If a second thing on screen wants to be orange, it is not the lead.",
+        "section": "colors"
+      },
+      {
+        "name": "The Glow Pairing Rule",
+        "body": "oxide-led never appears without its glow; oxide (the flat body colour) never glows on its own except through the primary pill's shadow.",
+        "section": "colors"
+      },
+      {
+        "name": "The Lit Figure Rule",
+        "body": "Years, statuses (NOW, LIVE, SOLO) and headline metrics are dot-matrix; names, roles and prose are Urbanist. Never draw a sentence in dots.",
+        "section": "typography"
+      },
+      {
+        "name": "The Thin Display Rule",
+        "body": "Headings are weight 300 with negative tracking and balanced wrap. Weight is spent on labels and actions, not headlines.",
+        "section": "typography"
+      },
+      {
+        "name": "The Planes Not Cards Rule",
+        "body": "Depth is a stack of blurred planes behind frosted glass. Do not lift rows, slabs or chips with shadows on hover; hover lightens a surface or racks focus instead. The primary pill's 1px glow lift is the one exception.",
+        "section": "elevation"
+      }
     ],
     "dos": [
       "Do set containers as frosted graphite glass (28px radius, 1px white-0.16 border, top sheen, blur 22px) over smoke, graphite, or a blurred image plane.",
