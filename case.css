@@ -183,7 +183,8 @@
 .case-film__video { display: block; width: 100%; height: auto; background: var(--graphite-2); color: var(--bone); }
 .case-film-stage figcaption,
 .case-product-stage figcaption { margin: 16px 6px 2px; font-size: 14px; color: var(--fog); }
-.case-film-stage figcaption strong { color: var(--bone); font-weight: 600; }
+.case-film-stage figcaption strong,
+.case-product-stage figcaption strong { color: var(--bone); font-weight: 600; }
 
 /* the case's key art as a racked plane behind the media glass */
 .case-hero::after {
