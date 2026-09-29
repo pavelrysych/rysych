@@ -901,7 +901,8 @@ button.pill { border: 0; font-family: inherit; cursor: pointer; }
 
 /* a wide screen fills the viewport; a narrow one would leave air under the short screenshot */
 @media (min-width: 961px) { .subskim { min-height: 100svh; } }
-@media (max-width: 960px) { .ai { padding-top: var(--pad-half); } }
+/* the short screenshot barely fades, so both sides keep their half of the gap */
+@media (max-width: 960px) { .subskim { padding-bottom: var(--pad-half); } .ai { padding-top: var(--pad-half); } }
 
 /* ---------- Smoke sections ---------- */
 
