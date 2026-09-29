@@ -248,3 +248,12 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
   .hero__image .portrait-hint { display: none !important; }
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
+
+/* Wide screens: keep the hero inside the same 1280px column as the rest of the page */
+@media (min-width: 1376px) {
+  .home-page { --portrait-width: min(704px,calc(100svh * 15 / 19)); }
+  .site-header--home { left: max(48px,calc((100% - 1280px) / 2)); width: calc(min(100% - 96px,1280px) - var(--portrait-width)); padding-left: 0; }
+  .hero__inner { width: min(calc(100% - 96px),1280px); margin-inline: auto; }
+  .hero__copy { padding-left: 0; }
+  .hero__copy h1 { font-size: 74px; }
+}
