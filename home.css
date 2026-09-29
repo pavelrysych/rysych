@@ -947,7 +947,7 @@ button.pill { border: 0; font-family: inherit; cursor: pointer; }
 .lead::after { bottom: 0; background: var(--seam-to-graphite); }
 .quotes > *,
 .lead > * { position: relative; z-index: 1; }
-/* the band under AI reaches up into it, so the key-art plane never leaves a hard edge */
+/* the band under AI reaches up into it, so the section never meets it on a hard edge */
 .lead::before {
   top: -140px;
   height: calc(var(--seam-height) + 140px);

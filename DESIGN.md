@@ -129,7 +129,7 @@ The career reads as a board in a quiet terminal: where Pavel has flown, what is 
 
 On those grounds sit frosted glass slabs: thick, blurred, with a top sheen and a soft drop. Numbers and status words are not typeset but lit, as LED dot-matrix drawn from a real 5x7 dot grid, one circle per dot, lighting dot by dot the first time they enter view. Hairline tick scales measure things. One glowing oxide orange carries the present tense: NOW, the primary action, the headline reading. Everything else is smoke, graphite, bone and fog.
 
-Density is calm and editorial. Display type is thin and large; data rows are open, separated by hairlines rather than boxes. Imagery (portrait, case key art) sits behind glass as a racked depth plane, blurred until a row or scroll brings it into focus.
+Density is calm and editorial. Display type is thin and large; data rows are open, separated by hairlines rather than boxes. Imagery (portrait, the case's own product screenshot) sits behind glass as a racked depth plane, blurred until a row or scroll brings it into focus.
 
 **Key Characteristics:**
 - Smoke-grey studio grounds alternating with warm graphite, joined by gradient seams.
@@ -201,7 +201,7 @@ A case is a long read that tells one story, in the same world as the homepage.
 
 - **Hero:** smoke ground fading to graphite by ~78% of its height. Right-aligned glass "All projects" pill; h1 (300, clamp(3.5rem, 8vw, 6rem), 1, −0.04em) and a deck (clamp(1.125rem, 1.6vw, 1.375rem), ink-2, max 34ch) on a 7/5 split.
 - **Outcomes panel:** a dark glass slab (0.72 tint, fog raised to #d6d4d0) under the heading, with outcomes on top hairlines in a 2–5 column grid; values are dot-matrix, the first one lit oxide.
-- **Media stage:** a dark glass slab (radius 28px, 14–22px padding) holding the hero screenshot or film at 16px radius, over the case’s own key art as a blurred (12px), masked plane. Screenshots are shown as supplied: never upscaled past their pixels or recompressed.
+- **Media stage:** a dark glass slab (radius 28px, 14–22px padding) holding the hero screenshot or film at 16px radius, over the case’s own product screenshot as a blurred (12px), masked plane. Screenshots are shown as supplied: never upscaled past their pixels or recompressed.
 - **Facts row:** Project / Role / Dates / Focus on a hairline-bounded row (13px 600 fog labels, 16px bone values).
 - **Long read:** on graphite. The intro is a lede-sized statement of the whole story (clamp(2rem, 3.6vw, 3.25rem)). Chapters are 220px aside + content, separated by top hairlines, not boxed: aside is a 13px 600 fog chapter label, h2 is 300 at clamp(1.75rem, 3vw, 2.5rem), body 17px/1.7 fog, max 66ch.
 - **Figures:** screenshots and films sit in light glass frames (white 0.04, 0.12 border, 28px radius, 12–18px padding, 16px inner image). Comparisons and animation sets keep each asset’s own proportions, in balanced columns; never force equal frames or leave a lone card centred.
@@ -213,7 +213,7 @@ A case is a long read that tells one story, in the same world as the homepage.
 
 ## Elevation & Depth
 
-Depth comes from planes, blur and light rather than a shadow ladder. Glass slabs frost what is behind them (`backdrop-filter: blur(22px) saturate(140%)`), carry a 1px inner top highlight and a linear top sheen, and cast one soft, far, negative-spread drop. Behind the board, case key art sits as a blurred plane (26px idle) that racks to 3px when its row is hovered or focused; the hero portrait racks out (up to 6px) as the glass planes drift apart on scroll. Glow is the other depth cue: lit things emit, they do not lift.
+Depth comes from planes, blur and light rather than a shadow ladder. Glass slabs frost what is behind them (`backdrop-filter: blur(22px) saturate(140%)`), carry a 1px inner top highlight and a linear top sheen, and cast one soft, far, negative-spread drop. Behind the board, the case's own product screenshot sits as a blurred plane (26px idle) that racks to 3px when its row is hovered or focused; the hero portrait racks out (up to 6px) as the glass planes drift apart on scroll. Glow is the other depth cue: lit things emit, they do not lift.
 
 ### Shadow Vocabulary
 - **Glass slab** (`inset 0 1px 0 rgba(255,255,255,0.22), inset 0 -1px 0 rgba(0,0,0,0.25), 0 24px 60px -24px rgba(0,0,0,0.55)`): every glass container.
@@ -252,7 +252,7 @@ Tactile, lit pills.
 Floating glass chrome, fixed 14px from the top on a 1fr/auto/1fr grid: glass wordmark pill left (name at 600, title in fog 13px), glass pill nav centre (links 15px/500, 9px 18px, hover wash 0.1 white), compact primary pill right. Below 960px the nav and CTA give way to a "Menu" glass pill that opens a 22px-radius glass list.
 
 ### Departures Board (signature)
-A dark glass slab holding a timeline and rows. The timeline is a tick scale (40 minor, 10 major) with years above, a pulsing oxide NOW needle, and an oxide span per role that appears when its row is hovered or focused. Rows run on a 150px / 1.15fr / 1.5fr / 170px grid: dot-matrix year plus range, destination name (title) plus role, route description, and right-aligned status (led plus dot-matrix word, with a fog note). Rows are divided by hairlines and wash to 0.06 white on hover or focus; the row's key art racks into focus behind the glass. A dashed "Scheduled" line lists upcoming work in fog dot-matrix.
+A dark glass slab holding a timeline and rows. The timeline is a tick scale (40 minor, 10 major) with years above, a pulsing oxide NOW needle, and an oxide span per role that appears when its row is hovered or focused. Rows run on a 150px / 1.15fr / 1.5fr / 170px grid: dot-matrix year plus range, destination name (title) plus role, route description, and right-aligned status (led plus dot-matrix word, with a fog note). Rows are divided by hairlines and wash to 0.06 white on hover or focus; the row's product screenshot racks into focus behind the glass. A dashed "Scheduled" line lists upcoming work in fog dot-matrix.
 
 ### Reading
 A figure with a top hairline: a dot-matrix value, a tick scale with a glowing marker at the value's position, and a fog caption with the metric named in bone 600. The lead reading is xxl and hot (oxide); others are xl/lg in bone.
