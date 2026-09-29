@@ -129,7 +129,6 @@
     const live = readingTile.querySelector('.reading__live');
     const label = readingTile.querySelector('[data-r-label]');
     const value = readingTile.querySelector('[data-r-value]');
-    const marker = readingTile.querySelector('[data-r-marker]');
     const note = readingTile.querySelector('[data-r-note]');
     const pager = readingTile.querySelector('[data-r-pager]');
     if (!live || !value || !pager) return;
@@ -144,7 +143,6 @@
       const r = readings[index];
       if (label) label.textContent = r.label;
       if (note) note.textContent = r.note;
-      if (marker) marker.style.setProperty('--at', `${r.at}%`);
       value.classList.remove('is-drawn', 'is-lit', 'is-arming');
       value.textContent = r.value;
       drawDotMatrix(value);

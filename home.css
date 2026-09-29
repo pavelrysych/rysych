@@ -170,28 +170,6 @@ p { margin: 0; text-wrap: pretty; }
   box-shadow: 0 0 10px 1px rgba(237, 235, 231, 0.55);
 }
 
-/* Tick scale with a glowing marker */
-.ticks {
-  position: relative;
-  display: block;
-  height: 14px;
-  background:
-    repeating-linear-gradient(90deg, currentColor 0 1px, transparent 1px 8px) bottom / 100% 6px no-repeat,
-    repeating-linear-gradient(90deg, currentColor 0 1px, transparent 1px 40px) bottom / 100% 12px no-repeat;
-  opacity: 0.55;
-}
-.ticks i {
-  position: absolute;
-  bottom: -3px;
-  left: var(--at, 50%);
-  width: 3px;
-  height: 20px;
-  margin-left: -1px;
-  border-radius: 2px;
-  background: var(--oxide-led);
-  box-shadow: 0 0 12px 2px var(--oxide-glow);
-}
-
 /* ---------- Dot-matrix numerals ---------- */
 
 .dm {
@@ -532,10 +510,8 @@ p { margin: 0; text-wrap: pretty; }
   --fog: #d6d4d0;
   background: rgba(24, 23, 22, 0.72);
 }
-.hero-reading .ticks { color: var(--bone); }
 .reading__live { display: grid; gap: 12px; transition: opacity 260ms var(--ease), filter 260ms var(--ease); }
 .reading__live.is-swapping { opacity: 0; filter: blur(4px); }
-.hero-reading .ticks i { transition: left 600ms var(--ease); }
 /* two lines reserved for label and note, so the tile keeps one height as readings change */
 .hero-reading .reading__label,
 .hero-reading .reading__note { line-height: 1.45; min-height: 2.9em; }
@@ -848,7 +824,6 @@ button.pill { border: 0; font-family: inherit; cursor: pointer; }
   max-width: 40ch;
 }
 .reading figcaption strong { color: var(--bone); font-weight: 600; }
-.reading .ticks { color: var(--bone); max-width: 520px; }
 .reading--1 { grid-column: 1 / 8; grid-row: 1 / 4; padding-right: 24px; align-content: center; }
 .readings .dm--xxl { --dm-h: clamp(72px, 9vw, 128px); }
 .readings .reading__live { min-height: calc(clamp(72px, 9vw, 128px) + 120px); align-content: start; }
@@ -1349,8 +1324,7 @@ button.pill { border: 0; font-family: inherit; cursor: pointer; }
   }
   .hero-reading .dm--xl { --dm-h: 30px; }
   .hero-reading .reading__label { font-size: 12px; min-height: 2.9em; }
-  .hero-reading .reading__note,
-  .hero-reading .ticks { display: none; }
+  .hero-reading .reading__note { display: none; }
   .hero-board {
     grid-column: 1; grid-row: 3;
     margin: 8px 0 48px;
