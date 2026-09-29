@@ -225,24 +225,13 @@
     updateDepth();
   }
 
-  /* ---------- Board: a row lights its span on the timeline and racks its key art into focus ---------- */
+  /* ---------- Board: a row lights its span on the timeline ---------- */
   const board = document.querySelector('[data-board]');
   if (board) {
     const span = board.querySelector('[data-span]');
-    const arts = [...document.querySelectorAll('.work__art img')];
     const START = 2017;
     const RANGE = 10;
-    const idle = arts.find((img) => img.dataset.art === 'admirals');
-    const showArt = (key) => {
-      arts.forEach((img) => {
-        img.classList.toggle('is-active', img.dataset.art === key);
-        img.classList.toggle('is-idle', !key && img === idle);
-      });
-    };
-    showArt(null);
-
     const activate = (row) => {
-      showArt(row.dataset.row);
       const from = Number.parseFloat(row.dataset.from);
       const to = Number.parseFloat(row.dataset.to);
       if (Number.isFinite(from) && Number.isFinite(to)) {
@@ -253,14 +242,10 @@
         span.classList.remove('is-on');
       }
     };
-    // At rest the board shows what is boarding now: Admirals' span lit, its art as the idle plane.
+    // At rest the board shows what is boarding now: Admirals' span lit.
     const nowRow = board.querySelector('.board-row[data-row="admirals"]');
     const reset = () => {
       if (nowRow) activate(nowRow);
-      arts.forEach((img) => {
-        img.classList.remove('is-active');
-        img.classList.toggle('is-idle', img === idle);
-      });
     };
     reset();
 

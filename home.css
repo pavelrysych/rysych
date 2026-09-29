@@ -649,31 +649,6 @@ button.pill { border: 0; font-family: inherit; cursor: pointer; }
   overflow: hidden;
   isolation: isolate;
 }
-.work__art { position: absolute; inset: 0; z-index: -1; }
-.work__art img {
-  position: absolute;
-  inset: -4%;
-  width: 108%;
-  height: 108%;
-  object-fit: cover;
-  opacity: 0;
-  filter: blur(26px) saturate(0.9);
-  transform: scale(1.04);
-  transition: opacity 900ms var(--ease), filter 900ms var(--ease), transform 1200ms var(--ease);
-}
-.work__art img.is-active {
-  opacity: 0.5;
-  filter: blur(3px) saturate(1);
-  transform: scale(1);
-}
-.work__art img.is-idle { opacity: 0.5; filter: blur(10px) saturate(0.95); transform: scale(1.02); }
-.work__art::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(180deg, var(--graphite) 0%, rgba(26, 25, 24, 0.35) 22%, rgba(26, 25, 24, 0.45) 55%, rgba(26, 25, 24, 0.85) 80%, var(--graphite) 100%);
-}
 
 .board { padding: 28px 28px 20px; }
 
