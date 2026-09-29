@@ -26,7 +26,12 @@
   /* eased seams: transparent to graphite with no visible start or end */
   --seam-to-graphite: linear-gradient(180deg, rgba(26, 25, 24, 0) 0%, rgba(26, 25, 24, 0.013) 8.1%, rgba(26, 25, 24, 0.049) 15.5%, rgba(26, 25, 24, 0.104) 22.5%, rgba(26, 25, 24, 0.175) 29%, rgba(26, 25, 24, 0.259) 35.3%, rgba(26, 25, 24, 0.352) 41.2%, rgba(26, 25, 24, 0.45) 47.1%, rgba(26, 25, 24, 0.55) 52.9%, rgba(26, 25, 24, 0.648) 58.8%, rgba(26, 25, 24, 0.741) 64.7%, rgba(26, 25, 24, 0.825) 71%, rgba(26, 25, 24, 0.896) 77.5%, rgba(26, 25, 24, 0.951) 84.5%, rgba(26, 25, 24, 0.987) 91.9%, var(--graphite) 100%);
   --seam-from-graphite: linear-gradient(0deg, rgba(26, 25, 24, 0) 0%, rgba(26, 25, 24, 0.013) 8.1%, rgba(26, 25, 24, 0.049) 15.5%, rgba(26, 25, 24, 0.104) 22.5%, rgba(26, 25, 24, 0.175) 29%, rgba(26, 25, 24, 0.259) 35.3%, rgba(26, 25, 24, 0.352) 41.2%, rgba(26, 25, 24, 0.45) 47.1%, rgba(26, 25, 24, 0.55) 52.9%, rgba(26, 25, 24, 0.648) 58.8%, rgba(26, 25, 24, 0.741) 64.7%, rgba(26, 25, 24, 0.825) 71%, rgba(26, 25, 24, 0.896) 77.5%, rgba(26, 25, 24, 0.951) 84.5%, rgba(26, 25, 24, 0.987) 91.9%, var(--graphite) 100%);
-  --seam-height: clamp(160px, 18vw, 300px);
+  --seam-height: clamp(110px, 11vw, 160px);
+  /* one rhythm between sections: content-to-content distance, however the boundary is drawn */
+  --section-gap: clamp(150px, 16vw, 232px);
+  --pad-smoke: calc(var(--seam-height) + 24px);
+  --pad-near-smoke: max(48px, calc(var(--section-gap) - var(--pad-smoke)));
+  --pad-half: calc(var(--section-gap) / 2);
 
   color-scheme: light;
 }
@@ -645,7 +650,7 @@ button.pill { border: 0; font-family: inherit; cursor: pointer; }
 /* ---------- Work board ---------- */
 
 .work {
-  padding: clamp(96px, 12vw, 160px) 0 clamp(96px, 10vw, 140px);
+  padding: var(--pad-near-smoke) 0 var(--pad-half);
   overflow: hidden;
   isolation: isolate;
 }
@@ -845,8 +850,7 @@ button.pill { border: 0; font-family: inherit; cursor: pointer; }
 /* ---------- Subskim: an Apple-style product hero ---------- */
 
 .subskim {
-  min-height: 100svh;
-  padding: clamp(110px, 12vw, 170px) 0 0;
+  padding: var(--pad-half) 0 0;
   overflow: hidden;
   isolation: isolate;
   text-align: center;
@@ -895,6 +899,10 @@ button.pill { border: 0; font-family: inherit; cursor: pointer; }
   to { transform: none; opacity: 1; }
 }
 
+/* a wide screen fills the viewport; a narrow one would leave air under the short screenshot */
+@media (min-width: 961px) { .subskim { min-height: 100svh; } }
+@media (max-width: 960px) { .ai { padding-top: var(--pad-half); } }
+
 /* ---------- Smoke sections ---------- */
 
 .smoke {
@@ -926,18 +934,18 @@ button.pill { border: 0; font-family: inherit; cursor: pointer; }
 .lead > * { position: relative; z-index: 1; }
 /* the band under AI reaches up into it, so the section never meets it on a hard edge */
 .lead::before {
-  top: -140px;
-  height: calc(var(--seam-height) + 140px);
+  top: calc(-1 * var(--pad-near-smoke));
+  height: calc(var(--seam-height) + var(--pad-near-smoke));
   background:
-    var(--seam-to-graphite) top / 100% 140px no-repeat,
-    var(--seam-from-graphite) bottom / 100% calc(100% - 140px) no-repeat;
+    var(--seam-to-graphite) top / 100% var(--pad-near-smoke) no-repeat,
+    var(--seam-from-graphite) bottom / 100% var(--seam-height) no-repeat;
 }
 
-.quotes { padding: clamp(150px, 16vw, 230px) 0; }
+.quotes { padding: var(--pad-smoke) 0; }
 
 /* directly under the hero: the studio smoke carries on, then settles into graphite */
 .quotes--after-hero {
-  padding-top: clamp(24px, 3vw, 48px);
+  padding-top: clamp(48px, 5vw, 72px);
   background: var(--smoke);
 }
 .quotes--after-hero::before { display: none; }
@@ -961,7 +969,8 @@ button.pill { border: 0; font-family: inherit; cursor: pointer; }
 /* ---------- AI console ---------- */
 
 .ai {
-  padding: clamp(96px, 11vw, 150px) 0;
+  /* the Subskim screen above fades out, so the gap is already half there */
+  padding: calc(var(--section-gap) / 3) 0 var(--pad-near-smoke);
   background:
     radial-gradient(60% 50% at 85% 20%, rgba(210, 69, 42, 0.14), rgba(210, 69, 42, 0) 70%),
     radial-gradient(70% 70% at 10% 90%, #33302d 0%, rgba(51, 48, 45, 0) 70%),
@@ -1075,7 +1084,7 @@ button.pill { border: 0; font-family: inherit; cursor: pointer; }
 
 /* ---------- Leadership + About ---------- */
 
-.lead { padding: clamp(160px, 16vw, 230px) 0; }
+.lead { padding: var(--pad-smoke) 0; }
 .lead__grid {
   display: grid;
   grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
@@ -1102,7 +1111,7 @@ button.pill { border: 0; font-family: inherit; cursor: pointer; }
 /* ---------- Contact ---------- */
 
 .contact {
-  padding: clamp(110px, 13vw, 180px) 0 40px;
+  padding: var(--pad-near-smoke) 0 40px;
   background:
     radial-gradient(40% 30% at 15% 50%, rgba(169, 168, 173, 0.18), rgba(169, 168, 173, 0) 70%),
     var(--graphite);
