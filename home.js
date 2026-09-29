@@ -54,8 +54,9 @@
 
   const drawDotMatrix = (el) => {
     const text = el.textContent.trim().toUpperCase();
-    const chars = [...text].filter((ch) => GLYPHS[ch]);
-    if (!chars.length) return;
+    const chars = [...text];
+    // Only draw text the dot font can spell in full; anything else stays as set type.
+    if (!chars.length || chars.some((ch) => !GLYPHS[ch])) return;
 
     const svg = document.createElementNS(SVG_NS, 'svg');
     svg.setAttribute('aria-hidden', 'true');
@@ -89,6 +90,11 @@
     return count;
   };
 
+  // Case outcomes become LED readings when their characters allow it.
+  document.querySelectorAll('.case-impact__value:not(.case-impact__value--text)').forEach((el) => {
+    el.classList.add('dm');
+    el.setAttribute('data-dm', '');
+  });
   const matrices = [...document.querySelectorAll('[data-dm]')];
   matrices.forEach(drawDotMatrix);
 
