@@ -182,7 +182,12 @@
           return b;
         });
       }
-      buttons.forEach((b, i) => b.addEventListener('click', () => { chosen = true; window.clearTimeout(timer); show(i); }));
+      // Like the departures board: pointing at a result shows it; a tap or keyboard focus picks it too.
+      buttons.forEach((b, i) => {
+        b.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse' && i !== index) show(i); });
+        b.addEventListener('focus', () => { if (i !== index) show(i); });
+        b.addEventListener('click', () => { chosen = true; window.clearTimeout(timer); if (i !== index) show(i); });
+      });
       pager.hidden = false;
       if (!inView) {
         new IntersectionObserver(([entry]) => {
