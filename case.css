@@ -120,7 +120,6 @@
 .case-impact__grid > div {
   min-width: 0;
   padding-top: 16px;
-  border-top: 1px solid var(--line-dark);
 }
 .case-impact dt { margin: 0 0 12px; font-size: 13px; font-weight: 500; color: var(--fog); }
 .case-impact dd { margin: 0; }
@@ -142,7 +141,6 @@
 .case-impact__context {
   margin: 20px 0 0;
   padding-top: 16px;
-  border-top: 1px solid var(--line-dark);
   font-size: 14px;
   line-height: 1.6;
   color: var(--fog);
@@ -209,8 +207,6 @@
   gap: 24px;
   margin: 56px 0 0;
   padding: 22px 0;
-  border-top: 1px solid rgba(237, 235, 231, 0.22);
-  border-bottom: 1px solid var(--line-dark);
 }
 .case-facts > div { min-width: 0; }
 .case-facts dt { margin: 0 0 6px; font-size: 13px; font-weight: 600; color: var(--fog); }
@@ -229,7 +225,6 @@
   gap: 24px 56px;
   margin: 0;
   padding: clamp(40px, 5vw, 64px) 0;
-  border-top: 1px solid var(--line-dark);
 }
 .case-section__aside {
   margin: 8px 0 0;
@@ -331,7 +326,7 @@
 .case-social-comparison__item img { display: block; width: 100%; height: auto; border-radius: 14px; }
 
 /* Audience table in a glass slab */
-.case-audiences { margin: 0; padding: clamp(40px, 5vw, 64px) 0; border-top: 1px solid var(--line-dark); }
+.case-audiences { margin: 0; padding: clamp(40px, 5vw, 64px) 0; }
 .case-audiences__intro {
   display: grid;
   grid-template-columns: 220px minmax(0, 1fr);
@@ -346,9 +341,9 @@
   overflow: hidden;
 }
 .case-audience-table { width: 100%; border-collapse: collapse; table-layout: fixed; text-align: left; }
-.case-audience-table caption { padding: 18px 24px; text-align: left; font-size: 14px; color: var(--fog); border-bottom: 1px solid var(--line-dark); }
+.case-audience-table caption { padding: 18px 24px; text-align: left; font-size: 14px; color: var(--fog); }
 .case-audience-table th,
-.case-audience-table td { padding: 22px 24px; vertical-align: top; font-size: 15px; line-height: 1.6; border-bottom: 1px solid var(--line-dark); }
+.case-audience-table td { padding: 22px 24px; vertical-align: top; font-size: 15px; line-height: 1.6; }
 .case-audience-table thead th { padding-block: 14px; font-size: 13px; font-weight: 600; color: var(--fog); background: rgba(255, 255, 255, 0.03); }
 .case-audience-table thead th:first-child { width: 26%; }
 .case-audience-table tbody th { font-size: 18px; font-weight: 600; color: var(--bone); }
@@ -359,7 +354,7 @@
 .case-audience-table tr:last-child td { border-bottom: 0; }
 
 /* Mechanism ventures: planes on hairlines, screens in glass */
-.mechanism-products { margin: 0; padding: clamp(40px, 5vw, 64px) 0; border-top: 1px solid var(--line-dark); }
+.mechanism-products { margin: 0; padding: clamp(40px, 5vw, 64px) 0; }
 .mechanism-products__heading { margin-bottom: 32px; }
 .mechanism-products__heading .eyebrow { display: none; }
 .mechanism-products__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px 40px; }
@@ -407,7 +402,7 @@
 .fundraise-form-comparison { padding: clamp(24px, 3.5vw, 48px); }
 .fundraise-form-comparison h2 { font-family: var(--font); font-weight: 300; letter-spacing: -0.025em; color: var(--bone); }
 .fundraise-form-comparison p:not(.eyebrow) { font-size: 16px; line-height: 1.7; color: var(--fog); }
-.fundraise-form-comparison p.fundraise-form-comparison__note { font-size: 14px; border-top-color: var(--line-dark); }
+.fundraise-form-comparison p.fundraise-form-comparison__note { font-size: 14px; border-top: 0; padding-top: 0; }
 /* the long-form illustration stays a real, readable form */
 .fundraise-longform { border-radius: 14px; color: #2b2b2b; }
 .fundraise-longform__header > span { font-size: 22px; color: #1f1f1f; }
@@ -444,7 +439,6 @@
 
 .case-quotes {
   padding: clamp(40px, 5vw, 64px) 0;
-  border-top: 1px solid var(--line-dark);
 }
 .case-quotes__title {
   margin: 0 0 32px;
@@ -568,7 +562,7 @@
   /* wide desktop screenshots are cropped to the part that matters, at a readable scale */
   #subskim-calendar .case-hero__image { aspect-ratio: 4 / 5; object-fit: cover; object-position: 0 0; }
   .case-page--metamap .case-figure > img { aspect-ratio: 1; object-fit: cover; object-position: 35% 0; }
-  .fundraise-form-comparison { padding-top: 40px; border-top: 1px solid var(--line-dark); }
+
   .fundraise-motion-grid { grid-template-columns: minmax(0, 1fr); }
   .case-quotes__grid, .case-quotes__grid--two { grid-template-columns: minmax(0, 1fr); gap: 28px; }
 }

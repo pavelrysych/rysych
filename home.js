@@ -52,7 +52,7 @@
     '/': ['00001', '00010', '00010', '00100', '01000', '01000', '10000'],
     '.': ['00', '00', '00', '00', '00', '11', '11'],
     ':': ['0', '0', '1', '0', '1', '0', '0'],
-    ' ': ['000', '000', '000', '000', '000', '000', '000'],
+    ' ': ['00', '00', '00', '00', '00', '00', '00'],
   };
   const SVG_NS = 'http://www.w3.org/2000/svg';
 
@@ -69,11 +69,19 @@
     let count = 0;
     chars.forEach((ch, index) => {
       const rows = GLYPHS[ch];
+      // proportional: a glyph takes only the columns it lights, so an arrow or a 1 sits as close as any letter
+      let left = 0;
+      let right = rows[0].length - 1;
+      if (ch !== ' ') {
+        const lit = (c) => rows.some((row) => row[c] === '1');
+        while (left < right && !lit(left)) left += 1;
+        while (right > left && !lit(right)) right -= 1;
+      }
       rows.forEach((row, y) => {
         [...row].forEach((bit, cx) => {
           if (bit !== '1') return;
           const dot = document.createElementNS(SVG_NS, 'circle');
-          dot.setAttribute('cx', x + cx + 0.5);
+          dot.setAttribute('cx', x + cx - left + 0.5);
           dot.setAttribute('cy', y + 0.5);
           dot.setAttribute('r', 0.4);
           dot.style.setProperty('--d', `${Math.round(Math.random() * 520)}ms`);
@@ -81,7 +89,7 @@
           count += 1;
         });
       });
-      x += rows[0].length + (index < chars.length - 1 ? 1 : 0);
+      x += right - left + 1 + (index < chars.length - 1 ? 1 : 0);
     });
     svg.setAttribute('viewBox', `0 0 ${x} 7`);
 
