@@ -884,11 +884,9 @@ button.pill { border: 0; font-family: inherit; cursor: pointer; }
 .subskim::before { top: 0; background: var(--seam-from-graphite); }
 .subskim::after { bottom: 0; background: var(--seam-to-graphite); }
 .subskim__intro { display: grid; justify-items: center; }
-.subskim h2 {
-  font-size: clamp(4rem, 11vw, 9rem);
-  line-height: 0.95;
-  letter-spacing: -0.045em;
-}
+/* the product's own logo (mark + wordmark, from subskim.com) stands in for a set title */
+.subskim__logo { margin: 0; line-height: 0; }
+.subskim__logo img { width: clamp(260px, 42vw, 600px); height: auto; }
 .subskim__tagline {
   margin-top: 24px;
   max-width: 40ch;
