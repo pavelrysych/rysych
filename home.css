@@ -1434,21 +1434,13 @@ button.pill { border: 0; font-family: inherit; cursor: pointer; }
   .readings .dm--xxl { --dm-h: min(72px, calc((100vw - 2 * var(--gutter)) * 0.18)); }
   /* years and status share one line down to 360 */
   .board-row .dm--row { --dm-h: 16px; }
-  /* the Subskim screen is cropped to its totals and first columns at a readable scale */
-  .subskim__stage {
-    aspect-ratio: 1 / 1;
-    overflow: hidden;
-    border-radius: 16px;
-    -webkit-mask-image: linear-gradient(180deg, #000 60%, transparent 100%);
-    mask-image: linear-gradient(180deg, #000 60%, transparent 100%);
-  }
+  /* phones get the app's own phone screen, fading into the black at the bottom */
+  .subskim__stage { width: min(calc(100% - 2 * var(--gutter)), 420px); }
   .subskim__stage img {
-    width: 295%;
-    max-width: none;
     border-radius: 0;
     box-shadow: none;
-    -webkit-mask-image: none;
-    mask-image: none;
+    -webkit-mask-image: linear-gradient(180deg, #000 70%, transparent 100%);
+    mask-image: linear-gradient(180deg, #000 70%, transparent 100%);
   }
   .destinations { flex-direction: column; align-items: flex-start; gap: 18px; }
   .destinations__group { flex-direction: column; align-items: flex-start; gap: 10px; }

@@ -583,6 +583,8 @@
 
 @media (max-width: 560px) {
   .case-hero--fundraise .case-hero__image { aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 50%; }
+  /* phones show Subskim's own phone screen whole, not a crop of the desktop calendar */
+  #subskim-calendar .case-hero__image { aspect-ratio: auto; object-fit: fill; }
 
   /* phones: screenshots run edge to edge, captions keep the gutter */
   .case-product-stage,
