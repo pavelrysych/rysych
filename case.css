@@ -81,8 +81,14 @@
   letter-spacing: -0.04em;
 }
 /* Subskim's case opens with the product's own logo (the black mark + wordmark from subskim.com) */
-.case-hero__logo { line-height: 0; }
-.case-hero__logo img { width: clamp(200px, 26vw, 380px); height: auto; }
+/* cases open with the company's own logo; each logo is scaled so the lettering reads at one optical size */
+.case-hero__logo,
+.case-next__logo { line-height: 0; }
+.logo { display: block; width: auto; max-width: 100%; height: calc(var(--logo-h) * var(--logo-scale, 1)); }
+.case-hero__logo .logo { --logo-h: clamp(44px, 5.8vw, 84px); }
+.case-next__logo .logo { --logo-h: clamp(40px, 5.2vw, 76px); }
+.logo--admirals { --logo-scale: 0.56; }
+.logo--mechanism { --logo-scale: 0.95; }
 .case-hero__deck {
   max-width: 34ch;
   font-size: clamp(1.125rem, 1.6vw, 1.375rem);
@@ -494,8 +500,7 @@
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16);
 }
 .case-next h2 { margin: 0; font-size: clamp(3rem, 7vw, 5.5rem); line-height: 1; letter-spacing: -0.04em; }
-.case-next__logo { line-height: 0; }
-.case-next__logo img { width: clamp(200px, 24vw, 340px); height: auto; }
+
 .case-next__actions { display: flex; flex-wrap: wrap; gap: 12px; }
 .case-footer { width: 100%; max-width: calc(var(--max) - 2 * var(--gutter)); margin: 48px auto 0; }
 .case-next__actions .text-link:first-child {
