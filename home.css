@@ -975,7 +975,7 @@ button.pill { border: 0; font-family: inherit; cursor: pointer; }
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 48px;
 }
-.quote { margin: 0; display: grid; align-content: space-between; gap: 24px; padding-top: 24px; border-top: 1px solid var(--line-light); }
+.quote { margin: 0; display: grid; align-content: space-between; gap: 24px; }
 .quote blockquote { margin: 0; }
 .quote p { font-size: 19px; line-height: 1.55; }
 .quote figcaption { display: grid; font-size: 15px; font-weight: 600; }
