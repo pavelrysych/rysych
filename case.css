@@ -465,6 +465,41 @@
   .fundraise-form-comparison__copy { position: sticky; top: 112px; }
 }
 
+/* ---------- Customer quotes ---------- */
+
+.case-quotes {
+  padding: clamp(40px, 5vw, 64px) 0;
+  border-top: 1px solid var(--line-dark);
+}
+.case-quotes__title {
+  margin: 0 0 32px;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--bone);
+}
+.case-quotes__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 40px;
+}
+.case-quotes__grid--two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.case-quote {
+  margin: 0;
+  display: grid;
+  align-content: space-between;
+  gap: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(237, 235, 231, 0.22);
+}
+.case-quote blockquote { margin: 0; }
+.case-quote blockquote p { margin: 0; font-size: 19px; line-height: 1.55; color: var(--bone); }
+.case-quote__translation { margin: -8px 0 0; font-size: 15px; line-height: 1.5; color: var(--fog); }
+.case-quote figcaption { display: grid; font-size: 15px; font-weight: 600; color: var(--bone); }
+.case-quote figcaption span { font-weight: 400; font-size: 14px; color: var(--fog); }
+.case-quotes__source { margin: 28px 0 0; font-size: 14px; color: var(--fog); }
+.case-quotes__source a { color: var(--bone); text-decoration-color: var(--oxide-led); text-underline-offset: 4px; }
+
 /* ---------- Next case ---------- */
 
 .case-next { padding: 0 0 48px; }
@@ -536,4 +571,5 @@
   .case-value-shift { padding: 16px; gap: 12px; }
   .case-next__inner { flex-direction: column; align-items: flex-start; }
   .fundraise-motion-grid { grid-template-columns: minmax(0, 1fr); }
+  .case-quotes__grid, .case-quotes__grid--two { grid-template-columns: minmax(0, 1fr); gap: 28px; }
 }
