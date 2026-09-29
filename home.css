@@ -886,7 +886,7 @@ button.pill { border: 0; font-family: inherit; cursor: pointer; }
 .subskim__intro { display: grid; justify-items: center; }
 /* the product's own logo (mark + wordmark, from subskim.com) stands in for a set title */
 .subskim__logo { margin: 0; line-height: 0; }
-.subskim__logo img { width: clamp(260px, 42vw, 600px); height: auto; }
+.subskim__logo img { width: clamp(200px, 26vw, 380px); height: auto; }
 .subskim__tagline {
   margin-top: 24px;
   max-width: 40ch;

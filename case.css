@@ -80,6 +80,9 @@
   font-weight: 300;
   letter-spacing: -0.04em;
 }
+/* Subskim's case opens with the product's own logo (the black mark + wordmark from subskim.com) */
+.case-hero__logo { line-height: 0; }
+.case-hero__logo img { width: clamp(200px, 26vw, 380px); height: auto; }
 .case-hero__deck {
   max-width: 34ch;
   font-size: clamp(1.125rem, 1.6vw, 1.375rem);
