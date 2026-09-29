@@ -594,19 +594,26 @@ button.pill { border: 0; font-family: inherit; cursor: pointer; }
 
 .section-head {
   display: grid;
-  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
-  gap: 24px 48px;
-  align-items: end;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 24px 64px;
+  align-items: start;
   margin-bottom: 48px;
 }
 .section-head h2 {
   font-size: clamp(2.5rem, 5vw, 4.5rem);
   line-height: 1.02;
 }
-.section-head p {
-  font-size: 17px;
-  color: var(--fog);
-  max-width: 44ch;
+.section-head p { color: var(--fog); }
+
+/* one subtitle style for every section: same size, measure and top alignment */
+.section-head p,
+.lead__intro,
+.about__copy p:first-child {
+  margin: 0;
+  font-size: clamp(1.25rem, 1.8vw, 1.5rem);
+  line-height: 1.45;
+  font-weight: 400;
+  max-width: 40ch;
 }
 
 /* ---------- Work board ---------- */
@@ -1064,8 +1071,8 @@ button.pill { border: 0; font-family: inherit; cursor: pointer; }
   gap: 32px 64px;
   align-items: start;
 }
-.lead h2 { font-size: clamp(2.5rem, 4.6vw, 4.25rem); line-height: 1.04; max-width: 9ch; }
-.lead__intro { font-size: clamp(1.25rem, 1.8vw, 1.5rem); line-height: 1.45; font-weight: 400; max-width: 34ch; }
+.lead h2 { font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.02; max-width: 9ch; }
+
 .principles { margin: 40px 0 0; display: grid; }
 .principles div {
   display: grid;
@@ -1079,7 +1086,7 @@ button.pill { border: 0; font-family: inherit; cursor: pointer; }
 
 .about { margin-top: clamp(96px, 10vw, 140px); }
 .about__copy { display: grid; gap: 20px; font-size: 18px; color: var(--ink-2); max-width: 62ch; }
-.about__copy p:first-child { font-size: clamp(1.25rem, 1.8vw, 1.5rem); line-height: 1.45; color: var(--ink); }
+.about__copy p:first-child { color: var(--ink); }
 
 /* ---------- Contact ---------- */
 
@@ -1091,9 +1098,9 @@ button.pill { border: 0; font-family: inherit; cursor: pointer; }
     var(--graphite);
   overflow: hidden;
 }
-.contact h2 { font-size: clamp(3rem, 7.5vw, 6rem); line-height: 1; max-width: 12ch; }
+.contact h2 { max-width: 12ch; }
 .contact__head { margin-bottom: 0; }
-.contact__lede { margin-top: 0; font-size: 19px; color: var(--fog); max-width: 44ch; padding-bottom: 10px; }
+
 
 .destinations {
   display: flex;
