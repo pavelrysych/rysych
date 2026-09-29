@@ -822,7 +822,9 @@ button.pill { border: 0; font-family: inherit; cursor: pointer; }
   color: var(--fog);
   max-width: 40ch;
 }
-.reading figcaption strong { color: var(--bone); font-weight: 600; }
+/* the result's name reads as a title, its explanation as the line under it */
+.reading figcaption strong { display: block; font-size: 17px; color: var(--bone); font-weight: 600; }
+.reading figcaption [data-r-note] { display: block; margin-top: 4px; }
 .reading--1 { grid-column: 1 / 8; grid-row: 1 / 4; padding-right: 24px; align-content: center; }
 .readings .dm--xxl { --dm-h: clamp(72px, 9vw, 128px); }
 .readings .reading__live { min-height: calc(clamp(72px, 9vw, 128px) + 120px); align-content: start; }
