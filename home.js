@@ -121,6 +121,72 @@
     });
   }
 
+  /* ---------- Hero reading: cycles through confirmed results; pauses on hover, focus or choice ---------- */
+  const readingTile = document.querySelector('[data-readings]');
+  if (readingTile) {
+    let readings = [];
+    try { readings = JSON.parse(readingTile.dataset.readings); } catch { readings = []; }
+    const live = readingTile.querySelector('.reading__live');
+    const label = live.querySelector('.reading__label');
+    const value = live.querySelector('[data-dm]');
+    const marker = live.querySelector('.ticks i');
+    const note = live.querySelector('.reading__note');
+    const pager = readingTile.querySelector('.reading__pager');
+    let index = 0;
+    let timer = null;
+    let held = false;
+    let chosen = false;
+
+    const show = (next) => {
+      index = (next + readings.length) % readings.length;
+      const r = readings[index];
+      label.textContent = r.label;
+      note.textContent = r.note;
+      marker.style.setProperty('--at', `${r.at}%`);
+      value.classList.remove('is-drawn', 'is-lit', 'is-arming');
+      value.textContent = r.value;
+      drawDotMatrix(value);
+      if (!reduceMotion.matches) {
+        void value.offsetWidth;
+        value.classList.add('is-lit');
+      }
+      pager.querySelectorAll('button').forEach((b, i) => b.setAttribute('aria-pressed', String(i === index)));
+    };
+
+    const schedule = () => {
+      window.clearTimeout(timer);
+      if (held || chosen || reduceMotion.matches || document.hidden || readings.length < 2) return;
+      timer = window.setTimeout(() => {
+        live.classList.add('is-swapping');
+        window.setTimeout(() => {
+          show(index + 1);
+          live.classList.remove('is-swapping');
+          schedule();
+        }, 260);
+      }, 4200);
+    };
+
+    if (readings.length > 1) {
+      readings.forEach((r, i) => {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'reading__dot';
+        b.setAttribute('aria-label', `${r.label}: ${r.value}`);
+        b.setAttribute('aria-pressed', String(i === 0));
+        b.addEventListener('click', () => { chosen = true; window.clearTimeout(timer); show(i); });
+        pager.append(b);
+      });
+      pager.hidden = false;
+      readingTile.addEventListener('pointerenter', () => { held = true; window.clearTimeout(timer); });
+      readingTile.addEventListener('pointerleave', () => { held = false; schedule(); });
+      readingTile.addEventListener('focusin', () => { held = true; window.clearTimeout(timer); });
+      readingTile.addEventListener('focusout', (e) => { if (!readingTile.contains(e.relatedTarget)) { held = false; schedule(); } });
+      document.addEventListener('visibilitychange', schedule);
+      reduceMotion.addEventListener('change', schedule);
+      schedule();
+    }
+  }
+
   /* ---------- Hero depth: glass planes drift apart and the portrait racks out of focus ---------- */
   const hero = document.querySelector('.hero');
   if (hero) {

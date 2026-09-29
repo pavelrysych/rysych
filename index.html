@@ -18,9 +18,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="preload" href="/assets/minimal-hero-film-v1-poster.jpg" as="image" fetchpriority="high">
-    <link rel="stylesheet" href="/home.css?v=2">
+    <link rel="stylesheet" href="/home.css?v=3">
     <script src="/site.js?v=13" defer></script>
-    <script src="/home.js?v=4" defer></script>
+    <script src="/home.js?v=5" defer></script>
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="Pavel Rysych">
@@ -75,11 +75,21 @@
             <span class="visually-hidden" id="portrait-instructions">Move your mouse horizontally or drag across the portrait to turn it. With the portrait focused, use the left and right arrow keys, Home or End. The portrait stays still when reduced motion is enabled.</span>
           </div>
 
-          <aside class="glass hero-reading" aria-label="Headline result">
-            <span class="reading__label">Customer acquisition cost · Admirals</span>
-            <span class="dm dm--xl" data-dm>−67%</span>
-            <span class="ticks" aria-hidden="true"><i style="--at:33%"></i></span>
-            <span class="reading__note">Two-thirds lower after customer journey improvements</span>
+          <aside class="glass hero-reading" aria-label="Results" data-readings='[
+            {"label":"Customer acquisition cost · Admirals","value":"−67%","at":33,"note":"Two-thirds lower after customer journey improvements"},
+            {"label":"Click-through rate · Admirals","value":"×3","at":100,"note":"Tripled by the web redesign"},
+            {"label":"Widget conversion · Fundraise Up","value":"×2.8","at":93,"note":"Through a checkout that asks one question at a time"},
+            {"label":"Onboarding conversion · Pettable","value":"+28%","at":28,"note":"Within three months, at Mechanism"},
+            {"label":"Verification checks · MetaMap","value":"2 → 15+","at":100,"note":"Kept understandable through a product pivot"},
+            {"label":"Portfolio revenue · Mechanism","value":"$300M+","at":100,"note":"Driven by the Mechanism Ventures portfolio"}
+          ]'>
+            <div class="reading__live" aria-live="off">
+              <span class="reading__label">Customer acquisition cost · Admirals</span>
+              <span class="dm dm--xl" data-dm>−67%</span>
+              <span class="ticks" aria-hidden="true"><i style="--at:33%"></i></span>
+              <span class="reading__note">Two-thirds lower after customer journey improvements</span>
+            </div>
+            <div class="reading__pager" role="group" aria-label="Choose a result" hidden></div>
           </aside>
 
           <aside class="glass hero-board" aria-label="Career at a glance">
