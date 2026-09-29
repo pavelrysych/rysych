@@ -769,6 +769,41 @@ p { margin: 0; text-wrap: pretty; }
 .reading figcaption strong { color: var(--bone); font-weight: 600; }
 .reading .ticks { color: var(--bone); max-width: 520px; }
 .reading--1 { grid-column: 1 / 8; grid-row: 1 / 4; padding-right: 24px; align-content: center; }
+.readings .dm--xxl { --dm-h: clamp(72px, 9vw, 128px); }
+.readings .reading__live { min-height: calc(clamp(72px, 9vw, 128px) + 120px); align-content: start; }
+
+/* the index of results: pick one, or watch the lead reading cycle through them */
+.readings__list {
+  grid-column: 8 / 13;
+  grid-row: 1 / 4;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line-dark);
+}
+.readings__item {
+  display: grid;
+  grid-template-columns: 116px minmax(0, 1fr);
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 14px 12px;
+  border: 0;
+  border-bottom: 1px solid var(--line-dark);
+  border-radius: 0;
+  background: transparent;
+  color: var(--fog);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 300ms var(--ease), color 300ms var(--ease);
+}
+.readings__item .dm { color: var(--fog); }
+.readings__item:hover { background: rgba(255, 255, 255, 0.04); color: var(--bone); }
+.readings__item[aria-pressed="true"] { background: rgba(255, 255, 255, 0.06); color: var(--bone); }
+.readings__item[aria-pressed="true"] .dm { color: var(--bone); }
+.readings__name { display: grid; font-size: 15px; font-weight: 600; line-height: 1.35; }
+.readings__name span { font-size: 13px; font-weight: 400; color: var(--fog); }
 .reading--2 { grid-column: 8 / 13; }
 .reading--3 { grid-column: 8 / 13; }
 .reading--4 { grid-column: 8 / 13; }
@@ -1038,6 +1073,12 @@ p { margin: 0; text-wrap: pretty; }
   align-items: center;
 }
 .destinations li { display: inline-flex; align-items: center; gap: 10px; }
+.destinations { gap: 16px 48px; }
+.destinations__group { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; }
+.destinations__group + .destinations__group { padding-left: 48px; border-left: 1px solid var(--line-dark); }
+@media (max-width: 760px) {
+  .destinations__group + .destinations__group { padding-left: 0; border-left: 0; }
+}
 .destinations__note { margin-left: auto; font-size: 14px; color: var(--fog); }
 
 .contact__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 40px; }
@@ -1130,6 +1171,8 @@ p { margin: 0; text-wrap: pretty; }
 
   .readings { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
   .reading--1 { grid-column: 1 / 3; grid-row: auto; padding-right: 0; }
+  .readings__list { grid-column: 1 / 3; grid-row: auto; }
+  .readings__item { grid-template-columns: 96px minmax(0, 1fr); padding: 12px 6px; }
   .reading--2 { grid-column: 1 / 3; }
   .reading--3 { grid-column: 1; }
   .reading--4 { grid-column: 2; }

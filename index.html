@@ -18,9 +18,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="preload" href="/assets/minimal-hero-film-v1-poster.jpg" as="image" fetchpriority="high">
-    <link rel="stylesheet" href="/home.css?v=3">
+    <link rel="stylesheet" href="/home.css?v=4">
     <script src="/site.js?v=13" defer></script>
-    <script src="/home.js?v=5" defer></script>
+    <script src="/home.js?v=6" defer></script>
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="Pavel Rysych">
@@ -84,12 +84,12 @@
             {"label":"Portfolio revenue · Mechanism","value":"$300M+","at":100,"note":"Driven by the Mechanism Ventures portfolio"}
           ]'>
             <div class="reading__live" aria-live="off">
-              <span class="reading__label">Customer acquisition cost · Admirals</span>
-              <span class="dm dm--xl" data-dm>−67%</span>
-              <span class="ticks" aria-hidden="true"><i style="--at:33%"></i></span>
-              <span class="reading__note">Two-thirds lower after customer journey improvements</span>
+              <span class="reading__label" data-r-label>Customer acquisition cost · Admirals</span>
+              <span class="dm dm--xl" data-dm data-r-value>−67%</span>
+              <span class="ticks" aria-hidden="true"><i data-r-marker style="--at:33%"></i></span>
+              <span class="reading__note" data-r-note>Two-thirds lower after customer journey improvements</span>
             </div>
-            <div class="reading__pager" role="group" aria-label="Choose a result" hidden></div>
+            <div class="reading__pager" data-r-pager role="group" aria-label="Choose a result" hidden></div>
           </aside>
 
           <aside class="glass hero-board" aria-label="Career at a glance">
@@ -190,27 +190,29 @@
             </div>
           </div>
 
-          <div class="readings" aria-label="Results">
+          <div class="readings" aria-label="Results" data-readings='[
+            {"label":"Customer acquisition cost, Admirals.","value":"−67%","at":33,"note":"Customer journey improvements contributed to a two-thirds reduction."},
+            {"label":"Click-through rate, Admirals.","value":"×3","at":100,"note":"The web redesign tripled it."},
+            {"label":"Widget conversion, Fundraise Up.","value":"×2.8","at":93,"note":"Through a checkout that asks one question at a time."},
+            {"label":"Onboarding conversion, Pettable.","value":"+28%","at":28,"note":"Within three months, at Mechanism."},
+            {"label":"Verification checks, MetaMap.","value":"2 → 15+","at":100,"note":"Expanded through a product pivot, kept understandable."},
+            {"label":"Portfolio revenue, Mechanism Ventures.","value":"$300M+","at":100,"note":"For context, not credit."}
+          ]'>
             <figure class="reading reading--1">
-              <span class="dm dm--xxl dm--hot" data-dm>−67%</span>
-              <span class="ticks" aria-hidden="true"><i style="--at:33%"></i></span>
-              <figcaption><strong>Customer acquisition cost, Admirals.</strong> Customer journey improvements contributed to a two-thirds reduction.</figcaption>
+              <div class="reading__live" aria-live="off">
+                <span class="dm dm--xxl dm--hot" data-dm data-r-value>−67%</span>
+                <span class="ticks" aria-hidden="true"><i data-r-marker style="--at:33%"></i></span>
+                <figcaption><strong data-r-label>Customer acquisition cost, Admirals.</strong> <span data-r-note>Customer journey improvements contributed to a two-thirds reduction.</span></figcaption>
+              </div>
             </figure>
-            <figure class="reading reading--2">
-              <span class="dm dm--xl" data-dm>×3</span>
-              <span class="ticks" aria-hidden="true"><i style="--at:100%"></i></span>
-              <figcaption><strong>Click-through rate, Admirals.</strong> The web redesign tripled it.</figcaption>
-            </figure>
-            <figure class="reading reading--3">
-              <span class="dm dm--lg" data-dm>×2.8</span>
-              <span class="ticks" aria-hidden="true"><i style="--at:93%"></i></span>
-              <figcaption><strong>Widget conversion, Fundraise Up.</strong></figcaption>
-            </figure>
-            <figure class="reading reading--4">
-              <span class="dm dm--md" data-dm>$300M+</span>
-              <span class="ticks" aria-hidden="true"></span>
-              <figcaption><strong>Revenue driven by the Mechanism Ventures portfolio.</strong></figcaption>
-            </figure>
+            <ol class="readings__list" data-r-pager aria-label="Choose a result">
+              <li><button type="button" class="readings__item" aria-pressed="true"><span class="dm dm--row" data-dm>−67%</span><span class="readings__name">Customer acquisition cost<span>Admirals</span></span></button></li>
+              <li><button type="button" class="readings__item" aria-pressed="false"><span class="dm dm--row" data-dm>×3</span><span class="readings__name">Click-through rate<span>Admirals</span></span></button></li>
+              <li><button type="button" class="readings__item" aria-pressed="false"><span class="dm dm--row" data-dm>×2.8</span><span class="readings__name">Widget conversion<span>Fundraise Up</span></span></button></li>
+              <li><button type="button" class="readings__item" aria-pressed="false"><span class="dm dm--row" data-dm>+28%</span><span class="readings__name">Onboarding conversion<span>Pettable</span></span></button></li>
+              <li><button type="button" class="readings__item" aria-pressed="false"><span class="dm dm--row" data-dm>2 → 15+</span><span class="readings__name">Verification checks<span>MetaMap</span></span></button></li>
+              <li><button type="button" class="readings__item" aria-pressed="false"><span class="dm dm--row" data-dm>$300M+</span><span class="readings__name">Portfolio revenue<span>Mechanism Ventures</span></span></button></li>
+            </ol>
           </div>
         </div>
       </section>
@@ -354,15 +356,21 @@
           <p class="contact__lede">I'm interested in Head of Design and Director of Product Design roles with startups and established product companies. If you're building a product or developing a design team, I'd be glad to talk.</p>
 
           <div class="glass glass--dark destinations" aria-label="Where I can work">
-            <span class="destinations__label">Next destination</span>
-            <ul>
-              <li><span class="led led--on" aria-hidden="true"></span><span class="dm dm--row dm--hot" data-dm>REMOTE</span></li>
-              <li><span class="dm dm--row" data-dm>SINGAPORE</span></li>
-              <li><span class="dm dm--row" data-dm>DUBAI</span></li>
-              <li><span class="dm dm--row" data-dm>LONDON</span></li>
-              <li><span class="dm dm--row" data-dm>USA</span></li>
-            </ul>
-            <span class="destinations__note">Remote-first, open to relocation</span>
+            <div class="destinations__group">
+              <span class="destinations__label">Open to</span>
+              <ul>
+                <li><span class="led led--on" aria-hidden="true"></span><span class="dm dm--row dm--hot" data-dm>REMOTE</span></li>
+              </ul>
+            </div>
+            <div class="destinations__group">
+              <span class="destinations__label">Relocate to</span>
+              <ul>
+                <li><span class="dm dm--row" data-dm>SINGAPORE</span></li>
+                <li><span class="dm dm--row" data-dm>DUBAI</span></li>
+                <li><span class="dm dm--row" data-dm>LONDON</span></li>
+                <li><span class="dm dm--row" data-dm>USA</span></li>
+              </ul>
+            </div>
           </div>
 
           <div class="contact__actions">

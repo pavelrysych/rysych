@@ -121,28 +121,29 @@
     });
   }
 
-  /* ---------- Hero reading: cycles through confirmed results; pauses on hover, focus or choice ---------- */
-  const readingTile = document.querySelector('[data-readings]');
-  if (readingTile) {
+  /* ---------- Live readings: cycle through confirmed results; pause on hover, focus or choice ---------- */
+  document.querySelectorAll('[data-readings]').forEach((readingTile) => {
     let readings = [];
     try { readings = JSON.parse(readingTile.dataset.readings); } catch { readings = []; }
     const live = readingTile.querySelector('.reading__live');
-    const label = live.querySelector('.reading__label');
-    const value = live.querySelector('[data-dm]');
-    const marker = live.querySelector('.ticks i');
-    const note = live.querySelector('.reading__note');
-    const pager = readingTile.querySelector('.reading__pager');
+    const label = readingTile.querySelector('[data-r-label]');
+    const value = readingTile.querySelector('[data-r-value]');
+    const marker = readingTile.querySelector('[data-r-marker]');
+    const note = readingTile.querySelector('[data-r-note]');
+    const pager = readingTile.querySelector('[data-r-pager]');
+    if (!live || !value || !pager) return;
     let index = 0;
     let timer = null;
     let held = false;
     let chosen = false;
+    let inView = !('IntersectionObserver' in window);
 
     const show = (next) => {
       index = (next + readings.length) % readings.length;
       const r = readings[index];
-      label.textContent = r.label;
-      note.textContent = r.note;
-      marker.style.setProperty('--at', `${r.at}%`);
+      if (label) label.textContent = r.label;
+      if (note) note.textContent = r.note;
+      if (marker) marker.style.setProperty('--at', `${r.at}%`);
       value.classList.remove('is-drawn', 'is-lit', 'is-arming');
       value.textContent = r.value;
       drawDotMatrix(value);
@@ -155,7 +156,7 @@
 
     const schedule = () => {
       window.clearTimeout(timer);
-      if (held || chosen || reduceMotion.matches || document.hidden || readings.length < 2) return;
+      if (held || chosen || !inView || reduceMotion.matches || document.hidden || readings.length < 2) return;
       timer = window.setTimeout(() => {
         live.classList.add('is-swapping');
         window.setTimeout(() => {
@@ -167,16 +168,27 @@
     };
 
     if (readings.length > 1) {
-      readings.forEach((r, i) => {
-        const b = document.createElement('button');
-        b.type = 'button';
-        b.className = 'reading__dot';
-        b.setAttribute('aria-label', `${r.label}: ${r.value}`);
-        b.setAttribute('aria-pressed', String(i === 0));
-        b.addEventListener('click', () => { chosen = true; window.clearTimeout(timer); show(i); });
-        pager.append(b);
-      });
+      // A pager may ship its own buttons (the readings list) or get small leds built here.
+      let buttons = [...pager.querySelectorAll('button')];
+      if (!buttons.length) {
+        buttons = readings.map((r, i) => {
+          const b = document.createElement('button');
+          b.type = 'button';
+          b.className = 'reading__dot';
+          b.setAttribute('aria-label', `${r.label}: ${r.value}`);
+          b.setAttribute('aria-pressed', String(i === 0));
+          pager.append(b);
+          return b;
+        });
+      }
+      buttons.forEach((b, i) => b.addEventListener('click', () => { chosen = true; window.clearTimeout(timer); show(i); }));
       pager.hidden = false;
+      if (!inView) {
+        new IntersectionObserver(([entry]) => {
+          inView = entry.isIntersecting;
+          if (inView) schedule(); else window.clearTimeout(timer);
+        }, { threshold: 0.3 }).observe(readingTile);
+      }
       readingTile.addEventListener('pointerenter', () => { held = true; window.clearTimeout(timer); });
       readingTile.addEventListener('pointerleave', () => { held = false; schedule(); });
       readingTile.addEventListener('focusin', () => { held = true; window.clearTimeout(timer); });
@@ -185,7 +197,7 @@
       reduceMotion.addEventListener('change', schedule);
       schedule();
     }
-  }
+  });
 
   /* ---------- Hero depth: glass planes drift apart and the portrait racks out of focus ---------- */
   const hero = document.querySelector('.hero');
