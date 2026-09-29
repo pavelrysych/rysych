@@ -173,6 +173,10 @@
   overflow: hidden;
 }
 .case-film__video { display: block; width: 100%; height: auto; background: var(--graphite-2); color: var(--bone); }
+/* the Admirals screen recordings carry a 2px capture edge on the right: crop 4 source pixels off that side */
+#admirals-film .case-film__video,
+#admirals-account-film .case-film__video { aspect-ratio: 1436 / 912; object-fit: cover; object-position: 0 50%; }
+#admirals-signup-film .case-film__video { aspect-ratio: 1436 / 950; object-fit: cover; object-position: 0 50%; }
 .case-film-stage figcaption,
 .case-product-stage figcaption { margin: 16px 6px 2px; font-size: 14px; color: var(--fog); }
 .case-film-stage figcaption strong,
