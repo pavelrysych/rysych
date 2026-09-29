@@ -23,36 +23,20 @@ document.addEventListener('pointerdown', (event) => {
 // iOS only applies :active styles when a touch listener exists.
 document.addEventListener('touchstart', () => {}, { passive: true });
 
-// Phones: the header gains a frosted band once the page moves, slides away while reading down, returns on the way up.
+// Phones: the header gains a frosted band once the page moves, so text never runs under the pills.
+// It stays put: hiding it on scroll fought in-app browsers (Telegram) whose own bars collapse while scrolling.
 const siteHeader = document.querySelector('.site-header');
 if (siteHeader) {
-  const compact = window.matchMedia('(max-width: 960px)');
-  const headerMenu = siteHeader.querySelector('.mobile-nav');
-  let lastY = Math.max(window.scrollY, 0);
   let queued = false;
   const syncHeader = () => {
     queued = false;
-    const maxY = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
-    const y = Math.min(Math.max(window.scrollY, 0), maxY); // ignore iOS rubber-banding
-    siteHeader.classList.toggle('is-scrolled', y > 8);
-    if (!compact.matches || headerMenu?.open || y < 120) {
-      siteHeader.classList.remove('is-hidden');
-      lastY = y;
-      return;
-    }
-    if (Math.abs(y - lastY) < 12) return;
-    siteHeader.classList.toggle('is-hidden', y > lastY);
-    lastY = y;
+    siteHeader.classList.toggle('is-scrolled', window.scrollY > 8);
   };
   window.addEventListener('scroll', () => {
     if (queued) return;
     queued = true;
     window.requestAnimationFrame(syncHeader);
   }, { passive: true });
-  compact.addEventListener('change', syncHeader);
-  headerMenu?.addEventListener('toggle', () => {
-    if (headerMenu.open) siteHeader.classList.remove('is-hidden');
-  });
   syncHeader();
 }
 

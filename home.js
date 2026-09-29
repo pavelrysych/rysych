@@ -308,7 +308,7 @@
     });
   });
 
-  /* ---------- Quotes: one at a time; turns on its own, pauses while read, swipes on touch ---------- */
+  /* ---------- Quotes on phones: one at a time; turns on its own, pauses while read, swipes on touch ---------- */
   document.querySelectorAll('[data-carousel]').forEach((carousel) => {
     const track = carousel.querySelector('[data-carousel-track]');
     const slides = [...carousel.querySelectorAll('.quote')];
@@ -320,6 +320,7 @@
     let held = false;
     let chosen = false;
     let inView = !('IntersectionObserver' in window);
+    const phone = window.matchMedia('(max-width: 760px)');
 
     const dots = slides.map((slide, i) => {
       const b = document.createElement('button');
@@ -342,7 +343,7 @@
     };
     const schedule = () => {
       window.clearTimeout(timer);
-      if (held || chosen || !inView || reduceMotion.matches || document.hidden) return;
+      if (!phone.matches || held || chosen || !inView || reduceMotion.matches || document.hidden) return;
       timer = window.setTimeout(() => { show(index + 1); schedule(); }, 7000);
     };
     // a person's choice stops the rotation and is announced
@@ -353,9 +354,20 @@
       show(i);
     };
 
-    carousel.classList.add('is-live');
-    controls.hidden = false;
-    show(0);
+    // wide screens keep all three quotes side by side and fully readable by assistive tech
+    const sync = () => {
+      window.clearTimeout(timer);
+      carousel.classList.toggle('is-live', phone.matches);
+      controls.hidden = !phone.matches;
+      if (phone.matches) {
+        show(index);
+        schedule();
+      } else {
+        slides.forEach((s) => { s.classList.remove('is-active'); s.removeAttribute('aria-hidden'); });
+      }
+    };
+    phone.addEventListener('change', sync);
+    sync();
     carousel.querySelector('[data-carousel-prev]')?.addEventListener('click', () => pick(index - 1));
     carousel.querySelector('[data-carousel-next]')?.addEventListener('click', () => pick(index + 1));
     carousel.addEventListener('keydown', (e) => {
@@ -367,7 +379,7 @@
     let startX = null;
     let startY = 0;
     track.addEventListener('pointerdown', (e) => {
-      if (e.pointerType === 'mouse') return;
+      if (e.pointerType === 'mouse' || !phone.matches) return;
       startX = e.clientX;
       startY = e.clientY;
     });

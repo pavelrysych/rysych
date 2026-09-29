@@ -119,7 +119,9 @@ p { margin: 0; text-wrap: pretty; }
   transform: translateY(-160%);
   transition: transform 200ms var(--ease);
 }
-.skip-link:focus { transform: none; }
+/* shows only for keyboard focus; in-app browsers that focus the first link on load (Telegram) keep it hidden */
+.skip-link:focus-visible { transform: none; }
+@media (pointer: coarse) { .skip-link:focus-visible { transform: translateY(-160%); } }
 
 .page-width {
   width: 100%;
@@ -982,35 +984,13 @@ button.pill { border: 0; font-family: inherit; cursor: pointer; }
     radial-gradient(90% 70% at 62% 34%, #d6d5d9 0%, rgba(214, 213, 217, 0) 60%),
     linear-gradient(180deg, var(--smoke-hi) 0%, var(--smoke) 60%);
 }
-/* colleagues' words, one at a time: slides share one cell so the section never changes height */
-.quote-carousel { max-width: 980px; }
-.quote-carousel__track { display: grid; gap: 56px; }
-.quote { margin: 0; display: grid; align-content: start; gap: 24px; }
+/* colleagues' words: three side by side on wide screens; one at a time on phones (see the 760px query) */
+.quote-carousel__track { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 48px; }
+.quote { margin: 0; display: grid; align-content: space-between; gap: 24px; }
 .quote blockquote { margin: 0; }
-.quote p {
-  font-size: clamp(1.5rem, 2.6vw, 2.25rem);
-  font-weight: 300;
-  line-height: 1.4;
-  letter-spacing: -0.015em;
-  color: var(--ink);
-  text-wrap: pretty;
-}
-.quote figcaption { display: grid; gap: 2px; font-size: 16px; font-weight: 600; }
+.quote p { font-size: 19px; line-height: 1.55; color: var(--ink); text-wrap: pretty; }
+.quote figcaption { display: grid; gap: 2px; font-size: 15px; font-weight: 600; }
 .quote figcaption span { font-weight: 400; color: var(--ink-2); }
-.quote-carousel.is-live .quote-carousel__track { gap: 0; touch-action: pan-y; }
-.quote-carousel.is-live .quote {
-  grid-area: 1 / 1;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateX(16px);
-  transition: opacity 450ms var(--ease), transform 600ms var(--ease), visibility 0s linear 450ms;
-}
-.quote-carousel.is-live .quote.is-active {
-  opacity: 1;
-  visibility: visible;
-  transform: none;
-  transition: opacity 450ms var(--ease), transform 600ms var(--ease), visibility 0s;
-}
 .quote-carousel__controls { display: flex; align-items: center; gap: 8px; margin-top: 36px; }
 .quote-carousel__controls[hidden] { display: none; }
 .quote-carousel__arrow {
@@ -1297,7 +1277,6 @@ button.pill { border: 0; font-family: inherit; cursor: pointer; }
   .site-header {
     top: 0;
     padding: max(8px, env(safe-area-inset-top)) max(var(--gutter), env(safe-area-inset-right)) 8px max(var(--gutter), env(safe-area-inset-left));
-    transition: transform 320ms var(--ease);
   }
   .site-header::before {
     content: "";
@@ -1321,7 +1300,6 @@ button.pill { border: 0; font-family: inherit; cursor: pointer; }
     backdrop-filter: none;
   }
   .site-header.is-scrolled .mobile-nav[open] summary { background: var(--bone); border-color: var(--bone); color: var(--ink); }
-  .site-header.is-hidden:not(:focus-within) { transform: translateY(-100%); }
   .wordmark,
   .mobile-nav summary { padding-block: 0; line-height: 42px; }
 
@@ -1405,6 +1383,25 @@ button.pill { border: 0; font-family: inherit; cursor: pointer; }
 
   .quote { gap: 16px; }
   .quote-carousel__controls { margin-top: 24px; }
+  .quote-carousel__track { grid-template-columns: minmax(0, 1fr); gap: 56px; }
+  .quote { align-content: start; gap: 16px; }
+  .quote p { font-size: 1.5rem; font-weight: 300; line-height: 1.4; letter-spacing: -0.015em; }
+  .quote figcaption { font-size: 16px; }
+  /* one at a time: slides share one cell, so the section never changes height */
+  .quote-carousel.is-live .quote-carousel__track { gap: 0; touch-action: pan-y; }
+  .quote-carousel.is-live .quote {
+    grid-area: 1 / 1;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(16px);
+    transition: opacity 450ms var(--ease), transform 600ms var(--ease), visibility 0s linear 450ms;
+  }
+  .quote-carousel.is-live .quote.is-active {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition: opacity 450ms var(--ease), transform 600ms var(--ease), visibility 0s;
+  }
   /* land a Leadership link on the heading, not on the seam above it */
   .lead { scroll-margin-top: calc(-1 * var(--pad-smoke)); }
   .destinations__note { margin-left: 0; }
