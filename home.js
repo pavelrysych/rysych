@@ -277,18 +277,32 @@
   /* ---------- Copy email: works even where mailto has no mail app behind it ---------- */
   document.querySelectorAll('[data-copy]').forEach((button) => {
     if (!navigator.clipboard) return;
-    const label = button.textContent;
+    const status = button.parentElement.querySelector('[data-copy-status]');
     let reset = null;
     button.hidden = false;
     button.addEventListener('click', async () => {
+      let copied = true;
       try {
         await navigator.clipboard.writeText(button.dataset.copy);
-        button.textContent = 'Copied';
       } catch {
-        button.textContent = button.dataset.copy;
+        // Fallback for browsers that refuse the async clipboard here.
+        const field = document.createElement('textarea');
+        field.value = button.dataset.copy;
+        field.setAttribute('readonly', '');
+        field.style.cssText = 'position:fixed;opacity:0;pointer-events:none';
+        document.body.append(field);
+        field.select();
+        try { copied = document.execCommand('copy'); } catch { copied = false; }
+        field.remove();
+        button.focus();
       }
+      button.classList.toggle('is-copied', copied);
+      if (status) status.textContent = copied ? 'Email address copied' : `Copy failed. The address is ${button.dataset.copy}`;
       window.clearTimeout(reset);
-      reset = window.setTimeout(() => { button.textContent = label; }, 2000);
+      reset = window.setTimeout(() => {
+        button.classList.remove('is-copied');
+        if (status) status.textContent = '';
+      }, 2000);
     });
   });
 

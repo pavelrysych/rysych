@@ -1121,7 +1121,65 @@ button.pill { border: 0; font-family: inherit; cursor: pointer; }
 }
 .destinations__note { margin-left: auto; font-size: 14px; color: var(--fog); }
 
-.contact__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 40px; }
+.contact__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 32px; margin-top: 40px; }
+
+/* email as one split pill: address opens mail, the icon copies it */
+.email-pill {
+  display: inline-flex;
+  align-items: stretch;
+  min-height: 64px;
+  border-radius: 999px;
+  background: var(--oxide);
+  color: #fff;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -10px 18px rgba(110, 20, 0, 0.25),
+    0 12px 32px -8px rgba(255, 106, 69, 0.65);
+}
+.email-pill__address {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 24px 0 34px;
+  font-size: 19px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 999px 0 0 999px;
+}
+.email-pill__copy {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  padding: 0 6px 0 0;
+  border: 0;
+  border-left: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 0 999px 999px 0;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 250ms var(--ease);
+}
+.email-pill__copy[hidden] { display: none; }
+.email-pill__address:hover,
+.email-pill__copy:hover { background: rgba(255, 255, 255, 0.1); }
+.email-pill__copy svg { grid-area: 1 / 1; transition: opacity 200ms var(--ease), transform 200ms var(--ease); }
+.email-pill__copy .icon-check { opacity: 0; transform: scale(0.6); }
+.email-pill__copy.is-copied .icon-copy { opacity: 0; transform: scale(0.6); }
+.email-pill__copy.is-copied .icon-check { opacity: 1; transform: none; }
+
+.socials { display: flex; gap: 12px; }
+.social {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  color: var(--bone);
+  transition: background-color 250ms var(--ease);
+}
+.social:hover { background: rgba(255, 255, 255, 0.12); }
 
 .site-footer {
   display: flex;
@@ -1237,7 +1295,8 @@ button.pill { border: 0; font-family: inherit; cursor: pointer; }
   .stages { grid-template-columns: minmax(0, 1fr); }
   .stages::before { display: none; }
   .hero__actions .pill, .subskim__actions .pill { flex: 1 1 auto; }
-  .contact__actions .pill--large { width: 100%; font-size: 17px; }
+  .email-pill { width: 100%; }
+  .email-pill__address { flex: 1; padding-left: 26px; font-size: 17px; }
   .reading--3, .reading--4 { grid-column: 1 / 3; }
 }
 
