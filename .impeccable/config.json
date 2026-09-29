@@ -1,0 +1,35 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-29T14:15:18.132Z",
+        "reason": "user confirmed: chose 'glowing orange' (Svetyashchiysya oranzhevyy) from the Glyva reference as a pinned material"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-29T14:22:44.206Z",
+        "reason": "false positive: full-bleed sections inset their content through .page-width padding (verified in desktop and mobile screenshots)"
+      },
+      {
+        "rule": "buried-raster",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-29T14:22:44.389Z",
+        "reason": "intentional: work__art key-art images crossfade in on board-row hover/focus; opacity 0 is their resting state"
+      }
+    ]
+  }
+}

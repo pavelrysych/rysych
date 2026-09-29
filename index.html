@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <meta name="theme-color" content="#f3f3f3">
+    <meta name="theme-color" content="#a9a8ad">
     <meta name="author" content="Pavel Rysych">
-    <meta name="description" content="Pavel Rysych leads product design, builds design teams, and brings AI into everyday product work. Selected work across Admirals, Mechanism Ventures, MetaMap, and Fundraise Up.">
+    <meta name="description" content="Pavel Rysych leads product design, builds design teams, and brings AI into everyday product work. Selected work across Admirals, Subskim, Mechanism Ventures, MetaMap, and Fundraise Up.">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <title>Pavel Rysych — Product Design Leader</title>
     <link rel="canonical" href="https://www.rysych.com/">
@@ -16,11 +16,11 @@
     <link rel="manifest" href="/site.webmanifest?v=2">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="preload" href="/assets/minimal-hero-film-v1-poster.jpg" as="image" fetchpriority="high">
-    <link rel="stylesheet" href="/styles.css?v=23">
-    <link rel="stylesheet" href="/feature-visuals.css?v=2">
+    <link rel="stylesheet" href="/home.css?v=1">
     <script src="/site.js?v=13" defer></script>
+    <script src="/home.js?v=1" defer></script>
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="Pavel Rysych">
@@ -30,19 +30,20 @@
     <meta property="og:image" content="https://www.rysych.com/assets/minimal-hero-film-v1-poster.jpg">
     <meta name="twitter:card" content="summary_large_image">
   </head>
-  <body class="home-page">
+  <body class="home">
     <a class="skip-link" href="#main">Skip to content</a>
-    <header class="site-header site-header--overlay site-header--home">
-      <a class="wordmark" href="#main" aria-label="Pavel Rysych, home">Pavel Rysych<span class="wordmark__mark">/</span></a>
-      <nav class="desktop-nav" aria-label="Main navigation">
+
+    <header class="site-header site-header--home">
+      <a class="wordmark" href="#main" aria-label="Pavel Rysych, Product Design Leader, home">Pavel Rysych<span>Product Design Leader</span></a>
+      <nav class="pill-nav" aria-label="Main navigation">
         <a href="#work">Work</a>
         <a href="#ai">AI</a>
         <a href="#leadership">Leadership</a>
         <a href="#about">About</a>
-        <a href="#contact">Contact</a>
       </nav>
+      <a class="pill pill--glow pill--compact header-cta" href="#contact">Contact</a>
       <details class="mobile-nav">
-        <summary>Menu <span aria-hidden="true">+</span></summary>
+        <summary>Menu</summary>
         <nav aria-label="Mobile navigation">
           <a href="#work">Work</a>
           <a href="#ai">AI</a>
@@ -52,18 +53,20 @@
         </nav>
       </details>
     </header>
+
     <main id="main">
+      <!-- Hero: portrait in smoke, glass board over it -->
       <section class="hero" aria-labelledby="hero-title">
-        <div class="hero__inner">
+        <div class="hero__stage">
           <div class="hero__copy">
-            <p class="eyebrow eyebrow--light">Product Design Leader</p>
-            <h1 id="hero-title">I build products<br>and the design teams<br><span>behind them<span class="accent-dot">.</span></span></h1>
-            <p class="hero__intro">I lead product design and bring AI into everyday work — from prototypes and design systems to implementation. My experience across design, product and growth helps me connect decisions with the needs of the business.</p>
-            <div class="text-actions">
-              <a class="text-link text-link--light" href="#work">View selected work <span aria-hidden="true"><svg class="icon-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a>
-              <a class="text-link text-link--light" href="#contact">Get in touch <span aria-hidden="true"><svg class="icon-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a>
+            <h1 id="hero-title">I build products and the design teams behind them.</h1>
+            <p class="hero__intro">I lead product design and bring AI into everyday work — from prototypes and design systems to implementation.<span class="hero__intro-more"> My experience across design, product and growth helps me connect decisions with the needs of the business.</span></p>
+            <div class="hero__actions">
+              <a class="pill pill--glow" href="mailto:rysych@gmail.com">Get in touch</a>
+              <a class="pill pill--glass" href="#work">View selected work</a>
             </div>
           </div>
+
           <div class="hero__image" role="group" tabindex="0" aria-label="Interactive portrait of Pavel Rysych" aria-describedby="portrait-instructions">
             <video class="hero__video" width="960" height="1216" poster="/assets/minimal-hero-film-v1-poster.jpg" muted playsinline preload="auto" disablepictureinpicture data-portrait-scrub data-scrub-start="0.9" data-scrub-end="2.9" aria-label="Pavel Rysych wearing dark glasses against a light grey studio background">
               <source src="/assets/minimal-hero-film-v2.mp4" type="video/mp4">
@@ -71,170 +74,261 @@
             </video>
             <span class="visually-hidden" id="portrait-instructions">Move your mouse horizontally or drag across the portrait to turn it. With the portrait focused, use the left and right arrow keys, Home or End. The portrait stays still when reduced motion is enabled.</span>
           </div>
+
+          <aside class="glass hero-reading" aria-label="Headline result">
+            <span class="reading__label">Customer acquisition cost · Admirals</span>
+            <span class="dm dm--xl" data-dm>−67%</span>
+            <span class="ticks" aria-hidden="true"><i style="--at:33%"></i></span>
+            <span class="reading__note">Two-thirds lower after customer journey improvements</span>
+          </aside>
+
+          <aside class="glass hero-board" aria-label="Career at a glance">
+            <div class="hero-board__head">
+              <span>Career</span>
+              <span class="led led--on" aria-hidden="true"></span>
+            </div>
+            <ol class="mini-board">
+              <li><a href="/work/admirals/"><span class="dm dm--status dm--hot" data-dm>NOW</span><span class="mini-board__name">Admirals</span><span class="mini-board__role">Head of Design</span></a></li>
+              <li><a href="/work/subskim/"><span class="dm dm--status" data-dm>LIVE</span><span class="mini-board__name">Subskim</span><span class="mini-board__role">Built solo with AI</span></a></li>
+              <li><a href="/work/metamap/"><span class="dm dm--status" data-dm>2018</span><span class="mini-board__name">MetaMap</span><span class="mini-board__role">Head of Design</span></a></li>
+              <li><a href="/work/fundraise-up/"><span class="dm dm--status" data-dm>2017</span><span class="mini-board__name">Fundraise Up</span><span class="mini-board__role">Founding Designer</span></a></li>
+            </ol>
+          </aside>
         </div>
       </section>
 
-      <section class="testimonials page-width" id="recommendations" aria-labelledby="testimonials-title">
-        <h2 class="visually-hidden" id="testimonials-title">What colleagues say</h2>
-        <div class="testimonials__grid">
-          <figure class="testimonial">
-            <blockquote><p>“Pavel is one of the best designers I worked with in my life. He is extremely talented and has a unique ability to transform complex ideas into graphics.”</p></blockquote>
-            <figcaption>Yuriy Smirnov<span>Co-Founder &amp; COO, Fundraise Up</span></figcaption>
-          </figure>
-          <figure class="testimonial">
-            <blockquote><p>“Pavel was a dedicated team player and is a talented artist. He was able to conceptualize complex concepts and articulate them effectively visually.”</p></blockquote>
-            <figcaption>Peter Byrnes<span>Co-Founder &amp; CEO, Fundraise Up</span></figcaption>
-          </figure>
-          <figure class="testimonial">
-            <blockquote><p>“He is a very professional colleague and great individual. I'm going to miss working with him!”</p></blockquote>
-            <figcaption>Celestin Soubrier<span>Chief Growth Officer · Fintech Leader</span></figcaption>
-          </figure>
+      <!-- Work: the departures board -->
+      <section class="work dark" id="work" aria-labelledby="work-title">
+        <div class="work__art" aria-hidden="true">
+          <img src="/assets/admirals-key-art.jpg" alt="" data-art="admirals" loading="lazy" decoding="async">
+          <img src="/assets/subskim-key-art.jpg" alt="" data-art="subskim" loading="lazy" decoding="async">
+          <img src="/assets/mechanism-key-art.jpg" alt="" data-art="mechanism" loading="lazy" decoding="async">
+          <img src="/assets/metamap-key-art.jpg" alt="" data-art="metamap" loading="lazy" decoding="async">
+          <img src="/assets/fundraise-up-key-art.jpg" alt="" data-art="fundraise" loading="lazy" decoding="async">
         </div>
-      </section>
 
-      <section class="work paper-section section-pad" id="work" aria-labelledby="work-title">
         <div class="page-width">
-          <div class="section-heading">
-            <p class="eyebrow"><span class="section-index">// 02</span> Selected projects</p>
-            <h2 id="work-title">Selected work<span class="accent-dot">.</span></h2>
-            <p class="section-heading__note">Four chapters across early products, complex platforms, team leadership and AI-enabled work.</p>
+          <div class="section-head">
+            <h2 id="work-title">Selected work</h2>
+            <p>Early products, complex platforms, team leadership and AI-enabled work. Each row lights its years on the timeline.</p>
           </div>
-          <div class="work-list">
-            <a class="work-card work-card--admirals" href="/work/admirals/" aria-label="Explore Admirals case study" aria-describedby="admirals-cover-category admirals-cover-proof">
-              <div class="work-card__visual"><span class="work-card__category" id="admirals-cover-category">Fintech</span><span class="work-card__brand" aria-hidden="true">Admirals</span><span class="work-card__proof" id="admirals-cover-proof">25+ years · EU broker</span></div>
-              <div class="work-card__body"><span class="work-card__role">01 / Head of Design</span><span class="work-card__date">Feb 2024–Present</span><div class="work-card__title"><h3>Admirals</h3><span aria-hidden="true"><svg class="icon-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></div><p>Customer strategy, design leadership and AI workflows.</p></div>
-            </a>
-            <a class="work-card work-card--mechanism" href="/work/mechanism/" aria-label="Explore Mechanism Ventures case study and its products" aria-describedby="mechanism-cover-category mechanism-cover-proof">
-              <div class="work-card__visual"><span class="work-card__category" id="mechanism-cover-category">E-commerce · Startup studio</span><span class="work-card__brand" aria-hidden="true">Mechanism<span class="work-card__brand-suffix">Ventures</span></span><span class="work-card__proof" id="mechanism-cover-proof">Driving $300M+ in revenue</span></div>
-              <div class="work-card__body"><span class="work-card__role">02 / Product Designer</span><span class="work-card__date">Sep 2021–Oct 2023</span><div class="work-card__title"><h3>Mechanism</h3><span aria-hidden="true"><svg class="icon-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></div><p>Pettable, Learner, Top Nutrition Coaching and PrimePutt.</p></div>
-            </a>
-            <a class="work-card work-card--metamap" href="/work/metamap/" aria-label="Explore MetaMap case study" aria-describedby="metamap-cover-category metamap-cover-proof">
-              <div class="work-card__visual"><span class="work-card__category" id="metamap-cover-category">Identity verification · KYC</span><span class="work-card__brand" aria-hidden="true">MetaMap</span><span class="work-card__proof" id="metamap-cover-proof">Acquired by Incode</span></div>
-              <div class="work-card__body"><span class="work-card__role">03 / Head of Design</span><span class="work-card__date">Dec 2018–Sep 2021</span><div class="work-card__title"><h3>MetaMap</h3><span aria-hidden="true"><svg class="icon-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></div><p>Verification platform, product direction and design team processes.</p></div>
-            </a>
-            <a class="work-card work-card--fundraise" href="/work/fundraise-up/" aria-label="Explore Fundraise Up case study" aria-describedby="fundraise-cover-category fundraise-cover-proof">
-              <div class="work-card__visual"><span class="work-card__category" id="fundraise-cover-category">Fintech · Fundraising</span><span class="work-card__brand" aria-hidden="true">Fundraise Up</span><span class="work-card__proof" id="fundraise-cover-proof">Used by UNICEF USA</span></div>
-              <div class="work-card__body"><span class="work-card__role">04 / Founding Designer</span><span class="work-card__date">Sep 2017–Dec 2018</span><div class="work-card__title"><h3>Fundraise Up</h3><span aria-hidden="true"><svg class="icon-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></div><p>Donation experiences and early product foundations.</p></div>
-            </a>
+
+          <div class="glass glass--dark board" data-board>
+            <div class="timeline" aria-hidden="true">
+              <div class="timeline__scale">
+                <span class="timeline__year" style="--x:0">2017</span>
+                <span class="timeline__year" style="--x:.2">2019</span>
+                <span class="timeline__year" style="--x:.4">2021</span>
+                <span class="timeline__year" style="--x:.6">2023</span>
+                <span class="timeline__year" style="--x:.8">2025</span>
+                <span class="timeline__span" data-span></span>
+                <span class="timeline__now" style="--x:.975"><span>NOW</span></span>
+              </div>
+            </div>
+
+            <div class="board__cols" aria-hidden="true">
+              <span>Years</span><span>Destination</span><span>Route</span><span>Status</span>
+            </div>
+
+            <ol class="board__rows">
+              <li>
+                <a class="board-row" href="/work/admirals/" data-row="admirals" data-from="2024.08" data-to="2026.75">
+                  <span class="board-row__time"><span class="dm dm--row" data-dm>2024</span><span class="board-row__range">Feb 2024 – Present</span></span>
+                  <span class="board-row__dest"><span class="board-row__name">Admirals</span><span class="board-row__role">Head of Design</span></span>
+                  <span class="board-row__route">Fintech · EU broker, 25+ years. Customer strategy, design leadership and AI workflows.</span>
+                  <span class="board-row__status"><span class="led led--on" aria-hidden="true"></span><span class="dm dm--row dm--hot" data-dm>NOW</span></span>
+                </a>
+              </li>
+              <li>
+                <a class="board-row" href="/work/subskim/" data-row="subskim">
+                  <span class="board-row__time"><span class="dm dm--row" data-dm>SOLO</span><span class="board-row__range">Independent app</span></span>
+                  <span class="board-row__dest"><span class="board-row__name">Subskim</span><span class="board-row__role">Idea, design and build</span></span>
+                  <span class="board-row__route">Subscription tracker and renewal calendar, with AI-assisted import from screenshots.</span>
+                  <span class="board-row__status"><span class="led led--live" aria-hidden="true"></span><span class="dm dm--row" data-dm>LIVE</span></span>
+                </a>
+              </li>
+              <li>
+                <a class="board-row" href="/work/mechanism/" data-row="mechanism" data-from="2021.67" data-to="2023.8">
+                  <span class="board-row__time"><span class="dm dm--row" data-dm>2021</span><span class="board-row__range">Sep 2021 – Oct 2023</span></span>
+                  <span class="board-row__dest"><span class="board-row__name">Mechanism Ventures</span><span class="board-row__role">Product Designer</span></span>
+                  <span class="board-row__route">Startup studio · Pettable, Learner, Top Nutrition Coaching and PrimePutt.</span>
+                  <span class="board-row__status"><span class="dm dm--row" data-dm>$300M+</span><span class="board-row__statusnote">revenue</span></span>
+                </a>
+              </li>
+              <li>
+                <a class="board-row" href="/work/metamap/" data-row="metamap" data-from="2018.92" data-to="2021.67">
+                  <span class="board-row__time"><span class="dm dm--row" data-dm>2018</span><span class="board-row__range">Dec 2018 – Sep 2021</span></span>
+                  <span class="board-row__dest"><span class="board-row__name">MetaMap</span><span class="board-row__role">Head of Design</span></span>
+                  <span class="board-row__route">Identity verification · KYC. Product direction and design team processes.</span>
+                  <span class="board-row__status"><span class="board-row__statusnote board-row__statusnote--before">acquired by</span><span class="dm dm--row" data-dm>INCODE</span></span>
+                </a>
+              </li>
+              <li>
+                <a class="board-row" href="/work/fundraise-up/" data-row="fundraise" data-from="2017.67" data-to="2018.92">
+                  <span class="board-row__time"><span class="dm dm--row" data-dm>2017</span><span class="board-row__range">Sep 2017 – Dec 2018</span></span>
+                  <span class="board-row__dest"><span class="board-row__name">Fundraise Up</span><span class="board-row__role">Founding Designer</span></span>
+                  <span class="board-row__route">Fintech · Fundraising. Donation experiences and early product foundations.</span>
+                  <span class="board-row__status"><span class="board-row__statusnote board-row__statusnote--before">used by</span><span class="dm dm--row" data-dm>UNICEF USA</span></span>
+                </a>
+              </li>
+            </ol>
+
+            <div class="board__scheduled">
+              <span class="board__scheduled-label">Scheduled</span>
+              <span class="board__scheduled-item">Stoic Class <span class="dm dm--tiny" data-dm>IN DEV</span></span>
+              <span class="board__scheduled-item">Phomoji <span class="dm dm--tiny" data-dm>IN DEV</span></span>
+            </div>
           </div>
-          <a class="subskim-banner" href="/work/subskim/" aria-label="Explore Subskim, a subscription management app">
-            <div class="subskim-banner__copy">
-              <span class="subskim-banner__label">// Independent app · Live product</span>
-              <h3>Subskim<span class="accent-dot">.</span></h3>
-              <p>A clearer view of subscriptions, renewals and recurring spending, with AI-assisted import from screenshots.</p>
-              <span class="subskim-banner__link">Explore the app <span aria-hidden="true"><svg class="icon-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></span>
-            </div>
-          </a>
-          <div class="in-progress" aria-labelledby="in-progress-title">
-            <div>
-              <p class="eyebrow"><span class="section-index">// ALSO</span> In progress</p>
-              <h3 id="in-progress-title">What's next<span class="accent-dot">.</span></h3>
-            </div>
-            <div class="in-progress__projects" aria-label="Projects in progress">
-              <div><strong>Stoic Class</strong><span>In development</span></div>
-              <div><strong>Phomoji</strong><span>In development</span></div>
-            </div>
+
+          <div class="readings" aria-label="Results">
+            <figure class="reading reading--1">
+              <span class="dm dm--xxl dm--hot" data-dm>−67%</span>
+              <span class="ticks" aria-hidden="true"><i style="--at:33%"></i></span>
+              <figcaption><strong>Customer acquisition cost, Admirals.</strong> Customer journey improvements contributed to a two-thirds reduction.</figcaption>
+            </figure>
+            <figure class="reading reading--2">
+              <span class="dm dm--xl" data-dm>×3</span>
+              <span class="ticks" aria-hidden="true"><i style="--at:100%"></i></span>
+              <figcaption><strong>Click-through rate, Admirals.</strong> The web redesign tripled it.</figcaption>
+            </figure>
+            <figure class="reading reading--3">
+              <span class="dm dm--lg" data-dm>×2.8</span>
+              <span class="ticks" aria-hidden="true"><i style="--at:93%"></i></span>
+              <figcaption><strong>Widget conversion, Fundraise Up.</strong></figcaption>
+            </figure>
+            <figure class="reading reading--4">
+              <span class="dm dm--md" data-dm>$300M+</span>
+              <span class="ticks" aria-hidden="true"></span>
+              <figcaption><strong>Revenue driven by the Mechanism Ventures portfolio.</strong></figcaption>
+            </figure>
           </div>
         </div>
       </section>
 
-      <section class="ai-section dark-section section-pad" id="ai" aria-labelledby="ai-title">
+      <!-- Subskim -->
+      <section class="subskim dark" aria-labelledby="subskim-title">
+        <img class="subskim__art" src="/assets/subskim-key-art.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+        <div class="page-width subskim__grid">
+          <div class="subskim__copy">
+            <h2 id="subskim-title">Subskim</h2>
+            <p>A clearer view of subscriptions, renewals and recurring spending. I came up with the idea, designed it and built it myself with AI — including an import that reads subscriptions from screenshots and lets people confirm them before saving.</p>
+            <div class="subskim__actions">
+              <a class="pill pill--glow" href="/work/subskim/">Explore the case</a>
+              <a class="pill pill--glass" href="https://subskim.com/" target="_blank" rel="noopener noreferrer">Try Subskim</a>
+            </div>
+            <p class="subskim__status"><span class="led led--live" aria-hidden="true"></span><span class="dm dm--tiny" data-dm>LIVE</span> Independent app, live at subskim.com</p>
+          </div>
+          <figure class="glass glass--dark subskim__shot">
+            <img src="/assets/subskim-product-hero.png" alt="Subskim landing page with a subscription command center showing monthly spend, potential savings and category spend" width="1600" height="900" loading="lazy" decoding="async">
+          </figure>
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section class="quotes smoke" id="recommendations" aria-labelledby="quotes-title">
         <div class="page-width">
-          <div class="section-heading section-heading--dark">
-            <p class="eyebrow eyebrow--light"><span class="section-index">// 03</span> Applied intelligence</p>
-            <h2 id="ai-title">AI in practice<span class="accent-dot">.</span></h2>
-            <p class="section-heading__note">Selected AI projects across creative review, design systems, web production and subscription management. Each explores a specific task, from the initial context to a result people can review and use.</p>
-          </div>
-          <div class="ai-grid">
-            <article class="ai-item">
-<div class="ai-visual ai-visual--prototype" aria-hidden="true">
-  <div class="av-scene">
-    <div class="av-panel av-brief">
-      <span class="av-eyebrow">Context / 01</span>
-      <span class="av-title">Brand &amp; design context.</span>
-      <i class="av-line"></i><i class="av-line"></i><i class="av-line"></i><i class="av-line"></i>
-    </div>
-    <div class="av-panel av-prototype">
-      <div class="av-windowbar"><span class="av-dots"><i></i><i></i><i></i></span><span class="av-eyebrow">Review tool</span></div>
-      <div class="av-prototype-body">
-        <div class="av-sidebar"><i></i><i></i><i></i></div>
-        <div class="av-preview"><span class="av-title">Review the creative.</span><i class="av-line"></i><div class="av-preview-tiles"><div class="av-preview-tile"><span></span></div><div class="av-preview-tile"><span></span></div></div><div class="av-preview-button"></div></div>
-      </div>
-    </div>
-    <div class="av-cursor"><svg viewBox="0 0 18 22"><path d="M2 1v17l4-5 4 8 3-2-4-7 7-1Z"/></svg><span>Review draft</span></div>
-  </div>
-</div>
-              <span class="ai-item__number">01 / REVIEW TOOL</span>
-              <h3>Creative compliance checker.</h3>
-              <p>A prototype for supporting the compliance review of marketing creatives. I used AI to turn the brief, design direction and brand context into a working interface that could be tried and refined.</p>
-            </article>
-            <article class="ai-item">
-<div class="ai-visual ai-visual--system" aria-hidden="true">
-  <div class="av-scene">
-    <svg class="av-system-wire" viewBox="0 0 320 133"><path d="M70 17v28q0 14 14 14h126v33q0 15-15 15H62v26"/><circle cx="160" cy="59" r="2.5"/><circle cx="62" cy="124" r="2"/></svg>
-    <div class="av-panel av-tokens"><span class="av-eyebrow">01 / Tokens</span><div class="av-swatches"><i></i><i></i><i></i></div></div>
-    <div class="av-panel av-component"><span class="av-eyebrow">02 / Components</span><div class="av-component-button">Continue <b><svg class="icon-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></b></div></div>
-    <div class="av-panel av-code"><svg viewBox="0 0 16 16"><path d="m5 4-4 4 4 4m6-8 4 4-4 4M9 2 7 14"/></svg><span>03 / Interface</span></div>
-  </div>
-</div>
-              <span class="ai-item__number">02 / DESIGN SYSTEM</span>
-              <h3>Design system to code.</h3>
-              <p>An AI-assisted project to audit existing interfaces, document semantic tokens and interaction states, and develop reusable components. Figma design context connects the system to its implementation.</p>
-            </article>
-            <article class="ai-item">
-<div class="ai-visual ai-visual--team" aria-hidden="true">
-  <div class="av-scene">
-    <div class="av-flow">
-      <div class="av-flow-row"><span class="av-icon"><svg viewBox="0 0 20 20"><rect x="3" y="3" width="14" height="14" rx="3"/><path d="M3 8h14M8 8v9"/></svg></span><div class="av-flow-copy"><span class="av-title">Design</span><i class="av-line"></i></div><span class="av-flow-shortcut">01</span></div>
-      <div class="av-flow-row av-flow-row--active"><span class="av-icon"><svg viewBox="0 0 20 20"><path d="m7 5-5 5 5 5m6-10 5 5-5 5M12 3 8 17"/></svg></span><div class="av-flow-copy"><span class="av-title">Build</span><i class="av-line"></i></div><span class="av-flow-shortcut">02</span></div>
-      <div class="av-flow-row"><span class="av-icon"><svg viewBox="0 0 20 20"><path d="m5 10 3 3 7-7"/><rect x="2" y="2" width="16" height="16" rx="5"/></svg></span><div class="av-flow-copy"><span class="av-title">Review</span><i class="av-line"></i></div><span class="av-flow-shortcut">03</span></div>
-    </div>
-  </div>
-</div>
-              <span class="ai-item__number">03 / PRODUCTION WORKFLOW</span>
-              <h3>AI-assisted web production.</h3>
-              <p>A workflow connecting design, AI-assisted implementation and review. I developed the process and ran practical workshops to help designers take ideas through to working interfaces, with developer support.</p>
-            </article>
-            <article class="ai-item">
-<div class="ai-visual ai-visual--review" aria-hidden="true">
-  <div class="av-scene">
-    <div class="av-panel av-detected"><span class="av-eyebrow">Subscriptions detected</span><div class="av-detected-row"><i></i><span class="av-line"></span></div><div class="av-detected-row"><i></i><span class="av-line"></span></div></div>
-    <div class="av-panel av-review">
-      <div class="av-windowbar"><span class="av-eyebrow">Import / Review</span><span class="av-review-dot"></span></div>
-      <span class="av-title">You make the final call.</span><span class="av-review-hint">Review the details before importing.</span>
-      <div class="av-review-action"><span>Confirm import</span><svg viewBox="0 0 16 16"><path d="m3 8 3 3 7-7"/></svg></div>
-    </div>
-  </div>
-</div>
-              <span class="ai-item__number">04 / PRODUCT FEATURE</span>
-              <h3>Screenshot-to-subscription import.</h3>
-              <p>An AI import flow that extracts subscription details from screenshots and presents them for review. Users confirm the suggestions before saving them to their subscription calendar.</p>
-            </article>
+          <h2 class="visually-hidden" id="quotes-title">What colleagues say</h2>
+          <div class="quotes__grid">
+            <figure class="quote">
+              <blockquote><p>“Pavel is one of the best designers I worked with in my life. He is extremely talented and has a unique ability to transform complex ideas into graphics.”</p></blockquote>
+              <figcaption>Yuriy Smirnov<span>Co-Founder &amp; COO, Fundraise Up</span></figcaption>
+            </figure>
+            <figure class="quote">
+              <blockquote><p>“Pavel was a dedicated team player and is a talented artist. He was able to conceptualize complex concepts and articulate them effectively visually.”</p></blockquote>
+              <figcaption>Peter Byrnes<span>Co-Founder &amp; CEO, Fundraise Up</span></figcaption>
+            </figure>
+            <figure class="quote">
+              <blockquote><p>“He is a very professional colleague and great individual. I'm going to miss working with him!”</p></blockquote>
+              <figcaption>Celestin Soubrier<span>Chief Growth Officer · Fintech Leader</span></figcaption>
+            </figure>
           </div>
         </div>
       </section>
 
-      <section class="leadership paper-section section-pad" id="leadership" aria-labelledby="leadership-title">
-        <div class="page-width leadership__grid">
-          <div>
-            <p class="eyebrow"><span class="section-index">// 04</span> How I lead</p>
-            <h2 id="leadership-title">Direction.<br>Ownership.<br>Craft<span class="accent-dot">.</span></h2>
+      <!-- AI console -->
+      <section class="ai dark" id="ai" aria-labelledby="ai-title">
+        <img class="ai__art" src="/assets/metamap-key-art.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+        <div class="page-width">
+          <div class="section-head">
+            <h2 id="ai-title">AI in practice</h2>
+            <p>Four projects, each followed from the initial context to a result people can review and use.</p>
           </div>
-          <div class="leadership__content">
-            <p class="leadership__lead">I connect business priorities, customer needs and design quality, giving the team a clear direction and the autonomy to deliver.</p>
-            <div class="leadership__principle"><span>01</span><div><h3>Set a clear direction</h3><p>I align the team around who we are building for, which problem matters and how we will measure success.</p></div></div>
-            <div class="leadership__principle"><span>02</span><div><h3>Give designers ownership</h3><p>I give designers context, clear responsibilities and room to make decisions, with feedback and support as they grow.</p></div></div>
-            <div class="leadership__principle"><span>03</span><div><h3>Stay close to the work</h3><p>I stay involved in product flows, prototypes, design systems and implementation, helping the team carry good decisions through to the finished product.</p></div></div>
+
+          <div class="glass glass--dark console" data-tabs>
+            <div class="console__tabs" role="tablist" aria-label="AI projects">
+              <button class="chip" role="tab" id="tab-review" aria-controls="panel-review" aria-selected="true">Review tool</button>
+              <button class="chip" role="tab" id="tab-system" aria-controls="panel-system" aria-selected="false" tabindex="-1">Design system</button>
+              <button class="chip" role="tab" id="tab-production" aria-controls="panel-production" aria-selected="false" tabindex="-1">Web production</button>
+              <button class="chip" role="tab" id="tab-import" aria-controls="panel-import" aria-selected="false" tabindex="-1">Screenshot import</button>
+            </div>
+
+            <div class="console__panel" role="tabpanel" id="panel-review" aria-labelledby="tab-review">
+              <div class="console__copy">
+                <h3>Creative compliance checker</h3>
+                <p>A prototype for supporting the compliance review of marketing creatives. I used AI to turn the brief, design direction and brand context into a working interface that could be tried and refined.</p>
+              </div>
+              <ol class="stages">
+                <li><span class="dm dm--sm" data-dm>01</span><strong>Context</strong><span>Brief, design direction and brand guidelines</span></li>
+                <li><span class="dm dm--sm" data-dm>02</span><strong>Build</strong><span>A working review interface</span></li>
+                <li><span class="dm dm--sm" data-dm>03</span><strong>Refine</strong><span>Tried and refined</span></li>
+              </ol>
+            </div>
+
+            <div class="console__panel" role="tabpanel" id="panel-system" aria-labelledby="tab-system" hidden>
+              <div class="console__copy">
+                <h3>Design system to code</h3>
+                <p>An AI-assisted project to audit existing interfaces, document semantic tokens and interaction states, and develop reusable components. Figma design context connects the system to its implementation.</p>
+              </div>
+              <ol class="stages">
+                <li><span class="dm dm--sm" data-dm>01</span><strong>Audit</strong><span>Existing interfaces and duplicated patterns</span></li>
+                <li><span class="dm dm--sm" data-dm>02</span><strong>System</strong><span>Semantic tokens, states and components</span></li>
+                <li><span class="dm dm--sm" data-dm>03</span><strong>Code</strong><span>Connected through Figma design context</span></li>
+              </ol>
+            </div>
+
+            <div class="console__panel" role="tabpanel" id="panel-production" aria-labelledby="tab-production" hidden>
+              <div class="console__copy">
+                <h3>AI-assisted web production</h3>
+                <p>A workflow connecting design, AI-assisted implementation and review. I developed the process and ran practical workshops to help designers take ideas through to working interfaces, with developer support.</p>
+              </div>
+              <ol class="stages">
+                <li><span class="dm dm--sm" data-dm>01</span><strong>Design</strong><span>Designers take ideas forward</span></li>
+                <li><span class="dm dm--sm" data-dm>02</span><strong>Build</strong><span>AI-assisted implementation</span></li>
+                <li><span class="dm dm--sm" data-dm>03</span><strong>Review</strong><span>Working interfaces, with developer support</span></li>
+              </ol>
+            </div>
+
+            <div class="console__panel" role="tabpanel" id="panel-import" aria-labelledby="tab-import" hidden>
+              <div class="console__copy">
+                <h3>Screenshot-to-subscription import</h3>
+                <p>An AI import flow in Subskim that extracts subscription details from screenshots and presents them for review. Users confirm the suggestions before saving them to their subscription calendar.</p>
+              </div>
+              <ol class="stages">
+                <li><span class="dm dm--sm" data-dm>01</span><strong>Screenshot</strong><span>People add a screenshot of their subscriptions</span></li>
+                <li><span class="dm dm--sm" data-dm>02</span><strong>Extract</strong><span>AI extracts the subscription details</span></li>
+                <li><span class="dm dm--sm" data-dm>03</span><strong>Confirm</strong><span>The person makes the final call</span></li>
+              </ol>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="about paper-section section-pad" id="about" aria-labelledby="about-title">
-        <div class="page-width about__grid">
-          <div>
-            <p class="eyebrow"><span class="section-index">// 05</span> About</p>
-            <h2 id="about-title">A wider view<br>of design<span class="accent-dot">.</span></h2>
+      <!-- Leadership + About -->
+      <section class="lead smoke" id="leadership" aria-labelledby="leadership-title">
+        <div class="page-width lead__grid">
+          <h2 id="leadership-title">Direction. Ownership. Craft.</h2>
+          <div class="lead__content">
+            <p class="lead__intro">I connect business priorities, customer needs and design quality, giving the team a clear direction and the autonomy to deliver.</p>
+            <dl class="principles">
+              <div><dt>Set a clear direction</dt><dd>I align the team around who we are building for, which problem matters and how we will measure success.</dd></div>
+              <div><dt>Give designers ownership</dt><dd>I give designers context, clear responsibilities and room to make decisions, with feedback and support as they grow.</dd></div>
+              <div><dt>Stay close to the work</dt><dd>I stay involved in product flows, prototypes, design systems and implementation, helping the team carry good decisions through to the finished product.</dd></div>
+            </dl>
           </div>
+        </div>
+
+        <div class="page-width lead__grid about" id="about">
+          <h2 id="about-title">A wider view of design</h2>
           <div class="about__copy">
             <p>My career has taken me from founding designer to leading design teams, with responsibilities extending into product and growth. I understand the customer, choose the right problem and help a team deliver a thoughtful solution.</p>
             <p>Much of my work sits at moments when people need confidence to act: making a donation, verifying their identity or choosing a financial service. Clarity and trust are recurring themes in that work.</p>
@@ -243,17 +337,32 @@
         </div>
       </section>
 
-      <section class="contact dark-section section-pad" id="contact" aria-labelledby="contact-title">
+      <!-- Contact -->
+      <section class="contact dark" id="contact" aria-labelledby="contact-title">
         <div class="page-width">
-          <p class="eyebrow eyebrow--light"><span class="section-index">// CONTACT</span> Next chapter</p>
-          <h2 id="contact-title">Let's build<br>what matters<span class="accent-dot">.</span></h2>
-          <p>I'm interested in Head of Design and Director of Product Design roles with startups and established product companies. If you're building a product or developing a design team, I'd be glad to talk.</p>
-          <div class="contact__links" aria-label="Connect with Pavel Rysych">
-            <a class="text-link text-link--light" href="https://www.linkedin.com/in/rysych/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true"><svg class="icon-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a>
-            <a class="text-link text-link--light" href="https://www.instagram.com/pavel_rysych/" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true"><svg class="icon-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a>
-            <a class="text-link text-link--light" href="https://www.threads.com/@pavel_rysych" target="_blank" rel="noopener noreferrer">Threads <span aria-hidden="true"><svg class="icon-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a>
+          <h2 id="contact-title">Let's build what matters.</h2>
+          <p class="contact__lede">I'm interested in Head of Design and Director of Product Design roles with startups and established product companies. If you're building a product or developing a design team, I'd be glad to talk.</p>
+
+          <div class="glass glass--dark destinations" aria-label="Where I can work">
+            <span class="destinations__label">Next destination</span>
+            <ul>
+              <li><span class="led led--on" aria-hidden="true"></span><span class="dm dm--row dm--hot" data-dm>REMOTE</span></li>
+              <li><span class="dm dm--row" data-dm>SINGAPORE</span></li>
+              <li><span class="dm dm--row" data-dm>DUBAI</span></li>
+              <li><span class="dm dm--row" data-dm>LONDON</span></li>
+              <li><span class="dm dm--row" data-dm>USA</span></li>
+            </ul>
+            <span class="destinations__note">Remote-first, open to relocation</span>
           </div>
-          <footer class="site-footer"><span>© 2026 Pavel Rysych</span><a href="#main">Back to top <svg class="icon-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20V4M6 10l6-6 6 6"/></svg></a></footer>
+
+          <div class="contact__actions">
+            <a class="pill pill--glow pill--large" href="mailto:rysych@gmail.com">rysych@gmail.com</a>
+            <a class="pill pill--glass" href="https://www.linkedin.com/in/rysych/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="pill pill--glass" href="https://www.instagram.com/pavel_rysych/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a class="pill pill--glass" href="https://www.threads.com/@pavel_rysych" target="_blank" rel="noopener noreferrer">Threads</a>
+          </div>
+
+          <footer class="site-footer"><span>© 2026 Pavel Rysych</span><a href="#main">Back to top</a></footer>
         </div>
       </section>
     </main>

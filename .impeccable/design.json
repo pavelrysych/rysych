@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-29T12:00:00Z",
+  "title": "Design System: rysych.com",
+  "extensions": {
+    "scope": "Homepage only (index.html, home.css, home.js). Case pages under work/ still use styles.css / case-styles.css and are known drift, not authority.",
+    "colorMeta": {
+      "oxide": { "role": "primary", "displayName": "Oxide", "canonical": "#d2452a", "tonalRamp": ["#3a0f06", "#5f190b", "#872511", "#ae3219", "#d2452a", "#e06a52", "#eb9a88", "#f6cfc6"] },
+      "oxide-led": { "role": "primary", "displayName": "Oxide LED", "canonical": "#ff6a45", "tonalRamp": ["#4a1206", "#7a200c", "#ad3014", "#e0461f", "#ff6a45", "#ff8e70", "#ffb7a3", "#ffe0d7"] },
+      "smoke-hi": { "role": "neutral", "displayName": "Smoke High", "canonical": "#c9c8cc", "tonalRamp": ["#1f1f21", "#3a393c", "#58575b", "#78777b", "#9a999d", "#b9b8bc", "#c9c8cc", "#ecebee"] },
+      "smoke": { "role": "neutral", "displayName": "Smoke", "canonical": "#a9a8ad", "tonalRamp": ["#1f1f21", "#3a393c", "#58575b", "#78777b", "#a9a8ad", "#c9c8cc", "#dddce0", "#f1f0f3"] },
+      "smoke-lo": { "role": "neutral", "displayName": "Smoke Low", "canonical": "#6e6d71", "tonalRamp": ["#1f1f21", "#353437", "#4d4c50", "#6e6d71", "#8e8d91", "#aeadb1", "#cdccd0", "#ebeaed"] },
+      "slate": { "role": "neutral", "displayName": "Slate", "canonical": "#5e5d5f", "tonalRamp": ["#1c1b1c", "#2f2e30", "#454446", "#5e5d5f", "#7c7b7d", "#9d9c9e", "#c0bfc1", "#e3e2e4"] },
+      "graphite": { "role": "neutral", "displayName": "Warm Graphite", "canonical": "#1a1918", "tonalRamp": ["#1a1918", "#252321", "#353432", "#4c4a47", "#67645f", "#8a8781", "#b3b0aa", "#dcdad5"] },
+      "graphite-2": { "role": "neutral", "displayName": "Graphite Step", "canonical": "#252321", "tonalRamp": ["#1a1918", "#252321", "#353432", "#4c4a47", "#67645f", "#8a8781", "#b3b0aa", "#dcdad5"] },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#151413", "tonalRamp": ["#151413", "#252321", "#353432", "#4c4a47", "#67645f", "#8a8781", "#b3b0aa", "#dcdad5"] },
+      "ink-2": { "role": "neutral", "displayName": "Ink Secondary", "canonical": "#353432", "tonalRamp": ["#151413", "#252321", "#353432", "#4c4a47", "#67645f", "#8a8781", "#b3b0aa", "#dcdad5"] },
+      "bone": { "role": "neutral", "displayName": "Bone", "canonical": "#edebe7", "tonalRamp": ["#2a2927", "#45433f", "#625f5a", "#827f79", "#a3a09a", "#c5c2bd", "#edebe7", "#f8f7f5"] },
+      "fog": { "role": "neutral", "displayName": "Fog", "canonical": "#aeadb1", "tonalRamp": ["#1f1f21", "#3a393c", "#58575b", "#78777b", "#aeadb1", "#c4c3c6", "#d6d4d0", "#eeedf0"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero statement only; contact and Subskim use larger siblings at the same weight." },
+      "headline": { "displayName": "Headline", "purpose": "Section heads, left of a short fog note." },
+      "title": { "displayName": "Title", "purpose": "Destination names on the departures board." },
+      "body": { "displayName": "Body", "purpose": "Running text at 44-62ch, tabular numerals on." },
+      "label": { "displayName": "Label", "purpose": "Board column heads, reading labels, board header; sentence case, never uppercase." },
+      "dot-matrix": { "displayName": "Dot-matrix", "purpose": "SVG 5x7 dot grid for years, statuses and headline figures. Heights: tiny 11px, status 12px, sm 16px, row 18px, md clamp(34px,3.4vw,46px), lg clamp(48px,4.8vw,66px), xl clamp(60px,6.2vw,88px), xxl clamp(96px,13vw,184px)." }
+    },
+    "shadows": [
+      { "name": "glass-slab", "value": "inset 0 1px 0 rgba(255,255,255,0.22), inset 0 -1px 0 rgba(0,0,0,0.25), 0 24px 60px -24px rgba(0,0,0,0.55)", "purpose": "Every glass container." },
+      { "name": "glass-chrome", "value": "inset 0 1px 0 rgba(255,255,255,0.18), 0 12px 30px -16px rgba(0,0,0,0.5)", "purpose": "Wordmark, pill nav, mobile menu trigger." },
+      { "name": "oxide-pill-glow", "value": "inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -10px 18px rgba(110,20,0,0.25), 0 12px 32px -8px rgba(255,106,69,0.65)", "purpose": "Primary pill at rest." },
+      { "name": "oxide-pill-glow-hover", "value": "inset 0 1px 0 rgba(255,255,255,0.45), inset 0 -10px 18px rgba(110,20,0,0.2), 0 16px 44px -8px rgba(255,106,69,0.85)", "purpose": "Primary pill on hover, with a 1px lift." },
+      { "name": "led-glow", "value": "0 0 0 3px rgba(255,106,69,0.18), 0 0 14px 2px rgba(255,106,69,0.55)", "purpose": "ON led; markers and the NOW needle use 0 0 12-14px 2px of the same glow." },
+      { "name": "glass-backdrop", "value": "backdrop-filter: blur(22px) saturate(140%)", "purpose": "Frost on glass slabs (20px on chrome, 16px on glass pills)." }
+    ],
+    "motion": [
+      { "name": "ease", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "House easing for every transition." },
+      { "name": "state", "value": "250-300ms", "purpose": "Hover washes, pill glow, chip selection." },
+      { "name": "dm-on", "value": "420ms, per-dot random delay 0-520ms", "purpose": "Dot-matrix lights dot by dot the first time it enters view." },
+      { "name": "rack-focus", "value": "900ms opacity/filter, 1200ms transform", "purpose": "Board row racks its key art from 26px blur to 3px behind the glass." },
+      { "name": "now-pulse", "value": "2.4s ease-in-out infinite", "purpose": "The timeline NOW needle breathes." },
+      { "name": "plane-drift", "value": "scroll-linked --depth / --rack", "purpose": "Hero glass planes drift apart (-60px / -24px) and the portrait blurs up to 6px." },
+      { "name": "reduced-motion", "value": "prefers-reduced-motion: reduce", "purpose": "All of the above collapse to static, fully visible states." }
+    ],
+    "breakpoints": [
+      { "name": "board-tight", "value": "1180px" },
+      { "name": "single-column", "value": "960px" },
+      { "name": "narrow", "value": "560px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Pill",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Glowing oxide pill for the one primary action in a cluster.",
+      "html": "<a class=\"ds-pill-glow\" href=\"#\">Get in touch</a>",
+      "css": ".ds-pill-glow { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 26px; border-radius: 999px; background: #d2452a; color: #fff; font: 600 16px/1 Urbanist, 'Helvetica Neue', Arial, sans-serif; letter-spacing: 0.01em; text-decoration: none; box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -10px 18px rgba(110,20,0,0.25), 0 12px 32px -8px rgba(255,106,69,0.65); transition: transform 300ms cubic-bezier(0.16,1,0.3,1), box-shadow 300ms cubic-bezier(0.16,1,0.3,1); } .ds-pill-glow:hover { transform: translateY(-1px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.45), inset 0 -10px 18px rgba(110,20,0,0.2), 0 16px 44px -8px rgba(255,106,69,0.85); } .ds-pill-glow:focus-visible { outline: 2px solid #ff6a45; outline-offset: 3px; }"
+    },
+    {
+      "name": "Glass Pill (on graphite)",
+      "kind": "button",
+      "refersTo": "button-glass-on-graphite",
+      "description": "Secondary action on dark grounds.",
+      "html": "<div class=\"ds-dark\"><a class=\"ds-pill-glass\" href=\"#\">Try Subskim</a></div>",
+      "css": ".ds-dark { background: #1a1918; padding: 24px; } .ds-pill-glass { display: inline-flex; align-items: center; min-height: 52px; padding: 0 26px; border-radius: 999px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.18); color: #edebe7; font: 600 16px/1 Urbanist, 'Helvetica Neue', Arial, sans-serif; text-decoration: none; box-shadow: inset 0 1px 0 rgba(255,255,255,0.14); backdrop-filter: blur(16px); transition: background-color 300ms cubic-bezier(0.16,1,0.3,1); } .ds-pill-glass:hover { background: rgba(255,255,255,0.12); } .ds-pill-glass:focus-visible { outline: 2px solid #ff6a45; outline-offset: 3px; }"
+    },
+    {
+      "name": "Glass Pill (on smoke)",
+      "kind": "button",
+      "refersTo": "button-glass-on-smoke",
+      "description": "Secondary action on the smoke studio ground.",
+      "html": "<div class=\"ds-smoke\"><a class=\"ds-pill-glass-light\" href=\"#\">View selected work</a></div>",
+      "css": ".ds-smoke { background: linear-gradient(180deg, #c9c8cc, #a9a8ad); padding: 24px; } .ds-pill-glass-light { display: inline-flex; align-items: center; min-height: 52px; padding: 0 26px; border-radius: 999px; background: rgba(255,255,255,0.3); border: 1px solid rgba(255,255,255,0.55); color: #151413; font: 600 16px/1 Urbanist, 'Helvetica Neue', Arial, sans-serif; text-decoration: none; backdrop-filter: blur(16px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), 0 10px 24px -14px rgba(0,0,0,0.35); transition: background-color 300ms cubic-bezier(0.16,1,0.3,1); } .ds-pill-glass-light:hover { background: rgba(255,255,255,0.45); } .ds-pill-glass-light:focus-visible { outline: 2px solid #ff6a45; outline-offset: 3px; }"
+    },
+    {
+      "name": "Console Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Tab chip in the AI console; selected fills bone.",
+      "html": "<div class=\"ds-dark\" role=\"tablist\"><button class=\"ds-chip\" role=\"tab\" aria-selected=\"true\">Review tool</button> <button class=\"ds-chip\" role=\"tab\" aria-selected=\"false\">Design system</button></div>",
+      "css": ".ds-dark { background: #1a1918; padding: 24px; display: flex; gap: 8px; } .ds-chip { min-height: 48px; padding: 0 22px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #edebe7; font: 500 16px/1 Urbanist, 'Helvetica Neue', Arial, sans-serif; cursor: pointer; transition: background-color 300ms cubic-bezier(0.16,1,0.3,1), color 300ms cubic-bezier(0.16,1,0.3,1); } .ds-chip:hover { background: rgba(255,255,255,0.1); } .ds-chip[aria-selected=\"true\"] { background: #edebe7; color: #151413; font-weight: 600; box-shadow: 0 10px 30px -10px rgba(237,235,231,0.45), inset 0 -2px 0 rgba(0,0,0,0.1); } .ds-chip:focus-visible { outline: 2px solid #ff6a45; outline-offset: 3px; }"
+    },
+    {
+      "name": "Glass Pill Nav",
+      "kind": "nav",
+      "refersTo": "pill-nav-link",
+      "description": "Floating frosted nav pill.",
+      "html": "<div class=\"ds-smoke\"><nav class=\"ds-nav\"><a href=\"#\">Work</a><a href=\"#\">AI</a><a href=\"#\">Leadership</a><a href=\"#\">About</a></nav></div>",
+      "css": ".ds-smoke { background: linear-gradient(180deg, #c9c8cc, #a9a8ad); padding: 24px; } .ds-nav { display: inline-flex; gap: 2px; padding: 5px; border-radius: 999px; background: rgba(24,23,22,0.55); border: 1px solid rgba(255,255,255,0.14); box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), 0 12px 30px -16px rgba(0,0,0,0.5); backdrop-filter: blur(20px) saturate(140%); } .ds-nav a { padding: 9px 18px; border-radius: 999px; color: #edebe7; font: 500 15px/1.2 Urbanist, 'Helvetica Neue', Arial, sans-serif; text-decoration: none; transition: background-color 250ms cubic-bezier(0.16,1,0.3,1); } .ds-nav a:hover { background: rgba(255,255,255,0.1); } .ds-nav a:focus-visible { outline: 2px solid #ff6a45; outline-offset: 3px; }"
+    },
+    {
+      "name": "Glass Slab",
+      "kind": "card",
+      "refersTo": "glass-slab",
+      "description": "The only container material: frosted graphite with a top sheen.",
+      "html": "<div class=\"ds-smoke\"><div class=\"ds-glass\"><p class=\"ds-glass-label\">Career at a glance</p><p class=\"ds-glass-body\">Admirals, Head of Design</p></div></div>",
+      "css": ".ds-smoke { background: linear-gradient(180deg, #c9c8cc, #6e6d71); padding: 32px; } .ds-glass { position: relative; max-width: 320px; padding: 22px 24px; border-radius: 28px; background: rgba(24,23,22,0.58); border: 1px solid rgba(255,255,255,0.16); box-shadow: inset 0 1px 0 rgba(255,255,255,0.22), inset 0 -1px 0 rgba(0,0,0,0.25), 0 24px 60px -24px rgba(0,0,0,0.55); backdrop-filter: blur(22px) saturate(140%); color: #edebe7; font-family: Urbanist, 'Helvetica Neue', Arial, sans-serif; } .ds-glass::before { content: ''; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; background: linear-gradient(180deg, rgba(255,255,255,0.1), rgba(255,255,255,0) 38%); } .ds-glass-label { margin: 0 0 8px; font-size: 13px; font-weight: 600; letter-spacing: 0.02em; color: #aeadb1; } .ds-glass-body { margin: 0; font-size: 17px; font-weight: 600; }"
+    },
+    {
+      "name": "Board Row",
+      "kind": "custom",
+      "refersTo": "board-row",
+      "description": "Departures-board row: year, destination, route, lit status.",
+      "html": "<div class=\"ds-dark\"><a class=\"ds-row\" href=\"#\"><span class=\"ds-year\">2024</span><span><span class=\"ds-name\">Admirals</span><span class=\"ds-role\">Head of Design</span></span><span class=\"ds-status\"><span class=\"ds-led\"></span>NOW</span></a></div>",
+      "css": ".ds-dark { background: #1a1918; padding: 16px; font-family: Urbanist, 'Helvetica Neue', Arial, sans-serif; } .ds-row { display: grid; grid-template-columns: 90px 1fr auto; gap: 24px; align-items: center; padding: 22px 16px; border-top: 1px solid rgba(237,235,231,0.12); border-radius: 18px; color: #edebe7; text-decoration: none; transition: background-color 300ms cubic-bezier(0.16,1,0.3,1); } .ds-row:hover, .ds-row:focus-visible { background: rgba(255,255,255,0.06); outline: none; } .ds-year { font-weight: 600; letter-spacing: 0.08em; font-size: 15px; } .ds-name { display: block; font-size: 28px; font-weight: 400; letter-spacing: -0.02em; line-height: 1.15; } .ds-role { display: block; font-size: 15px; color: #aeadb1; } .ds-status { display: inline-flex; align-items: center; gap: 10px; color: #ff6a45; font-weight: 600; letter-spacing: 0.08em; } .ds-led { width: 8px; height: 8px; border-radius: 50%; background: #ff6a45; box-shadow: 0 0 0 3px rgba(255,106,69,0.18), 0 0 14px 2px rgba(255,106,69,0.55); }"
+    },
+    {
+      "name": "Tick Scale",
+      "kind": "custom",
+      "description": "Hairline scale with a glowing oxide marker; measures a reading.",
+      "html": "<div class=\"ds-dark\"><span class=\"ds-ticks\"><i></i></span></div>",
+      "css": ".ds-dark { background: #1a1918; padding: 24px; color: #edebe7; } .ds-ticks { position: relative; display: block; max-width: 320px; height: 14px; background: repeating-linear-gradient(90deg, rgba(237,235,231,0.55) 0 1px, transparent 1px 8px) bottom / 100% 6px no-repeat, repeating-linear-gradient(90deg, rgba(237,235,231,0.55) 0 1px, transparent 1px 40px) bottom / 100% 12px no-repeat; } .ds-ticks i { position: absolute; bottom: -3px; left: 67%; width: 3px; height: 20px; margin-left: -1px; border-radius: 2px; background: #ff6a45; box-shadow: 0 0 12px 2px rgba(255,106,69,0.55); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Glass Departures Board",
+    "overview": "The career reads as a board in a quiet terminal: where Pavel has flown, what is boarding now, where he can go next. Two grounds alternate down the page: a light smoke-grey studio (portrait, quotes, leadership) and a warm graphite hall (the board, readings, AI console, contact). Smoke bands rise out of the graphite and settle back into it through soft gradient seams; there are no hard section edges.\n\nOn those grounds sit frosted glass slabs: thick, blurred, with a top sheen and a soft drop. Numbers and status words are not typeset but lit, as LED dot-matrix drawn from a real 5x7 dot grid, one circle per dot, lighting dot by dot the first time they enter view. Hairline tick scales measure things. One glowing oxide orange carries the present tense: NOW, the primary action, the headline reading. Everything else is smoke, graphite, bone and fog.\n\nDensity is calm and editorial. Display type is thin and large; data rows are open, separated by hairlines rather than boxes. Imagery (portrait, case key art) sits behind glass as a racked depth plane, blurred until a row or scroll brings it into focus.",
+    "keyCharacteristics": [
+      "Smoke-grey studio grounds alternating with warm graphite, joined by gradient seams.",
+      "Frosted glass slabs as the only container material.",
+      "LED dot-matrix numerals and status words rendered from a real dot grid.",
+      "Hairline tick scales with a glowing oxide marker.",
+      "One glowing oxide accent for NOW, the primary action and the lead result.",
+      "Urbanist throughout: light display, regular and semibold text.",
+      "Depth by planes and rack focus, not by stacked cards."
+    ],
+    "rules": [
+      { "name": "The Lit Oxide Rule", "body": "Orange means \"now\" or \"act\". It marks the current role, the primary action, and the single lead result (CAC −67%). Secondary readings (×3, ×2.8, $300M+) and past roles stay bone or fog. If a second thing on screen wants to be orange, it is not the lead.", "section": "colors" },
+      { "name": "The Glow Pairing Rule", "body": "oxide-led never appears without its glow; oxide (the flat body colour) never glows on its own except through the primary pill's shadow.", "section": "colors" },
+      { "name": "The Lit Figure Rule", "body": "Years, statuses (NOW, LIVE, SOLO) and headline metrics are dot-matrix; names, roles and prose are Urbanist. Never draw a sentence in dots.", "section": "typography" },
+      { "name": "The Thin Display Rule", "body": "Headings are weight 300 with negative tracking and balanced wrap. Weight is spent on labels and actions, not headlines.", "section": "typography" },
+      { "name": "The Planes Not Cards Rule", "body": "Depth is a stack of blurred planes behind frosted glass. Do not lift rows, slabs or chips with shadows on hover; hover lightens a surface or racks focus instead. The primary pill's 1px glow lift is the one exception.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do set containers as frosted graphite glass (28px radius, 1px white-0.16 border, top sheen, blur 22px) over smoke, graphite, or a blurred image plane.",
+      "Do draw years, statuses and headline figures with the dot-matrix renderer, keeping the real text in the DOM for assistive tech.",
+      "Do reserve oxide for NOW, the primary action and the single lead result; pair `oxide-led` with its glow every time.",
+      "Do join smoke and graphite with gradient seams into `graphite`, never a hard edge.",
+      "Do measure with hairline tick scales and a glowing marker rather than bars or charts.",
+      "Do thicken the glass tint and lift fog locally when glass sits over light imagery, to hold AA contrast.",
+      "Do honour reduced motion: dot lighting, rack focus, plane drift and the NOW pulse all fall back to static, fully visible states."
+    ],
+    "donts": [
+      "Don't add a second accent hue; the system is smoke, graphite, bone, fog and one oxide.",
+      "Don't colour secondary metrics or past roles orange.",
+      "Don't set display headings heavier than 300 or add a second typeface.",
+      "Don't fake the dot-matrix with a pixel or LED web font; it is a real dot grid.",
+      "Don't lift rows, slabs or chips with hover shadows; hover washes a surface or racks focus (the primary pill's glow lift is the only exception).",
+      "Don't treat the old styles.css / case-styles.css look on the case pages as part of this system."
+    ]
+  }
+}
