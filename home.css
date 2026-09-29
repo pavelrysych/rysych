@@ -431,7 +431,7 @@ p { margin: 0; text-wrap: pretty; }
 }
 
 .hero__image {
-  grid-column: 5 / 11;
+  grid-column: 4 / 10;
   grid-row: 1;
   align-self: end;
   justify-self: center;
