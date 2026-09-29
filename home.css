@@ -749,39 +749,62 @@ button.pill { border: 0; font-family: inherit; cursor: pointer; }
 .board-row:focus-within { background: rgba(255, 255, 255, 0.06); }
 @media (hover: hover) { .board-row:hover { background: rgba(255, 255, 255, 0.06); } }
 
-/* only this opens the case: an arrow at rest, "View case" once the row is hovered or the link focused */
+/* only this opens the case: an arrow in a glass circle at rest, opening into an oxide "View case" pill
+   when the row is hovered or the link focused (clip-path and opacity only, nothing reflows) */
 .board-row__cta {
+  position: relative;
+  isolation: isolate;
   justify-self: end;
   display: inline-flex;
   align-items: center;
-  min-width: 44px;
+  gap: 8px;
   height: 44px;
-  padding: 0 12px;
+  padding: 0 13px 0 16px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: rgba(255, 255, 255, 0.06);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
   color: var(--bone);
   font-size: 15px;
   font-weight: 600;
   text-decoration: none;
   white-space: nowrap;
-  transition: background-color 250ms var(--ease), border-color 250ms var(--ease), color 250ms var(--ease);
+  transition: color 250ms var(--ease);
+}
+.board-row__cta::before,
+.board-row__cta::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  border-radius: 999px;
+  pointer-events: none;
+}
+.board-row__cta::before {
+  inset: 0;
+  background: var(--oxide);
+  opacity: 0;
+  clip-path: inset(0 0 0 calc(100% - 44px) round 22px);
+  transition: clip-path 350ms var(--ease), opacity 200ms var(--ease), background-color 250ms var(--ease);
+}
+.board-row__cta::after {
+  top: 0;
+  right: 0;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  transition: opacity 250ms var(--ease);
 }
 .board-row__cta-icon { flex: none; }
-.board-row__cta-label {
-  display: inline-block;
-  max-width: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-width 350ms var(--ease), opacity 250ms var(--ease), margin 350ms var(--ease);
-}
-.board-row:focus-within .board-row__cta-label { max-width: 90px; margin-right: 8px; opacity: 1; }
-.board-row__cta:focus-visible { background: var(--oxide); border-color: var(--oxide); color: #fff; }
+.board-row__cta-label { opacity: 0; transition: opacity 250ms var(--ease); }
+.board-row:focus-within .board-row__cta { color: #fff; }
+.board-row:focus-within .board-row__cta::before { opacity: 1; clip-path: inset(0 round 22px); }
+.board-row:focus-within .board-row__cta::after { opacity: 0; }
+.board-row:focus-within .board-row__cta-label { opacity: 1; }
 @media (hover: hover) {
-  .board-row:hover .board-row__cta-label { max-width: 90px; margin-right: 8px; opacity: 1; }
-  .board-row:hover .board-row__cta { background: var(--oxide); border-color: var(--oxide); color: #fff; }
-  .board-row__cta:hover { background: #bb3a21; border-color: #bb3a21; }
+  .board-row:hover .board-row__cta { color: #fff; }
+  .board-row:hover .board-row__cta::before { opacity: 1; clip-path: inset(0 round 22px); }
+  .board-row:hover .board-row__cta::after { opacity: 0; }
+  .board-row:hover .board-row__cta-label { opacity: 1; }
+  .board-row__cta:hover::before { background-color: #bb3a21; }
 }
 
 .board-row__time { display: grid; gap: 8px; }
@@ -1371,7 +1394,15 @@ button.pill { border: 0; font-family: inherit; cursor: pointer; }
   .board-row__status { grid-area: status; }
   /* no hover on phones: the case link shows its label and sits under the route */
   .board-row__cta { grid-area: cta; justify-self: start; margin-top: 6px; padding: 0 16px; }
-  .board-row__cta-label { max-width: none; margin-right: 8px; opacity: 1; }
+  .board-row__cta::before {
+    opacity: 1;
+    clip-path: none;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  }
+  .board-row__cta::after { display: none; }
+  .board-row__cta-label { opacity: 1; }
   .board-row__statusnote { display: block; order: -1; font-size: 12px; line-height: 1.3; }
   .board-row__time, .board-row__status { align-self: end; }
 
@@ -1452,7 +1483,8 @@ button.pill { border: 0; font-family: inherit; cursor: pointer; }
 }
 
 @media (hover: none) {
-  .board-row__cta:active { background: var(--oxide); border-color: var(--oxide); color: #fff; }
+  .board-row__cta:active { color: #fff; }
+  .board-row__cta:active::before { background: var(--oxide); border-color: var(--oxide); }
   .mini-board a:active, .readings__item:active { background: rgba(255, 255, 255, 0.06); }
   .pill--glow:active, .email-pill__address:active, .email-pill__copy:active { background-color: #bb3a21; }
   .social:active, .chip:not([aria-selected="true"]):active { background: rgba(255, 255, 255, 0.12); }
