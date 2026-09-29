@@ -18,9 +18,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="preload" href="/assets/minimal-hero-film-v1-poster.jpg" as="image" fetchpriority="high">
-    <link rel="stylesheet" href="/home.css?v=9">
+    <link rel="stylesheet" href="/home.css?v=13">
     <script src="/site.js?v=13" defer></script>
-    <script src="/home.js?v=6" defer></script>
+    <script src="/home.js?v=7" defer></script>
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="Pavel Rysych">
@@ -62,7 +62,7 @@
             <h1 id="hero-title">I build products and the design teams behind them.</h1>
             <p class="hero__intro">I lead product design and bring AI into everyday work — from prototypes and design systems to implementation.<span class="hero__intro-more"> My experience across design, product and growth helps me connect decisions with the needs of the business.</span></p>
             <div class="hero__actions">
-              <a class="pill pill--glow" href="mailto:rysych@gmail.com">Get in touch</a>
+              <a class="pill pill--glow" href="#contact">Get in touch</a>
               <a class="pill pill--glass" href="#work">View selected work</a>
             </div>
           </div>
@@ -75,6 +75,7 @@
             <span class="visually-hidden" id="portrait-instructions">Move your mouse horizontally or drag across the portrait to turn it. With the portrait focused, use the left and right arrow keys, Home or End. The portrait stays still when reduced motion is enabled.</span>
           </div>
 
+          <div class="hero-panels">
           <aside class="glass hero-reading" aria-label="Results" data-readings='[
             {"label":"Customer acquisition cost · Admirals","value":"−67%","at":33,"note":"Two-thirds lower after customer journey improvements"},
             {"label":"Click-through rate · Admirals","value":"×3","at":100,"note":"Tripled by the web redesign"},
@@ -100,10 +101,12 @@
             <ol class="mini-board">
               <li><a href="/work/admirals/"><span class="dm dm--status dm--hot" data-dm>NOW</span><span class="mini-board__name">Admirals</span><span class="mini-board__role">Head of Design</span></a></li>
               <li><a href="/work/subskim/"><span class="dm dm--status" data-dm>LIVE</span><span class="mini-board__name">Subskim</span><span class="mini-board__role">Built solo with AI</span></a></li>
+              <li><a href="/work/mechanism/"><span class="dm dm--status" data-dm>2021</span><span class="mini-board__name">Mechanism</span><span class="mini-board__role">Product Designer</span></a></li>
               <li><a href="/work/metamap/"><span class="dm dm--status" data-dm>2018</span><span class="mini-board__name">MetaMap</span><span class="mini-board__role">Head of Design</span></a></li>
               <li><a href="/work/fundraise-up/"><span class="dm dm--status" data-dm>2017</span><span class="mini-board__name">Fundraise Up</span><span class="mini-board__role">Founding Designer</span></a></li>
             </ol>
           </aside>
+          </div>
         </div>
       </section>
 
@@ -375,6 +378,7 @@
 
           <div class="contact__actions">
             <a class="pill pill--glow pill--large" href="mailto:rysych@gmail.com">rysych@gmail.com</a>
+            <button class="pill pill--glass" type="button" data-copy="rysych@gmail.com" hidden>Copy email</button>
             <a class="pill pill--glass" href="https://www.linkedin.com/in/rysych/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a class="pill pill--glass" href="https://www.instagram.com/pavel_rysych/" target="_blank" rel="noopener noreferrer">Instagram</a>
             <a class="pill pill--glass" href="https://www.threads.com/@pavel_rysych" target="_blank" rel="noopener noreferrer">Threads</a>

@@ -268,6 +268,24 @@
     });
   }
 
+  /* ---------- Copy email: works even where mailto has no mail app behind it ---------- */
+  document.querySelectorAll('[data-copy]').forEach((button) => {
+    if (!navigator.clipboard) return;
+    const label = button.textContent;
+    let reset = null;
+    button.hidden = false;
+    button.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(button.dataset.copy);
+        button.textContent = 'Copied';
+      } catch {
+        button.textContent = button.dataset.copy;
+      }
+      window.clearTimeout(reset);
+      reset = window.setTimeout(() => { button.textContent = label; }, 2000);
+    });
+  });
+
   /* ---------- AI console tabs ---------- */
   document.querySelectorAll('[data-tabs]').forEach((console) => {
     const tabs = [...console.querySelectorAll('[role="tab"]')];
