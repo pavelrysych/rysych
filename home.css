@@ -417,7 +417,7 @@ p { margin: 0; text-wrap: pretty; }
   max-width: 11ch;
 }
 .hero__intro {
-  max-width: 46ch;
+  max-width: 36ch; /* ends before the portrait's face at every desktop width */
   margin-top: 28px;
   font-size: 18px;
   line-height: 1.6;
@@ -1112,7 +1112,11 @@ p { margin: 0; text-wrap: pretty; }
 
 @media (max-width: 1180px) {
   .board__cols, .board-row { grid-template-columns: 120px minmax(0, 1fr) minmax(0, 1.2fr) 140px; gap: 18px; }
-  .hero-reading { grid-column: 9 / 13; }
+  .hero-reading { grid-column: 9 / 13; margin-top: 8vh; }
+  /* small laptops: keep the intro off the face and the two tiles apart */
+  .hero__intro { max-width: 30ch; }
+  .hero-reading .reading__note { display: none; }
+  .hero-board { margin-bottom: 6vh; }
 }
 
 @media (max-width: 960px) {
