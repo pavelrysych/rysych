@@ -494,6 +494,8 @@
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16);
 }
 .case-next h2 { margin: 0; font-size: clamp(3rem, 7vw, 5.5rem); line-height: 1; letter-spacing: -0.04em; }
+.case-next__logo { line-height: 0; }
+.case-next__logo img { width: clamp(200px, 24vw, 340px); height: auto; }
 .case-next__actions { display: flex; flex-wrap: wrap; gap: 12px; }
 .case-footer { width: 100%; max-width: calc(var(--max) - 2 * var(--gutter)); margin: 48px auto 0; }
 .case-next__actions .text-link:first-child {
