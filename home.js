@@ -250,9 +250,9 @@
     reset();
 
     board.querySelectorAll('.board-row').forEach((row) => {
-      // a tap on a phone opens the case, so only a mouse lights the span on the way
+      // a mouse lights the span on the way; the row's case link lights it for keyboard users
       row.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse') activate(row); });
-      row.addEventListener('focus', () => activate(row));
+      row.addEventListener('focusin', () => activate(row));
     });
     board.addEventListener('pointerleave', (e) => { if (e.pointerType === 'mouse') reset(); });
     window.addEventListener('pageshow', (e) => { if (e.persisted) reset(); });

@@ -727,7 +727,7 @@ button.pill { border: 0; font-family: inherit; cursor: pointer; }
 .board__cols,
 .board-row {
   display: grid;
-  grid-template-columns: 150px minmax(0, 1.15fr) minmax(0, 1.5fr) 170px;
+  grid-template-columns: 150px minmax(0, 1.15fr) minmax(0, 1.5fr) 150px 132px;
   gap: 24px;
   align-items: center;
 }
@@ -738,19 +738,51 @@ button.pill { border: 0; font-family: inherit; cursor: pointer; }
   letter-spacing: 0.04em;
   color: var(--fog);
 }
-.board__cols span:last-child { text-align: right; }
+.board__cols span:nth-child(4) { text-align: right; }
 
 .board__rows { list-style: none; margin: 0; padding: 0; }
 .board-row {
   padding: 22px 16px;
   border-radius: 18px;
-  text-decoration: none;
   transition: background-color 300ms var(--ease);
 }
-.board-row:focus-visible { background: rgba(255, 255, 255, 0.06); }
+.board-row:focus-within { background: rgba(255, 255, 255, 0.06); }
 @media (hover: hover) { .board-row:hover { background: rgba(255, 255, 255, 0.06); } }
-.board__rows li { border-top: 1px solid var(--line-dark); }
-.board__rows li:first-child { border-top-color: rgba(237, 235, 231, 0.22); }
+
+/* only this opens the case: an arrow at rest, "View case" once the row is hovered or the link focused */
+.board-row__cta {
+  justify-self: end;
+  display: inline-flex;
+  align-items: center;
+  min-width: 44px;
+  height: 44px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  color: var(--bone);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 250ms var(--ease), border-color 250ms var(--ease), color 250ms var(--ease);
+}
+.board-row__cta-icon { flex: none; }
+.board-row__cta-label {
+  display: inline-block;
+  max-width: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-width 350ms var(--ease), opacity 250ms var(--ease), margin 350ms var(--ease);
+}
+.board-row:focus-within .board-row__cta-label { max-width: 90px; margin-right: 8px; opacity: 1; }
+.board-row__cta:focus-visible { background: var(--oxide); border-color: var(--oxide); color: #fff; }
+@media (hover: hover) {
+  .board-row:hover .board-row__cta-label { max-width: 90px; margin-right: 8px; opacity: 1; }
+  .board-row:hover .board-row__cta { background: var(--oxide); border-color: var(--oxide); color: #fff; }
+  .board-row__cta:hover { background: #bb3a21; border-color: #bb3a21; }
+}
 
 .board-row__time { display: grid; gap: 8px; }
 .board-row__range { font-size: 13px; color: var(--fog); }
@@ -785,9 +817,8 @@ button.pill { border: 0; font-family: inherit; cursor: pointer; }
   flex-wrap: wrap;
   align-items: center;
   gap: 12px 28px;
-  margin-top: 8px;
+  margin-top: 16px;
   padding: 18px 16px 6px;
-  border-top: 1px dashed rgba(237, 235, 231, 0.2);
   font-size: 15px;
 }
 .board__scheduled-label { font-weight: 600; color: var(--fog); }
@@ -1231,7 +1262,7 @@ button.pill { border: 0; font-family: inherit; cursor: pointer; }
 /* ---------- Responsive ---------- */
 
 @media (max-width: 1180px) {
-  .board__cols, .board-row { grid-template-columns: 140px minmax(0, 1fr) minmax(0, 1.2fr) 130px; gap: 18px; }
+  .board__cols, .board-row { grid-template-columns: 140px minmax(0, 1fr) minmax(0, 1.2fr) 130px 124px; gap: 18px; }
   .hero-reading { grid-column: 9 / 13; margin-top: 8vh; }
   /* small laptops: keep the intro off the face and the two tiles apart */
   .hero__intro { max-width: 30ch; }
@@ -1330,7 +1361,7 @@ button.pill { border: 0; font-family: inherit; cursor: pointer; }
   .board__cols { display: none; }
   .board-row {
     grid-template-columns: auto minmax(0, 1fr);
-    grid-template-areas: "time status" "dest dest" "route route";
+    grid-template-areas: "time status" "dest dest" "route route" "cta cta";
     gap: 10px 16px;
     padding: 20px 10px;
   }
@@ -1338,6 +1369,9 @@ button.pill { border: 0; font-family: inherit; cursor: pointer; }
   .board-row__dest { grid-area: dest; }
   .board-row__route { grid-area: route; }
   .board-row__status { grid-area: status; }
+  /* no hover on phones: the case link shows its label and sits under the route */
+  .board-row__cta { grid-area: cta; justify-self: start; margin-top: 6px; padding: 0 16px; }
+  .board-row__cta-label { max-width: none; margin-right: 8px; opacity: 1; }
   .board-row__statusnote { display: block; order: -1; font-size: 12px; line-height: 1.3; }
   .board-row__time, .board-row__status { align-self: end; }
 
@@ -1418,7 +1452,8 @@ button.pill { border: 0; font-family: inherit; cursor: pointer; }
 }
 
 @media (hover: none) {
-  .board-row:active, .mini-board a:active, .readings__item:active { background: rgba(255, 255, 255, 0.06); }
+  .board-row__cta:active { background: var(--oxide); border-color: var(--oxide); color: #fff; }
+  .mini-board a:active, .readings__item:active { background: rgba(255, 255, 255, 0.06); }
   .pill--glow:active, .email-pill__address:active, .email-pill__copy:active { background-color: #bb3a21; }
   .social:active, .chip:not([aria-selected="true"]):active { background: rgba(255, 255, 255, 0.12); }
   .hover-note { display: none; }
