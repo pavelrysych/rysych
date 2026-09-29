@@ -888,6 +888,19 @@ p { margin: 0; text-wrap: pretty; }
 .lead > * { position: relative; z-index: 1; }
 
 .quotes { padding: clamp(150px, 16vw, 230px) 0; }
+
+/* directly under the hero: the studio smoke carries on, then settles into graphite */
+.quotes--after-hero {
+  padding-top: clamp(24px, 3vw, 48px);
+  background: var(--smoke);
+}
+.quotes--after-hero::before { display: none; }
+.hero:has(+ .quotes--after-hero)::after { display: none; }
+.hero:has(+ .quotes--after-hero) {
+  background-image:
+    radial-gradient(90% 70% at 62% 34%, #d6d5d9 0%, rgba(214, 213, 217, 0) 60%),
+    linear-gradient(180deg, var(--smoke-hi) 0%, var(--smoke) 60%);
+}
 .quotes__grid {
   display: grid;
   grid-template-columns: 1.3fr 1fr 1fr;
