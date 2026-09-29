@@ -181,6 +181,8 @@
   overflow: hidden;
 }
 .case-film__video { display: block; width: 100%; height: auto; background: var(--graphite-2); color: var(--bone); }
+/* a screenshot never scales past its own pixels */
+.case-page--fundraise-up .case-hero__image { width: auto; max-width: min(100%, 826px); margin-inline: auto; }
 .case-film-stage figcaption,
 .case-product-stage figcaption { margin: 16px 6px 2px; font-size: 14px; color: var(--fog); }
 .case-film-stage figcaption strong,
