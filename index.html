@@ -18,9 +18,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="preload" href="/assets/minimal-hero-film-v1-poster.jpg" as="image" fetchpriority="high">
-    <link rel="stylesheet" href="/home.css?v=46">
+    <link rel="stylesheet" href="/home.css?v=47">
     <script src="/site.js?v=15" defer></script>
-    <script src="/home.js?v=16" defer></script>
+    <script src="/home.js?v=17" defer></script>
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="Pavel Rysych">
@@ -98,11 +98,11 @@
               <span class="led led--on" aria-hidden="true"></span>
             </div>
             <ol class="mini-board">
-              <li><a href="/work/subskim/"><span class="dm dm--status dm--hot" data-dm>2026–NOW</span><span class="mini-board__name">Subskim</span><span class="mini-board__role">Built solo with AI</span></a></li>
-              <li><a href="/work/admirals/"><span class="dm dm--status dm--hot" data-dm>2024–NOW</span><span class="mini-board__name">Admirals</span><span class="mini-board__role">Head of Design</span></a></li>
-              <li><a href="/work/mechanism/"><span class="dm dm--status" data-dm>2021–2023</span><span class="mini-board__name">Mechanism</span><span class="mini-board__role">Head of Product Design</span></a></li>
-              <li><a href="/work/metamap/"><span class="dm dm--status" data-dm>2018–2021</span><span class="mini-board__name">MetaMap</span><span class="mini-board__role">Head of Design</span></a></li>
-              <li><a href="/work/fundraise-up/"><span class="dm dm--status" data-dm>2017–2018</span><span class="mini-board__name">Fundraise Up</span><span class="mini-board__role">Founding Designer</span></a></li>
+              <li class="mini-board__row"><span class="dm dm--status dm--hot" data-dm>2026–NOW</span><span class="mini-board__name">Subskim</span><span class="mini-board__role">Built solo with AI</span></li>
+              <li class="mini-board__row"><span class="dm dm--status dm--hot" data-dm>2024–NOW</span><span class="mini-board__name">Admirals</span><span class="mini-board__role">Head of Design</span></li>
+              <li class="mini-board__row"><span class="dm dm--status" data-dm>2021–2023</span><span class="mini-board__name">Mechanism</span><span class="mini-board__role">Head of Product Design</span></li>
+              <li class="mini-board__row"><span class="dm dm--status" data-dm>2018–2021</span><span class="mini-board__name">MetaMap</span><span class="mini-board__role">Head of Design</span></li>
+              <li class="mini-board__row"><span class="dm dm--status" data-dm>2017–2018</span><span class="mini-board__name">Fundraise Up</span><span class="mini-board__role">Founding Designer</span></li>
             </ol>
           </aside>
           </div>
@@ -113,19 +113,26 @@
       <section class="quotes quotes--after-hero smoke" id="recommendations" aria-labelledby="quotes-title">
         <div class="page-width">
           <h2 class="visually-hidden" id="quotes-title">What colleagues say</h2>
-          <div class="quotes__grid">
-            <figure class="quote">
+          <div class="quote-carousel" data-carousel aria-roledescription="carousel" aria-labelledby="quotes-title">
+            <div class="quote-carousel__track" data-carousel-track aria-live="off">
+            <figure class="quote" role="group" aria-roledescription="slide" aria-label="1 of 3">
               <blockquote><p>“Pavel is one of the best designers I worked with in my life. He is extremely talented and has a unique ability to transform complex ideas into graphics.”</p></blockquote>
               <figcaption>Yuriy Smirnov<span>Co-Founder &amp; COO, Fundraise Up</span></figcaption>
             </figure>
-            <figure class="quote">
+            <figure class="quote" role="group" aria-roledescription="slide" aria-label="2 of 3">
               <blockquote><p>“Pavel was a dedicated team player and is a talented artist. He was able to conceptualize complex concepts and articulate them effectively visually.”</p></blockquote>
               <figcaption>Peter Byrnes<span>Co-Founder &amp; CEO, Fundraise Up</span></figcaption>
             </figure>
-            <figure class="quote">
+            <figure class="quote" role="group" aria-roledescription="slide" aria-label="3 of 3">
               <blockquote><p>“He is a very professional colleague and great individual. I'm going to miss working with him!”</p></blockquote>
               <figcaption>Celestin Soubrier<span>Chief Growth Officer · Fintech Leader</span></figcaption>
             </figure>
+            </div>
+            <div class="quote-carousel__controls" hidden>
+              <button type="button" class="quote-carousel__arrow" data-carousel-prev aria-label="Previous quote"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+              <div class="quote-carousel__dots" data-carousel-dots role="group" aria-label="Choose a quote"></div>
+              <button type="button" class="quote-carousel__arrow" data-carousel-next aria-label="Next quote"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            </div>
           </div>
         </div>
       </section>

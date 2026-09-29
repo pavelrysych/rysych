@@ -585,18 +585,14 @@ button.pill { border: 0; font-family: inherit; cursor: pointer; }
   color: var(--fog);
 }
 .mini-board { list-style: none; margin: 0; padding: 0; }
-.mini-board a {
+.mini-board__row {
   display: grid;
   grid-template-columns: 96px minmax(0, 1fr);
   grid-template-rows: auto auto;
   column-gap: 12px;
   align-items: center;
   padding: 10px 14px;
-  border-radius: 14px;
-  text-decoration: none;
-  transition: background-color 250ms var(--ease);
 }
-@media (hover: hover) { .mini-board a:hover { background: rgba(255, 255, 255, 0.07); } }
 .mini-board .dm { grid-column: 1; grid-row: 1 / 3; }
 .mini-board__name, .mini-board__role { grid-column: 2; }
 .mini-board__name { font-size: 17px; font-weight: 600; line-height: 1.2; }
@@ -722,6 +718,9 @@ button.pill { border: 0; font-family: inherit; cursor: pointer; }
 }
 .board-row:focus-within { background: rgba(255, 255, 255, 0.06); }
 @media (hover: hover) { .board-row:hover { background: rgba(255, 255, 255, 0.06); } }
+.board-row[data-row] { cursor: pointer; }
+.board-row.is-selected { background: rgba(255, 255, 255, 0.08); }
+.board-row.is-selected .board-row__name { color: #fff; }
 
 /* only this opens the case: an arrow in a glass circle at rest; hovering the row (or focusing the link)
    fades in an oxide "View case" pill. Opacity and transform only, on layers that stay put, so nothing
@@ -870,7 +869,20 @@ button.pill { border: 0; font-family: inherit; cursor: pointer; }
   overflow: hidden;
   isolation: isolate;
   text-align: center;
+  /* pure black, like the app itself, so the screen reads as the product rather than a picture of it */
+  background: #000;
 }
+.subskim::before,
+.subskim::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0;
+  height: var(--seam-height);
+  z-index: -1;
+  pointer-events: none;
+}
+.subskim::before { top: 0; background: var(--seam-from-graphite); }
+.subskim::after { bottom: 0; background: var(--seam-to-graphite); }
 .subskim__intro { display: grid; justify-items: center; }
 .subskim h2 {
   font-size: clamp(4rem, 11vw, 9rem);
@@ -972,16 +984,72 @@ button.pill { border: 0; font-family: inherit; cursor: pointer; }
     radial-gradient(90% 70% at 62% 34%, #d6d5d9 0%, rgba(214, 213, 217, 0) 60%),
     linear-gradient(180deg, var(--smoke-hi) 0%, var(--smoke) 60%);
 }
-.quotes__grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 48px;
-}
-.quote { margin: 0; display: grid; align-content: space-between; gap: 24px; }
+/* colleagues' words, one at a time: slides share one cell so the section never changes height */
+.quote-carousel { max-width: 980px; }
+.quote-carousel__track { display: grid; gap: 56px; }
+.quote { margin: 0; display: grid; align-content: start; gap: 24px; }
 .quote blockquote { margin: 0; }
-.quote p { font-size: 19px; line-height: 1.55; }
-.quote figcaption { display: grid; font-size: 15px; font-weight: 600; }
+.quote p {
+  font-size: clamp(1.5rem, 2.6vw, 2.25rem);
+  font-weight: 300;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  text-wrap: pretty;
+}
+.quote figcaption { display: grid; gap: 2px; font-size: 16px; font-weight: 600; }
 .quote figcaption span { font-weight: 400; color: var(--ink-2); }
+.quote-carousel.is-live .quote-carousel__track { gap: 0; touch-action: pan-y; }
+.quote-carousel.is-live .quote {
+  grid-area: 1 / 1;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(16px);
+  transition: opacity 450ms var(--ease), transform 600ms var(--ease), visibility 0s linear 450ms;
+}
+.quote-carousel.is-live .quote.is-active {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition: opacity 450ms var(--ease), transform 600ms var(--ease), visibility 0s;
+}
+.quote-carousel__controls { display: flex; align-items: center; gap: 8px; margin-top: 36px; }
+.quote-carousel__controls[hidden] { display: none; }
+.quote-carousel__arrow {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid rgba(21, 20, 19, 0.22);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  color: var(--ink);
+  cursor: pointer;
+  transition: background-color 250ms var(--ease);
+}
+@media (hover: hover) { .quote-carousel__arrow:hover { background: rgba(255, 255, 255, 0.45); } }
+.quote-carousel__arrow:active { background: rgba(255, 255, 255, 0.45); }
+.quote-carousel__dots { display: flex; }
+.quote-carousel__dot {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+.quote-carousel__dot::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(21, 20, 19, 0.28);
+  transition: background-color 250ms var(--ease), transform 250ms var(--ease);
+}
+.quote-carousel__dot[aria-current="true"]::before { background: var(--oxide); transform: scale(1.25); }
 
 /* ---------- AI console ---------- */
 
@@ -1218,7 +1286,6 @@ button.pill { border: 0; font-family: inherit; cursor: pointer; }
   .hero-reading { grid-column: 9 / 13; margin-top: 8vh; }
   /* small laptops: keep the intro off the face and the two tiles apart */
   .hero__intro { max-width: 30ch; }
-  .hero-reading .reading__note { display: none; }
   .hero-board { margin-bottom: 6vh; }
 }
 
@@ -1297,7 +1364,6 @@ button.pill { border: 0; font-family: inherit; cursor: pointer; }
   }
   .hero-reading .dm--xl { --dm-h: 30px; }
   .hero-reading .reading__label { font-size: 12px; min-height: 2.9em; }
-  .hero-reading .reading__note { display: none; }
   .hero-board {
     grid-column: 1; grid-row: 3;
     margin: 8px 0 48px;
@@ -1339,8 +1405,8 @@ button.pill { border: 0; font-family: inherit; cursor: pointer; }
   /* every tab stays in view: the strip wraps instead of scrolling behind the glass edge */
   .console__tabs { flex-wrap: wrap; overflow: visible; }
 
-  .quotes__grid { grid-template-columns: minmax(0, 1fr); gap: 56px; }
   .quote { gap: 16px; }
+  .quote-carousel__controls { margin-top: 24px; }
   /* land a Leadership link on the heading, not on the seam above it */
   .lead { scroll-margin-top: calc(-1 * var(--pad-smoke)); }
   .destinations__note { margin-left: 0; }
@@ -1400,10 +1466,9 @@ button.pill { border: 0; font-family: inherit; cursor: pointer; }
 @media (hover: none) {
   .board-row__cta:active { color: #fff; }
   .board-row__cta:active::before { background: var(--oxide); border-color: var(--oxide); }
-  .mini-board a:active, .readings__item:active { background: rgba(255, 255, 255, 0.06); }
+  .readings__item:active { background: rgba(255, 255, 255, 0.06); }
   .pill--glow:active, .email-pill__address:active, .email-pill__copy:active { background-color: #bb3a21; }
   .social:active, .chip:not([aria-selected="true"]):active { background: rgba(255, 255, 255, 0.12); }
-  .hover-note { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
