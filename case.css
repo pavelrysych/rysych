@@ -569,5 +569,60 @@
 
 @media (max-width: 560px) {
   .case-hero--fundraise .case-hero__image { aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 50%; }
+
+  /* phones: screenshots run edge to edge, captions keep the gutter */
+  .case-product-stage,
+  .case-film-stage {
+    width: 100%;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+  .case-hero__image,
+  .case-film,
+  .case-figure > img,
+  .case-figure--video .case-film__video,
+  .fundraise-motion-card img,
+  .fundraise-motion-card video,
+  .case-social-comparison__item a,
+  .case-social-comparison__item img { border-radius: 0; }
+  .case-product-stage figcaption,
+  .case-film-stage figcaption { margin: 14px var(--gutter) 0; }
+
+  .case-figure,
+  .case-social-comparison,
+  .fundraise-motion-grid { margin-inline: calc(-1 * var(--gutter)); }
+  .case-figure,
+  .case-social-comparison,
+  .fundraise-motion-card {
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+  }
+  .case-figure figcaption,
+  .fundraise-motion-card figcaption { margin: 14px var(--gutter) 0; }
+
+  /* before and after share the full width; each caption keeps its outer gutter */
+  .case-social-comparison { gap: 0 6px; }
+  .case-social-comparison__item { max-width: none; }
+  .case-social-comparison__item figcaption { padding-left: var(--gutter); }
+  .case-social-comparison__item--after figcaption { padding: 0 var(--gutter) 0 10px; }
+  .case-social-comparison__item:first-child figcaption { padding-right: 10px; }
+
+  .mechanism-product__image {
+    width: calc(100% + 2 * var(--gutter));
+    max-width: none;
+    margin-inline: calc(-1 * var(--gutter));
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+  }
 }
 .case-footer .site-footer { margin-top: 0; }
