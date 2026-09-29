@@ -407,9 +407,16 @@
 
 /* Fundraise Up specifics (assets/fundraise-case.css loads before this file) */
 .fundraise-gamification { background: none; }
-.fundraise-motion-grid { gap: 24px; margin: 0 0 clamp(40px, 5vw, 64px); }
+.fundraise-motion-grid {
+  gap: 24px;
+  margin: 0 0 clamp(40px, 5vw, 64px);
+  grid-template-areas: "monthly costs" "monthly donate" "mobile mobile";
+}
 .fundraise-motion-card { margin: 0; }
-.fundraise-motion-card img { border: 0; border-radius: 14px; }
+.fundraise-motion-card--costs { grid-area: costs; }
+.fundraise-motion-card--mobile { justify-self: center; width: min(100%, 720px); }
+.fundraise-motion-card img,
+.fundraise-motion-card video { display: block; width: 100%; height: auto; border: 0; border-radius: 14px; background: #fff; }
 .fundraise-motion-card figcaption { margin: 14px 6px 4px; font-size: 14px; color: var(--fog); }
 .fundraise-form-comparison { padding: clamp(24px, 3.5vw, 48px); }
 .fundraise-form-comparison h2 { font-family: var(--font); font-weight: 300; letter-spacing: -0.025em; color: var(--bone); }
@@ -487,4 +494,5 @@
   .case-audience-table tbody td::before { content: attr(data-label); display: block; margin-bottom: 6px; font-size: 13px; font-weight: 600; color: var(--bone); }
   .case-value-shift { padding: 16px; gap: 12px; }
   .case-next__inner { flex-direction: column; align-items: flex-start; }
+  .fundraise-motion-grid { grid-template-areas: "monthly" "costs" "donate" "mobile"; }
 }
