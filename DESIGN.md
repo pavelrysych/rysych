@@ -218,11 +218,11 @@ Depth comes from planes, blur and light rather than a shadow ladder. Glass slabs
 ### Shadow Vocabulary
 - **Glass slab** (`inset 0 1px 0 rgba(255,255,255,0.22), inset 0 -1px 0 rgba(0,0,0,0.25), 0 24px 60px -24px rgba(0,0,0,0.55)`): every glass container.
 - **Glass chrome** (`inset 0 1px 0 rgba(255,255,255,0.18), 0 12px 30px -16px rgba(0,0,0,0.5)`): wordmark, pill nav, mobile menu trigger.
-- **Oxide pill glow** (`inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -10px 18px rgba(110,20,0,0.25), 0 12px 32px -8px rgba(255,106,69,0.65)`): primary pill at rest; hover deepens the outer glow to 0.85 and lifts 1px.
+- **Primary pill** (`inset 0 1px 0 rgba(255,255,255,0.28)`): a flat oxide fill with only a faint top highlight. Buttons do not glow; glow belongs to status lights (LEDs, NOW, markers).
 - **LED glow** (`0 0 0 3px rgba(255,106,69,0.18), 0 0 14px 2px rgba(255,106,69,0.55)`): the ON led; markers and needles use `0 0 12–14px 2px` of the same glow.
 
 ### Named Rules
-**The Planes Not Cards Rule.** Depth is a stack of blurred planes behind frosted glass. Do not lift rows, slabs or chips with shadows on hover; hover lightens a surface or racks focus instead. The primary pill's 1px glow lift is the one exception.
+**The Planes Not Cards Rule.** Depth is a stack of blurred planes behind frosted glass. Do not lift rows, slabs or chips with shadows on hover; hover lightens a surface or racks focus instead.
 
 ## Shapes
 
@@ -233,8 +233,8 @@ Soft, generous corners on glass; full pills on anything you press. Slabs 28px; t
 ### Buttons
 Tactile, lit pills.
 - **Shape:** full pill (999px), 52px tall by default; compact 44px, large 64px.
-- **Primary (glow):** oxide body, white 600 text at 16px, inner top highlight, inner bottom ember, and an oxide glow beneath. Hover lifts 1px and brightens the glow. One per view cluster.
-- **Glass:** on smoke, translucent white (0.3) with a 0.55 white border, ink text, 16px blur; on graphite, 0.06 white with a 0.18 border and bone text. Hover raises the white alpha.
+- **Primary:** flat oxide pill, white 600 text at 16px, faint inner top highlight, no outer glow. Hover darkens the fill (#bb3a21). One per view cluster.
+- **Secondary:** a text link, not a button: 600 weight, 1px underline at 6px offset in 45% current colour, full colour on hover. External links (other sites) add an ↗ icon, open in a new tab with rel="noopener noreferrer" and a visually hidden "(opens in a new tab)"; internal links carry no icon. Glass pills remain only for controls such as console chips and icon buttons.
 - **Focus:** 2px `oxide-led` outline, 3px offset. Transitions 300ms on the house ease `cubic-bezier(0.16, 1, 0.3, 1)`.
 
 ### Chips
@@ -279,7 +279,7 @@ Three stages riding one ticked track, each with a dot-matrix index, a bone mark 
 - **Don't** colour secondary metrics or past roles orange.
 - **Don't** set display headings heavier than 300 or add a second typeface.
 - **Don't** fake the dot-matrix with a pixel or LED web font; it is a real dot grid.
-- **Don't** lift rows, slabs or chips with hover shadows; hover washes a surface or racks focus (the primary pill's glow lift is the only exception).
+- **Don't** lift rows, slabs or chips with hover shadows; hover washes a surface or racks focus.
 - **Don't** load styles.css or case-styles.css; they are retired.
 - **Don't** put an artifact card inside a glass slab, or stretch a screenshot beyond its own pixels.
 - **Don't** label case chapters by discipline (POSITIONING, TEAM); label them by their place in the story.
