@@ -281,5 +281,6 @@ Three stages riding one ticked track, each with a dot-matrix index, a bone mark 
 - **Don't** fake the dot-matrix with a pixel or LED web font; it is a real dot grid.
 - **Don't** lift rows, slabs or chips with hover shadows; hover washes a surface or racks focus.
 - **Don't** load styles.css or case-styles.css; they are retired.
+- **Don't** use AI-generated key art or decorative scenes as backgrounds; the only imagery behind glass is the project's own product screenshot, heavily blurred.
 - **Don't** put an artifact card inside a glass slab, or stretch a screenshot beyond its own pixels.
 - **Don't** label case chapters by discipline (POSITIONING, TEAM); label them by their place in the story.
