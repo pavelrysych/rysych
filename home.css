@@ -852,7 +852,6 @@ button.pill { border: 0; font-family: inherit; cursor: pointer; }
   cursor: pointer;
   transition: background-color 300ms var(--ease), color 300ms var(--ease);
 }
-.readings__list li { border-bottom: 1px solid var(--line-dark); }
 .readings__item .dm { color: var(--fog); }
 @media (hover: hover) { .readings__item:hover { background: rgba(255, 255, 255, 0.04); color: var(--bone); } }
 .readings__item[aria-pressed="true"] { background: rgba(255, 255, 255, 0.06); color: var(--bone); }
