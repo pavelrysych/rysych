@@ -30,7 +30,7 @@
   align-items: center;
   gap: 6px;
   min-height: 44px;
-  padding: 0 4px;
+  padding: 0;
   font-size: 16px;
   font-weight: 600;
   color: inherit;
@@ -40,9 +40,11 @@
   text-decoration-color: color-mix(in srgb, currentColor 45%, transparent);
   transition: text-decoration-color 250ms var(--ease);
 }
-.case-page .text-link:hover { text-decoration-color: currentColor; }
+@media (hover: hover) { .case-page .text-link:hover { text-decoration-color: currentColor; } }
 .case-page .text-link .icon-arrow { width: 16px; height: 16px; }
 .case-page .text-link:not([target="_blank"]) .icon-arrow { display: none; }
+.case-figure figcaption .icon-arrow { width: 14px; height: 14px; margin-left: 2px; vertical-align: -2px; }
+.nowrap { white-space: nowrap; }
 
 /* ---------- Hero: smoke settling into graphite ---------- */
 
@@ -364,8 +366,12 @@
 .mechanism-product { display: flex; flex-direction: column; align-items: flex-start; min-width: 0; padding: 0; border: 0; background: none; }
 .mechanism-product__number { font-size: 13px; font-weight: 600; letter-spacing: 0.04em; color: var(--fog); }
 .mechanism-product__image {
-  width: 100%;
+  box-sizing: content-box;
+  width: calc(100% - 22px);
   height: auto;
+  aspect-ratio: 1250 / 712;
+  object-fit: cover;
+  object-position: left top;
   margin-top: 16px;
   padding: 10px;
   border-radius: 22px;
@@ -469,8 +475,9 @@
 
 /* ---------- Next case ---------- */
 
-.case-next { padding: 0 0 48px; }
+.case-next { padding: 0 var(--gutter) 48px; }
 .case-next__inner {
+  max-width: calc(var(--max) - 2 * var(--gutter));
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -487,6 +494,7 @@
 }
 .case-next h2 { margin: 0; font-size: clamp(3rem, 7vw, 5.5rem); line-height: 1; letter-spacing: -0.04em; }
 .case-next__actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.case-footer { width: 100%; max-width: calc(var(--max) - 2 * var(--gutter)); margin: 48px auto 0; }
 .case-next__actions .text-link:first-child {
   background: var(--oxide);
   border-color: transparent;
@@ -522,7 +530,11 @@
   .case-hero__image, .case-film { border-radius: 14px; }
   .case-section, .case-audiences__intro { grid-template-columns: minmax(0, 1fr); gap: 12px; }
   .case-section p:not(.case-section__aside) { font-size: 16px; }
-  .case-social-comparison { grid-template-columns: minmax(0, 1fr); }
+  /* before and after sit side by side instead of two screens of scrolling */
+  .case-social-comparison { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: auto auto; gap: 0 12px; padding: 12px; }
+  .case-social-comparison__item { display: grid; grid-row: span 2; grid-template-rows: subgrid; }
+  .case-social-comparison__item figcaption { align-content: start; margin-bottom: 10px; font-size: 13px; line-height: 1.4; }
+  .case-social-comparison__item a, .case-social-comparison__item img { border-radius: 10px; }
   .mechanism-products__grid { grid-template-columns: minmax(0, 1fr); }
   .case-table-wrap { border: 0; background: none; box-shadow: none; border-radius: 0; }
   .case-audience-table, .case-audience-table tbody { display: block; }
@@ -541,6 +553,21 @@
   .case-audience-table tbody td::before { content: attr(data-label); display: block; margin-bottom: 6px; font-size: 13px; font-weight: 600; color: var(--bone); }
   .case-value-shift { padding: 16px; gap: 12px; }
   .case-next__inner { flex-direction: column; align-items: flex-start; }
+  /* the hero settles into graphite before this link on phones */
+  .case-hero .case-hero__external { color: var(--bone); }
+  .case-facts > div:nth-child(3) { grid-column: 1 / -1; }
+  .case-main { padding-bottom: 56px; }
+  /* the lead result gets the full row; the other four form a clean 2 x 2 */
+  .case-impact__grid--five > div:first-child { grid-column: 1 / -1; }
+  /* wide desktop screenshots are cropped to the part that matters, at a readable scale */
+  #subskim-calendar .case-hero__image { aspect-ratio: 4 / 5; object-fit: cover; object-position: 0 0; }
+  .case-page--metamap .case-figure > img { aspect-ratio: 1; object-fit: cover; object-position: 35% 0; }
+  .fundraise-form-comparison { padding-top: 40px; border-top: 1px solid var(--line-dark); }
   .fundraise-motion-grid { grid-template-columns: minmax(0, 1fr); }
   .case-quotes__grid, .case-quotes__grid--two { grid-template-columns: minmax(0, 1fr); gap: 28px; }
 }
+
+@media (max-width: 560px) {
+  .case-hero--fundraise .case-hero__image { aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 50%; }
+}
+.case-footer .site-footer { margin-top: 0; }

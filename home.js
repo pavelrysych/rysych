@@ -250,10 +250,12 @@
     reset();
 
     board.querySelectorAll('.board-row').forEach((row) => {
-      row.addEventListener('pointerenter', () => activate(row));
+      // a tap on a phone opens the case, so only a mouse lights the span on the way
+      row.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse') activate(row); });
       row.addEventListener('focus', () => activate(row));
     });
-    board.addEventListener('pointerleave', reset);
+    board.addEventListener('pointerleave', (e) => { if (e.pointerType === 'mouse') reset(); });
+    window.addEventListener('pageshow', (e) => { if (e.persisted) reset(); });
     board.addEventListener('focusout', (event) => {
       if (!board.contains(event.relatedTarget)) reset();
     });
@@ -309,7 +311,7 @@
         void el.offsetWidth;
         el.classList.add('is-lit');
       });
-      if (focus) tab.focus();
+      if (focus) tab.focus({ preventScroll: true });
     };
     tabs.forEach((tab, index) => {
       tab.addEventListener('click', () => select(tab, false));

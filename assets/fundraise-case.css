@@ -42,7 +42,7 @@
 .fundraise-longform__submit { margin-top: 24px; padding: 12px 16px; border-radius: 2px; background: #495563; color: #fff; font-size: 10px; font-weight: 600; text-align: center; }
 
 @media (max-width: 1050px) {
-  .fundraise-impact { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+  .case-impact__grid.fundraise-impact { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
 }
 @media (max-width: 760px) {
   .fundraise-motion-grid { grid-template-columns: minmax(0, 1fr); grid-template-areas: "monthly" "donate" "mobile"; gap: 20px; margin-block: 24px; }
@@ -51,12 +51,12 @@
   .fundraise-form-comparison { grid-template-columns: minmax(0, 1fr); gap: 24px; padding: 26px; margin-block: 24px; }
   .fundraise-form-comparison__copy { padding-top: 0; }
   .fundraise-form-comparison__copy .eyebrow { margin-bottom: 20px; }
-  .fundraise-form-comparison h2 { font-size: 34px; }
+  .fundraise-form-comparison h2 { font-size: 28px; }
   .fundraise-form-comparison p:not(.eyebrow) { font-size: 14px; line-height: 1.9; }
   .fundraise-longform { padding: 22px; }
 }
 @media (max-width: 620px) {
-  .fundraise-impact { grid-template-columns: minmax(0, 1fr); }
+  .case-impact__grid.fundraise-impact { grid-template-columns: minmax(0, 1fr); gap: 20px; }
   .fundraise-impact dt { min-height: auto; }
 }
 @media (max-width: 390px) {

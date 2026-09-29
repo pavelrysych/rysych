@@ -13,6 +13,49 @@ document.querySelectorAll('.mobile-nav').forEach((menu) => {
   });
 });
 
+// A tap anywhere outside the open menu closes it.
+document.addEventListener('pointerdown', (event) => {
+  document.querySelectorAll('.mobile-nav[open]').forEach((menu) => {
+    if (!menu.contains(event.target)) menu.open = false;
+  });
+});
+
+// iOS only applies :active styles when a touch listener exists.
+document.addEventListener('touchstart', () => {}, { passive: true });
+
+// Phones: the header gains a frosted band once the page moves, slides away while reading down, returns on the way up.
+const siteHeader = document.querySelector('.site-header');
+if (siteHeader) {
+  const compact = window.matchMedia('(max-width: 960px)');
+  const headerMenu = siteHeader.querySelector('.mobile-nav');
+  let lastY = Math.max(window.scrollY, 0);
+  let queued = false;
+  const syncHeader = () => {
+    queued = false;
+    const maxY = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+    const y = Math.min(Math.max(window.scrollY, 0), maxY); // ignore iOS rubber-banding
+    siteHeader.classList.toggle('is-scrolled', y > 8);
+    if (!compact.matches || headerMenu?.open || y < 120) {
+      siteHeader.classList.remove('is-hidden');
+      lastY = y;
+      return;
+    }
+    if (Math.abs(y - lastY) < 12) return;
+    siteHeader.classList.toggle('is-hidden', y > lastY);
+    lastY = y;
+  };
+  window.addEventListener('scroll', () => {
+    if (queued) return;
+    queued = true;
+    window.requestAnimationFrame(syncHeader);
+  }, { passive: true });
+  compact.addEventListener('change', syncHeader);
+  headerMenu?.addEventListener('toggle', () => {
+    if (headerMenu.open) siteHeader.classList.remove('is-hidden');
+  });
+  syncHeader();
+}
+
 const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
 document.querySelectorAll('[data-click-to-play]').forEach((player) => {
   const video = player.querySelector('video');
@@ -21,8 +64,14 @@ document.querySelectorAll('[data-click-to-play]').forEach((player) => {
 
   let hasStarted = false;
   playButton.hidden = false;
+  // one play control before the first play; native controls take over once it runs
+  video.controls = false;
+  video.addEventListener('click', () => {
+    if (!hasStarted) playButton.click();
+  });
   video.addEventListener('playing', () => {
     hasStarted = true;
+    video.controls = true;
     playButton.hidden = true;
     playButton.disabled = false;
   });
@@ -35,6 +84,7 @@ document.querySelectorAll('[data-click-to-play]').forEach((player) => {
     }
   });
   video.addEventListener('error', () => {
+    video.controls = true;
     playButton.disabled = false;
     playButton.hidden = hasStarted;
   });
@@ -58,10 +108,13 @@ document.querySelectorAll('video[data-case-autoplay]').forEach((video) => {
       });
       video.load();
     }
-    video.play().catch(() => {});
+    video.play().catch((error) => {
+      // iOS Low Power Mode refuses autoplay: hand the viewer the controls instead of a dead poster
+      if (error && error.name === 'NotAllowedError') video.controls = true;
+    });
   };
 
-  if (lazy && 'IntersectionObserver' in window) {
+  if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver(([entry]) => {
       nearViewport = entry.isIntersecting;
       syncPlayback();
