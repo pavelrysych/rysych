@@ -127,18 +127,18 @@ components:
 
 The career reads as a board in a quiet terminal: where Pavel has flown, what is boarding now, where he can go next. Two grounds alternate down the page: a light smoke-grey studio (portrait, quotes, leadership) and a warm graphite hall (the board, readings, AI console, contact). Smoke bands rise out of the graphite and settle back into it through soft gradient seams; there are no hard section edges.
 
-On those grounds sit frosted glass slabs: thick, blurred, with a top sheen and a soft drop. Numbers and status words are not typeset but lit, as LED dot-matrix drawn from a real 5x7 dot grid, one circle per dot, lighting dot by dot the first time they enter view. Hairline tick scales measure things. One glowing oxide orange carries the present tense: NOW, the primary action, the headline reading. Everything else is smoke, graphite, bone and fog.
+On those grounds sit frosted glass slabs: thick, blurred, with a top sheen and a soft drop. Numbers and status words are not typeset but lit, as LED dot-matrix drawn from a real 5x7 dot grid, one circle per dot, lighting dot by dot the first time they enter view. One timeline, 2017 to NOW, measures the career. One oxide orange carries the present tense: NOW, the primary action and the lead result. Everything else is smoke, graphite, pure black (Subskim only), bone and fog.
 
-Density is calm and editorial. Display type is thin and large; data rows are open, separated by hairlines rather than boxes. Imagery (portrait, the case's own product screenshot) sits behind glass as a racked depth plane, blurred until a row or scroll brings it into focus.
+Density is calm and editorial. Display type is thin and large; rows and lists are separated by space alone: the site draws no divider lines. Imagery is the real thing: the portrait film, company logos, and each product's own screenshots and films, shown sharp inside glass. Nothing decorative sits behind the glass.
 
 **Key Characteristics:**
 - Smoke-grey studio grounds alternating with warm graphite, joined by gradient seams.
 - Frosted glass slabs as the only container material.
 - LED dot-matrix numerals and status words rendered from a real dot grid.
-- Hairline tick scales with a glowing oxide marker.
+- One career timeline with a glowing NOW needle; no other tick scales.
 - One glowing oxide accent for NOW, the primary action and the lead result.
 - Urbanist throughout: light display, regular and semibold text.
-- Depth by planes and rack focus, not by stacked cards.
+- Depth by planes and blur, not by stacked cards or divider lines.
 
 ## Colors
 
@@ -146,7 +146,7 @@ A near-monochrome smoke-and-graphite palette with one lit oxide orange.
 
 ### Primary
 - **Oxide** (`oxide`): the body of the primary pill ("Get in touch", "Contact", the email pill), text selection, and low-alpha radial warmth behind the AI console and contact sections.
-- **Oxide LED** (`oxide-led`): the lit version of oxide. Only for things that glow: the NOW status word, the ON led, tick-scale markers, the timeline NOW needle and lit span, hot dot-matrix readings, and the focus ring. Always paired with its glow (`rgba(255, 106, 69, 0.55)`).
+- **Oxide LED** (`oxide-led`): the lit version of oxide. Only for things that glow: the NOW status years, the ON led, the timeline NOW needle and lit span, hot dot-matrix readings, and the focus ring. Always paired with its glow (`rgba(255, 106, 69, 0.55)`). The NOW needle pulses by fading a pre-painted glow (opacity only).
 
 ### Neutral
 - **Smoke High / Smoke / Smoke Low** (`smoke-hi`, `smoke`, `smoke-lo`): the studio ground, always as a vertical gradient (high to low) with a pale radial bloom; never as flat fills behind text-heavy UI.
@@ -155,16 +155,17 @@ A near-monochrome smoke-and-graphite palette with one lit oxide orange.
 - **Ink / Ink 2** (`ink`, `ink-2`): text on smoke; `ink-2` for intros, principle definitions and secondary copy on smoke.
 - **Bone** (`bone`): primary text on graphite and glass; also the LIVE led and the selected chip fill.
 - **Fog** (`fog`): secondary text on graphite (roles, ranges, captions, column labels). Inside glass laid over the light portrait, fog is locally raised to `#d6d4d0` and the glass tint thickened to 0.72 to hold AA contrast.
-- **Hairlines**: `rgba(237, 235, 231, 0.12)` on graphite, `rgba(21, 20, 19, 0.16)` on smoke.
+- **Black** (`#000`): the Subskim product section only, so the app's own black screens read as the product; it eases in from and out to graphite through seams.
+- **Glass borders**: 1px white at 0.14–0.18 on chrome and slabs. There are no divider hairlines between rows, sections, principles or list items.
 
 ### Named Rules
-**The Lit Oxide Rule.** Orange means "now" or "act". It marks the current role, the primary action, and one lead result per page: CAC −67% on the homepage, and the first outcome of each case’s outcomes panel. Secondary readings and past roles stay bone or fog. If a second thing on screen wants to be orange, it is not the lead.
+**The Lit Oxide Rule.** Orange means "now" or "act". It marks the current roles (NOW), the primary action, and one lead result per page: CAC −67% on the homepage, and the first outcome of each case’s outcomes panel. Secondary readings, past roles and secondary controls (the revealed "View case" pill is bone) stay bone or fog. If a second thing on screen wants to be orange, it is not the lead.
 
 **The Glow Pairing Rule.** `oxide-led` never appears without its glow; `oxide` (the flat body colour) never glows on its own except through the primary pill's shadow.
 
 ## Typography
 
-**Display Font:** Urbanist (with Helvetica Neue, Arial, sans-serif), weights 300–700 from Google Fonts.
+**Display Font:** Urbanist (with Helvetica Neue, Arial, sans-serif), weights 300–700, self-hosted as two variable woff2 subsets in `assets/fonts/` (latin preloaded on every page, SIL OFL licence alongside).
 **Body Font:** Urbanist.
 **Label/Mono Font:** none. Figures use tabular numerals (`font-variant-numeric: tabular-nums` on body); display figures are the dot-matrix renderer, not a font.
 
@@ -192,28 +193,28 @@ A 1440px max page width with a fluid gutter (clamp(16px, 4vw, 56px)) and a 12-co
 
 Vertical rhythm is generous: dark sections pad clamp(96px, 11–12vw, 150–160px); smoke bands pad more (clamp(150–160px, 16vw, 230px)) because their top and bottom clamp(72px, 9vw, 140px) are spent on the gradient seam into graphite.
 
-The hero overlaps planes on one grid row: copy in columns 1–6, portrait in 5–10 blended into the smoke with `mix-blend-mode: multiply` and edge masks, the reading slab at 9–12 high, the board slab at 9–13 low. Readings are ranked by weight, not boxed: the lead figure takes columns 1–7 across three rows, the rest stack in 8–13, each separated by a top hairline.
+The hero overlaps planes on one grid row: copy in columns 1–6, portrait in 4–10 blended into the smoke with `mix-blend-mode: multiply` on the video and edge masks, and a column of two glass tiles at 9–13 (the result reading above the Career list, a fixed gap apart). On 961–1500px the headline scales to 4.8vw so it stays clear of the portrait. The results band below the board has its own "Results" heading: the lead figure takes columns 1–7, a six-item list 8–13.
 
-Breakpoints: 1180px tightens board columns; 960px collapses to one column (portrait first, headline rising over it, compact reading on the portrait's shoulder, board below), swaps the pill nav for a disclosure menu, and turns board rows into a time/status + destination + route stack; 560px stacks the stage track and makes action pills fill the row.
+Breakpoints: 1180px tightens board columns; 960px collapses to one column (portrait first, headline rising over it), swaps the pill nav for a disclosure menu, gives the header a frosted band once the page scrolls, stacks board rows (years, destination, route, a labelled View case pill) and makes the board's timeline stick under the header while the rows scroll; 760px moves the result reading and Career list under the hero copy and turns the testimonials into a carousel; 560px stacks the stages, wraps the AI chips and makes action pills fill the row. Case media runs edge to edge below 560px.
 
 ### Case pages
 A case is a long read that tells one story, in the same world as the homepage.
 
-- **Hero:** smoke ground fading to graphite by ~78% of its height. Right-aligned glass "All projects" pill; h1 (300, clamp(3.5rem, 8vw, 6rem), 1, −0.04em) and a deck (clamp(1.125rem, 1.6vw, 1.375rem), ink-2, max 34ch) on a 7/5 split.
-- **Outcomes panel:** a dark glass slab (0.72 tint, fog raised to #d6d4d0) under the heading, with outcomes on top hairlines in a 2–5 column grid; values are dot-matrix, the first one lit oxide.
-- **Media stage:** a dark glass slab (radius 28px, 14–22px padding) holding the hero screenshot or film at 16px radius, over the case’s own product screenshot as a blurred (12px), masked plane. Screenshots are shown as supplied: never upscaled past their pixels or recompressed.
-- **Facts row:** Project / Role / Dates / Focus on a hairline-bounded row (13px 600 fog labels, 16px bone values).
-- **Long read:** on graphite. The intro is a lede-sized statement of the whole story (clamp(2rem, 3.6vw, 3.25rem)). Chapters are 220px aside + content, separated by top hairlines, not boxed: aside is a 13px 600 fog chapter label, h2 is 300 at clamp(1.75rem, 3vw, 2.5rem), body 17px/1.7 fog, max 66ch.
+- **Hero:** smoke ground fading to graphite by ~78% of its height (on phones the seam runs behind the outcomes glass, 28–48%). Right-aligned "All projects" link; the h1 is the company's own logo (dark variant, scaled per logo so lettering reads at one optical size) with a visually hidden "case study", and a deck (clamp(1.125rem, 1.6vw, 1.375rem), ink-2, max 34ch) on a 7/5 split.
+- **Outcomes panel:** a dark glass slab (0.72 tint, fog raised to #d6d4d0) under the heading, outcomes in a 2–5 column grid separated by space; values are dot-matrix, the first one lit oxide.
+- **Media stage:** a dark glass slab (radius 28px, 14–22px padding) holding the hero screenshot or film at 16px radius. Screenshots are shown as supplied: never upscaled past their pixels. Below 560px the slab drops its frame and the media runs edge to edge.
+- **Facts row:** Project / Role / Dates / Focus (13px 600 fog labels, 16px bone values), set off by space.
+- **Long read:** on graphite. The intro is a lede-sized statement of the whole story (clamp(2rem, 3.6vw, 3.25rem)). Chapters are 220px aside + content, separated by space, not lines or boxes: aside is a 13px 600 fog chapter label, h2 is 300 at clamp(1.75rem, 3vw, 2.5rem), body 17px/1.7 fog, max 66ch. Each chapter heading is unique to its case.
 - **Figures:** screenshots and films sit in light glass frames (white 0.04, 0.12 border, 28px radius, 12–18px padding, 16px inner image). Comparisons and animation sets keep each asset’s own proportions, in balanced columns; never force equal frames or leave a lone card centred.
 - **Artifact illustrations** (for example the traditional long donation form) sit directly on the ground, not inside a slab, and stay legible (labels 12px+, AA contrast). Their copy column may be sticky while the artifact scrolls.
-- **Next case:** a light glass slab with an oxide radial glow, the next project name at display size and a primary "Next project" pill.
+- **Next case:** a light glass slab with an oxide radial glow, the next company's white logo and a primary "Next project" pill. The cases loop in board order: Subskim → Admirals → Mechanism → MetaMap → Fundraise Up → Subskim. Every case ends with the site footer.
 
 ### Named Rules
 **The Story Rule.** Every case, and every project line on the homepage, tells one story in this order: the problem the category or customer had → the idea or bet → how it reached the product → the result → context. Chapters are labelled by role in the story (01 / THE PROBLEM, 02 / THE IDEA …), not by discipline. Results use only confirmed figures; company funding, revenue or acquisitions are framed "for context, not credit".
 
 ## Elevation & Depth
 
-Depth comes from planes, blur and light rather than a shadow ladder. Glass slabs frost what is behind them (`backdrop-filter: blur(22px) saturate(140%)`), carry a 1px inner top highlight and a linear top sheen, and cast one soft, far, negative-spread drop. Behind the board, the case's own product screenshot sits as a blurred plane (26px idle) that racks to 3px when its row is hovered or focused; the hero portrait racks out (up to 6px) as the glass planes drift apart on scroll. Glow is the other depth cue: lit things emit, they do not lift.
+Depth comes from planes, blur and light rather than a shadow ladder. Glass slabs frost what is behind them (`backdrop-filter: blur(22px) saturate(140%)`), carry a 1px inner top highlight and a linear top sheen, and cast one soft, far, negative-spread drop. The hero portrait racks out (up to 6px) as the glass planes drift apart on scroll. Glow is the other depth cue: lit things emit, they do not lift. Hover and reveal effects animate opacity and transform only, on layers that stay put, so nothing re-layers or repaints the glass.
 
 ### Shadow Vocabulary
 - **Glass slab** (`inset 0 1px 0 rgba(255,255,255,0.22), inset 0 -1px 0 rgba(0,0,0,0.25), 0 24px 60px -24px rgba(0,0,0,0.55)`): every glass container.
@@ -222,11 +223,11 @@ Depth comes from planes, blur and light rather than a shadow ladder. Glass slabs
 - **LED glow** (`0 0 0 3px rgba(255,106,69,0.18), 0 0 14px 2px rgba(255,106,69,0.55)`): the ON led; markers and needles use `0 0 12–14px 2px` of the same glow.
 
 ### Named Rules
-**The Planes Not Cards Rule.** Depth is a stack of blurred planes behind frosted glass. Do not lift rows, slabs or chips with shadows on hover; hover lightens a surface or racks focus instead.
+**The Planes Not Cards Rule.** Depth is a stack of blurred planes behind frosted glass. Do not lift rows, slabs or chips with shadows on hover; hover lightens a surface.
 
 ## Shapes
 
-Soft, generous corners on glass; full pills on anything you press. Slabs 28px; the Subskim screenshot frame 26px with a 16px inner image; mobile menu 22px; board rows 18px and mini-board rows 14px, visible only as hover wash. The portrait is unframed (0 radius), dissolved by gradient masks. Lines are 1px hairlines; the one dashed line separates the board's "Scheduled" row from the live board. Leds are 8px circles; tick markers are 2–3px bars with 2px ends.
+Soft, generous corners on glass; full pills on anything you press. Slabs 28px; mobile menu 22px; board rows 18px, visible only as hover or selected wash; case figures 16px inside their frames. The portrait is unframed (0 radius), dissolved by gradient masks. There are no divider lines. Leds are 8px circles; the NOW needle is a 2px bar.
 
 ## Components
 
@@ -239,7 +240,7 @@ Tactile, lit pills.
 
 ### Chips
 - **Style:** console tabs; pill, 48px tall, faint white fill (0.05), 0.2 white border, bone 500 text.
-- **State:** selected fills bone with ink 600 text and a soft bone glow beneath; hover raises the fill to 0.1.
+- **State:** selected fills bone with ink 600 text and a faint inner bottom shade (no glow); hover raises the fill to 0.1. Chip labels match their panel titles.
 
 ### Cards / Containers
 - **Corner Style:** 28px.
@@ -249,38 +250,40 @@ Tactile, lit pills.
 - **Internal Padding:** 14–28px; rows inside keep their own 16px inset.
 
 ### Navigation
-Floating glass chrome, fixed 14px from the top on a 1fr/auto/1fr grid: glass wordmark pill left (name at 600, title in fog 13px), glass pill nav centre (links 15px/500, 9px 18px, hover wash 0.1 white), compact primary pill right. Below 960px the nav and CTA give way to a "Menu" glass pill that opens a 22px-radius glass list.
+Floating glass chrome, fixed 14px from the top on a 1fr/auto/1fr grid: glass wordmark pill left (name at 600, title in fog 13px), glass pill nav centre (links 15px/500, 9px 18px, hover wash 0.1 white), compact primary pill right. Below 960px the header sits at the top and gains a frosted graphite band once the page scrolls (it never hides on scroll); a "Menu" pill (reading "Close" while open) opens a 22px-radius glass list that closes on any tap outside it.
 
 ### Departures Board (signature)
-A dark glass slab holding a timeline and rows. The timeline is a tick scale (40 minor, 10 major) with years above, a pulsing oxide NOW needle, and an oxide span per role that appears when its row is hovered or focused. Rows run on a 150px / 1.15fr / 1.5fr / 170px grid: dot-matrix year plus range, destination name (title) plus role, route description, and right-aligned status (led plus dot-matrix word, with a fog note). Rows are divided by hairlines and wash to 0.06 white on hover or focus; the row's product screenshot racks into focus behind the glass. A dashed "Scheduled" line lists upcoming work in fog dot-matrix.
+A dark glass slab holding a timeline and rows, with no header row and no divider lines. The timeline is a tick scale (40 minor, 10 major) with years above, a pulsing oxide NOW needle, and an oxide span per role. Rows run on a 150px / 1.15fr / 1.5fr / 132px grid: dot-matrix years (NOW years lit), destination name (title) plus role, a one-line route story with a bold fact line ("For context:" in fog when a figure is company context, not Pavel's result), and the case link. Rows are not links: hovering a row with a mouse lights its span and washes the row; clicking or tapping a row pins its span (again to release). The only way into a case is the row's link: an arrow in a glass circle at rest that reveals a bone "View case" pill on hover or focus; on phones the labelled pill is always visible.
 
 ### Reading
-A figure with a top hairline: a dot-matrix value, a tick scale with a glowing marker at the value's position, and a fog caption with the metric named in bone 600. The lead reading is xxl and hot (oxide); others are xl/lg in bone.
+A dot-matrix value and a caption: the metric and company as a bone 600 title ("Customer acquisition cost · Admirals"), the explanation in fog on the next line. No scale or marker. The hero reading holds the lead (−67%) and changes only when someone picks another result; the results band's lead figure turns on its own and pauses while read. The lead is xxl and hot (oxide); list values are row-size in fog.
 
 ### Led
 8px status dot. Off is slate; ON is oxide LED with a halo; LIVE is bone with a soft white glow.
 
 ### Stage track
-Three stages riding one ticked track, each with a dot-matrix index, a bone mark on the track, a 600 title and fog note.
+Two or three stages in columns, each a dot-matrix index, a 600 title and a fog note drawn from real work (Configure, Hand off, Teach…); on phones the index sits beside the title. No track.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** set containers as frosted graphite glass (28px radius, 1px white-0.16 border, top sheen, blur 22px) over smoke, graphite, or a blurred image plane.
+- **Do** set containers as frosted graphite glass (28px radius, 1px white 0.14–0.18 border, top sheen, blur 22px) over smoke or graphite.
 - **Do** draw years, statuses and headline figures with the dot-matrix renderer, keeping the real text in the DOM for assistive tech.
 - **Do** reserve oxide for NOW, the primary action and the single lead result; pair `oxide-led` with its glow every time.
 - **Do** join smoke and graphite with gradient seams into `graphite`, never a hard edge.
-- **Do** measure with hairline tick scales and a glowing marker rather than bars or charts.
+- **Do** let space separate rows, chapters and list items; the career timeline is the only scale.
 - **Do** thicken the glass tint and lift fog locally when glass sits over light imagery, to hold AA contrast.
-- **Do** honour reduced motion: dot lighting, rack focus, plane drift and the NOW pulse all fall back to static, fully visible states.
+- **Do** honour reduced motion: dot lighting, plane drift, carousel and reading rotation, and the NOW pulse all fall back to static, fully visible states.
 
 ### Don't:
 - **Don't** add a second accent hue; the system is smoke, graphite, bone, fog and one oxide.
 - **Don't** colour secondary metrics or past roles orange.
 - **Don't** set display headings heavier than 300 or add a second typeface.
 - **Don't** fake the dot-matrix with a pixel or LED web font; it is a real dot grid.
-- **Don't** lift rows, slabs or chips with hover shadows; hover washes a surface or racks focus.
+- **Don't** lift rows, slabs or chips with hover shadows, and don't animate width, clip-path or box-shadow on hover; animate opacity and transform.
 - **Don't** load styles.css or case-styles.css; they are retired.
-- **Don't** use AI-generated key art or decorative scenes as backgrounds; the only imagery behind glass is the project's own product screenshot, heavily blurred.
+- **Don't** put any image behind glass as decoration, AI-generated or blurred: product screenshots and films are shown sharp, as content.
 - **Don't** put an artifact card inside a glass slab, or stretch a screenshot beyond its own pixels.
 - **Don't** label case chapters by discipline (POSITIONING, TEAM); label them by their place in the story.
+
+- **Don't** add divider lines, tick scales under figures, or a second scale; they were removed on purpose.

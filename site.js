@@ -1,4 +1,7 @@
 document.querySelectorAll('.mobile-nav').forEach((menu) => {
+  // the trigger says what it will do next
+  const trigger = menu.querySelector('summary');
+  menu.addEventListener('toggle', () => { if (trigger) trigger.textContent = menu.open ? 'Close' : 'Menu'; });
   menu.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
       menu.open = false;

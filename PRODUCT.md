@@ -32,8 +32,8 @@ Experience across design, product, and growth lets him connect design decisions 
 
 ## Capabilities and Constraints
 
-- Static site: `index.html`, `styles.css`, `case-styles.css`, `feature-visuals.css`, `site.js`; case pages in `work/admirals`, `work/subskim`, `work/metamap`, `work/fundraise-up`, `work/mechanism`. No framework or build step.
-- Homepage sections: hero with interactive portrait, colleague quotes, Selected work (Admirals, Mechanism, MetaMap, Fundraise Up), Subskim, What's next (Stoic Class, Phomoji — in development), AI in practice, How I lead, About, Contact.
+- Static site: `index.html`, `home.css`, `home.js`, `site.js`, `case.css` (+ `assets/fundraise-case.css`), a branded `404.html`; case pages in `work/subskim`, `work/admirals`, `work/mechanism`, `work/metamap`, `work/fundraise-up`. No framework or build step; deployed on Vercel from GitHub main (`vercel.json` for URLs and caching, `.vercelignore` keeps working docs out of the deployment).
+- Homepage sections: hero with interactive portrait, result reading and Career list; colleague quotes; Selected work board (Subskim, Admirals, Mechanism Ventures, MetaMap, Fundraise Up) with a Results band; Subskim; AI in practice (web production, design system to code, compliance checker); leadership principles linked to case chapters; About; Contact.
 - AI projects are presented as standalone projects without employer attribution.
 - The hero portrait responds to horizontal pointer movement/drag and arrow keys, and stays still under reduced motion.
 - Public contact email: rysych@gmail.com.

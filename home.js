@@ -163,7 +163,8 @@
 
     const schedule = () => {
       window.clearTimeout(timer);
-      if (held || chosen || !inView || reduceMotion.matches || document.hidden || readings.length < 2) return;
+      // the hero holds its lead result; only the results band turns on its own
+      if (readingTile.dataset.autoplay === 'off' || held || chosen || !inView || reduceMotion.matches || document.hidden || readings.length < 2) return;
       timer = window.setTimeout(() => {
         live.classList.add('is-swapping');
         window.setTimeout(() => {
