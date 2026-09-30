@@ -11,7 +11,7 @@
   ],
   "headers": [
     {
-      "source": "/(.*)\\.(css|js|png|svg|ico|webmanifest)",
+      "source": "/(.*)\\.(css|js|png|svg|ico|webmanifest|woff2)",
       "has": [{ "type": "query", "key": "v" }],
       "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
     },
