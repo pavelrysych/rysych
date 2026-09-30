@@ -1304,6 +1304,9 @@ button.pill { border: 0; font-family: inherit; cursor: pointer; }
   /* small laptops: keep the intro off the face and the two tiles apart */
   .hero__intro { max-width: 30ch; }
   .hero-board { margin-bottom: 6vh; }
+  /* five nav links leave the wordmark room on one line */
+  .pill-nav a { padding: 9px 14px; }
+  .wordmark { white-space: nowrap; }
 }
 
 @media (max-width: 960px) {
@@ -1498,7 +1501,7 @@ button.pill { border: 0; font-family: inherit; cursor: pointer; }
   .site-footer__end { width: 100%; margin-left: 0; justify-content: space-between; }
   .destinations__group { flex-direction: column; align-items: flex-start; gap: 10px; }
   .hero__actions .pill, .subskim__actions .pill { flex: 1 1 auto; }
-  .email-pill { width: 100%; }
+  .email-pill, .contact__cv { width: 100%; }
   .email-pill__address { flex: 1; padding-left: 26px; font-size: 17px; }
   .reading--3, .reading--4 { grid-column: 1 / 3; }
 }
