@@ -55,7 +55,7 @@ Experience across design, product, and growth lets him connect design decisions 
   - Admirals: customer journey improvements contributed to a two-thirds reduction in CAC; web redesign tripled click-through rates.
   - Fundraise Up: 2.8× widget conversion.
   - Mechanism: portfolio driving $300M+ in revenue.
-- Real testimonials: Yuriy Smirnov (Co-Founder & COO, Fundraise Up), Peter Byrnes (Co-Founder & CEO, Fundraise Up), Celestin Soubrier (Chief Growth Officer, fintech).
+- Real testimonials: Yuriy Smirnov (Co-Founder & COO, Fundraise Up), Peter Byrnes (Co-Founder & CEO, Fundraise Up), Celestin Soubrier (Chief Growth Officer, MetaMap).
 - Subskim: live product at https://subskim.com — conceived and built entirely by Pavel (idea, product, design, and AI-assisted implementation), confirmed 2026-09-29; AI screenshot import with user review before saving.
 - Editorial source material: `portfolio-content.md`.
 - Do not fabricate: additional testimonials, user counts or revenue for Subskim, team sizes beyond confirmed numbers, or results not listed above.
