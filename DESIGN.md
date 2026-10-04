@@ -216,7 +216,7 @@ A monochrome Apple-light palette: ink, a softened ink, one grey, and two steps o
 - **Section Title** (600, `clamp(1.75rem, 2.6vw, 2.25rem)`, -0.035em): Every homepage section head, the contact sign-off included. One quiet size; no section head is louder than another.
 - **Title** (600, `clamp(1.625rem, 2.6vw, 2.25rem)`, 1.15): Case chapter headings and the case quotes title.
 - **Figure** (600, `clamp(2rem, 3.2vw, 2.75rem)`, 1.05, tabular): Proof numbers in the case outcomes tile.
-- **Item Title** (600, 19 to 20px, 1.3, -0.025em): Bento tile names (19px) and How I work item titles (20px).
+- **Item Title** (600, 20px, 1.3, -0.025em): Bento project names and How I work item titles.
 - **Bento Figure** (400, `clamp(2.5rem, 5vw, 4.25rem)`, 1, -0.045em, no wrap): the proof number in a figure tile, set at the hero promise's weight; `clamp(1.75rem, 9vw, 2.5rem)` on phones, where figures always sit in pairs.
 - **Quote** (500, `clamp(1.125rem, 1.5vw, 1.3125rem)`, 1.45): Testimonial text; 21px in the phone carousel.
 - **Lede** (400, `clamp(1.0625rem, 1.3vw, 1.1875rem)`, Reading Grey): The single grey line under How I work (max 52ch) and Contact (max 56ch). Nowhere else on the homepage.
