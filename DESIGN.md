@@ -163,7 +163,7 @@ A white page written like a Californian product launch, by a designer. Images of
 
 Density is generous and calm: wide sections (88 to 144px apart), a 1200px measure, one quiet section-title size, and almost no copy under headings. Headings are set tight and heavy in Geist; supporting lines are grey. Depth comes from tone (white against light grey), never from lines, glows or glass. Motion is a single quiet entrance on the first screen, a slow image scale on card hover, and small 200ms state changes everywhere else.
 
-The first viewport is a photograph of Pavel, set as one large rounded card inset from the window, on a misty hillside, with the landscape mirrored so he stands on the right and the person kept in his real orientation. Only the three-line promise and one white "Get in touch" pill sit over the hills; the header floats transparent over the sky. This system replaced the retired "Glass Departures Board" world entirely (graphite, smoke, oxide LED, Urbanist, glass panels).
+The first viewport is a photograph of Pavel, set as one large rounded card inset from the window, on a misty hillside, with the landscape mirrored so he stands on the right and the person kept in his real orientation. The three-line promise, one grey-white line of subtitle and one white "Get in touch" pill sit over the hills; the header floats transparent over the sky. This system replaced the retired "Glass Departures Board" world entirely (graphite, smoke, oxide LED, Urbanist, glass panels).
 
 **Key Characteristics:**
 - Pure white ground, near-black ink, one reading grey, one light-grey tile; no accent hue.
@@ -202,7 +202,7 @@ A monochrome Apple-light palette: ink, a softened ink, one grey, and two steps o
 **Character:** One neutral grotesk doing everything, Apple-style: heavy, tightly tracked headlines over light, slightly loose body. Geist is a sanctioned exception to the overused-font detector, recorded in `.impeccable/config.json`.
 
 ### Hierarchy
-- **Display** (600, `clamp(2.75rem, 5vw, 4.5rem)`, 1.02): The hero promise only, white on the photograph with a soft text shadow, max 11em so it always sets in three lines ("and the design teams" never breaks; under 900px the size follows the viewport width).
+- **Display** (400, `clamp(2.75rem, 5vw, 4.5rem)`, 1.04, −0.035em): The hero promise only, white on the photograph with a soft text shadow, max 11em so it always sets in three lines ("and the design teams" never breaks; under 900px the size follows the viewport width).
 - **Headline** (600, `clamp(2rem, 4.2vw, 3.5rem)`, 1.1): The case-page deck sentence, max 24ch.
 - **Section Title** (600, `clamp(1.75rem, 2.6vw, 2.25rem)`, -0.035em): Every homepage section head, the contact sign-off included. One quiet size; no section head is louder than another.
 - **Title** (600, `clamp(1.625rem, 2.6vw, 2.25rem)`, 1.15): Case chapter headings and the case quotes title.
@@ -301,6 +301,9 @@ Three short items: a 20px title, one or two grey 16px sentences (max 34ch), and 
 - **Shadow Strategy:** none (see Elevation).
 - **Internal Padding:** `clamp(24px, 3vw, 36px)` for content tiles; `clamp(10px, 1.6vw, 20px)` for media tiles so the screen fills the tile.
 - **Outcomes tile:** a grid of 2 to 5 proof figures (Figure type) with term and detail below each.
+
+### Card previews
+The Admirals, Mechanism, MetaMap and Fundraise Up cards preview as short silent loops (10–18s, 1120w H.264, 0.25–0.85 MB) with a first-frame poster: Admirals the live site, MetaMap the Mati film, Mechanism a 2x2 of the venture films, Fundraise Up the three checkout animations on lavender. They load and play only near the viewport, stay on the poster under reduced motion, and never show controls (`data-quiet`), since the whole card is a link. Subskim stays a still screenshot.
 
 ### Venture Card (Mechanism case)
 Each Mechanism venture as mechanism.com shows it: its looping film (lazy, muted, plays in view, poster under reduced motion) filling a 5:4 tile at 24px radius, a 30% black veil, and the venture's white logo centred at about half the width. The homepage Mechanism card uses a 2x2 still collage of the same four cards.

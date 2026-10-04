@@ -314,8 +314,9 @@ section { position: relative; }
 .hero h1 {
   max-width: 11em;
   font-size: clamp(2.75rem, 5vw, 4.5rem);
-  line-height: 1.02;
-  letter-spacing: -0.04em;
+  font-weight: 400;
+  line-height: 1.04;
+  letter-spacing: -0.035em;
   text-shadow: 0 1px 24px rgba(0, 0, 0, 0.18);
 }
 /* "and the design teams" holds one line, so the promise always sets in three */
