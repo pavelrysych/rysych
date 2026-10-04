@@ -291,7 +291,9 @@ section { position: relative; }
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: #8f969c;
+  /* while the photo loads: its own sky-to-hills tones, dark where the type sits */
+  background-color: #4b5246;
+  background-image: linear-gradient(180deg, #a3a9ae 0%, #8b9286 42%, #4b5246 72%, #3b4237 100%);
 }
 .hero__media img {
   width: 100%;
