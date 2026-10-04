@@ -33,18 +33,19 @@ Experience across design, product, and growth lets him connect design decisions 
 ## Capabilities and Constraints
 
 - Static site: `index.html`, `home.css`, `home.js`, `site.js`, `case.css` (+ `assets/fundraise-case.css`), a branded `404.html`; case pages in `work/subskim`, `work/admirals`, `work/mechanism`, `work/metamap`, `work/fundraise-up`. No framework or build step; deployed on Vercel from GitHub main (`vercel.json` for URLs and caching, `.vercelignore` keeps working docs out of the deployment).
-- Homepage sections: hero with interactive portrait, result reading and Career list; colleague quotes; Selected work board (Subskim, Admirals, Mechanism Ventures, MetaMap, Fundraise Up) with a Results band; Subskim; AI in practice (web production, design system to code, compliance checker); leadership principles linked to case chapters; About; Contact.
+- Homepage sections: hero with interactive portrait and a row of company logos linking to the cases; colleague quotes; Selected work list (Subskim, Admirals, Mechanism Ventures, MetaMap, Fundraise Up), each row carrying its proof figure; Subskim; AI in practice (web production, design system to code, compliance checker); leadership principles linked to case chapters; About; Contact.
 - AI projects are presented as standalone projects without employer attribution.
 - The hero portrait responds to horizontal pointer movement/drag and arrow keys, and stays still under reduced motion.
 - Public contact email: rysych@gmail.com.
 - Work format: remote preferred; open to relocation to Singapore, Dubai, London, or the US.
-- Open: current CV file must be confirmed before launch.
+- CV: ATS-friendly PDF at `/Pavel_Rysych_CV.pdf` (short link `/cv`), linked from the nav on every page and from Contact. Its HTML source lives outside the repo in `../CV/`.
+- Visual direction (2026-10-04): the user asked for California-startup minimalism on a light page, with Stripe / Airbnb, Apple and designer personal sites (rauno.me, emilkowal.ski, paco.me) as references. No divider lines, no glows, no accent hue.
 
 ## Brand Commitments
 
 - Name: **Pavel Rysych**; title: **Product Design Leader**.
 - Core promise: "I build products and the design teams behind them."
-- Real portrait of Pavel (misty mountain landscape) is part of his identity on the site.
+- Real studio portrait of Pavel (dark glasses, white shirt, light studio ground), shown as the interactive scrub film in the hero, is part of his identity on the site.
 - Personal side: photography and filmmaking — attention, detail, storytelling.
 - Voice: first person, calm, specific, factual; claims tied to concrete episodes. No inflated titles or unverified attributions.
 
