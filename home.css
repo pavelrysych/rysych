@@ -654,9 +654,10 @@ a.tile:focus-visible { outline-offset: 4px; }
 .hl-head .hl-id__role { color: var(--dark-muted); }
 .hl-head .hl-go { align-self: center; background: #333336; color: #f5f5f7; }
 .hl-head:focus-visible { outline-offset: 2px; }
+.hl-panel--dark :focus-visible { outline-color: #f5f5f7; }
 
 @media (hover: hover) {
-  .hl a.hl-tile:not(.hl-hero):not(.hl-live):hover { background: var(--tile-2); }
+  .hl a.hl-tile:not(.hl-hero, .hl-live, .hl-dark, .hl-light):hover { background: var(--tile-2); }
   .hl a.hl-dark:hover { background: #2c2c2e; }
   .hl-panel--dark a.hl-tile:not(.hl-hero):not(.hl-light):hover { background: #161618; }
   .hl-panel--dark a.hl-light:hover { background: #e8e8ed; }
@@ -693,9 +694,9 @@ a.tile:focus-visible { outline-offset: 4px; }
     grid-auto-rows: minmax(0, auto);
     aspect-ratio: auto;
   }
-  .hl .hl-tile:not(.hl-hero):not(.hl-id):not(.hl-live) { min-height: 150px; }
+  .hl .hl-tile:where(:not(.hl-hero, .hl-id, .hl-live)) { min-height: 150px; }
   .hl .hl-id { min-height: 0; gap: 18px; flex-direction: row; align-items: flex-end; }
-  .hl .hl-hero { align-self: stretch; }
+  .hl .hl-hero { align-self: stretch; justify-self: stretch; width: 100%; }
 
   .hl--subskim .hl-grid {
     grid-template-areas:
@@ -709,6 +710,8 @@ a.tile:focus-visible { outline-offset: 4px; }
   .hl--subskim .hl-a-cal .hl-txt { align-items: flex-start; }
   .hl--subskim .hl-a-cal .hl-ico { margin-bottom: 0; }
   .hl--subskim .hl-live { min-height: 170px; }
+  /* the phone always runs off the bottom edge */
+  .hl--subskim .hl-phone { margin-bottom: -48px; }
 
   .hl--admirals .hl-grid {
     grid-template-areas:
@@ -757,11 +760,35 @@ a.tile:focus-visible { outline-offset: 4px; }
   .hl--fundraise-up .hl-a-grow .hl-note { max-width: 46ch; }
 }
 
+@media (min-width: 561px) and (max-width: 760px) {
+  .hl--mechanism .hl-grid {
+    grid-template-areas:
+      "hero hero hero onb onb onb"
+      "hero hero hero churn churn churn"
+      "vent vent vent port port port";
+  }
+  .hl--subskim .hl-grid {
+    grid-template-areas:
+      "id id id id id id"
+      "hero hero hero hero hero hero"
+      "imp imp imp cal cal cal"
+      "rvw rvw rvw solo solo solo"
+      "live live live live live live";
+  }
+}
+@media (min-width: 561px) and (max-width: 620px) {
+  .hl--fundraise-up .hl-a-conv .hl-note { display: none; }
+}
+@media (max-width: 760px) {
+  .hl--subskim .hl-hero { width: 100%; aspect-ratio: 5 / 6; max-height: 540px; }
+  .hl--subskim .hl-phone { margin-bottom: 0; }
+}
+
 /* ---------- phones: name, hero, then the numbers in pairs ---------- */
 @media (max-width: 560px) {
-  .hl { --g: 10px; --pad: 18px; --ico: 28px; }
+  .hl { --g: 10px; --pad: 18px; --ico: 28px; --num: clamp(26px, 10cqi, 34px); --num-xl: min(40px, 14cqi); }
   .hl-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .hl .hl-tile:not(.hl-hero):not(.hl-id):not(.hl-live) { min-height: 0; }
+  .hl .hl-tile:where(:not(.hl-hero, .hl-id, .hl-live)) { min-height: 0; }
   .hl-ico { stroke-width: 1.75; }
   .hl-stat .hl-ico { margin-bottom: 14px; }
   .hl-panel { padding: 10px; border-radius: calc(var(--radius) + 10px); }
@@ -774,7 +801,7 @@ a.tile:focus-visible { outline-offset: 4px; }
   .hl-stat .hl-note { max-width: none; }
 
   .hl--subskim .hl-grid { grid-template-areas: "id id" "hero hero" "imp cal" "rvw solo" "live live"; }
-  .hl--subskim .hl-hero { aspect-ratio: 5 / 6; }
+  .hl--subskim .hl-hero { aspect-ratio: 5 / 6; max-height: 540px; }
   .hl--subskim .hl-corner,
   .hl--subskim .hl-a-cal,
   .hl--subskim .hl-a-solo { min-height: 200px; }
@@ -794,7 +821,7 @@ a.tile:focus-visible { outline-offset: 4px; }
 
   .hl--fundraise-up .hl-grid { grid-template-areas: "id id" "hero hero" "conv csat" "grow grow"; }
   .hl--fundraise-up .hl-hero { aspect-ratio: 1120 / 1000; --inset: 18px; }
-  .hl--fundraise-up .hl-stat { min-height: 180px; }
+  .hl--fundraise-up .hl-a-conv { min-height: 180px; }
   /* paired with the dark ×2.8, satisfaction centres too */
   .hl--fundraise-up .hl-a-csat { align-items: center; justify-content: center; text-align: center; }
   .hl--fundraise-up .hl-a-csat .hl-ico { margin-bottom: 14px; }

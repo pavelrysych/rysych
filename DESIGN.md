@@ -10,6 +10,8 @@ colors:
   tile: "#f5f5f7"
   tile-pressed: "#ebebef"
   paper: "#ffffff"
+  dark-muted: "#a1a1a6"
+  tile-black: "#000000"
 typography:
   display:
     fontFamily: "Geist, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
@@ -42,12 +44,30 @@ typography:
     lineHeight: 1.05
     letterSpacing: "-0.04em"
     fontFeature: "tnum"
-  bento-figure:
+  highlight-number:
     fontFamily: "Geist, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
-    fontSize: "clamp(2.5rem, 5vw, 4.25rem)"
+    fontSize: "clamp(34px, 5.3cqi, 64px)"
     fontWeight: 400
     lineHeight: 1
     letterSpacing: "-0.045em"
+  highlight-number-xl:
+    fontFamily: "Geist, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
+    fontSize: "clamp(40px, 7cqi, 88px)"
+    fontWeight: 400
+    lineHeight: 1
+    letterSpacing: "-0.045em"
+  highlight-number-long:
+    fontFamily: "Geist, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
+    fontSize: "clamp(30px, 4.2cqi, 50px)"
+    fontWeight: 400
+    lineHeight: 1
+    letterSpacing: "-0.045em"
+  highlight-name:
+    fontFamily: "Geist, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
+    fontSize: "clamp(24px, 2.75cqi, 34px)"
+    fontWeight: 600
+    lineHeight: 1.05
+    letterSpacing: "-0.035em"
   item-title:
     fontFamily: "Geist, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
     fontSize: "20px"
@@ -93,8 +113,10 @@ spacing:
   gutter: "clamp(20px, 5vw, 64px)"
   section: "clamp(88px, 10vw, 144px)"
   header: "64px"
-  bento-gap: "16px"
-  bento-gap-narrow: "12px"
+  highlight-gap: "16px"
+  highlight-gap-tablet: "12px"
+  highlight-gap-phone: "10px"
+  highlight-blocks: "clamp(56px, 7vw, 104px)"
 components:
   button-primary:
     backgroundColor: "{colors.ink}"
@@ -140,18 +162,25 @@ components:
     padding: "8px 0"
   nav-link-hover:
     textColor: "{colors.ink}"
-  bento-tile:
+  highlight-tile:
     backgroundColor: "{colors.tile}"
     rounded: "{rounded.tile}"
-    padding: "20px 22px"
-  bento-tile-hover:
+    padding: "clamp(16px, 2.2cqi, 28px)"
+  highlight-tile-hover:
     backgroundColor: "{colors.tile-pressed}"
-  bento-tile-title:
+  highlight-tile-loud:
+    backgroundColor: "{colors.ink}"
+    textColor: "{colors.tile}"
+  highlight-name:
     textColor: "{colors.ink}"
-    typography: "{typography.item-title}"
-  bento-tile-sub:
-    textColor: "{colors.muted}"
-    typography: "{typography.label}"
+    typography: "{typography.highlight-name}"
+  highlight-panel-dark:
+    backgroundColor: "{colors.ink}"
+    textColor: "{colors.tile}"
+    padding: "16px"
+  highlight-panel-grey:
+    backgroundColor: "{colors.tile}"
+    padding: "16px"
   tile:
     backgroundColor: "{colors.tile}"
     rounded: "{rounded.tile}"
@@ -184,7 +213,7 @@ The first viewport is a photograph of Pavel, set as one large rounded card inset
 
 ## Colors
 
-A monochrome Apple-light palette: ink, a softened ink, one grey, and two steps of light-grey tile on white.
+A monochrome Apple-light palette: ink, a softened ink, a reading grey, and two steps of light-grey tile on white; the work section adds one dark slide (ink panel, black tiles, a light grey for notes).
 
 ### Primary
 - **Graphite Ink** (`ink`): All headings, tile names and proof figures, the black email and next-case pills, the selected carousel dot, the focus ring and text selection. It is the only "colour" that asks for action.
@@ -194,8 +223,9 @@ A monochrome Apple-light palette: ink, a softened ink, one grey, and two steps o
 - **Soft Ink** (`ink-soft`): Long-read paragraphs, table cells and header nav links; text that should read as text, not as headline.
 - **Reading Grey** (`muted`): The one grey. Section ledes, tile roles and years, proof labels, the resting tile arrow, How I work sentences, quote attributions, captions, footer.
 - **Dot Grey** (`dot`): Inactive carousel dots and the scrollbar thumb. Never used as a line.
-- **Product Tile** (`tile`): The light-grey surface for product moments: every bento tile, case media tiles, the outcomes tile, the next-case tile, secondary pills, the Menu pill, carousel arrows and contact icon buttons.
+- **Product Tile** (`tile`): The light-grey surface for product moments: every highlight tile, case media tiles, the outcomes tile, the next-case tile, secondary pills, the Menu pill, carousel arrows and contact icon buttons.
 - **Pressed Tile** (`tile-pressed`): Hover on secondary pills, the video placeholder, and the oversized 404 numeral.
+- **Dark Slide** (`ink` panel, `tile-black` tiles, `dark-muted` notes): the Mechanism highlight block only, plus the one loud ink tile in each other block and Subskim's black "Live" tile. Hover on an ink tile is #2c2c2e, on a black tile #161618; focus rings inside the dark panel are #f5f5f7. The MetaMap block is the inverse: a `tile` panel with white tiles.
 - **Paper** (`paper`): The page, the text on black pills, the white hero pill, and the mobile menu sheet.
 
 ### Named Rules
@@ -216,7 +246,8 @@ A monochrome Apple-light palette: ink, a softened ink, one grey, and two steps o
 - **Section Title** (600, `clamp(1.75rem, 2.6vw, 2.25rem)`, -0.035em): Every homepage section head, the contact sign-off included. One quiet size; no section head is louder than another.
 - **Title** (600, `clamp(1.625rem, 2.6vw, 2.25rem)`, 1.15): Case chapter headings and the case quotes title.
 - **Figure** (600, `clamp(2rem, 3.2vw, 2.75rem)`, 1.05, tabular): Proof numbers in the case outcomes tile.
-- **Item Title** (600, 20px, 1.3, -0.025em): Bento project names and How I work item titles.
+- **Item Title** (600, 20px, 1.3, -0.025em): How I work item titles.
+- **Highlight Name** (600, `clamp(24px, 2.75cqi, 34px)`, 1.05, -0.035em): the project name in each highlight block.
 - **Highlight Number** (400, `clamp(34px, 5.3cqi, 64px)`; the loud tile `clamp(40px, 7cqi, 88px)`; long values `clamp(30px, 4.2cqi, 50px)`; 1, -0.045em, no wrap): the number in a highlight tile, sized to the block's own width (container units), over a 600 label and a grey note.
 - **Quote** (500, `clamp(1.125rem, 1.5vw, 1.3125rem)`, 1.45): Testimonial text; 21px in the phone carousel.
 - **Lede** (400, `clamp(1.0625rem, 1.3vw, 1.1875rem)`, Reading Grey): The single grey line under How I work (max 52ch) and Contact (max 56ch). Nowhere else on the homepage.
@@ -265,14 +296,14 @@ Flat and tonal. Depth is white against light grey; shadows are rare, soft and on
 Soft, continuous, Apple-like rounding; everything interactive is a full pill or circle.
 
 - **Pill** (999px): every button, the Menu pill, carousel arrows (circles), social and copy buttons (circles).
-- **Frame** (28px): the grey media tiles that hold case screens and films, the next-case tile and the Fundraise Up form tile; also the focus outline around a bento tile.
-- **Tile** (24px): every bento tile, the outcomes tile, the audience table, the Mechanism venture cards.
+- **Frame** (28px): the grey media tiles that hold case screens and films, the next-case tile and the Fundraise Up form tile; also the focus outline around a highlight tile.
+- **Tile** (24px): every highlight tile (the dark and grey panels are 24px + gap, so their corners nest), the outcomes tile, the audience table, the Mechanism venture cards.
 - **Media** (20px): the value-shift strip and the mobile menu sheet.
 - **Screen** (16px): screenshots and films inside a media tile. Inner radius is always smaller than its tile so the corners nest.
-- **Borders:** none. Focus is a 2px ink outline with a 3px offset (4px around a bento tile; white over the hero photo).
-- **Phones (560px and under):** case screenshots and films drop their tile and radius and run edge to edge; captions keep the gutter. Bento tiles keep their tile and radius.
+- **Borders:** none. Focus is a 2px ink outline with a 3px offset (4px around a highlight tile; white over the hero photo, #f5f5f7 inside the dark panel).
+- **Phones (560px and under):** case screenshots and films drop their tile and radius and run edge to edge; captions keep the gutter. Highlight tiles keep their tile and radius.
 
-**The Continuous Corner Rule.** Large rounded blocks (hero card, bento tiles, case tiles, media frames, venture cards, the phone menu) use Apple-style continuous corners: a superellipse (n=4) 9-slice mask inlined in home.css as `--squircle`, applied with `-webkit-mask-box-image` at about 1.8x the radius it replaces (46px for 24px tiles, 30px for screens inside tiles, 36-58px for the hero). Browsers without mask-box-image (Firefox) keep the plain radius. Pills and circles stay true capsules and circles. Edge-to-edge media on phones drop the mask.
+**The Continuous Corner Rule.** Large rounded blocks (hero card, highlight tiles and panels, case tiles, media frames, venture cards, the phone menu) use Apple-style continuous corners: a superellipse (n=4) 9-slice mask inlined in home.css as `--squircle`, applied with `-webkit-mask-box-image` at about 1.8x the radius it replaces (46px for 24px tiles, 30px for screens inside tiles, 36-58px for the hero). Browsers without mask-box-image (Firefox) keep the plain radius. Pills and circles stay true capsules and circles. Edge-to-edge media on phones drop the mask.
 
 ## Components
 
@@ -302,7 +333,7 @@ Every tile in a block belongs to that one project and links into its case; all a
 - **Number tile:** a Lucide icon (inline SVG, stroke 1.75, ink or white), the Highlight Number, a 600 label and an optional grey note verbatim from the case ("For context, not credit" where the case says so). A visually hidden " · Project" keeps link text meaningful.
 - **Word tile:** for Subskim, which has no numbers, a feature name (AI import, Renewal calendar, Monthly review, Solo + AI) takes the number's place.
 - **Sentence tile:** one case sentence set large in grey with its key figures in ink (Admirals' annual losses).
-- **Hover:** tiles step to Pressed Tile (dark tiles step a shade lighter); films scale 1.03. **Focus:** the 2px ink outline 4px outside the tile; a focused tile drops its squircle mask so the ring shows.
+- **Hover:** tiles step to Pressed Tile (dark tiles step a shade lighter); films scale 1.03. **Focus:** the 2px ink outline 4px outside the tile (#f5f5f7 inside the dark panel); a focused tile drops its squircle mask so the ring shows.
 - **Icons:** Lucide (ISC licence), inlined, one per number tile, never decorative elsewhere.
 
 ### How I Work Items
@@ -341,7 +372,7 @@ Pavel on a green hillside in mountain fog: the landscape is mirrored, the person
 ### Don't:
 - **Don't** draw divider lines, borders or hairlines anywhere; separate with space or tone.
 - **Don't** add glows, glass panels, gradients or coloured light; the retired departures-board world is gone. The frosted sticky header is the one translucent surface.
-- **Don't** introduce an accent hue; the palette is ink, one grey and light-grey tiles.
+- **Don't** introduce an accent hue; the palette is ink, greys, light-grey, white or black tiles.
 - **Don't** put eyebrows, kickers, slash labels or chapter tags above headings, or intro paragraphs under homepage section heads beyond the one-line ledes.
 - **Don't** describe in a paragraph what an image of the work can show.
 - **Don't** make header links into pills or buttons; they are plain text.
