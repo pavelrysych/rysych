@@ -53,6 +53,22 @@
         ],
         "createdAt": "2026-10-04T13:57:28.796Z",
         "reason": "false positive: white hero type sits over the full-bleed hillside photo (and a dark sky-to-hills fallback gradient), which the detector cannot see; it compares against the white body. Measured on the mirrored photo: bottom-left text zone averages 11.3:1 for white, hills 5.7:1, before the dark scrim."
+      },
+      {
+        "rule": "marquee",
+        "value": "*",
+        "files": [
+          "index.html",
+          "home.css",
+          "404.html",
+          "work/admirals/index.html",
+          "work/fundraise-up/index.html",
+          "work/mechanism/index.html",
+          "work/metamap/index.html",
+          "work/subskim/index.html"
+        ],
+        "createdAt": "2026-10-04T16:37:29.413Z",
+        "reason": "user-requested (2026-10-04: \"make the logos a marquee on mobile\"): the company logo strip runs as a slow marquee only at 760px and under, with a duplicated aria-hidden echo, edge fades, and no motion under prefers-reduced-motion; desktop keeps a static row"
       }
     ]
   }
