@@ -309,6 +309,10 @@
 .fundraise-motion-card { margin: 0; grid-area: auto; }
 .fundraise-motion-card img,
 .fundraise-motion-card video { display: block; width: 100%; height: auto; border: 0; border-radius: 14px; background: #f4f5fa; }
+/* the screen recordings carry capture edges: crop them off (measured on the posters) */
+.fundraise-motion-card--donate video { aspect-ratio: 667 / 182; object-fit: cover; object-position: 20% 50%; }
+.fundraise-motion-card--monthly video { aspect-ratio: 929 / 830; object-fit: cover; object-position: 0 50%; }
+.fundraise-motion-card--costs video { aspect-ratio: 1427 / 830; object-fit: cover; object-position: 20% 50%; }
 .fundraise-motion-card figcaption { margin: 14px 6px 4px; font-size: 14px; line-height: 1.55; color: var(--muted); }
 /* the long donation form is the object itself, set on a grey tile */
 .fundraise-form-comparison {
