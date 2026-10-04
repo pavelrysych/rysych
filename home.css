@@ -266,23 +266,18 @@ section { position: relative; }
 
 /* ---------- Hero ---------- */
 
-/* the photograph is the stage: the header floats over its sky, the promise sits on the hills */
-.home .site-header:not(.is-scrolled) {
-  background: transparent;
-  -webkit-backdrop-filter: none;
-  backdrop-filter: none;
-}
-.home .site-header:not(.is-scrolled) .wordmark span { color: var(--ink-2); }
-.home .site-header { margin-bottom: calc(-1 * var(--header-h)); }
-
+/* the photograph is a card: inset from the window edges, soft corners, the promise on the hills */
+.hero { --inset: clamp(8px, 1.1vw, 16px); }
 .hero__stage {
   position: relative;
   isolation: isolate;
   display: flex;
   align-items: flex-end;
-  min-height: max(560px, min(100svh, 1040px));
-  padding-top: calc(var(--header-h) + 48px);
-  padding-bottom: clamp(48px, 9vh, 104px);
+  min-height: max(520px, min(calc(100svh - var(--header-h) - var(--inset)), 1000px));
+  margin: 0 var(--inset);
+  padding-top: 48px;
+  padding-bottom: clamp(44px, 8vh, 96px);
+  border-radius: clamp(20px, 2.2vw, 32px);
   color: #fff;
   overflow: hidden;
 }
@@ -312,9 +307,9 @@ section { position: relative; }
   gap: 20px;
   justify-items: start;
   width: 100%;
-  max-width: calc(var(--max) + 2 * var(--gutter));
+  max-width: calc(var(--max) + 2 * var(--gutter) - 2 * var(--inset));
   margin-inline: auto;
-  padding-inline: var(--gutter);
+  padding-inline: calc(var(--gutter) - var(--inset));
 }
 .hero h1 {
   max-width: 11em;
@@ -528,7 +523,7 @@ section { position: relative; }
   .mobile-nav { display: block; }
   .site-header { grid-template-columns: 1fr auto; }
 
-  .hero__stage { min-height: max(560px, 100svh); }
+  .hero__stage { min-height: max(520px, calc(100svh - var(--header-h) - var(--inset))); }
   .hero__media img { object-position: 74% 30%; }
   .hero h1 { font-size: min(calc((100vw - 2 * var(--gutter) - 8px) / 9.6), 4.25rem); }
 
