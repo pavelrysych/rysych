@@ -405,14 +405,15 @@ section { position: relative; }
   overflow: hidden;
 }
 .work-grid__wide .card__media { aspect-ratio: 2 / 1; }
-.card__media img {
+.card__media img,
+.card__media video {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: var(--pos, 50% 0);
   transition: transform 900ms var(--ease);
 }
-@media (hover: hover) { .card:hover .card__media img { transform: scale(1.03); } }
+@media (hover: hover) { .card:hover .card__media img, .card:hover .card__media video { transform: scale(1.03); } }
 .card:focus-visible { outline-offset: 6px; border-radius: calc(var(--radius) + 4px); }
 .card__meta { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; }
 .card__who, .card__metric { display: grid; gap: 2px; }

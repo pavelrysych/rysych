@@ -114,7 +114,8 @@ document.querySelectorAll('video[data-case-autoplay]').forEach((video) => {
     }
     video.play().catch((error) => {
       // iOS Low Power Mode refuses autoplay: hand the viewer the controls instead of a dead poster
-      if (error && error.name === 'NotAllowedError') video.controls = true;
+      // (card previews marked data-quiet stay on their poster: the whole card is a link)
+      if (error && error.name === 'NotAllowedError' && !video.hasAttribute('data-quiet')) video.controls = true;
     });
   };
 
