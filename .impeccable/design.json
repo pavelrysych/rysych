@@ -1,56 +1,274 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-04T18:30:00+04:00",
+  "generatedAt": "2026-10-04T20:00:00+04:00",
   "title": "Design System: rysych.com",
   "extensions": {
     "scope": "Homepage (index.html, home.css, home.js, site.js), the five case pages under work/ (home.css + case.css; assets/fundraise-case.css is legacy and overridden by case.css) and 404.html. Replaces the retired Glass Departures Board system in full.",
     "colorMeta": {
-      "ink": { "role": "primary", "displayName": "Graphite Ink", "canonical": "#1d1d1f", "tonalRamp": ["#1d1d1f", "#3a3a3c", "#48484a", "#636366", "#8e8e93", "#aeaeb2", "#d2d2d7", "#f5f5f7"] },
-      "ink-hover": { "role": "primary", "displayName": "Pressed Graphite", "canonical": "#3a3a3c", "tonalRamp": ["#1d1d1f", "#3a3a3c", "#48484a", "#636366", "#8e8e93", "#aeaeb2", "#d2d2d7", "#f5f5f7"] },
-      "ink-soft": { "role": "neutral", "displayName": "Soft Ink", "canonical": "#424245", "tonalRamp": ["#1d1d1f", "#2c2c2e", "#424245", "#636366", "#8e8e93", "#aeaeb2", "#d2d2d7", "#f5f5f7"] },
-      "muted": { "role": "neutral", "displayName": "Reading Grey", "canonical": "#636366", "tonalRamp": ["#1d1d1f", "#2c2c2e", "#424245", "#636366", "#8e8e93", "#aeaeb2", "#d2d2d7", "#f5f5f7"] },
-      "dot": { "role": "neutral", "displayName": "Dot Grey", "canonical": "#d2d2d7", "tonalRamp": ["#1d1d1f", "#424245", "#636366", "#8e8e93", "#aeaeb2", "#d2d2d7", "#ebebef", "#f5f5f7"] },
-      "tile": { "role": "neutral", "displayName": "Product Tile", "canonical": "#f5f5f7", "tonalRamp": ["#1d1d1f", "#424245", "#636366", "#8e8e93", "#d2d2d7", "#ebebef", "#f5f5f7", "#ffffff"] },
-      "tile-pressed": { "role": "neutral", "displayName": "Pressed Tile", "canonical": "#ebebef", "tonalRamp": ["#1d1d1f", "#424245", "#636366", "#8e8e93", "#d2d2d7", "#ebebef", "#f5f5f7", "#ffffff"] },
-      "paper": { "role": "neutral", "displayName": "Paper", "canonical": "#ffffff", "tonalRamp": ["#1d1d1f", "#424245", "#636366", "#8e8e93", "#d2d2d7", "#ebebef", "#f5f5f7", "#ffffff"] }
+      "ink": {
+        "role": "primary",
+        "displayName": "Graphite Ink",
+        "canonical": "#1d1d1f",
+        "tonalRamp": [
+          "#1d1d1f",
+          "#3a3a3c",
+          "#48484a",
+          "#636366",
+          "#8e8e93",
+          "#aeaeb2",
+          "#d2d2d7",
+          "#f5f5f7"
+        ]
+      },
+      "ink-hover": {
+        "role": "primary",
+        "displayName": "Pressed Graphite",
+        "canonical": "#3a3a3c",
+        "tonalRamp": [
+          "#1d1d1f",
+          "#3a3a3c",
+          "#48484a",
+          "#636366",
+          "#8e8e93",
+          "#aeaeb2",
+          "#d2d2d7",
+          "#f5f5f7"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Soft Ink",
+        "canonical": "#424245",
+        "tonalRamp": [
+          "#1d1d1f",
+          "#2c2c2e",
+          "#424245",
+          "#636366",
+          "#8e8e93",
+          "#aeaeb2",
+          "#d2d2d7",
+          "#f5f5f7"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Reading Grey",
+        "canonical": "#636366",
+        "tonalRamp": [
+          "#1d1d1f",
+          "#2c2c2e",
+          "#424245",
+          "#636366",
+          "#8e8e93",
+          "#aeaeb2",
+          "#d2d2d7",
+          "#f5f5f7"
+        ]
+      },
+      "dot": {
+        "role": "neutral",
+        "displayName": "Dot Grey",
+        "canonical": "#d2d2d7",
+        "tonalRamp": [
+          "#1d1d1f",
+          "#424245",
+          "#636366",
+          "#8e8e93",
+          "#aeaeb2",
+          "#d2d2d7",
+          "#ebebef",
+          "#f5f5f7"
+        ]
+      },
+      "tile": {
+        "role": "neutral",
+        "displayName": "Product Tile",
+        "canonical": "#f5f5f7",
+        "tonalRamp": [
+          "#1d1d1f",
+          "#424245",
+          "#636366",
+          "#8e8e93",
+          "#d2d2d7",
+          "#ebebef",
+          "#f5f5f7",
+          "#ffffff"
+        ]
+      },
+      "tile-pressed": {
+        "role": "neutral",
+        "displayName": "Pressed Tile",
+        "canonical": "#ebebef",
+        "tonalRamp": [
+          "#1d1d1f",
+          "#424245",
+          "#636366",
+          "#8e8e93",
+          "#d2d2d7",
+          "#ebebef",
+          "#f5f5f7",
+          "#ffffff"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#1d1d1f",
+          "#424245",
+          "#636366",
+          "#8e8e93",
+          "#d2d2d7",
+          "#ebebef",
+          "#f5f5f7",
+          "#ffffff"
+        ]
+      }
     },
     "typographyMeta": {
-      "display": { "displayName": "Display", "purpose": "The hero promise only, max 21ch." },
-      "display-closing": { "displayName": "Display Closing", "purpose": "The contact sign-off, max 11ch; the largest type on the site." },
-      "headline": { "displayName": "Headline", "purpose": "Homepage section titles and About; the case deck sentence uses the same voice." },
-      "title": { "displayName": "Title", "purpose": "Case chapter headings, case quotes title, AI panel headings." },
-      "figure": { "displayName": "Figure", "purpose": "Proof numbers in the outcomes tile; work rows use the same voice at 30px." },
-      "lede": { "displayName": "Lede", "purpose": "Hero intro, section intros and contact lede, in Reading Grey." },
-      "body": { "displayName": "Body", "purpose": "Default text, tabular figures; 16px under 560px." },
-      "body-long": { "displayName": "Body Long", "purpose": "Case-study reading paragraphs in Soft Ink, max 64ch; 17px on phones." },
-      "label": { "displayName": "Label", "purpose": "Years, roles, fact terms, captions, footer; sentence case, never tracked uppercase." }
+      "display": {
+        "displayName": "Display",
+        "purpose": "The hero promise only, white on the photograph, max 11em so it sets in three lines."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "The case-page deck sentence, max 24ch."
+      },
+      "section-title": {
+        "displayName": "Section Title",
+        "purpose": "Every homepage section head, contact included; one quiet size."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Case chapter headings and the case quotes title."
+      },
+      "figure": {
+        "displayName": "Figure",
+        "purpose": "Proof numbers in the case outcomes tile."
+      },
+      "item-title": {
+        "displayName": "Item Title",
+        "purpose": "Product-card names and proof values, How I work item titles; 18px on cards under 560px."
+      },
+      "quote": {
+        "displayName": "Quote",
+        "purpose": "Testimonial text; 21px in the phone carousel."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "The single grey line under How I work and Contact; nowhere else on the homepage."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Default text, tabular figures; 16px under 560px."
+      },
+      "body-long": {
+        "displayName": "Body Long",
+        "purpose": "Case-study reading paragraphs in Soft Ink, max 64ch; 17px on phones."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Roles and years, proof labels, fact terms, captions, footer; sentence case, never tracked uppercase."
+      }
     },
     "shadows": [
-      { "name": "header-lift", "value": "0 8px 24px -20px rgba(0, 0, 0, 0.35)", "purpose": "Sticky frosted header after 8px of scroll." },
-      { "name": "menu-sheet", "value": "0 24px 48px -16px rgba(0, 0, 0, 0.25), 0 2px 8px rgba(0, 0, 0, 0.06)", "purpose": "Open phone menu sheet." },
-      { "name": "selected-segment", "value": "0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(0, 0, 0, 0.04)", "purpose": "Selected tab inside the segmented track." },
-      { "name": "play-button", "value": "0 12px 30px -10px rgba(0, 0, 0, 0.45)", "purpose": "Black play disc over a film poster." }
+      {
+        "name": "header-lift",
+        "value": "0 8px 24px -20px rgba(0, 0, 0, 0.35)",
+        "purpose": "Sticky frosted header after 8px of scroll; absent on the homepage while it floats over the hero."
+      },
+      {
+        "name": "menu-sheet",
+        "value": "0 24px 48px -16px rgba(0, 0, 0, 0.25), 0 2px 8px rgba(0, 0, 0, 0.06)",
+        "purpose": "Open phone menu sheet."
+      },
+      {
+        "name": "play-button",
+        "value": "0 12px 30px -10px rgba(0, 0, 0, 0.45)",
+        "purpose": "Black play disc over a film poster."
+      },
+      {
+        "name": "promise-text",
+        "value": "text-shadow: 0 1px 24px rgba(0, 0, 0, 0.18)",
+        "purpose": "The hero promise over the photograph only."
+      }
     ],
     "materials": [
-      { "name": "frosted-header", "value": "background: rgba(255, 255, 255, 0.8); backdrop-filter: saturate(180%) blur(20px)", "purpose": "The sticky header only." }
+      {
+        "name": "frosted-header",
+        "value": "background: rgba(255, 255, 255, 0.8); backdrop-filter: saturate(180%) blur(20px)",
+        "purpose": "The sticky header once scrolled; transparent over the homepage hero until then."
+      },
+      {
+        "name": "hero-scrim",
+        "value": "linear-gradient(0deg, rgba(10, 14, 10, 0.55) 0%, rgba(10, 14, 10, 0.32) 36%, rgba(10, 14, 10, 0.1) 58%, rgba(10, 14, 10, 0) 70%)",
+        "purpose": "Low dark scrim over the bottom of the hero photo so the white promise stays legible."
+      }
     ],
     "motion": [
-      { "name": "ease", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "The single easing for every transition and entrance." },
-      { "name": "state", "value": "200ms", "purpose": "Hover, press, link underline, row wash, icon nudges." },
-      { "name": "first-viewport-rise", "value": "900ms rise (translateY 14px to 0, fade), staggered 0/70/140/260ms; hero photo settles in over 1600ms (fade, scale 1.04 to 1)", "purpose": "One quiet entrance for the first viewport, only under prefers-reduced-motion: no-preference." },
-      { "name": "panel-rise", "value": "500ms", "purpose": "AI tab panel entrance." },
-      { "name": "carousel-fade", "value": "400ms crossfade, 7000ms rotation", "purpose": "Phone quote carousel; stops for good once a person picks a quote." },
-      { "name": "menu-in", "value": "220ms (translateY -6px, scale 0.98, fade)", "purpose": "Phone menu sheet." },
-      { "name": "press", "value": "scale(0.98)", "purpose": "Pill active state." }
+      {
+        "name": "ease",
+        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "The single easing for every transition and entrance."
+      },
+      {
+        "name": "state",
+        "value": "200ms",
+        "purpose": "Hover, press, link underline, header link colour, icon nudges."
+      },
+      {
+        "name": "first-viewport",
+        "value": "copy rises 14px and fades over 900ms (delays 120/190ms); hero photo settles in over 1600ms (fade, scale 1.04 to 1)",
+        "purpose": "One quiet entrance for the first viewport, only under prefers-reduced-motion: no-preference."
+      },
+      {
+        "name": "card-image",
+        "value": "900ms, scale(1.03)",
+        "purpose": "Product-card image on hover; the card arrow nudges 3px over 250ms."
+      },
+      {
+        "name": "carousel-fade",
+        "value": "400ms crossfade, 7000ms rotation",
+        "purpose": "Phone quote carousel; stops for good once a person picks a quote."
+      },
+      {
+        "name": "menu-in",
+        "value": "220ms (translateY -6px, scale 0.98, fade)",
+        "purpose": "Phone menu sheet."
+      },
+      {
+        "name": "press",
+        "value": "scale(0.98)",
+        "purpose": "Pill active state."
+      }
     ],
     "breakpoints": [
-      { "name": "wide", "value": "1080px" },
-      { "name": "case-wide", "value": "1050px" },
-      { "name": "tablet", "value": "900px" },
-      { "name": "phone", "value": "760px" },
-      { "name": "small-phone", "value": "560px" }
+      {
+        "name": "wide",
+        "value": "1080px"
+      },
+      {
+        "name": "case-wide",
+        "value": "1050px"
+      },
+      {
+        "name": "tablet",
+        "value": "900px"
+      },
+      {
+        "name": "phone",
+        "value": "760px"
+      },
+      {
+        "name": "small-phone",
+        "value": "560px"
+      }
     ],
-    "focus": { "value": "outline: 2px solid #1d1d1f; outline-offset: 3px; border-radius: 6px", "purpose": "All focus-visible states." }
+    "focus": {
+      "value": "outline: 2px solid #1d1d1f; outline-offset: 3px; border-radius: 6px",
+      "purpose": "All focus-visible states."
+    }
   },
   "components": [
     {
@@ -60,6 +278,14 @@
       "description": "The one black pill per view: the primary action.",
       "html": "<a class=\"ds-pill-primary\" href=\"#\">Get in touch</a>",
       "css": ".ds-pill-primary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 22px; border: 0; border-radius: 999px; background: #1d1d1f; color: #fff; font-family: Geist, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 16px; font-weight: 500; letter-spacing: -0.01em; text-decoration: none; cursor: pointer; transition: background-color 200ms cubic-bezier(0.22, 1, 0.36, 1), transform 200ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-pill-primary:hover { background: #3a3a3c; } .ds-pill-primary:active { transform: scale(0.98); } .ds-pill-primary:focus-visible { outline: 2px solid #1d1d1f; outline-offset: 3px; }"
+    },
+    {
+      "name": "Photo Pill",
+      "kind": "button",
+      "refersTo": "button-on-photo",
+      "description": "The hero's primary pill: white with ink text over the photograph, the only action in the first viewport.",
+      "html": "<div class=\"ds-photo\"><a class=\"ds-pill-photo\" href=\"#\">Get in touch</a></div>",
+      "css": ".ds-photo { padding: 32px; background: linear-gradient(180deg, #8b9286, #3b4237); border-radius: 16px; } .ds-pill-photo { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 26px; border-radius: 999px; background: #fff; color: #1d1d1f; font-family: Geist, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 17px; font-weight: 500; letter-spacing: -0.01em; text-decoration: none; transition: background-color 200ms cubic-bezier(0.22, 1, 0.36, 1), transform 200ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-pill-photo:hover { background: #e8e8ed; } .ds-pill-photo:active { transform: scale(0.98); } .ds-pill-photo:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }"
     },
     {
       "name": "Secondary Pill",
@@ -81,25 +307,25 @@
       "name": "Header Navigation",
       "kind": "nav",
       "refersTo": "nav-link",
-      "description": "Frosted white header: wordmark, pill links that take a grey pill on hover, compact black Contact pill.",
-      "html": "<header class=\"ds-header\"><a class=\"ds-wordmark\" href=\"#\">Pavel Rysych<span>Product Design Leader</span></a><nav class=\"ds-nav\"><a href=\"#\">Work</a><a href=\"#\">AI</a><a href=\"#\">Leadership</a><a href=\"#\">About</a><a href=\"#\">CV</a></nav><a class=\"ds-header__cta\" href=\"#\">Contact</a></header>",
-      "css": ".ds-header { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 16px; height: 64px; padding-inline: 24px; background: rgba(255, 255, 255, 0.8); -webkit-backdrop-filter: saturate(180%) blur(20px); backdrop-filter: saturate(180%) blur(20px); box-shadow: 0 8px 24px -20px rgba(0, 0, 0, 0.35); font-family: Geist, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #1d1d1f; } .ds-wordmark { display: inline-flex; align-items: baseline; gap: 10px; font-size: 16px; font-weight: 600; letter-spacing: -0.02em; text-decoration: none; color: inherit; white-space: nowrap; } .ds-wordmark span { font-size: 14px; font-weight: 400; color: #636366; } .ds-nav { justify-self: end; display: flex; gap: 2px; } .ds-nav a { padding: 7px 12px; border-radius: 999px; color: #424245; font-size: 14px; font-weight: 500; text-decoration: none; transition: background-color 200ms cubic-bezier(0.22, 1, 0.36, 1), color 200ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-nav a:hover { background: #f5f5f7; color: #1d1d1f; } .ds-nav a:focus-visible, .ds-header__cta:focus-visible { outline: 2px solid #1d1d1f; outline-offset: 3px; } .ds-header__cta { display: inline-flex; align-items: center; min-height: 36px; padding: 0 16px; border-radius: 999px; background: #1d1d1f; color: #fff; font-size: 14px; font-weight: 500; text-decoration: none; transition: background-color 200ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-header__cta:hover { background: #3a3a3c; }"
+      "description": "The name alone, then four plain text links; frosted white once scrolled, transparent over the homepage hero.",
+      "html": "<header class=\"ds-header\"><a class=\"ds-wordmark\" href=\"#\">Pavel Rysych</a><nav class=\"ds-nav\"><a href=\"#\">Work</a><a href=\"#\">About</a><a href=\"#\">CV</a><a href=\"#\">Contact</a></nav></header>",
+      "css": ".ds-header { display: flex; justify-content: space-between; align-items: center; gap: 16px; height: 64px; padding-inline: 24px; background: rgba(255, 255, 255, 0.8); -webkit-backdrop-filter: saturate(180%) blur(20px); backdrop-filter: saturate(180%) blur(20px); box-shadow: 0 8px 24px -20px rgba(0, 0, 0, 0.35); font-family: Geist, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; color: #1d1d1f; } .ds-wordmark { font-size: 16px; font-weight: 600; letter-spacing: -0.02em; text-decoration: none; color: inherit; white-space: nowrap; } .ds-nav { display: flex; gap: clamp(20px, 2.4vw, 32px); } .ds-nav a { padding: 8px 0; color: #424245; font-size: 14px; font-weight: 500; text-decoration: none; transition: color 200ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-nav a:hover { color: #1d1d1f; } .ds-wordmark:focus-visible, .ds-nav a:focus-visible { outline: 2px solid #1d1d1f; outline-offset: 3px; border-radius: 6px; }"
     },
     {
-      "name": "Segmented Tabs",
-      "kind": "chip",
-      "refersTo": "tab",
-      "description": "Grey pill track; the selected segment lifts out in white.",
-      "html": "<div class=\"ds-tabs\" role=\"tablist\"><button class=\"ds-tab\" role=\"tab\" aria-selected=\"true\">Web production</button><button class=\"ds-tab\" role=\"tab\" aria-selected=\"false\">Design system to code</button><button class=\"ds-tab\" role=\"tab\" aria-selected=\"false\">Compliance checker</button></div>",
-      "css": ".ds-tabs { display: inline-flex; gap: 2px; padding: 4px; border-radius: 999px; background: #f5f5f7; } .ds-tab { min-height: 40px; padding: 0 18px; border: 0; border-radius: 999px; background: transparent; color: #636366; font-family: Geist, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 15px; font-weight: 500; cursor: pointer; transition: background-color 200ms cubic-bezier(0.22, 1, 0.36, 1), color 200ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 200ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-tab:hover { color: #1d1d1f; } .ds-tab[aria-selected=\"true\"] { background: #fff; color: #1d1d1f; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(0, 0, 0, 0.04); } .ds-tab:focus-visible { outline: 2px solid #1d1d1f; outline-offset: 3px; }"
+      "name": "Product Card",
+      "kind": "card",
+      "refersTo": "product-card-media",
+      "description": "Signature: the whole card links to a case; a 16:10 image on a 24px grey tile, name with arrow, role and years in grey, proof figure right. Image scales 1.03 on hover.",
+      "html": "<a class=\"ds-card\" href=\"#\"><span class=\"ds-card__media\"><span class=\"ds-card__img\"></span></span><span class=\"ds-card__meta\"><span class=\"ds-card__who\"><span class=\"ds-card__title\">Admirals<svg class=\"ds-card__arrow\" viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></span><span class=\"ds-card__sub\">Head of Design · 2024–Now</span></span><span class=\"ds-card__metric\"><span class=\"ds-card__value\">−67%</span><span class=\"ds-card__sub\">Customer acquisition cost</span></span></span></a>",
+      "css": ".ds-card { display: grid; gap: 18px; max-width: 584px; color: #1d1d1f; text-decoration: none; font-family: Geist, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-variant-numeric: tabular-nums; } .ds-card__media { position: relative; display: block; aspect-ratio: 16 / 10; border-radius: 24px; background: #f5f5f7; overflow: hidden; } .ds-card__img { position: absolute; inset: 12% 10% 0; border-radius: 12px 12px 0 0; background: linear-gradient(160deg, #ffffff, #e4e4ea); transition: transform 900ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-card:hover .ds-card__img { transform: scale(1.03); } .ds-card__meta { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; } .ds-card__who, .ds-card__metric { display: grid; gap: 2px; } .ds-card__metric { justify-items: end; text-align: right; } .ds-card__title { display: inline-flex; align-items: center; gap: 8px; font-size: 20px; font-weight: 600; letter-spacing: -0.025em; line-height: 1.3; } .ds-card__arrow { color: #636366; transition: transform 250ms cubic-bezier(0.22, 1, 0.36, 1), color 250ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-card:hover .ds-card__arrow { color: #1d1d1f; transform: translateX(3px); } .ds-card__sub { font-size: 14px; color: #636366; } .ds-card__value { font-size: 20px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.3; white-space: nowrap; } .ds-card:focus-visible { outline: 2px solid #1d1d1f; outline-offset: 6px; border-radius: 28px; }"
     },
     {
-      "name": "Work Row",
+      "name": "How I Work Item",
       "kind": "custom",
-      "refersTo": "work-row",
-      "description": "Signature: a non-linking proof row that washes grey on hover; only the View case control navigates, growing from an arrow into a labelled pill.",
-      "html": "<div class=\"ds-row\"><div class=\"ds-row__years\">2024–Now</div><div><div class=\"ds-row__name\">Admirals</div><div class=\"ds-row__role\">Head of Design</div></div><p class=\"ds-row__story\">Won experienced traders with trust instead of easy-start promises.</p><div><div class=\"ds-row__value\">−67%</div><div class=\"ds-row__label\">Customer acquisition cost</div></div><a class=\"ds-row__cta\" href=\"#\"><span class=\"ds-row__cta-label\">View case</span><svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></a></div>",
-      "css": ".ds-row { display: grid; grid-template-columns: 96px minmax(0, 0.9fr) minmax(0, 1.35fr) 150px 132px; align-items: start; gap: 28px; padding: 28px 24px; border-radius: 24px; color: #1d1d1f; font-family: Geist, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-variant-numeric: tabular-nums; transition: background-color 200ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-row:hover { background: #f5f5f7; } .ds-row__years { padding-top: 5px; font-size: 15px; color: #636366; } .ds-row__name { font-size: 22px; font-weight: 600; letter-spacing: -0.025em; line-height: 1.25; } .ds-row__role { font-size: 15px; color: #636366; } .ds-row__story { margin: 0; padding-top: 3px; font-size: 16px; line-height: 1.55; color: #424245; } .ds-row__value { font-size: 30px; font-weight: 600; letter-spacing: -0.035em; line-height: 1.1; } .ds-row__label { font-size: 13px; color: #636366; } .ds-row__cta { position: relative; justify-self: end; display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 12px 0 16px; border-radius: 999px; color: #1d1d1f; font-size: 15px; font-weight: 500; text-decoration: none; isolation: isolate; } .ds-row__cta::before, .ds-row__cta::after { content: ''; position: absolute; z-index: -1; border-radius: 999px; transition: opacity 200ms cubic-bezier(0.22, 1, 0.36, 1), background-color 200ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-row__cta::before { inset: 0 0 0 auto; width: 40px; background: #f5f5f7; } .ds-row__cta::after { inset: 0; background: #fff; opacity: 0; } .ds-row__cta-label { opacity: 0; transform: translateX(6px); transition: opacity 200ms cubic-bezier(0.22, 1, 0.36, 1), transform 200ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-row:hover .ds-row__cta::after, .ds-row__cta:focus-visible::after { opacity: 1; } .ds-row:hover .ds-row__cta-label, .ds-row__cta:focus-visible .ds-row__cta-label { opacity: 1; transform: none; } .ds-row__cta:hover { color: #fff; } .ds-row__cta:hover::after { background: #1d1d1f; } .ds-row__cta:focus-visible { outline: 2px solid #1d1d1f; outline-offset: 3px; }"
+      "refersTo": "product-card-title",
+      "description": "A 20px title, one grey sentence and an underlined link into a case chapter; no icon, number or tile.",
+      "html": "<div class=\"ds-how\"><h3>Ownership</h3><p>A design team rebuilt around senior designers who own decisions and execution.</p><a href=\"#\">How the team changed</a></div>",
+      "css": ".ds-how { max-width: 360px; font-family: Geist, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; color: #1d1d1f; } .ds-how h3 { margin: 0 0 8px; font-size: 20px; font-weight: 600; letter-spacing: -0.025em; line-height: 1.3; } .ds-how p { margin: 0; max-width: 34ch; font-size: 16px; line-height: 1.55; color: #636366; } .ds-how a { display: inline-flex; margin-top: 14px; color: #1d1d1f; font-size: 15px; font-weight: 500; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 5px; text-decoration-color: rgba(29, 29, 31, 0.3); transition: text-decoration-color 200ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-how a:hover { text-decoration-color: #1d1d1f; } .ds-how a:focus-visible { outline: 2px solid #1d1d1f; outline-offset: 3px; border-radius: 6px; }"
     },
     {
       "name": "Outcomes Tile",
@@ -120,37 +346,68 @@
   ],
   "narrative": {
     "northStar": "The Quiet Launch Page",
-    "overview": "A white page written like a Californian product launch, by a designer. The work and its numbers carry the page; the system steps back so they can. Everything is ink on white, with one light-grey tile colour that holds product moments, and a single black pill that tells the reader what to do next. References the user named: Stripe and Airbnb, Apple product pages, and designer personal sites (rauno.me, emilkowal.ski, paco.me).\n\nDensity is generous and calm: wide sections (88 to 144px apart), a 1200px measure, headings set tight and heavy in Geist, body set soft in grey. Depth comes from tone (white against light grey), never from lines, glows or glass. Motion is a single quiet entrance on the first screen and small 200ms state changes everywhere else.\n\nThis system replaces the retired \"Glass Departures Board\" world entirely (graphite, smoke, oxide LED, Urbanist, glass panels). The one thing carried across is the interactive video portrait, now a studio photo shown honestly in a rounded frame and turned by pointer, drag or arrow keys.",
+    "overview": "A white page written like a Californian product launch, by a designer. Images of the work carry the page, the way Apple and Airbnb let a product picture say what a paragraph would; the numbers sit quietly beside them, and the system steps back so both can. Everything is ink on white, with one light-grey tile colour that holds product images, and a single primary pill that tells the reader what to do next. References the user named: Stripe and Airbnb, Apple product pages, and designer personal sites (rauno.me, emilkowal.ski, paco.me).\n\nDensity is generous and calm: wide sections (88 to 144px apart), a 1200px measure, one quiet section-title size, and almost no copy under headings. Headings are set tight and heavy in Geist; supporting lines are grey. Depth comes from tone (white against light grey), never from lines, glows or glass. Motion is a single quiet entrance on the first screen, a slow image scale on card hover, and small 200ms state changes everywhere else.\n\nThe first viewport is a full-bleed photograph of Pavel on a misty hillside, with the landscape mirrored so he stands on the right and the person kept in his real orientation. Only the three-line promise and one white \"Get in touch\" pill sit over the hills; the header floats transparent over the sky. This system replaced the retired \"Glass Departures Board\" world entirely (graphite, smoke, oxide LED, Urbanist, glass panels).",
     "keyCharacteristics": [
       "Pure white ground, near-black ink, one reading grey, one light-grey tile; no accent hue.",
+      "Images instead of words: work is shown as product cards, not described in rows of text.",
       "Geist variable at 600 with tight negative tracking for every heading; 400 body at 17px with tabular figures.",
-      "Pills for every action: black for the one primary action, light grey for secondary.",
+      "Pills for actions: one primary pill per view, light grey for secondary; header links are plain text.",
       "Underlined text links; a ↗ arrow appears only when the link leaves the site.",
-      "Product screens sit sharp inside light-grey tiles; on phones they run edge to edge.",
       "No divider lines, no glows, no glass panels, no eyebrows."
     ],
     "rules": [
-      { "name": "The No-Accent Rule", "body": "There is no brand hue. Emphasis comes from weight, size and the black pill. A coloured link, badge or highlight is off-system.", "section": "colors" },
-      { "name": "The Tone-Not-Line Rule", "body": "Surfaces are separated by tone (white against tile), never by a border, hairline or divider. If two things need separating, add space or put one in a tile.", "section": "colors" },
-      { "name": "The Heavy-Head Rule", "body": "Every heading is Geist 600 with negative tracking (-0.02em to -0.045em, tighter as it grows). Light display weights belong to the retired world.", "section": "typography" },
-      { "name": "The No-Kicker Rule", "body": "Nothing sits above a heading: no eyebrows, kickers, slash labels or chapter tags. The case pages' chapter labels exist in markup and are hidden.", "section": "typography" },
-      { "name": "The Space-Is-The-Divider Rule", "body": "Sections and groups are separated by the section rhythm and gaps alone. No rules, no hairlines, no alternating stripes beyond the single grey Subskim band.", "section": "layout" },
-      { "name": "The Float-Only Rule", "body": "A shadow means the thing floats over content (header, menu, selected segment, play control). Cards and tiles never carry shadows.", "section": "elevation" }
+      {
+        "name": "The No-Accent Rule",
+        "body": "There is no brand hue. Emphasis comes from weight, size and the primary pill. A coloured link, badge or highlight is off-system. Colour on the page belongs to the photographs and product images, never to the interface.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tone-Not-Line Rule",
+        "body": "Surfaces are separated by tone (white against tile), never by a border, hairline or divider. If two things need separating, add space or put one in a tile.",
+        "section": "colors"
+      },
+      {
+        "name": "The Heavy-Head Rule",
+        "body": "Every heading is Geist 600 with negative tracking (-0.02em to -0.04em, tighter as it grows). Light display weights belong to the retired world.",
+        "section": "typography"
+      },
+      {
+        "name": "The Bare-Head Rule",
+        "body": "Nothing sits above a heading (no eyebrows, kickers, slash labels or chapter tags), and on the homepage nothing sits under one either, except a single grey lede line in How I work and Contact. The case pages' chapter labels exist in markup and are hidden.",
+        "section": "typography"
+      },
+      {
+        "name": "The Space-Is-The-Divider Rule",
+        "body": "Sections and groups are separated by the section rhythm and gaps alone. No rules, no hairlines, no alternating stripes or bands.",
+        "section": "layout"
+      },
+      {
+        "name": "The Picture-First Rule",
+        "body": "Where the page can show the work, it shows it: a product image does the job a paragraph used to. Text beside an image is limited to a name, a role and years, and one proof figure.",
+        "section": "layout"
+      },
+      {
+        "name": "The Float-Only Rule",
+        "body": "A shadow means the thing floats over content (header, menu, play control). Cards and tiles never carry shadows; a product card lifts by scaling its image, not by casting a shadow.",
+        "section": "elevation"
+      }
     ],
     "dos": [
       "Do set every heading in Geist 600 with negative tracking, and every supporting line in Reading Grey.",
-      "Do give each view exactly one black pill as the primary action; make every other action a grey pill or an underlined text link.",
-      "Do put product screens and films inside a Product Tile (28px) with a nested 16px screen radius, and let them run edge to edge on phones.",
+      "Do give each view exactly one primary pill (black on white, white on the photograph); make every other action a grey pill or an underlined text link.",
+      "Do show work as product cards: an image on a 24px Product Tile, the name, role and years, and one proof figure, with the whole card as the link.",
+      "Do use the one section-title size (clamp(1.75rem, 2.6vw, 2.25rem)) for every homepage section head.",
+      "Do put case screens and films inside a Product Tile (28px) with a nested 16px screen radius, and let them run edge to edge on phones.",
       "Do show testimonials three in a row on desktop and as a carousel on phones.",
-      "Do keep work rows non-linking; only the \"View case\" control navigates (arrow at rest, labelled pill on hover or focus, always labelled on phones).",
-      "Do use numbers beside items only where order is information, as in the AI stages.",
       "Do keep state changes at 200ms on cubic-bezier(0.22, 1, 0.36, 1) and wrap hover styles in (hover: hover)."
     ],
     "donts": [
       "Don't draw divider lines, borders or hairlines anywhere; separate with space or tone.",
       "Don't add glows, glass panels, gradients or coloured light; the retired departures-board world is gone. The frosted sticky header is the one translucent surface.",
       "Don't introduce an accent hue; the palette is ink, one grey and light-grey tiles.",
-      "Don't put eyebrows, kickers, slash labels or chapter tags above headings.",
+      "Don't put eyebrows, kickers, slash labels or chapter tags above headings, or intro paragraphs under homepage section heads beyond the one-line ledes.",
+      "Don't describe in a paragraph what an image of the work can show.",
+      "Don't make header links into pills or buttons; they are plain text.",
       "Don't add a ↗ icon to internal links; it marks leaving the site.",
       "Don't put shadows on cards or tiles; shadows only mark things that float.",
       "Don't use light display weights, uppercase tracked labels or a second typeface."

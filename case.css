@@ -277,21 +277,30 @@
 .mechanism-products__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px 40px; }
 .mechanism-product { display: flex; flex-direction: column; align-items: flex-start; min-width: 0; }
 .mechanism-product > * { order: 5; }
-.mechanism-product__image { order: 1; }
+.venture-card { order: 1; }
 .mechanism-product h3 { order: 2; }
 .mechanism-product__number { order: 3; margin-bottom: 8px; font-size: 15px; color: var(--muted); }
-.mechanism-product__image {
-  box-sizing: content-box;
-  width: calc(100% - 24px);
-  height: auto;
-  aspect-ratio: 1250 / 712;
-  object-fit: cover;
-  object-position: left top;
-  margin-top: 0;
-  padding: 12px;
-  border-radius: 24px;
-  background: var(--tile);
+/* each venture as its own card, the way mechanism.com shows them: a looping film under a white logo */
+.venture-card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 5 / 4;
+  border-radius: var(--radius);
+  background: #161616;
+  overflow: hidden;
 }
+.venture-card__video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.venture-card::after { content: ""; position: absolute; inset: 0; background: rgba(0, 0, 0, 0.3); }
+.venture-card__logo {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: min(54%, 260px);
+  height: auto;
+  transform: translate(-50%, -50%);
+}
+.venture-card__logo--primeputt { width: min(46%, 220px); }
 .mechanism-product h3 { margin: 20px 0 2px; font-size: clamp(1.5rem, 2.2vw, 1.875rem); letter-spacing: -0.03em; }
 .mechanism-product p { flex-grow: 1; margin-bottom: 16px; max-width: 46ch; font-size: 16px; line-height: 1.6; color: var(--muted); }
 
@@ -458,12 +467,4 @@
   .case-social-comparison__item--after figcaption { padding: 0 var(--gutter) 0 10px; }
   .case-social-comparison__item:first-child figcaption { padding-right: 10px; }
   .fundraise-form-comparison { margin-inline: calc(-1 * var(--gutter)); border-radius: 0; padding: 28px var(--gutter); }
-  .mechanism-product__image {
-    width: calc(100% + 2 * var(--gutter));
-    max-width: none;
-    margin-inline: calc(-1 * var(--gutter));
-    padding: 0;
-    border-radius: 0;
-    background: none;
-  }
 }
