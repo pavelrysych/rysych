@@ -33,9 +33,8 @@ Experience across design, product, and growth lets him connect design decisions 
 ## Capabilities and Constraints
 
 - Static site: `index.html`, `home.css`, `home.js`, `site.js`, `case.css` (+ `assets/fundraise-case.css`), a branded `404.html`; case pages in `work/subskim`, `work/admirals`, `work/mechanism`, `work/metamap`, `work/fundraise-up`. No framework or build step; deployed on Vercel from GitHub main (`vercel.json` for URLs and caching, `.vercelignore` keeps working docs out of the deployment).
-- Homepage sections: hero with interactive portrait and a row of company logos linking to the cases; colleague quotes; Selected work list (Subskim, Admirals, Mechanism Ventures, MetaMap, Fundraise Up), each row carrying its proof figure; Subskim; AI in practice (web production, design system to code, compliance checker); leadership principles linked to case chapters; About; Contact.
+- Homepage sections: full-bleed hero photograph with the promise over it and a row of company logos linking to the cases; colleague quotes; Selected work list (Subskim, Admirals, Mechanism Ventures, MetaMap, Fundraise Up), each row carrying its proof figure; Subskim; AI in practice (web production, design system to code, compliance checker); leadership principles linked to case chapters; About; Contact.
 - AI projects are presented as standalone projects without employer attribution.
-- The hero portrait responds to horizontal pointer movement/drag and arrow keys, and stays still under reduced motion.
 - Public contact email: rysych@gmail.com.
 - Work format: remote preferred; open to relocation to Singapore, Dubai, London, or the US.
 - CV: ATS-friendly PDF at `/Pavel_Rysych_CV.pdf` (short link `/cv`), linked from the nav on every page and from Contact. Its HTML source lives outside the repo in `../CV/`.
@@ -45,7 +44,7 @@ Experience across design, product, and growth lets him connect design decisions 
 
 - Name: **Pavel Rysych**; title: **Product Design Leader**.
 - Core promise: "I build products and the design teams behind them."
-- Real studio portrait of Pavel (dark glasses, white shirt, light studio ground), shown as the interactive scrub film in the hero, is part of his identity on the site.
+- Real portrait of Pavel (misty mountain landscape: green hills, black jacket, round glasses) is part of his identity on the site; it is the full-bleed hero photograph, mirrored.
 - Personal side: photography and filmmaking — attention, detail, storytelling.
 - Voice: first person, calm, specific, factual; claims tied to concrete episodes. No inflated titles or unverified attributions.
 
@@ -71,4 +70,4 @@ Experience across design, product, and growth lets him connect design decisions 
 
 ## Accessibility & Inclusion
 
-Keyboard-accessible interactions (including the portrait), reduced-motion support, and readable text on both desktop and mobile. Target WCAG 2.1 AA.
+Keyboard-accessible interactions, reduced-motion support, and readable text on both desktop and mobile. Target WCAG 2.1 AA.

@@ -15,8 +15,8 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png?v=2">
     <link rel="manifest" href="/site.webmanifest?v=2">
     <link rel="preload" href="/assets/fonts/geist-variable.woff2?v=1" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/assets/minimal-hero-film-v1-poster.jpg" as="image" fetchpriority="high">
-    <link rel="stylesheet" href="/home.css?v=57">
+    <link rel="preload" as="image" type="image/webp" imagesrcset="/assets/hero-hills-800.webp 800w, /assets/hero-hills-1280.webp 1280w, /assets/hero-hills-2000.webp 2000w" imagesizes="100vw" fetchpriority="high">
+    <link rel="stylesheet" href="/home.css?v=58">
     <script src="/site.js?v=18" defer></script>
     <script src="/home.js?v=20" defer></script>
     <meta property="og:type" content="website">
@@ -35,7 +35,7 @@
     <meta name="twitter:description" content="Pavel Rysych, Product Design Leader and Head of Design, builds products and the design teams behind them. Case studies: Admirals, Subskim, MetaMap and more.">
     <meta name="twitter:image" content="https://www.rysych.com/assets/og/home.jpg">
     <meta name="twitter:image:alt" content="Pavel Rysych, Product Design Leader: I build products and the design teams behind them.">
-    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://www.rysych.com/#website","url":"https://www.rysych.com/","name":"Pavel Rysych","alternateName":["Rysych","rysych.com"],"description":"Portfolio of Pavel Rysych, Product Design Leader and Head of Design.","inLanguage":"en","publisher":{"@id":"https://www.rysych.com/#person"}},{"@type":"ProfilePage","@id":"https://www.rysych.com/","url":"https://www.rysych.com/","name":"Pavel Rysych — Product Design Leader & Head of Design","description":"Pavel Rysych, Product Design Leader and Head of Design, builds products and the design teams behind them. Case studies: Admirals, Subskim, MetaMap and more.","inLanguage":"en","isPartOf":{"@id":"https://www.rysych.com/#website"},"mainEntity":{"@id":"https://www.rysych.com/#person"},"primaryImageOfPage":{"@id":"https://www.rysych.com/#portrait"},"dateCreated":"2026-05-05T17:44:40+04:00","dateModified":"2026-10-04T18:00:00+04:00"},{"@type":"Person","@id":"https://www.rysych.com/#person","name":"Pavel Rysych","url":"https://www.rysych.com/","jobTitle":"Head of Design","sameAs":["https://www.linkedin.com/in/rysych/","https://www.instagram.com/pavel_rysych/","https://www.threads.com/@pavel_rysych"],"image":{"@id":"https://www.rysych.com/#portrait"},"worksFor":{"@id":"https://www.rysych.com/#org-admirals"},"description":"Product Design Leader and Head of Design. Leads product design, builds design teams and brings AI into everyday product work.","email":"mailto:rysych@gmail.com","knowsAbout":["Product design","Design leadership","Design systems","Prototyping","AI-assisted design and implementation","Product and growth","Customer journeys","Onboarding","Identity verification","Donation experience"]},{"@type":"ImageObject","@id":"https://www.rysych.com/#portrait","url":"https://www.rysych.com/assets/minimal-hero-film-v1-poster.jpg","contentUrl":"https://www.rysych.com/assets/minimal-hero-film-v1-poster.jpg","width":960,"height":1216,"caption":"Pavel Rysych"},{"@type":"Organization","@id":"https://www.rysych.com/#org-admirals","name":"Admirals","url":"https://admiralmarkets.com/","logo":{"@type":"ImageObject","url":"https://www.rysych.com/assets/admirals-logo-dark.svg"}}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://www.rysych.com/#website","url":"https://www.rysych.com/","name":"Pavel Rysych","alternateName":["Rysych","rysych.com"],"description":"Portfolio of Pavel Rysych, Product Design Leader and Head of Design.","inLanguage":"en","publisher":{"@id":"https://www.rysych.com/#person"}},{"@type":"ProfilePage","@id":"https://www.rysych.com/","url":"https://www.rysych.com/","name":"Pavel Rysych — Product Design Leader & Head of Design","description":"Pavel Rysych, Product Design Leader and Head of Design, builds products and the design teams behind them. Case studies: Admirals, Subskim, MetaMap and more.","inLanguage":"en","isPartOf":{"@id":"https://www.rysych.com/#website"},"mainEntity":{"@id":"https://www.rysych.com/#person"},"primaryImageOfPage":{"@id":"https://www.rysych.com/#portrait"},"dateCreated":"2026-05-05T17:44:40+04:00","dateModified":"2026-10-04T18:00:00+04:00"},{"@type":"Person","@id":"https://www.rysych.com/#person","name":"Pavel Rysych","url":"https://www.rysych.com/","jobTitle":"Head of Design","sameAs":["https://www.linkedin.com/in/rysych/","https://www.instagram.com/pavel_rysych/","https://www.threads.com/@pavel_rysych"],"image":{"@id":"https://www.rysych.com/#portrait"},"worksFor":{"@id":"https://www.rysych.com/#org-admirals"},"description":"Product Design Leader and Head of Design. Leads product design, builds design teams and brings AI into everyday product work.","email":"mailto:rysych@gmail.com","knowsAbout":["Product design","Design leadership","Design systems","Prototyping","AI-assisted design and implementation","Product and growth","Customer journeys","Onboarding","Identity verification","Donation experience"]},{"@type":"ImageObject","@id":"https://www.rysych.com/#portrait","url":"https://www.rysych.com/assets/hero-hills-2000.jpg","contentUrl":"https://www.rysych.com/assets/hero-hills-2000.jpg","width":2000,"height":1333,"caption":"Pavel Rysych"},{"@type":"Organization","@id":"https://www.rysych.com/#org-admirals","name":"Admirals","url":"https://admiralmarkets.com/","logo":{"@type":"ImageObject","url":"https://www.rysych.com/assets/admirals-logo-dark.svg"}}]}</script>
   </head>
   <body class="home">
     <a class="skip-link" href="#main">Skip to content</a>
@@ -65,7 +65,11 @@
 
     <main id="main">
       <section class="hero" aria-labelledby="hero-title">
-        <div class="page-width hero__stage">
+        <div class="hero__stage">
+          <picture class="hero__media">
+            <source type="image/webp" srcset="/assets/hero-hills-800.webp 800w, /assets/hero-hills-1280.webp 1280w, /assets/hero-hills-2000.webp 2000w" sizes="100vw">
+            <img src="/assets/hero-hills-2000.jpg" width="2000" height="1333" alt="Pavel Rysych in a black jacket and round glasses, standing on a green hillside in mountain fog" fetchpriority="high" decoding="async">
+          </picture>
           <div class="hero__copy">
             <h1 id="hero-title">I build products <span class="hero__line">and the design teams</span> behind them.</h1>
             <p class="hero__intro">I lead product design and bring AI into everyday work — from prototypes and design systems to implementation. My experience across design, product and growth helps me connect decisions with the needs of the business.</p>
@@ -73,14 +77,6 @@
               <a class="pill pill--glow pill--large" href="#contact">Get in touch</a>
               <a class="link-secondary" href="#work">View selected work</a>
             </div>
-          </div>
-
-          <div class="hero__image" role="group" tabindex="0" aria-label="Interactive portrait of Pavel Rysych" aria-describedby="portrait-instructions">
-            <video class="hero__video" width="960" height="1216" poster="/assets/minimal-hero-film-v1-poster.jpg" muted playsinline preload="none" disablepictureinpicture data-portrait-scrub data-scrub-start="0.9" data-scrub-end="2.9" aria-label="Pavel Rysych wearing dark glasses against a light grey studio background">
-              <source src="/assets/minimal-hero-film-v2.mp4" type="video/mp4">
-              <img src="/assets/minimal-hero-film-v1-poster.jpg" alt="Pavel Rysych wearing dark glasses against a light grey studio background" width="960" height="1216">
-            </video>
-            <span class="visually-hidden" id="portrait-instructions">Move your mouse horizontally or drag across the portrait to turn it. With the portrait focused, use the left and right arrow keys, Home or End. The portrait stays still when reduced motion is enabled.</span>
           </div>
         </div>
 

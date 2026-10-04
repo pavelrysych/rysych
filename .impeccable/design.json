@@ -37,7 +37,7 @@
     "motion": [
       { "name": "ease", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "The single easing for every transition and entrance." },
       { "name": "state", "value": "200ms", "purpose": "Hover, press, link underline, row wash, icon nudges." },
-      { "name": "first-viewport-rise", "value": "900ms rise (translateY 14px to 0, fade), staggered 0/70/140/260ms; portrait fades over 1200ms", "purpose": "One quiet entrance for the first viewport, only under prefers-reduced-motion: no-preference." },
+      { "name": "first-viewport-rise", "value": "900ms rise (translateY 14px to 0, fade), staggered 0/70/140/260ms; hero photo settles in over 1600ms (fade, scale 1.04 to 1)", "purpose": "One quiet entrance for the first viewport, only under prefers-reduced-motion: no-preference." },
       { "name": "panel-rise", "value": "500ms", "purpose": "AI tab panel entrance." },
       { "name": "carousel-fade", "value": "400ms crossfade, 7000ms rotation", "purpose": "Phone quote carousel; stops for good once a person picks a quote." },
       { "name": "menu-in", "value": "220ms (translateY -6px, scale 0.98, fade)", "purpose": "Phone menu sheet." },

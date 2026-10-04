@@ -161,7 +161,7 @@ A white page written like a Californian product launch, by a designer. The work 
 
 Density is generous and calm: wide sections (88 to 144px apart), a 1200px measure, headings set tight and heavy in Geist, body set soft in grey. Depth comes from tone (white against light grey), never from lines, glows or glass. Motion is a single quiet entrance on the first screen and small 200ms state changes everywhere else.
 
-This system replaces the retired "Glass Departures Board" world entirely (graphite, smoke, oxide LED, Urbanist, glass panels). The one thing carried across is the interactive video portrait, now a studio photo shown honestly in a rounded frame and turned by pointer, drag or arrow keys.
+This system replaces the retired "Glass Departures Board" world entirely (graphite, smoke, oxide LED, Urbanist, glass panels). The first viewport is a full-bleed photograph of Pavel on a misty hillside, mirrored so he stands on the right, with the promise set in white over the hills, the way OpenAI opens its pages.
 
 **Key Characteristics:**
 - Pure white ground, near-black ink, one reading grey, one light-grey tile; no accent hue.
@@ -183,7 +183,7 @@ A monochrome Apple-light palette: ink, a softened ink, one grey, and two steps o
 - **Soft Ink** (`ink-soft`): Long-read paragraphs, work-row stories, About copy, table cells and header nav links; prose that should read as text, not as headline.
 - **Reading Grey** (`muted`): The one grey. Ledes under headings, roles, years, figure labels, captions, footer, inactive tabs.
 - **Dot Grey** (`dot`): Inactive carousel dots and the scrollbar thumb. Never used as a line.
-- **Product Tile** (`tile`): The light-grey surface for product moments: media tiles, the outcomes tile, the next-case tile, the Subskim band, secondary pills, the tab track, stage numerals, work-row hover and the portrait frame's ground.
+- **Product Tile** (`tile`): The light-grey surface for product moments: media tiles, the outcomes tile, the next-case tile, the Subskim band, secondary pills, the tab track, stage numerals and work-row hover.
 - **Pressed Tile** (`tile-pressed`): Hover on secondary pills, the video placeholder, and the oversized 404 numeral.
 - **Paper** (`paper`): The page, the text on black pills, the selected tab, and the mobile menu sheet.
 
@@ -200,7 +200,7 @@ A monochrome Apple-light palette: ink, a softened ink, one grey, and two steps o
 **Character:** One neutral grotesk doing everything, Apple-style: heavy, tightly tracked headlines over light, slightly loose body. Geist is a sanctioned exception to the overused-font detector, recorded in `.impeccable/config.json`.
 
 ### Hierarchy
-- **Display** (600, `clamp(2.75rem, 4.6vw, 4.25rem)`, 1.04): The hero promise only, max 21ch, set in three lines on desktop.
+- **Display** (600, `clamp(2.75rem, 5vw, 4.5rem)`, 1.02): The hero promise only, white on the photograph, max 11em so it always sets in three lines ("and the design teams" never breaks; on phones the size follows the viewport width).
 - **Display Closing** (600, `clamp(2.75rem, 6.4vw, 5.25rem)`, 1.0): The contact sign-off, max 11ch. The largest type on the site is the invitation to write.
 - **Headline** (600, `clamp(2.25rem, 4.2vw, 3.5rem)`, 1.08): Homepage section titles and About. The case-page deck sentence uses the same voice at `clamp(2rem, 4.2vw, 3.5rem)` / 1.1, max 24ch.
 - **Title** (600, `clamp(1.625rem, 2.6vw, 2.25rem)`, 1.15): Case chapter headings, case quotes title, AI panel headings.
@@ -219,7 +219,7 @@ A monochrome Apple-light palette: ink, a softened ink, one grey, and two steps o
 
 A centred 1200px measure with a fluid gutter (`clamp(20px, 5vw, 64px)`), sections separated by space alone (`clamp(88px, 10vw, 144px)`). A sticky 64px header (60px under 900px) of frosted white sits over everything.
 
-- **Hero:** two columns at 1.2fr / 0.8fr, copy left, portrait right (max 520px). Under 900px the portrait moves above the copy at `min(64vw, 340px)` and the headline scales to fit the viewport. A row of five grey company logos (50% opacity, full on hover) sits below, each linking to its case.
+- **Hero:** a full-bleed photograph (`hero-hills`, mirrored) filling the first viewport (`max(560px, min(100svh, 1040px))`), the header floating transparent over its sky until the page scrolls. Copy sits bottom-left on the page measure, over the hills, with a low dark scrim (bottom 70% of the height) behind it; the person stands on the right. On phones the photo is positioned on the person (`74% 30%`) and the copy sits over the lower half. A row of five grey company logos (50% opacity, full on hover) sits below, each linking to its case.
 - **Quotes:** three in a row on desktop; at 760px and under they become a one-at-a-time carousel with arrows and dots, rotating every 7s until a person picks one.
 - **Work list:** five grid rows (years, name and role, story, proof figure, view-case control) at 28px gaps. Under 1080px the control drops under the story; under 900px each row becomes a standing grey tile; under 560px the figure stacks.
 - **AI section:** a segmented tab track over a two-column panel (copy left, numbered stages right); one column under 900px.
@@ -248,7 +248,7 @@ Flat and tonal. Depth is white against light grey; shadows are rare, soft and on
 Soft, continuous, Apple-like rounding; everything interactive is a full pill or circle.
 
 - **Pill** (999px): every button, nav link, tab, tab track, carousel arrow (circle), stage numeral (circle), social and copy buttons (circles).
-- **Frame** (28px): the portrait frame (24px under 900px) and the grey media tiles that hold screens and films, the next-case tile and the Fundraise Up form tile.
+- **Frame** (28px): the grey media tiles that hold screens and films, the next-case tile and the Fundraise Up form tile.
 - **Tile** (24px): work rows, the outcomes tile, the audience table, Mechanism product images.
 - **Media** (20px): the Subskim screenshot (top corners only, sitting on the band's bottom edge), the value-shift strip, the mobile menu sheet.
 - **Screen** (16px): screenshots and films inside a media tile. Inner radius is always smaller than its tile so the corners nest.
@@ -292,8 +292,8 @@ Five rows that read as a ledger of proof, not five links.
 - **Only the control navigates.** The row is not a link; the "View case" control is the only way in, with a visually hidden case name for screen readers.
 - **Phones (900px and under):** every row is a standing grey tile and the control is always a labelled white pill.
 
-### Interactive Portrait (signature)
-The studio portrait film in a 28px frame (24px on phones) on a Product Tile ground, scrubbed by horizontal pointer movement, drag or arrow keys, Home and End; still under reduced motion. Its frame radius is pending the user's confirmation.
+### Hero Photograph (signature)
+Pavel on a green hillside in mountain fog, mirrored, served as WebP at 800/1280/2000w with a JPEG fallback. The header (ink on the light sky) floats over it; the promise is white Geist 600 with a soft text shadow; the primary action is a white pill with ink text and the secondary a white underlined link. It settles in once on load (fade with a 1.04 to 1 scale over 1.6s) and stays still under reduced motion.
 
 ### AI Stages
 Ordered steps in a list with 32px grey circle numerals (14px/600). The only numbered device on the site, used because the order of the steps is the information.

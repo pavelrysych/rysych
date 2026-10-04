@@ -267,46 +267,78 @@ section { position: relative; }
 
 /* ---------- Hero ---------- */
 
-.hero { padding-top: clamp(24px, 4vw, 56px); }
-.hero__stage {
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
-  align-items: center;
-  gap: clamp(32px, 5vw, 72px);
+/* the photograph is the stage: the header floats over its sky, the promise sits on the hills */
+.home .site-header:not(.is-scrolled) {
+  background: transparent;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
 }
-.hero__copy { display: grid; gap: 24px; justify-items: start; }
-.hero h1 {
-  font-size: clamp(2.75rem, 4.6vw, 4.25rem);
-  line-height: 1.04;
-  letter-spacing: -0.04em;
-  max-width: 21ch;
-}
-.hero h1 .hero__line { white-space: nowrap; }
-.hero__intro { font-size: clamp(1.125rem, 1.5vw, 1.3125rem); line-height: 1.5; color: var(--muted); max-width: 36ch; }
-.hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin-top: 8px; }
+.home .site-header:not(.is-scrolled) .wordmark span { color: var(--ink-2); }
+.home .site-header { margin-bottom: calc(-1 * var(--header-h)); }
 
-.hero__image {
+.hero__stage {
   position: relative;
-  justify-self: end;
-  width: min(100%, 520px);
-  aspect-ratio: 960 / 1216;
-  touch-action: pan-y;
-  outline-offset: 6px;
-  /* the studio portrait is shown as what it is: a photo, cut to a soft rounded frame */
-  border-radius: 28px;
+  isolation: isolate;
+  display: flex;
+  align-items: flex-end;
+  min-height: max(560px, min(100svh, 1040px));
+  padding-top: calc(var(--header-h) + 48px);
+  padding-bottom: clamp(48px, 9vh, 104px);
+  color: #fff;
   overflow: hidden;
-  background: var(--tile);
 }
-.hero__video,
-.hero__image img {
+.hero__media {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: #8f969c;
+}
+.hero__media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 60% 38%;
 }
-@media (hover: hover) and (pointer: fine) { .hero__image { cursor: ew-resize; } }
+/* a low scrim keeps the white type steady over bright patches of grass and flowers */
+.hero__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(10, 14, 10, 0.55) 0%, rgba(10, 14, 10, 0.32) 36%, rgba(10, 14, 10, 0.1) 58%, rgba(10, 14, 10, 0) 70%);
+}
+.hero__copy {
+  display: grid;
+  gap: 20px;
+  justify-items: start;
+  width: 100%;
+  max-width: calc(var(--max) + 2 * var(--gutter));
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+.hero h1 {
+  max-width: 11em;
+  font-size: clamp(2.75rem, 5vw, 4.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  text-shadow: 0 1px 24px rgba(0, 0, 0, 0.18);
+}
+/* "and the design teams" holds one line, so the promise always sets in three */
+.hero h1 .hero__line { white-space: nowrap; }
+.hero__intro {
+  max-width: 44ch;
+  font-size: clamp(1.0625rem, 1.4vw, 1.25rem);
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.88);
+}
+.hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin-top: 8px; }
+.hero .pill--glow { background: #fff; color: var(--ink); }
+@media (hover: hover) { .hero .pill--glow:hover { background: #e8e8ed; } }
+.hero .link-secondary { color: #fff; text-decoration-color: rgba(255, 255, 255, 0.5); }
+@media (hover: hover) { .hero .link-secondary:hover { text-decoration-color: #fff; } }
+.hero :focus-visible { outline-color: #fff; }
 
 /* the companies behind the work, each a way into its case */
-.companies { margin-top: clamp(40px, 5vw, 72px); }
+.companies { margin-top: clamp(32px, 4vw, 56px); }
 .companies ul {
   display: flex;
   flex-wrap: wrap;
@@ -326,15 +358,15 @@ section { position: relative; }
 /* one quiet entrance for the first viewport */
 @media (prefers-reduced-motion: no-preference) {
   .hero__copy > *,
-  .hero__image,
   .companies { animation: rise 900ms var(--ease) backwards; }
-  .hero__copy > :nth-child(2) { animation-delay: 70ms; }
-  .hero__copy > :nth-child(3) { animation-delay: 140ms; }
-  .hero__image { animation-name: fade; animation-duration: 1200ms; }
+  .hero__media img { animation: settle 1600ms var(--ease) backwards; }
+  .hero__copy > :nth-child(1) { animation-delay: 120ms; }
+  .hero__copy > :nth-child(2) { animation-delay: 190ms; }
+  .hero__copy > :nth-child(3) { animation-delay: 260ms; }
   .companies { animation-delay: 260ms; }
 }
 @keyframes rise { from { opacity: 0; transform: translateY(14px); } }
-@keyframes fade { from { opacity: 0; } }
+@keyframes settle { from { opacity: 0; transform: scale(1.04); } }
 
 /* ---------- Quotes ---------- */
 
@@ -666,8 +698,8 @@ section { position: relative; }
   .mobile-nav { display: block; }
   .site-header { grid-template-columns: 1fr auto; }
 
-  .hero__stage { grid-template-columns: minmax(0, 1fr); }
-  .hero__image { order: -1; justify-self: center; width: min(64vw, 340px); border-radius: 24px; }
+  .hero__stage { min-height: max(560px, 100svh); }
+  .hero__media img { object-position: 74% 30%; }
   .hero h1 { font-size: min(calc((100vw - 2 * var(--gutter) - 8px) / 9.6), 4.25rem); }
 
   .work-list { margin-inline: 0; gap: 12px; }
