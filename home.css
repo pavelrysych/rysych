@@ -582,6 +582,63 @@ section { position: relative; }
   .site-footer { flex-direction: column; align-items: flex-start; }
 }
 
+/* ---------- Continuous corners ---------- */
+/* Apple-style squircle corners from a 9-slice mask (Safari, Chrome, Edge); everything else keeps its plain radius.
+   The mask width is about 1.8x the radius it replaces, so the corner reads at the same size but eases into the edges. */
+@supports (-webkit-mask-box-image: none) {
+  :root { --squircle: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cpath d='M120.0,0.0L137.7,0.0L145.0,0.1L150.6,0.4L155.3,0.7L159.4,1.2L163.1,1.7L166.4,2.3L169.4,3.1L172.3,3.9L174.9,4.8L177.3,5.9L179.6,7.0L181.7,8.3L183.7,9.6L185.5,11.1L187.2,12.7L188.8,14.4L190.3,16.2L191.7,18.2L192.9,20.3L194.0,22.6L195.1,25.0L196.0,27.6L196.8,30.5L197.6,33.5L198.2,36.9L198.7,40.5L199.2,44.6L199.5,49.3L199.8,54.9L199.9,62.2L200.0,80.0L200.0,120.0L199.9,137.7L199.8,145.0L199.5,150.6L199.2,155.3L198.7,159.4L198.2,163.1L197.6,166.4L196.8,169.4L196.0,172.3L195.1,174.9L194.0,177.3L192.9,179.6L191.7,181.7L190.3,183.7L188.8,185.5L187.2,187.2L185.5,188.8L183.7,190.3L181.7,191.7L179.6,192.9L177.3,194.0L174.9,195.1L172.3,196.0L169.4,196.8L166.4,197.6L163.1,198.2L159.4,198.7L155.3,199.2L150.6,199.5L145.0,199.8L137.7,199.9L120.0,200.0L80.0,200.0L62.2,199.9L54.9,199.8L49.3,199.5L44.6,199.2L40.5,198.7L36.9,198.2L33.5,197.6L30.5,196.8L27.6,196.0L25.0,195.1L22.6,194.0L20.3,192.9L18.2,191.7L16.2,190.3L14.4,188.8L12.7,187.2L11.1,185.5L9.6,183.7L8.3,181.7L7.0,179.6L5.9,177.3L4.8,174.9L3.9,172.3L3.1,169.4L2.3,166.4L1.7,163.1L1.2,159.4L0.7,155.3L0.4,150.6L0.1,145.0L0.0,137.7L0.0,120.0L0.0,80.0L0.0,62.2L0.1,54.9L0.4,49.3L0.7,44.6L1.2,40.5L1.7,36.9L2.3,33.5L3.1,30.5L3.9,27.6L4.8,25.0L5.9,22.6L7.0,20.3L8.3,18.2L9.6,16.2L11.1,14.4L12.7,12.7L14.4,11.1L16.2,9.6L18.2,8.3L20.3,7.0L22.6,5.9L25.0,4.8L27.6,3.9L30.5,3.1L33.5,2.3L36.9,1.7L40.5,1.2L44.6,0.7L49.3,0.4L54.9,0.1L62.2,0.0L80.0,0.0Z' fill='%23000'/%3E%3C/svg%3E"); }
+  html .hero__stage,
+  html .card__media,
+  html .mobile-nav nav,
+  html .case-impact,
+  html .case-product-stage,
+  html .case-film-stage,
+  html .case-art,
+  html .case-figure,
+  html .case-social-comparison,
+  html .fundraise-motion-card,
+  html .fundraise-form-comparison,
+  html .case-table-wrap,
+  html .case-next__inner,
+  html .venture-card,
+  html .case-audience-table tbody tr {
+    border-radius: 0;
+    -webkit-mask-box-image: var(--squircle) 80 / var(--sq, 46px) stretch;
+  }
+  html .hero__stage { --sq: clamp(38px, 4vw, 58px); }
+  html .mobile-nav nav { --sq: 38px; }
+  /* screens inside tiles */
+  html .case-hero__image,
+  html .case-film,
+  html .case-art > img,
+  html .case-figure > img,
+  html .case-figure--video .case-film__video,
+  html .fundraise-motion-card img,
+  html .fundraise-motion-card video,
+  html .case-social-comparison__item img,
+  html .fundraise-longform {
+    border-radius: 0;
+    -webkit-mask-box-image: var(--squircle) 80 / 30px stretch;
+  }
+  @media (max-width: 560px) {
+    /* phones: case media run edge to edge, square */
+    html .case-product-stage,
+    html .case-film-stage,
+    html .case-figure,
+    html .case-social-comparison,
+    html .fundraise-motion-card,
+    html .fundraise-form-comparison,
+    html .case-hero__image,
+    html .case-film,
+    html .case-figure > img,
+    html .case-figure--video .case-film__video,
+    html .fundraise-motion-card img,
+    html .fundraise-motion-card video,
+    html .case-social-comparison__item img { -webkit-mask-box-image: none; }
+    html .hero__stage { --sq: 36px; }
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition-duration: 0.01ms !important; }

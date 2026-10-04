@@ -262,6 +262,8 @@ Soft, continuous, Apple-like rounding; everything interactive is a full pill or 
 - **Borders:** none. Focus is a 2px ink outline with a 3px offset (6px around a product card; white over the hero photo).
 - **Phones (560px and under):** case screenshots and films drop their tile and radius and run edge to edge; captions keep the gutter. Product-card images keep their tile and radius.
 
+**The Continuous Corner Rule.** Large rounded blocks (hero card, work-card media, case tiles, media frames, venture cards, the phone menu) use Apple-style continuous corners: a superellipse (n=4) 9-slice mask inlined in home.css as `--squircle`, applied with `-webkit-mask-box-image` at about 1.8x the radius it replaces (46px for 24px tiles, 30px for screens inside tiles, 36-58px for the hero). Browsers without mask-box-image (Firefox) keep the plain radius. Pills and circles stay true capsules and circles. Edge-to-edge media on phones drop the mask.
+
 ## Components
 
 ### Buttons
