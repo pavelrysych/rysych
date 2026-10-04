@@ -33,7 +33,7 @@ Experience across design, product, and growth lets him connect design decisions 
 ## Capabilities and Constraints
 
 - Static site: `index.html`, `home.css`, `home.js`, `site.js`, `case.css` (+ `assets/fundraise-case.css`), a branded `404.html`; case pages in `work/subskim`, `work/admirals`, `work/mechanism`, `work/metamap`, `work/fundraise-up`. No framework or build step; deployed on Vercel from GitHub main (`vercel.json` for URLs and caching, `.vercelignore` keeps working docs out of the deployment).
-- Homepage sections: full-bleed hero photograph with the promise over it and a row of company logos linking to the cases; colleague quotes; Selected work list (Subskim, Admirals, Mechanism Ventures, MetaMap, Fundraise Up), each row carrying its proof figure; Subskim; AI in practice (web production, design system to code, compliance checker); leadership principles linked to case chapters; About; Contact.
+- Homepage sections (image-led, few words): full-bleed hero photograph with the promise and one "Get in touch" action; Selected work as product cards with real screenshots (Subskim wide, then Admirals, Mechanism Ventures, MetaMap, Fundraise Up), each with role, years and one proof figure; colleague quotes; How I work (three short principles linked to Admirals chapters); Contact. Header: name plus Work, About, CV, Contact.
 - AI projects are presented as standalone projects without employer attribution.
 - Public contact email: rysych@gmail.com.
 - Work format: remote preferred; open to relocation to Singapore, Dubai, London, or the US.

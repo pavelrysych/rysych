@@ -16,7 +16,7 @@
     <link rel="manifest" href="/site.webmanifest?v=2">
     <link rel="preload" href="/assets/fonts/geist-variable.woff2?v=1" as="font" type="font/woff2" crossorigin>
     <link rel="preload" as="image" type="image/webp" imagesrcset="/assets/hero-hills-800.webp 800w, /assets/hero-hills-1280.webp 1280w, /assets/hero-hills-2000.webp 2000w" imagesizes="100vw" fetchpriority="high">
-    <link rel="stylesheet" href="/home.css?v=58">
+    <link rel="stylesheet" href="/home.css?v=59">
     <script src="/site.js?v=18" defer></script>
     <script src="/home.js?v=20" defer></script>
     <meta property="og:type" content="website">
@@ -41,21 +41,17 @@
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="site-header site-header--home">
-      <a class="wordmark" href="#main" aria-label="Pavel Rysych, Product Design Leader, home">Pavel Rysych<span>Product Design Leader</span></a>
+      <a class="wordmark" href="#main" aria-label="Pavel Rysych, Product Design Leader, home">Pavel Rysych</a>
       <nav class="pill-nav" aria-label="Main navigation">
         <a href="#work">Work</a>
-        <a href="#ai">AI</a>
-        <a href="#leadership">Leadership</a>
         <a href="#about">About</a>
         <a href="/Pavel_Rysych_CV.pdf" target="_blank" rel="noopener">CV</a>
+        <a href="#contact">Contact</a>
       </nav>
-      <a class="pill pill--glow pill--compact header-cta" href="#contact">Contact</a>
       <details class="mobile-nav">
         <summary>Menu</summary>
         <nav aria-label="Mobile navigation">
           <a href="#work">Work</a>
-          <a href="#ai">AI</a>
-          <a href="#leadership">Leadership</a>
           <a href="#about">About</a>
           <a href="/Pavel_Rysych_CV.pdf" target="_blank" rel="noopener">CV</a>
           <a href="#contact">Contact</a>
@@ -72,23 +68,64 @@
           </picture>
           <div class="hero__copy">
             <h1 id="hero-title">I build products <span class="hero__line">and the design teams</span> behind them.</h1>
-            <p class="hero__intro">I lead product design and bring AI into everyday work — from prototypes and design systems to implementation. My experience across design, product and growth helps me connect decisions with the needs of the business.</p>
             <div class="hero__actions">
               <a class="pill pill--glow pill--large" href="#contact">Get in touch</a>
-              <a class="link-secondary" href="#work">View selected work</a>
             </div>
           </div>
         </div>
+      </section>
 
-        <nav class="page-width companies" aria-label="Companies and products I have designed for">
-          <ul>
-            <li><a href="/work/admirals/"><img src="/assets/admirals-logo-dark.svg" alt="Admirals" width="116" height="23" style="--s:.62"></a></li>
-            <li><a href="/work/subskim/"><img src="/assets/subskim-logo-black.svg" alt="Subskim" width="126" height="28" style="--s:.95"></a></li>
-            <li><a href="/work/mechanism/" style="--o:.8"><img src="/assets/mechanism-logo-dark.svg" alt="Mechanism Ventures" width="125" height="34" style="--s:1.3"></a></li>
-            <li><a href="/work/metamap/"><img src="/assets/metamap-logo-dark.svg" alt="MetaMap" width="1352" height="295" style="--s:1"></a></li>
-            <li><a href="/work/fundraise-up/"><img src="/assets/fundraise-up-logo-dark.svg" alt="Fundraise Up" width="152" height="28" style="--s:.95"></a></li>
+      <section class="work" id="work" aria-labelledby="work-title">
+        <div class="page-width">
+          <h2 class="section-title" id="work-title">Selected work</h2>
+          <ul class="work-grid">
+            <li class="work-grid__wide">
+              <a class="card" href="/work/subskim/">
+                <span class="card__media"><img src="/assets/subskim-calendar-v1.webp" srcset="/assets/card-subskim-800.webp 800w, /assets/card-subskim-1400.webp 1400w, /assets/subskim-calendar-v1.webp 3265w" sizes="(max-width: 900px) calc(100vw - 40px), 1200px" width="3265" height="1686" alt="Subskim renewal calendar with monthly spend and upcoming charges." style="--pos:50% 0" loading="lazy" decoding="async"></span>
+                <span class="card__meta">
+                  <span class="card__who"><span class="card__title">Subskim<svg class="card__arrow" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span class="card__sub">Idea, design and build · 2026–Now</span></span>
+                  <span class="card__metric"><span class="card__value">Live</span><span class="card__label">Built solo with AI</span></span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a class="card" href="/work/admirals/">
+                <span class="card__media"><img src="/assets/admirals-website-film-v3-poster.jpg" srcset="/assets/card-admirals-800.webp 800w, /assets/card-admirals-1400.webp 1400w, /assets/admirals-website-film-v3-poster.jpg 1440w" sizes="(max-width: 900px) calc(100vw - 40px), 584px" width="1440" height="912" alt="Admirals website hero: “Admirals is built for traders who’ve outgrown excuses.”" style="--pos:0 0" loading="lazy" decoding="async"></span>
+                <span class="card__meta">
+                  <span class="card__who"><span class="card__title">Admirals<svg class="card__arrow" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span class="card__sub">Head of Design · 2024–Now</span></span>
+                  <span class="card__metric"><span class="card__value">−67%</span><span class="card__label">Customer acquisition cost</span></span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a class="card" href="/work/mechanism/">
+                <span class="card__media"><img src="/assets/mechanism-product-sites.jpg" srcset="/assets/card-mechanism-800.webp 800w, /assets/card-mechanism-1400.webp 1400w, /assets/mechanism-product-sites.jpg 1600w" sizes="(max-width: 900px) calc(100vw - 40px), 584px" width="1600" height="900" alt="Pettable, Learner, Top Nutrition Coaching and PrimePutt product sites." style="--pos:0 50%" loading="lazy" decoding="async"></span>
+                <span class="card__meta">
+                  <span class="card__who"><span class="card__title">Mechanism Ventures<svg class="card__arrow" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span class="card__sub">Head of Product Design · 2021–2023</span></span>
+                  <span class="card__metric"><span class="card__value">+28%</span><span class="card__label">Onboarding conversion</span></span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a class="card" href="/work/metamap/">
+                <span class="card__media"><img src="/assets/metamap-mati-poster.jpg" srcset="/assets/card-metamap-800.webp 800w, /assets/card-metamap-1400.webp 1400w, /assets/metamap-mati-poster.jpg 1440w" sizes="(max-width: 900px) calc(100vw - 40px), 584px" width="1440" height="810" alt="Mati / MetaMap product film still: verified user avatars on a dark navy ground." style="--pos:50% 50%" loading="lazy" decoding="async"></span>
+                <span class="card__meta">
+                  <span class="card__who"><span class="card__title">MetaMap<svg class="card__arrow" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span class="card__sub">Head of Design · 2018–2021</span></span>
+                  <span class="card__metric"><span class="card__value">2 → 15+</span><span class="card__label">Verification checks</span></span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a class="card" href="/work/fundraise-up/">
+                <span class="card__media"><img src="/assets/fundraise-up-unicef-widget.webp" srcset="/assets/card-fundraise-up-800.webp 800w, /assets/card-fundraise-up-1400.webp 1400w, /assets/fundraise-up-unicef-widget.webp 2000w" sizes="(max-width: 900px) calc(100vw - 40px), 584px" width="2000" height="1652" alt="Fundraise Up donation checkout open on the UNICEF USA website." style="--pos:55% 42%" loading="lazy" decoding="async"></span>
+                <span class="card__meta">
+                  <span class="card__who"><span class="card__title">Fundraise Up<svg class="card__arrow" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span class="card__sub">Founding Designer · 2017–2018</span></span>
+                  <span class="card__metric"><span class="card__value">×2.8</span><span class="card__label">Donation conversion</span></span>
+                </span>
+              </a>
+            </li>
           </ul>
-        </nav>
+        </div>
       </section>
 
       <section class="quotes" id="recommendations" aria-labelledby="quotes-title">
@@ -118,158 +155,34 @@
         </div>
       </section>
 
-      <section class="work" id="work" aria-labelledby="work-title">
+      <section class="how" id="about" aria-labelledby="about-title">
         <div class="page-width">
-          <div class="section-head">
-            <h2 id="work-title">Selected work</h2>
-            <p>Each project started with a problem worth solving — here is what I set out to change, and what changed.</p>
-          </div>
-
-          <ol class="work-list">
+          <h2 class="section-title" id="about-title">How I work</h2>
+          <p class="how__lede">From founding designer to head of design, across fintech, identity verification and nonprofit products.</p>
+          <ul class="how__grid">
             <li>
-              <div class="work-row">
-                <div class="work-row__years">2026–Now</div>
-                <div class="work-row__dest"><h3 class="work-row__name">Subskim</h3><span class="work-row__role">Idea, design and build</span></div>
-                <p class="work-row__story">Makes every recurring charge visible before it renews, designed and built solo with AI.</p>
-                <div class="work-row__metric"><span class="work-row__value">Live</span><span class="work-row__label">subskim.com</span></div>
-                <a class="work-row__cta" href="/work/subskim/"><span class="work-row__cta-label">View case</span><span class="visually-hidden">: Subskim</span><svg class="work-row__cta-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-              </div>
+              <h3>Clear direction</h3>
+              <p>At Admirals: experienced traders over “easy start” promises, client value over head counts.</p>
+              <a class="link-secondary" href="/work/admirals/#admirals-strategy">Read the bet</a>
             </li>
             <li>
-              <div class="work-row">
-                <div class="work-row__years">2024–Now</div>
-                <div class="work-row__dest"><h3 class="work-row__name">Admirals</h3><span class="work-row__role">Head of Design</span></div>
-                <p class="work-row__story">Won experienced traders with trust instead of “easy start” promises, and measured clients by value, not volume.<span class="work-row__fact">The web redesign tripled click-through rate.</span></p>
-                <div class="work-row__metric"><span class="work-row__value">−67%</span><span class="work-row__label">Customer acquisition cost</span></div>
-                <a class="work-row__cta" href="/work/admirals/"><span class="work-row__cta-label">View case</span><span class="visually-hidden">: Admirals</span><svg class="work-row__cta-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-              </div>
+              <h3>Ownership</h3>
+              <p>A design team rebuilt around senior designers who own decisions and execution.</p>
+              <a class="link-secondary" href="/work/admirals/#admirals-team">How the team changed</a>
             </li>
             <li>
-              <div class="work-row">
-                <div class="work-row__years">2021–2023</div>
-                <div class="work-row__dest"><h3 class="work-row__name">Mechanism Ventures</h3><span class="work-row__role">Head of Product Design</span></div>
-                <p class="work-row__story">Four ventures at different stages, one job: make each customer’s next decision obvious.<span class="work-row__fact">For context: $300M+ portfolio revenue</span></p>
-                <div class="work-row__metric"><span class="work-row__value">+28%</span><span class="work-row__label">Onboarding conversion at Pettable</span></div>
-                <a class="work-row__cta" href="/work/mechanism/"><span class="work-row__cta-label">View case</span><span class="visually-hidden">: Mechanism Ventures</span><svg class="work-row__cta-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-              </div>
+              <h3>AI in production</h3>
+              <p>Web production moved from six developers to two designers with Claude and one developer.</p>
+              <a class="link-secondary" href="/work/admirals/#admirals-workflow">See the workflow</a>
             </li>
-            <li>
-              <div class="work-row">
-                <div class="work-row__years">2018–2021</div>
-                <div class="work-row__dest"><h3 class="work-row__name">MetaMap</h3><span class="work-row__role">Head of Design</span></div>
-                <p class="work-row__story">Kept identity verification understandable as the platform grew from 2 checks to 15+.<span class="work-row__fact">For context: later acquired by Incode</span></p>
-                <div class="work-row__metric"><span class="work-row__value">2 → 15+</span><span class="work-row__label">Verification checks</span></div>
-                <a class="work-row__cta" href="/work/metamap/"><span class="work-row__cta-label">View case</span><span class="visually-hidden">: MetaMap</span><svg class="work-row__cta-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-              </div>
-            </li>
-            <li>
-              <div class="work-row">
-                <div class="work-row__years">2017–2018</div>
-                <div class="work-row__dest"><h3 class="work-row__name">Fundraise Up</h3><span class="work-row__role">Founding Designer</span></div>
-                <p class="work-row__story">Replaced the long donation form with a checkout that asks one question at a time.<span class="work-row__fact">Used by UNICEF USA</span></p>
-                <div class="work-row__metric"><span class="work-row__value">×2.8</span><span class="work-row__label">Donation widget conversion</span></div>
-                <a class="work-row__cta" href="/work/fundraise-up/"><span class="work-row__cta-label">View case</span><span class="visually-hidden">: Fundraise Up</span><svg class="work-row__cta-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-              </div>
-            </li>
-          </ol>
-        </div>
-      </section>
-
-      <section class="subskim" aria-labelledby="subskim-title">
-        <div class="page-width subskim__intro">
-          <h2 id="subskim-title" class="subskim__logo"><img src="/assets/subskim-logo-black.svg" alt="Subskim" width="126" height="28"></h2>
-          <p class="subskim__tagline">Subscriptions are easy to forget. Subskim makes every recurring charge visible before it renews — designed and built solo, with AI.</p>
-          <div class="subskim__actions">
-            <a class="pill pill--glow pill--large" href="/work/subskim/">Explore the case</a>
-            <a class="link-secondary" href="https://subskim.com/" target="_blank" rel="noopener noreferrer">Try Subskim<svg class="icon-external" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M8 7h9v9"/></svg><span class="visually-hidden"> (opens in a new tab)</span></a>
-          </div>
-        </div>
-        <figure class="subskim__stage">
-          <picture><source media="(max-width: 560px)" srcset="/assets/subskim-mobile.jpg" width="1033" height="2000"><img src="/assets/subskim-calendar-v1.webp" alt="Subskim showing monthly spend, active subscriptions and upcoming charges on a renewal calendar." width="3265" height="1686" loading="lazy" decoding="async"></picture>
-        </figure>
-      </section>
-
-      <section class="ai" id="ai" aria-labelledby="ai-title">
-        <div class="page-width">
-          <div class="section-head">
-            <h2 id="ai-title">AI in practice</h2>
-            <p>As a design leader, I work on the context, standards and team practices that make AI useful in everyday work.</p>
-          </div>
-          <div class="console" data-tabs>
-            <div class="console__tabs" role="tablist" aria-label="AI projects">
-              <button class="chip" role="tab" id="tab-production" aria-controls="panel-production" aria-selected="true">Web production</button>
-              <button class="chip" role="tab" id="tab-system" aria-controls="panel-system" aria-selected="false" tabindex="-1">Design system to code</button>
-              <button class="chip" role="tab" id="tab-review" aria-controls="panel-review" aria-selected="false" tabindex="-1">Compliance checker</button>
-            </div>
-            <div class="console__panel" role="tabpanel" id="panel-production" aria-labelledby="tab-production">
-              <div class="console__copy">
-                <h3>Web production</h3>
-                <p>I reorganized web production from a workflow supported by six developers to two designers using Claude and one developer. Designers took ideas through to working interfaces, with developer support.</p>
-              </div>
-              <ol class="stages">
-                <li><strong>Configure</strong><span>Claude with marketing strategy, design direction and brand guidelines</span></li>
-                <li><strong>Hand off</strong><span>Working interfaces to one developer for implementation</span></li>
-                <li><strong>Teach</strong><span>Workshops to help colleagues apply the tools</span></li>
-              </ol>
-            </div>
-            <div class="console__panel" role="tabpanel" id="panel-system" aria-labelledby="tab-system" hidden>
-              <div class="console__copy">
-                <h3>Design system to code</h3>
-                <p>I used AI to audit years of product and web legacy and find duplicated patterns, then documented components, semantic tokens and interaction states. Figma MCP gave Claude the design context to compare implementation with the system.</p>
-              </div>
-              <ol class="stages">
-                <li><strong>Audit</strong><span>Years of product and web legacy for duplicated patterns</span></li>
-                <li><strong>Document</strong><span>Components, semantic tokens and interaction states</span></li>
-                <li><strong>Compare</strong><span>Implementation with the design system through Figma MCP</span></li>
-              </ol>
-            </div>
-            <div class="console__panel" role="tabpanel" id="panel-review" aria-labelledby="tab-review" hidden>
-              <div class="console__copy">
-                <h3>Compliance checker</h3>
-                <p>A tool I built to support the compliance review of marketing creatives. I used AI to turn the brief, design direction and brand context into a working interface that could be tried and refined.</p>
-              </div>
-              <ol class="stages">
-                <li><strong>Assemble</strong><span>The brief, design direction and brand context</span></li>
-                <li><strong>Build</strong><span>A working interface for reviewing marketing creatives</span></li>
-              </ol>
-            </div>
-          </div>
-          <p class="ai__more">The same approach runs through Subskim, where AI reads subscriptions from a screenshot and the person reviews them before saving. <a class="link-secondary" href="/work/subskim/#import">Explore the import in Subskim</a></p>
-        </div>
-      </section>
-
-      <section class="lead" id="leadership" aria-labelledby="leadership-title">
-        <div class="page-width">
-          <div class="section-head">
-            <h2 id="leadership-title">Direction. Ownership. Craft.</h2>
-            <p>Across my projects the pattern is the same: find the problem that matters, make the next decision obvious and measure what changes. I connect business priorities, customer needs and design quality, giving the team a clear direction and the autonomy to deliver.</p>
-          </div>
-          <dl class="principles">
-            <div><dt>Set a clear direction</dt><dd>I align the team around who we are building for and how we will measure success. At Admirals, that meant experienced traders instead of “easy start” promises, and Client Business Value instead of the number of clients. <a class="link-secondary" href="/work/admirals/#admirals-strategy">Read the Admirals bet</a></dd></div>
-            <div><dt>Give designers ownership</dt><dd>I give designers context, clear responsibilities and room to make decisions. At Admirals, I reshaped the design team around senior designers with more responsibility for decisions and execution. <a class="link-secondary" href="/work/admirals/#admirals-team">How the team changed</a></dd></div>
-            <div><dt>Stay close to the work</dt><dd>I stay involved in product flows, prototypes, design systems and implementation. At Admirals, I redesigned the Sign Up flow from one screen to seven. <a class="link-secondary" href="/work/admirals/#admirals-signup">Watch the Sign Up redesign</a></dd></div>
-          </dl>
-
-          <div class="about" id="about" aria-labelledby="about-title">
-            <h2 id="about-title">A wider view of design</h2>
-            <div class="about__copy">
-              <p>My career has taken me from founding designer to leading design teams, with responsibilities extending into product and growth. I understand the customer, choose the right problem and help a team deliver a thoughtful solution.</p>
-              <p>Much of my work sits at moments when people need confidence to act: making a donation, verifying their identity or choosing a financial service. Clarity and trust are recurring themes in that work.</p>
-              <p>Outside product design, I explore photography and filmmaking — other ways of working with attention, detail and storytelling.</p>
-            </div>
-          </div>
+          </ul>
         </div>
       </section>
 
       <section class="contact" id="contact" aria-labelledby="contact-title">
         <div class="page-width">
-          <h2 id="contact-title">Let's build what matters.</h2>
-          <p class="contact__lede">I'm interested in Head of Design and Director of Product Design roles with startups and established product companies. If you're building a product or developing a design team, I'd be glad to talk.</p>
-
-          <dl class="availability" aria-label="Where I can work">
-            <div><dt>Open to</dt><dd>Remote · B2B contract is available worldwide</dd></div>
-            <div><dt>Relocate to</dt><dd>Singapore, Dubai, London, USA</dd></div>
-          </dl>
+          <h2 class="section-title" id="contact-title">Let's build what matters.</h2>
+          <p class="contact__lede">Open to Head of Design and Director of Product Design roles. Remote with a B2B contract worldwide, or relocation to Singapore, Dubai, London or the US.</p>
 
           <div class="contact__actions">
             <div class="email-pill">
