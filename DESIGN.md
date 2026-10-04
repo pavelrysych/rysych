@@ -176,7 +176,7 @@ The first viewport is a photograph of Pavel, set as one large rounded card inset
 
 **Key Characteristics:**
 - Pure white ground, near-black ink, one reading grey, one light-grey tile; no accent hue.
-- Images instead of words: each project is its own small bento of its film and its own proof, not rows of text.
+- Images instead of words: each project is an Apple-style highlights slide, its visual in the centre and its numbers, each with an icon, around it.
 - Geist variable at 600 with tight negative tracking for every heading; 400 body at 17px with tabular figures.
 - Pills for actions: one primary pill per view, light grey for secondary; header links are plain text.
 - Underlined text links; a ↗ arrow appears only when the link leaves the site.
@@ -217,7 +217,7 @@ A monochrome Apple-light palette: ink, a softened ink, one grey, and two steps o
 - **Title** (600, `clamp(1.625rem, 2.6vw, 2.25rem)`, 1.15): Case chapter headings and the case quotes title.
 - **Figure** (600, `clamp(2rem, 3.2vw, 2.75rem)`, 1.05, tabular): Proof numbers in the case outcomes tile.
 - **Item Title** (600, 20px, 1.3, -0.025em): Bento project names and How I work item titles.
-- **Bento Figure** (400, `clamp(2.5rem, 5vw, 4.25rem)`, 1, -0.045em, no wrap): the proof number in a figure tile, set at the hero promise's weight; `clamp(1.75rem, 9vw, 2.5rem)` on phones, where figures always sit in pairs.
+- **Highlight Number** (400, `clamp(34px, 5.3cqi, 64px)`; the loud tile `clamp(40px, 7cqi, 88px)`; long values `clamp(30px, 4.2cqi, 50px)`; 1, -0.045em, no wrap): the number in a highlight tile, sized to the block's own width (container units), over a 600 label and a grey note.
 - **Quote** (500, `clamp(1.125rem, 1.5vw, 1.3125rem)`, 1.45): Testimonial text; 21px in the phone carousel.
 - **Lede** (400, `clamp(1.0625rem, 1.3vw, 1.1875rem)`, Reading Grey): The single grey line under How I work (max 52ch) and Contact (max 56ch). Nowhere else on the homepage.
 - **Body** (400, 17px, 1.55; 16px under 560px): Default text. Tabular figures on everywhere.
@@ -235,7 +235,7 @@ A centred 1200px measure with a fluid gutter (`clamp(20px, 5vw, 64px)`), section
 
 - **Homepage order:** hero, Selected work, quotes, How I work (`#about`), contact with the footer.
 - **Hero:** a photograph card (`hero-hills`, landscape mirrored, person unmirrored), inset from the window by `clamp(8px, 1.1vw, 16px)` with a `clamp(20px, 2.2vw, 32px)` radius, filling the rest of the first viewport under the white header (`max(520px, min(100svh - header - inset, 1000px))`). The promise and one pill sit bottom-left on the page measure, over the hills, with a low dark scrim (bottom 70% of the height) behind them; the person stands on the right. Under 900px the photo is positioned on the person (`74% 30%`); under 560px the pill stretches across the measure.
-- **Selected work:** five project blocks in reverse-chronological order (Subskim, Admirals, Mechanism Ventures, MetaMap, Fundraise Up, the same chain as the cases' "Next project"), `clamp(40px, 5vw, 64px)` apart, with no heading, line or tone change between them. Each block is a 6-column × 2-row bento with a 16px gap; rows are `minmax(calc(var(--bw) * 0.175 + 33px), auto)`, so a 4-column film's media box stays near 1.9:1 at every desktop width. The film is always first and on the left, so project names form a column down the left edge; the project's own proof sits on the right. Admirals, MetaMap and Fundraise Up: film 4 columns + two stacked 2-column figures. Subskim: film + one tall screen tile (it has no numbers). Mechanism: a narrow 2-column portrait film + two wide 4-column figures. Under 900px each block is two columns (12px gap): the film full width at its own aspect (Subskim 2:1, MetaMap 16:9, the rest 16:10), figures paired below; Mechanism keeps its film in column 1 at 4:5 beside stacked figures; the Subskim screen tile becomes a full-width row with the screen on the right. Under 560px Mechanism's film goes full width at 1:1 with its figures paired below.
+- **Selected work:** five highlight blocks in reverse-chronological order (Subskim, Admirals, Mechanism Ventures, MetaMap, Fundraise Up), `clamp(56px, 7vw, 104px)` apart. Above 900px each block is a 12-column × 6-row grid with its own aspect ratio and grid areas: the project's visual sits in the middle columns at its own shape (Subskim's phone tall, Admirals' film wide, Mechanism's collage tall, MetaMap's builder wide, Fundraise Up's checkout square), its numbers in tiles around it, and a name tile (name, role · years, arrow) that moves each time. One loud tile per block, always somewhere new. The tone changes from block to block: white, white, a dark #1d1d1f panel for Mechanism, a grey panel with white tiles for MetaMap, white. Sizes use container units (`.hl { container-type: inline-size }`). 901–1180px hides the Subskim feature notes; 901–1060px hides the name-tile arrows and the ×2.8 note. At 900px and under the grid is 6 columns with content rows and each visual keeps its own aspect; at 560px and under it is 2 columns: name, visual, then the numbers in pairs or full rows.
 - **Quotes:** three in a row on desktop; at 760px and under they become a one-at-a-time carousel with arrows and dots, rotating every 7s until a person picks one. The section title is visually hidden.
 - **How I work:** section title, one grey lede, then three items in three columns; one column (max 560px) under 1080px.
 - **Contact:** section title, one grey lede, then the email pill, copy button, Download CV pill and social circles in one wrapping row; on phones the email pill and CV pill each take the full width.
@@ -245,7 +245,7 @@ A centred 1200px measure with a fluid gutter (`clamp(20px, 5vw, 64px)`), section
 ### Named Rules
 **The Space-Is-The-Divider Rule.** Sections and groups are separated by the section rhythm and gaps alone. No rules, no hairlines, no alternating stripes or bands.
 
-**The Picture-First Rule.** Where the page can show the work, it shows it: a product image does the job a paragraph used to. Text beside an image is limited to a name, a role and years, and one or two proof figures, each in its own tile with at most one grey line of scope.
+**The Picture-First Rule.** Where the page can show the work, it shows it: a product image does the job a paragraph used to. Around the image sit only the project's own outcomes, each in its own tile with an icon, a label and at most one grey line of scope, verbatim from the case.
 
 ## Elevation & Depth
 
@@ -295,16 +295,15 @@ Quiet and certain: the primary pill says "this", a grey pill says "also".
 - **Homepage:** the same white header as every page; the hero card starts below it.
 - **Phones (900px and under):** a grey "Menu" pill that turns black and reads "Close" when open, dropping a white 20px sheet of 17px links with the menu-sheet shadow; Escape or an outside tap closes it.
 
-### Bento Tiles (signature)
-The work, shown rather than described: every tile in a block belongs to that one project. Three kinds of Product Tile (24px, continuous corners):
-- **Project tile:** a head row (`20px 22px 0`) with the name and a small arrow over "role · years" in Reading Grey, and an optional white tag pill on the right (only Subskim: "Live, built solo with AI"); the film fills the rest of the tile edge to edge, 16px below the head, each with its own focal point (`--pos`). The name is the block's h3.
-- **Figure tile:** one proof number from the case's Key outcomes (Bento Figure) at the top; at the bottom its label (15px/600) with the arrow kept on the last word, and an optional grey note (14px, 13px on phones) only where the number needs its scope or cause, verbatim from the case. A visually hidden " · Project" keeps the link text meaningful. It links to the case, whose hero holds Key outcomes.
-- **Screen tile (Subskim):** the label "Import, then review" and its grey note over the real phone screen (`subskim-mobile-720.webp`, max 340px, 16px screen corners, black placeholder while it loads), inset 22px and running 32px past the tile's bottom edge; it links to `/work/subskim/#import`.
-- **No quote tiles:** the testimonials section directly after the work is the only place for colleague voices.
-- **Link:** each project and figure tile is one link; there is no separate control.
-- **Hover:** a project tile's film scales to 1.03 over 900ms; a figure tile steps to Pressed Tile; the grey arrow turns ink and nudges 3px right over 250ms. Pointer devices only.
-- **Focus:** the 2px ink outline sits 4px outside the tile.
-- **Phones (560px and under):** head padding 18px, tags hidden, figure padding 18px.
+### Highlight Tiles (signature)
+Every tile in a block belongs to that one project and links into its case; all are Product Tiles (24px, continuous corners) or, for the loud number, Graphite Ink tiles with white type.
+- **Visual tile:** the project's film, phone screen or checkout, at its own shape in the middle of the grid; a mouse-only duplicate link (`tabindex="-1"`, `aria-hidden`) so keyboard users meet each case once per tile that says something.
+- **Name tile:** the h3 (600, `clamp(24px, 2.75cqi, 34px)`), "role · years" in grey with the years kept together, and a small round arrow; it moves around the block.
+- **Number tile:** a Lucide icon (inline SVG, stroke 1.75, ink or white), the Highlight Number, a 600 label and an optional grey note verbatim from the case ("For context, not credit" where the case says so). A visually hidden " · Project" keeps link text meaningful.
+- **Word tile:** for Subskim, which has no numbers, a feature name (AI import, Renewal calendar, Monthly review, Solo + AI) takes the number's place.
+- **Sentence tile:** one case sentence set large in grey with its key figures in ink (Admirals' annual losses).
+- **Hover:** tiles step to Pressed Tile (dark tiles step a shade lighter); films scale 1.03. **Focus:** the 2px ink outline 4px outside the tile; a focused tile drops its squircle mask so the ring shows.
+- **Icons:** Lucide (ISC licence), inlined, one per number tile, never decorative elsewhere.
 
 ### How I Work Items
 Three short items: a 20px title, one or two grey 16px sentences (max 34ch), and an underlined link into the relevant chapter of a case. No icons, no numbers, no tiles.
@@ -320,10 +319,10 @@ Three short items: a 20px title, one or two grey 16px sentences (max 34ch), and 
 Under the hero card, the five company logos in one row (justified on desktop; at 760px and under a slow 26s marquee with faded edges, which falls back to a centred wrapping row under reduced motion), grey at 50% opacity (Mechanism 80% for its hairline mark), each scaled to one optical size and linking to its case; full opacity on hover.
 
 ### Card previews
-Every project tile previews as a short silent loop (10–30s, H.264, 0.25–1.1 MB) with a first-frame poster: Admirals the live site, MetaMap the second half of the Mati film, Mechanism a 640x1000 2x2 of the venture films with their white logos (cropped to its narrow tile on desktop, 4:5 on tablets, 1:1 on phones), Fundraise Up the three checkout animations on lavender. They load and play only near the viewport, stay on the poster under reduced motion, and never show controls (`data-quiet`), since the whole tile is a link. Subskim plays a 14s scroll through subskim.com (hero, calendar, trials, Skim, screenshot import, apps).
+Visual tiles that play film use short silent loops (H.264, 0.25–1.1 MB) with a first-frame poster: Admirals the live site, MetaMap the second half of the Mati film, Mechanism a 640x1000 2x2 of the venture films with their white logos, Fundraise Up the monthly-giving checkout animation, and a small "Live" tile with the 14s scroll through subskim.com beside Subskim's phone screen. They load and play only near the viewport, stay on the poster under reduced motion, and never show controls (`data-quiet`).
 
 ### Venture Card (Mechanism case)
-Each Mechanism venture as mechanism.com shows it: its looping film (lazy, muted, plays in view, poster under reduced motion) filling a 5:4 tile at 24px radius, a 30% black veil, and the venture's white logo centred at about half the width. The homepage Mechanism tile plays a tall 2x2 collage of the same four films (`tile-mechanism.mp4`).
+Each Mechanism venture as mechanism.com shows it: its looping film (lazy, muted, plays in view, poster under reduced motion) filling a 5:4 tile at 24px radius, a 30% black veil, and the venture's white logo centred at about half the width. The homepage Mechanism block centres a tall 2x2 collage of the same four films (`tile-mechanism.mp4`).
 
 ### Hero Photograph (signature)
 Pavel on a green hillside in mountain fog: the landscape is mirrored, the person is cut out and flipped back in place so he keeps his real orientation. Served as WebP at 800/1280/2000w with a JPEG fallback, preloaded; while it loads the stage shows the photo's own sky-to-hills tones. The header (ink on the light sky) floats over it; the promise is white Display type; the one action is the white pill. It settles in once on load (fade with a 1.04 to 1 scale over 1.6s, copy rising 14px over 900ms) and stays still under reduced motion.
@@ -333,7 +332,7 @@ Pavel on a green hillside in mountain fog: the landscape is mirrored, the person
 ### Do:
 - **Do** set every heading in Geist 600 with negative tracking, and every supporting line in Reading Grey.
 - **Do** give each view exactly one primary pill (black on white, white on the photograph); make every other action a grey pill or an underlined text link.
-- **Do** show each project as its own bento block: its film first with name, role and years, then only its own proof figures; every tile is a single link into that case.
+- **Do** show each project as its own highlights slide: its visual in the centre, its own numbers with icons around it, a different arrangement and loud tile for every project; every tile links into that case.
 - **Do** use the one section-title size (`clamp(1.75rem, 2.6vw, 2.25rem)`) for every homepage section head.
 - **Do** put case screens and films inside a Product Tile (28px) with a nested 16px screen radius, and let them run edge to edge on phones.
 - **Do** show testimonials three in a row on desktop and as a carousel on phones.

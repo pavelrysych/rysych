@@ -33,7 +33,7 @@ Experience across design, product, and growth lets him connect design decisions 
 ## Capabilities and Constraints
 
 - Static site: `index.html`, `home.css`, `home.js`, `site.js`, `case.css` (+ `assets/fundraise-case.css`), a branded `404.html`; case pages in `work/subskim`, `work/admirals`, `work/mechanism`, `work/metamap`, `work/fundraise-up`. No framework or build step; deployed on Vercel from GitHub main (`vercel.json` for URLs and caching, `.vercelignore` keeps working docs out of the deployment).
-- Homepage sections (image-led, few words): full-bleed hero photograph with the promise and one "Get in touch" action; Selected work as five project blocks (Subskim, Admirals, Mechanism Ventures, MetaMap, Fundraise Up), each a small bento of the project's film with role and years plus only its own proof (two Key outcomes figures; for Subskim, the real app screen); colleague quotes; How I work (three short principles linked to Admirals chapters); Contact. Header: name plus Work, About, CV, Contact.
+- Homepage sections (image-led, few words): full-bleed hero photograph with the promise and one "Get in touch" action; Selected work as five Apple-style highlight blocks (Subskim, Admirals, Mechanism Ventures, MetaMap, Fundraise Up), each with the project's visual in the centre and its own outcomes with icons around it; colleague quotes; How I work (three short principles linked to Admirals chapters); Contact. Header: name plus Work, About, CV, Contact.
 - AI projects are presented as standalone projects without employer attribution.
 - Public contact email: rysych@gmail.com.
 - Work format: remote preferred; open to relocation to Singapore, Dubai, London, or the US.
@@ -60,6 +60,11 @@ Experience across design, product, and growth lets him connect design decisions 
   - Mechanism: +28% onboarding conversion (Pettable, within three months); −18% user churn through leave-intent interventions.
   - MetaMap: verification checks from 2 to 15+; a 5 + 12 design and delivery team (five designers and twelve developers).
   - Fundraise Up: ×2.8 donation conversion; ~98% donor satisfaction (CSAT).
+- Added to the homepage highlights on 2026-10-04 (verbatim from the case pages; shown to Pavel for approval):
+  - Admirals: +16% first-time deposits; annual losses reduced from €10M to €1.6M (labelled "Broader business impact").
+  - Mechanism: 4 products, one studio (Pettable, Learner, Top Nutrition Coaching, PrimePutt); $300M+ portfolio revenue labelled "For context, not credit".
+  - MetaMap: $70M company funding, later acquired by Incode, labelled "For context, not credit".
+  - Fundraise Up: 12 → 350+ company team growth (company headcount, not Pavel's result).
 - Real testimonials: Yuriy Smirnov (Co-Founder & COO, Fundraise Up), Peter Byrnes (Co-Founder & CEO, Fundraise Up), Celestin Soubrier (Chief Growth Officer, MetaMap).
 - Subskim: live product at https://subskim.com — conceived and built entirely by Pavel (idea, product, design, and AI-assisted implementation), confirmed 2026-09-29; AI screenshot import with user review before saving.
 - Editorial source material: `portfolio-content.md`.

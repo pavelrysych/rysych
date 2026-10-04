@@ -16,7 +16,7 @@
     <link rel="manifest" href="/site.webmanifest?v=2">
     <link rel="preload" href="/assets/fonts/geist-variable.woff2?v=1" as="font" type="font/woff2" crossorigin>
     <link rel="preload" as="image" type="image/webp" imagesrcset="/assets/hero-hills-800.webp 800w, /assets/hero-hills-1280.webp 1280w, /assets/hero-hills-2000.webp 2000w" imagesizes="100vw" fetchpriority="high">
-    <link rel="stylesheet" href="/home.css?v=73">
+    <link rel="stylesheet" href="/home.css?v=75">
     <script src="/site.js?v=19" defer></script>
     <script src="/home.js?v=20" defer></script>
     <meta property="og:type" content="website">
@@ -99,84 +99,168 @@
       <section class="work" id="work" aria-labelledby="work-title">
         <div class="page-width">
           <h2 class="section-title" id="work-title">Selected work</h2>
-          <div class="work__projects">
-            <article class="bento bento--subskim" aria-labelledby="work-subskim">
-              <a class="tile tile--project tile--film" href="/work/subskim/">
-                <div class="tile__head">
-                  <div class="tile__who"><h3 class="tile__title" id="work-subskim"><span class="nowrap">Subskim<svg class="tile__arrow" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></h3><span class="tile__sub">Idea, design and build · <span class="nowrap">2026–Now</span></span></div>
-                  <span class="tile__tag">Live, built solo with AI</span>
-                </div>
-                <span class="tile__media"><video data-case-autoplay data-case-lazy data-quiet muted loop playsinline disablepictureinpicture disableremoteplayback preload="none" data-poster="/assets/card-subskim-poster.jpg" width="1280" height="640" style="--pos:50% 0" aria-hidden="true"><source data-src="/assets/card-subskim.mp4" type="video/mp4"></video></span>
-              </a>
-              <a class="tile tile--shot tile--a" href="/work/subskim/#import">
-                <span class="tile__caption"><span class="tile__label">Import, then <span class="nowrap">review<svg class="tile__arrow" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span><span class="tile__note">AI-assisted screenshot import</span><span class="visually-hidden"> · Subskim</span></span>
-                <span class="tile__screen"><picture><source type="image/webp" srcset="/assets/subskim-mobile-720.webp"><img src="/assets/subskim-mobile.jpg" width="1033" height="2000" alt="" loading="lazy" decoding="async"></picture></span>
-              </a>
+          <div class="hl-projects">
+
+            <!-- 1 · Subskim -->
+            <article class="hl hl--subskim" aria-labelledby="hl-subskim">
+              <div class="hl-grid">
+                <a class="tile hl-tile hl-id hl-a-id" href="/work/subskim/">
+                  <span><h3 class="hl-id__name" id="hl-subskim">Subskim</h3><span class="hl-id__role">Idea, design and build&nbsp;· <span class="nowrap">2026–Now</span></span></span>
+                  <span class="hl-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                </a>
+                <a class="tile hl-tile hl-hero hl-hero--phone hl-a-hero" href="/work/subskim/" tabindex="-1" aria-hidden="true">
+                  <span class="hl-phone"><picture><source type="image/webp" srcset="/assets/subskim-mobile-720.webp"><img src="/assets/subskim-mobile.jpg" width="1033" height="2000" alt="" loading="lazy" decoding="async"></picture></span>
+                </a>
+                <a class="tile hl-tile hl-corner hl-a-imp" href="/work/subskim/#import">
+                  <svg class="hl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M7 8h8"/><path d="M7 12h10"/><path d="M7 16h6"/></svg>
+                  <span class="hl-txt"><span class="hl-word">AI import</span><span class="hl-note">AI-assisted screenshot import</span></span>
+                  <span class="visually-hidden"> · Subskim</span>
+                </a>
+                <a class="tile hl-tile hl-stat hl-a-cal" href="/work/subskim/">
+                  <svg class="hl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 14v2.2l1.6 1"/><path d="M16 2v3"/><path d="M21 7.338V5a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2h2.338"/><path d="M3 9h5.859"/><path d="M8 2v3"/><circle cx="16" cy="16" r="6"/></svg>
+                  <span class="hl-txt"><span class="hl-word">Renewal calendar</span><span class="hl-note">See what renews next alongside recurring spending.</span></span>
+                  <span class="visually-hidden"> · Subskim</span>
+                </a>
+                <a class="tile hl-tile hl-corner hl-a-rvw" href="/work/subskim/">
+                  <svg class="hl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M13 5h8"/><path d="M13 12h8"/><path d="M13 19h8"/><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/></svg>
+                  <span class="hl-txt"><span class="hl-word">Monthly review</span><span class="hl-note">Revisit subscriptions and decide what still earns its place.</span></span>
+                  <span class="visually-hidden"> · Subskim</span>
+                </a>
+                <a class="tile hl-tile hl-stat hl-dark hl-a-solo" href="/work/subskim/">
+                  <svg class="hl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/><path d="M20 2v4"/><path d="M22 4h-4"/><circle cx="4" cy="20" r="2"/></svg>
+                  <span class="hl-txt"><span class="hl-word">Solo + AI</span><span class="hl-note">From idea to live product, solo</span></span>
+                  <span class="visually-hidden"> · Subskim</span>
+                </a>
+                <a class="tile hl-tile hl-live hl-a-live" href="/work/subskim/">
+                  <span class="hl-live__tag"><svg class="hl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16.247 7.761a6 6 0 0 1 0 8.478"/><path d="M19.075 4.933a10 10 0 0 1 0 14.134"/><path d="M4.925 19.067a10 10 0 0 1 0-14.134"/><path d="M7.753 16.239a6 6 0 0 1 0-8.478"/><circle cx="12" cy="12" r="2"/></svg>Live</span>
+                  <span class="hl-media"><video data-case-autoplay data-case-lazy data-quiet muted loop playsinline disablepictureinpicture disableremoteplayback preload="none" data-poster="/assets/card-subskim-poster.jpg" width="1280" height="640" style="--pos:50% 0" aria-hidden="true"><source data-src="/assets/card-subskim.mp4" type="video/mp4"></video></span>
+                  <span class="visually-hidden">Subskim is live</span>
+                </a>
+              </div>
             </article>
-            <article class="bento bento--admirals" aria-labelledby="work-admirals">
-              <a class="tile tile--project tile--film" href="/work/admirals/">
-                <div class="tile__head">
-                  <div class="tile__who"><h3 class="tile__title" id="work-admirals"><span class="nowrap">Admirals<svg class="tile__arrow" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></h3><span class="tile__sub">Head of Design · <span class="nowrap">2024–Now</span></span></div>
-                </div>
-                <span class="tile__media"><video data-case-autoplay data-case-lazy data-quiet muted loop playsinline disablepictureinpicture disableremoteplayback preload="none" data-poster="/assets/card-admirals-poster.jpg" width="1120" height="712" style="--pos:0 30%" aria-hidden="true"><source data-src="/assets/card-admirals.mp4" type="video/mp4"></video></span>
-              </a>
-              <a class="tile tile--figure tile--a" href="/work/admirals/">
-                <span class="tile__value">−67%</span>
-                <span class="tile__caption"><span class="tile__label">Customer acquisition <span class="nowrap">cost<svg class="tile__arrow" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span><span class="visually-hidden"> · Admirals</span></span>
-              </a>
-              <a class="tile tile--figure tile--b" href="/work/admirals/">
-                <span class="tile__value">+€400k</span>
-                <span class="tile__caption"><span class="tile__label">Monthly <span class="nowrap">revenue<svg class="tile__arrow" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span><span class="tile__note">From a targeted UI change</span><span class="visually-hidden"> · Admirals</span></span>
-              </a>
+
+            <!-- 2 · Admirals -->
+            <article class="hl hl--admirals" aria-labelledby="hl-admirals">
+              <div class="hl-grid">
+                <a class="tile hl-tile hl-id hl-a-id" href="/work/admirals/">
+                  <span><h3 class="hl-id__name" id="hl-admirals">Admirals</h3><span class="hl-id__role">Head of Design&nbsp;· <span class="nowrap">2024–Now</span></span></span>
+                  <span class="hl-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                </a>
+                <a class="tile hl-tile hl-hero hl-a-hero" href="/work/admirals/" tabindex="-1" aria-hidden="true">
+                  <span class="hl-media"><video data-case-autoplay data-case-lazy data-quiet muted loop playsinline disablepictureinpicture disableremoteplayback preload="none" data-poster="/assets/card-admirals-poster.jpg" width="1120" height="712" style="--pos:0 30%" aria-hidden="true"><source data-src="/assets/card-admirals.mp4" type="video/mp4"></video></span>
+                </a>
+                <a class="tile hl-tile hl-stat hl-dark hl-a-cac" href="/work/admirals/">
+                  <svg class="hl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 17h6v-6"/><path d="m22 17-8.5-8.5-5 5L2 7"/></svg>
+                  <span class="hl-txt"><span class="hl-num hl-num--xl">−67%</span><span class="hl-lbl">Customer acquisition cost</span><span class="hl-note">Two-thirds lower than the previous CAC</span></span>
+                  <span class="visually-hidden"> · Admirals</span>
+                </a>
+                <a class="tile hl-tile hl-row hl-a-rev" href="/work/admirals/">
+                  <svg class="hl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 18H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5"/><path d="M18 12h.01"/><path d="M19 22v-6"/><path d="m22 19-3-3-3 3"/><path d="M6 12h.01"/><circle cx="12" cy="12" r="2"/></svg>
+                  <span class="hl-txt"><span class="hl-num">+€400k</span><span class="hl-lbl">Monthly revenue</span><span class="hl-note">From a targeted UI change</span></span>
+                  <span class="visually-hidden"> · Admirals</span>
+                </a>
+                <a class="tile hl-tile hl-row hl-a-ftd" href="/work/admirals/">
+                  <svg class="hl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M11 15h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 17"/><path d="m7 21 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9"/><path d="m2 16 6 6"/><circle cx="16" cy="9" r="2.9"/><circle cx="6" cy="5" r="3"/></svg>
+                  <span class="hl-txt"><span class="hl-num">+16%</span><span class="hl-lbl">First-time deposits</span></span>
+                  <span class="visually-hidden"> · Admirals</span>
+                </a>
+                <a class="tile hl-tile hl-row hl-wide-m hl-a-loss" href="/work/admirals/">
+                  <svg class="hl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M13 17V9"/><path d="M18 17v-3"/><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M8 17V5"/></svg>
+                  <span class="hl-txt"><span class="hl-eyebrow">Broader business impact</span><span class="hl-say">Annual losses reduced from <b>€10M to €1.6M</b> through a focus on retention and unit economics.</span></span>
+                  <span class="visually-hidden"> · Admirals</span>
+                </a>
+              </div>
             </article>
-            <article class="bento bento--mechanism" aria-labelledby="work-mechanism">
-              <a class="tile tile--project tile--film" href="/work/mechanism/">
-                <div class="tile__head">
-                  <div class="tile__who"><h3 class="tile__title" id="work-mechanism">Mechanism <span class="nowrap">Ventures<svg class="tile__arrow" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></h3><span class="tile__sub">Head of Product Design · <span class="nowrap">2021–2023</span></span></div>
-                </div>
-                <span class="tile__media"><video data-case-autoplay data-case-lazy data-quiet muted loop playsinline disablepictureinpicture disableremoteplayback preload="none" data-poster="/assets/tile-mechanism-poster.jpg" width="640" height="1000" style="--pos:50% 50%" aria-hidden="true"><source data-src="/assets/tile-mechanism.mp4" type="video/mp4"></video></span>
+
+            <!-- 3 · Mechanism Ventures -->
+            <article class="hl hl--mechanism hl-panel hl-panel--dark" aria-labelledby="hl-mechanism">
+              <a class="hl-head" href="/work/mechanism/">
+                <span><h3 class="hl-id__name" id="hl-mechanism">Mechanism Ventures</h3><span class="hl-id__role">Head of Product Design&nbsp;· <span class="nowrap">2021–2023</span></span></span>
+                <span class="hl-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
               </a>
-              <a class="tile tile--figure tile--a" href="/work/mechanism/">
-                <span class="tile__value">+28%</span>
-                <span class="tile__caption"><span class="tile__label">Onboarding <span class="nowrap">conversion<svg class="tile__arrow" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span><span class="tile__note">Pettable · within three months</span><span class="visually-hidden"> · Mechanism Ventures</span></span>
-              </a>
-              <a class="tile tile--figure tile--b" href="/work/mechanism/">
-                <span class="tile__value">−18%</span>
-                <span class="tile__caption"><span class="tile__label">User <span class="nowrap">churn<svg class="tile__arrow" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span><span class="tile__note">Through leave-intent interventions</span><span class="visually-hidden"> · Mechanism Ventures</span></span>
-              </a>
+              <div class="hl-grid">
+                <a class="tile hl-tile hl-hero hl-a-hero" href="/work/mechanism/" tabindex="-1" aria-hidden="true">
+                  <span class="hl-media"><video data-case-autoplay data-case-lazy data-quiet muted loop playsinline disablepictureinpicture disableremoteplayback preload="none" data-poster="/assets/tile-mechanism-poster.jpg" width="640" height="1000" style="--pos:50% 50%" aria-hidden="true"><source data-src="/assets/tile-mechanism.mp4" type="video/mp4"></video></span>
+                </a>
+                <a class="tile hl-tile hl-stat hl-light hl-a-onb" href="/work/mechanism/">
+                  <svg class="hl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m16 11 2 2 4-4"/><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                  <span class="hl-txt"><span class="hl-num hl-num--xl">+28%</span><span class="hl-lbl">Onboarding conversion</span><span class="hl-note">Pettable · within three months</span></span>
+                  <span class="visually-hidden"> · Mechanism Ventures</span>
+                </a>
+                <a class="tile hl-tile hl-stat hl-a-churn" href="/work/mechanism/">
+                  <svg class="hl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="22" x2="16" y1="11" y2="11"/></svg>
+                  <span class="hl-txt"><span class="hl-num hl-num--xl">−18%</span><span class="hl-lbl">User churn</span><span class="hl-note">Through <span class="nowrap">leave-intent</span> interventions</span></span>
+                  <span class="visually-hidden"> · Mechanism Ventures</span>
+                </a>
+                <a class="tile hl-tile hl-corner hl-a-vent" href="/work/mechanism/">
+                  <svg class="hl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+                  <span class="hl-txt"><span class="hl-num">4</span><span class="hl-lbl">Products, one studio</span><span class="hl-note">Pettable, Learner, Top Nutrition Coaching and PrimePutt</span></span>
+                  <span class="visually-hidden"> · Mechanism Ventures</span>
+                </a>
+                <a class="tile hl-tile hl-corner hl-a-port" href="/work/mechanism/">
+                  <svg class="hl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 12h.01"/><path d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><path d="M22 13a18.15 18.15 0 0 1-20 0"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>
+                  <span class="hl-txt"><span class="hl-num">$300M+</span><span class="hl-lbl">Portfolio revenue</span><span class="hl-note">For context, <span class="nowrap">not credit</span></span></span>
+                  <span class="visually-hidden"> · Mechanism Ventures</span>
+                </a>
+              </div>
             </article>
-            <article class="bento bento--metamap" aria-labelledby="work-metamap">
-              <a class="tile tile--project tile--film" href="/work/metamap/">
-                <div class="tile__head">
-                  <div class="tile__who"><h3 class="tile__title" id="work-metamap"><span class="nowrap">MetaMap<svg class="tile__arrow" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></h3><span class="tile__sub">Head of Design · <span class="nowrap">2018–2021</span></span></div>
-                </div>
-                <span class="tile__media"><video data-case-autoplay data-case-lazy data-quiet muted loop playsinline disablepictureinpicture disableremoteplayback preload="none" data-poster="/assets/card-metamap-poster.jpg?v=2" width="960" height="540" style="--pos:50% 50%" aria-hidden="true"><source data-src="/assets/card-metamap.mp4?v=2" type="video/mp4"></video></span>
-              </a>
-              <a class="tile tile--figure tile--a" href="/work/metamap/">
-                <span class="tile__value" role="img" aria-label="From 2 to 15 or more">2 → 15+</span>
-                <span class="tile__caption"><span class="tile__label">Verification <span class="nowrap">checks<svg class="tile__arrow" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span><span class="visually-hidden"> · MetaMap</span></span>
-              </a>
-              <a class="tile tile--figure tile--b" href="/work/metamap/">
-                <span class="tile__value">5 + 12</span>
-                <span class="tile__caption"><span class="tile__label">Design + delivery <span class="nowrap">team<svg class="tile__arrow" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span><span class="tile__note">Five designers and twelve developers</span><span class="visually-hidden"> · MetaMap</span></span>
-              </a>
+
+            <!-- 4 · MetaMap -->
+            <article class="hl hl--metamap hl-panel hl-panel--grey" aria-labelledby="hl-metamap">
+              <div class="hl-grid">
+                <a class="tile hl-tile hl-id hl-a-id" href="/work/metamap/">
+                  <span><h3 class="hl-id__name" id="hl-metamap">MetaMap</h3><span class="hl-id__role">Head of Design&nbsp;· <span class="nowrap">2018–2021</span></span></span>
+                  <span class="hl-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                </a>
+                <a class="tile hl-tile hl-hero hl-a-hero" href="/work/metamap/" tabindex="-1" aria-hidden="true">
+                  <span class="hl-media"><video data-case-autoplay data-case-lazy data-quiet muted loop playsinline disablepictureinpicture disableremoteplayback preload="none" data-poster="/assets/card-metamap-poster.jpg?v=2" width="960" height="540" style="--pos:50% 50%" aria-hidden="true"><source data-src="/assets/card-metamap.mp4?v=2" type="video/mp4"></video></span>
+                </a>
+                <a class="tile hl-tile hl-row hl-row--banner hl-dark hl-wide-m hl-a-chk" href="/work/metamap/">
+                  <svg class="hl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+                  <span class="hl-txt"><span class="hl-num hl-num--xl" role="img" aria-label="From 2 to 15 or more">2 → 15+</span><span class="hl-cap"><span class="hl-lbl">Verification checks</span><span class="hl-note">Expanded the verification offering through a product pivot.</span></span></span>
+                  <span class="visually-hidden"> · MetaMap</span>
+                </a>
+                <a class="tile hl-tile hl-stat hl-a-team" href="/work/metamap/">
+                  <svg class="hl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>
+                  <span class="hl-txt"><span class="hl-num">5 + 12</span><span class="hl-lbl">Design + delivery team</span><span class="hl-note">Five designers and twelve developers</span></span>
+                  <span class="visually-hidden"> · MetaMap</span>
+                </a>
+                <a class="tile hl-tile hl-corner hl-a-fund" href="/work/metamap/">
+                  <svg class="hl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>
+                  <span class="hl-txt"><span class="hl-num">$70M</span><span class="hl-lbl">Company funding</span><span class="hl-note">Later acquired by Incode.<br>For context, <span class="nowrap">not credit</span></span></span>
+                  <span class="visually-hidden"> · MetaMap</span>
+                </a>
+              </div>
             </article>
-            <article class="bento bento--fundraise-up" aria-labelledby="work-fundraise-up">
-              <a class="tile tile--project tile--film" href="/work/fundraise-up/">
-                <div class="tile__head">
-                  <div class="tile__who"><h3 class="tile__title" id="work-fundraise-up">Fundraise <span class="nowrap">Up<svg class="tile__arrow" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></h3><span class="tile__sub">Founding Designer · <span class="nowrap">2017–2018</span></span></div>
-                </div>
-                <span class="tile__media"><video data-case-autoplay data-case-lazy data-quiet muted loop playsinline disablepictureinpicture disableremoteplayback preload="none" data-poster="/assets/card-fundraise-up-poster.jpg" width="1120" height="700" style="--pos:50% 50%" aria-hidden="true"><source data-src="/assets/card-fundraise-up.mp4" type="video/mp4"></video></span>
-              </a>
-              <a class="tile tile--figure tile--a" href="/work/fundraise-up/">
-                <span class="tile__value">×2.8</span>
-                <span class="tile__caption"><span class="tile__label">Donation <span class="nowrap">conversion<svg class="tile__arrow" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span><span class="visually-hidden"> · Fundraise Up</span></span>
-              </a>
-              <a class="tile tile--figure tile--b" href="/work/fundraise-up/">
-                <span class="tile__value" role="img" aria-label="Around 98%">~98%</span>
-                <span class="tile__caption"><span class="tile__label">Donor <span class="nowrap">satisfaction<svg class="tile__arrow" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span><span class="visually-hidden"> · Fundraise Up</span></span>
-              </a>
+
+            <!-- 5 · Fundraise Up -->
+            <article class="hl hl--fundraise-up" aria-labelledby="hl-fundraise-up">
+              <div class="hl-grid">
+                <a class="tile hl-tile hl-id hl-a-id" href="/work/fundraise-up/">
+                  <span><h3 class="hl-id__name" id="hl-fundraise-up">Fundraise Up</h3><span class="hl-id__role">Founding Designer&nbsp;· <span class="nowrap">2017–2018</span></span></span>
+                  <span class="hl-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                </a>
+                <a class="tile hl-tile hl-hero hl-a-hero" href="/work/fundraise-up/" tabindex="-1" aria-hidden="true">
+                  <span class="hl-inset"><video data-case-autoplay data-case-lazy data-quiet muted loop playsinline disablepictureinpicture disableremoteplayback preload="none" data-poster="/assets/fundraise-up-gamification-monthly-poster.jpg" width="930" height="830" aria-hidden="true"><source data-src="/assets/fundraise-up-gamification-monthly.mp4" type="video/mp4"></video></span>
+                </a>
+                <a class="tile hl-tile hl-stat hl-dark hl-a-conv" href="/work/fundraise-up/">
+                  <svg class="hl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M11 14h2a2 2 0 0 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 16"/><path d="m14.45 13.39 5.05-4.694C20.196 8 21 6.85 21 5.75a2.75 2.75 0 0 0-4.797-1.837.276.276 0 0 1-.406 0A2.75 2.75 0 0 0 11 5.75c0 1.2.802 2.248 1.5 2.946L16 11.95"/><path d="m2 15 6 6"/><path d="m7 20 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a1 1 0 0 0-2.75-2.91"/></svg>
+                  <span class="hl-txt"><span class="hl-num hl-num--xl">×2.8</span><span class="hl-lbl">Donation conversion</span><span class="hl-note">Through a gamified donation experience</span></span>
+                  <span class="visually-hidden"> · Fundraise Up</span>
+                </a>
+                <a class="tile hl-tile hl-corner hl-a-csat" href="/work/fundraise-up/">
+                  <svg class="hl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 10V9"/><path d="M16.472 15a6 6 0 01-8.943 0"/><path d="M9 10V9"/><circle cx="12" cy="12" r="10"/></svg>
+                  <span class="hl-txt"><span class="hl-num" role="img" aria-label="Around 98%">~98%</span><span class="hl-lbl">Donor satisfaction</span><span class="hl-note">CSAT for the donation experience</span></span>
+                  <span class="visually-hidden"> · Fundraise Up</span>
+                </a>
+                <a class="tile hl-tile hl-stat hl-a-grow" href="/work/fundraise-up/">
+                  <svg class="hl-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 21a8 8 0 0 0-16 0"/><circle cx="10" cy="8" r="5"/><path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3"/></svg>
+                  <span class="hl-txt"><span class="hl-num hl-num--long" role="img" aria-label="From 12 to 350 or more">12 → 350+</span><span class="hl-lbl">Company team growth</span><span class="hl-note">From an early public snapshot to the current <span class="nowrap">company-reported</span> headcount</span></span>
+                  <span class="visually-hidden"> · Fundraise Up</span>
+                </a>
+              </div>
             </article>
+
           </div>
         </div>
       </section>
