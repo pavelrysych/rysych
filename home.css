@@ -334,6 +334,25 @@ section { position: relative; }
 @media (hover: hover) { .hero .link-secondary:hover { text-decoration-color: #fff; } }
 .hero :focus-visible { outline-color: #fff; }
 
+/* the companies behind the work, in grey, each a way into its case */
+.companies { margin-top: clamp(36px, 4.5vw, 64px); }
+.companies ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px clamp(28px, 4vw, 56px);
+}
+.companies a {
+  display: block;
+  padding: 8px 0;
+  opacity: var(--o, 0.5);
+  filter: grayscale(1);
+  transition: opacity 200ms var(--ease);
+}
+@media (hover: hover) { .companies a:hover { opacity: 1; } }
+.companies img { height: calc(26px * var(--s, 1)); width: auto; }
+
 /* one quiet entrance for the first viewport */
 @media (prefers-reduced-motion: no-preference) {
   .hero__copy > * { animation: rise 900ms var(--ease) backwards; }
@@ -550,6 +569,8 @@ section { position: relative; }
   body { font-size: 16px; }
   .hero__actions .pill { flex: 1 1 auto; }
   .card__title, .card__value { font-size: 18px; }
+  .companies ul { justify-content: center; gap: 18px 28px; }
+  .companies img { height: calc(22px * var(--s, 1)); }
   /* phones: the proof figure sits under the name, on one line */
   .card__meta { flex-direction: column; gap: 6px; }
   .card__metric { display: flex; align-items: baseline; gap: 8px; text-align: left; }

@@ -302,8 +302,11 @@ Three short items: a 20px title, one or two grey 16px sentences (max 34ch), and 
 - **Internal Padding:** `clamp(24px, 3vw, 36px)` for content tiles; `clamp(10px, 1.6vw, 20px)` for media tiles so the screen fills the tile.
 - **Outcomes tile:** a grid of 2 to 5 proof figures (Figure type) with term and detail below each.
 
+### Company strip
+Under the hero card, the five company logos in one row (justified on desktop, centred and wrapping on phones), grey at 50% opacity (Mechanism 80% for its hairline mark), each scaled to one optical size and linking to its case; full opacity on hover.
+
 ### Card previews
-The Admirals, Mechanism, MetaMap and Fundraise Up cards preview as short silent loops (10–18s, 1120w H.264, 0.25–0.85 MB) with a first-frame poster: Admirals the live site, MetaMap the Mati film, Mechanism a 2x2 of the venture films, Fundraise Up the three checkout animations on lavender. They load and play only near the viewport, stay on the poster under reduced motion, and never show controls (`data-quiet`), since the whole card is a link. Subskim stays a still screenshot.
+Every work card previews as a short silent loop (10–18s, 1120w H.264, 0.25–0.85 MB) with a first-frame poster: Admirals the live site, MetaMap the Mati film, Mechanism a 2x2 of the venture films, Fundraise Up the three checkout animations on lavender. They load and play only near the viewport, stay on the poster under reduced motion, and never show controls (`data-quiet`), since the whole card is a link. Subskim plays a 14s scroll through subskim.com (hero, calendar, trials, Skim, screenshot import, apps).
 
 ### Venture Card (Mechanism case)
 Each Mechanism venture as mechanism.com shows it: its looping film (lazy, muted, plays in view, poster under reduced motion) filling a 5:4 tile at 24px radius, a 30% black veil, and the venture's white logo centred at about half the width. The homepage Mechanism card uses a 2x2 still collage of the same four cards.
