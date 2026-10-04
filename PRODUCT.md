@@ -55,6 +55,11 @@ Experience across design, product, and growth lets him connect design decisions 
   - Admirals: customer journey improvements contributed to a two-thirds reduction in CAC; web redesign tripled click-through rates.
   - Fundraise Up: 2.8× widget conversion.
   - Mechanism: portfolio driving $300M+ in revenue.
+- Homepage proof figures (user-approved for publication, 2026-10-04; each verbatim from its case page's Key outcomes):
+  - Admirals: −67% customer acquisition cost; +€400k monthly revenue from a targeted UI change.
+  - Mechanism: +28% onboarding conversion (Pettable, within three months); −18% user churn through leave-intent interventions.
+  - MetaMap: verification checks from 2 to 15+; a 5 + 12 design and delivery team (five designers and twelve developers).
+  - Fundraise Up: ×2.8 donation conversion; ~98% donor satisfaction (CSAT).
 - Real testimonials: Yuriy Smirnov (Co-Founder & COO, Fundraise Up), Peter Byrnes (Co-Founder & CEO, Fundraise Up), Celestin Soubrier (Chief Growth Officer, MetaMap).
 - Subskim: live product at https://subskim.com — conceived and built entirely by Pavel (idea, product, design, and AI-assisted implementation), confirmed 2026-09-29; AI screenshot import with user review before saving.
 - Editorial source material: `portfolio-content.md`.
