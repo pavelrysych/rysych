@@ -1,4 +1,4 @@
 {
-  "prompt": "Not generated: user-provided photograph of Pavel Rysych on a misty green hillside (sent in chat 2026-10-04), mirrored horizontally at the user's request and resized for the web with @napi-rs/canvas. No other edits.",
-  "createdAt": "2026-10-04T13:56:36.146Z"
+  "prompt": "Not generated: user-provided photograph of Pavel Rysych on a misty green hillside (sent in chat 2026-10-04). Landscape mirrored horizontally; the person was cut out with @imgly/background-removal-node (local model) and flipped back in place about his own vertical axis so he keeps his real orientation; the few uncovered edge pixels were filled by reflecting the neighbouring background on the same row. Resized for the web with @napi-rs/canvas.",
+  "createdAt": "2026-10-04T14:00:56.313Z"
 }

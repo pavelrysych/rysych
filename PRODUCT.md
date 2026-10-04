@@ -44,7 +44,7 @@ Experience across design, product, and growth lets him connect design decisions 
 
 - Name: **Pavel Rysych**; title: **Product Design Leader**.
 - Core promise: "I build products and the design teams behind them."
-- Real portrait of Pavel (misty mountain landscape: green hills, black jacket, round glasses) is part of his identity on the site; it is the full-bleed hero photograph, mirrored.
+- Real portrait of Pavel (misty mountain landscape: green hills, black jacket, round glasses) is part of his identity on the site; it is the full-bleed hero photograph (landscape mirrored so he stands on the right; the person himself is shown in his real orientation, at his request).
 - Personal side: photography and filmmaking — attention, detail, storytelling.
 - Voice: first person, calm, specific, factual; claims tied to concrete episodes. No inflated titles or unverified attributions.
 

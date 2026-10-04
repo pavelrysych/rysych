@@ -161,7 +161,7 @@ A white page written like a Californian product launch, by a designer. The work 
 
 Density is generous and calm: wide sections (88 to 144px apart), a 1200px measure, headings set tight and heavy in Geist, body set soft in grey. Depth comes from tone (white against light grey), never from lines, glows or glass. Motion is a single quiet entrance on the first screen and small 200ms state changes everywhere else.
 
-This system replaces the retired "Glass Departures Board" world entirely (graphite, smoke, oxide LED, Urbanist, glass panels). The first viewport is a full-bleed photograph of Pavel on a misty hillside, mirrored so he stands on the right, with the promise set in white over the hills, the way OpenAI opens its pages.
+This system replaces the retired "Glass Departures Board" world entirely (graphite, smoke, oxide LED, Urbanist, glass panels). The first viewport is a full-bleed photograph of Pavel on a misty hillside, with the landscape mirrored so he stands on the right and the person kept in his real orientation, with the promise set in white over the hills, the way OpenAI opens its pages.
 
 **Key Characteristics:**
 - Pure white ground, near-black ink, one reading grey, one light-grey tile; no accent hue.
@@ -219,7 +219,7 @@ A monochrome Apple-light palette: ink, a softened ink, one grey, and two steps o
 
 A centred 1200px measure with a fluid gutter (`clamp(20px, 5vw, 64px)`), sections separated by space alone (`clamp(88px, 10vw, 144px)`). A sticky 64px header (60px under 900px) of frosted white sits over everything.
 
-- **Hero:** a full-bleed photograph (`hero-hills`, mirrored) filling the first viewport (`max(560px, min(100svh, 1040px))`), the header floating transparent over its sky until the page scrolls. Copy sits bottom-left on the page measure, over the hills, with a low dark scrim (bottom 70% of the height) behind it; the person stands on the right. On phones the photo is positioned on the person (`74% 30%`) and the copy sits over the lower half. A row of five grey company logos (50% opacity, full on hover) sits below, each linking to its case.
+- **Hero:** a full-bleed photograph (`hero-hills`, landscape mirrored, person unmirrored) filling the first viewport (`max(560px, min(100svh, 1040px))`), the header floating transparent over its sky until the page scrolls. Copy sits bottom-left on the page measure, over the hills, with a low dark scrim (bottom 70% of the height) behind it; the person stands on the right. On phones the photo is positioned on the person (`74% 30%`) and the copy sits over the lower half. A row of five grey company logos (50% opacity, full on hover) sits below, each linking to its case.
 - **Quotes:** three in a row on desktop; at 760px and under they become a one-at-a-time carousel with arrows and dots, rotating every 7s until a person picks one.
 - **Work list:** five grid rows (years, name and role, story, proof figure, view-case control) at 28px gaps. Under 1080px the control drops under the story; under 900px each row becomes a standing grey tile; under 560px the figure stacks.
 - **AI section:** a segmented tab track over a two-column panel (copy left, numbered stages right); one column under 900px.
@@ -293,7 +293,7 @@ Five rows that read as a ledger of proof, not five links.
 - **Phones (900px and under):** every row is a standing grey tile and the control is always a labelled white pill.
 
 ### Hero Photograph (signature)
-Pavel on a green hillside in mountain fog, mirrored, served as WebP at 800/1280/2000w with a JPEG fallback. The header (ink on the light sky) floats over it; the promise is white Geist 600 with a soft text shadow; the primary action is a white pill with ink text and the secondary a white underlined link. It settles in once on load (fade with a 1.04 to 1 scale over 1.6s) and stays still under reduced motion.
+Pavel on a green hillside in mountain fog: the landscape is mirrored, the person is cut out and flipped back in place so he keeps his real orientation. Served as WebP at 800/1280/2000w with a JPEG fallback. The header (ink on the light sky) floats over it; the promise is white Geist 600 with a soft text shadow; the primary action is a white pill with ink text and the secondary a white underlined link. It settles in once on load (fade with a 1.04 to 1 scale over 1.6s) and stays still under reduced motion.
 
 ### AI Stages
 Ordered steps in a list with 32px grey circle numerals (14px/600). The only numbered device on the site, used because the order of the steps is the information.
