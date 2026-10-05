@@ -60,7 +60,7 @@ Experience across design, product, and growth lets him connect design decisions 
   - Mechanism: +28% onboarding conversion (Pettable, within three months); −18% user churn through leave-intent interventions.
   - MetaMap: verification checks from 2 to 15+; a 5 + 12 design and delivery team (five designers and twelve developers).
   - Fundraise Up: ×2.8 donation conversion; ~98% donor satisfaction (CSAT).
-- Added to the homepage highlights on 2026-10-04 (verbatim from the case pages; shown to Pavel for approval):
+- Added to the homepage highlights on 2026-10-04 (verbatim from the case pages; user-approved for publication, 2026-10-05):
   - Admirals: +16% first-time deposits; annual losses reduced from €10M to €1.6M (labelled "Broader business impact").
   - Mechanism: 4 products, one studio (Pettable, Learner, Top Nutrition Coaching, PrimePutt); $300M+ portfolio revenue labelled "For context, not credit".
   - MetaMap: $70M company funding, later acquired by Incode, labelled "For context, not credit".
