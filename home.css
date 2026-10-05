@@ -266,15 +266,16 @@ section { position: relative; }
 
 /* ---------- Hero ---------- */
 
-/* the photograph is a card: inset from the window edges, soft corners, the promise on the hills */
-.hero { --inset: clamp(8px, 1.1vw, 16px); }
+/* the photograph is a card on the page measure, like every block below it: soft corners, the promise on the hills */
+.hero { --inset: clamp(8px, 1.1vw, 16px); --hero-pad: clamp(20px, 4.5vw, 64px); }
 .hero__stage {
   position: relative;
   isolation: isolate;
   display: flex;
   align-items: flex-end;
-  min-height: max(520px, min(calc(100svh - var(--header-h) - var(--inset)), 1000px));
-  margin: 0 var(--inset);
+  width: min(var(--max), 100% - 2 * var(--gutter));
+  min-height: max(520px, min(calc(100svh - var(--header-h) - var(--inset)), 860px));
+  margin: 0 auto;
   padding-top: 48px;
   padding-bottom: clamp(44px, 8vh, 96px);
   border-radius: clamp(20px, 2.2vw, 32px);
@@ -307,9 +308,7 @@ section { position: relative; }
   gap: 20px;
   justify-items: start;
   width: 100%;
-  max-width: calc(var(--max) + 2 * var(--gutter) - 2 * var(--inset));
-  margin-inline: auto;
-  padding-inline: calc(var(--gutter) - var(--inset));
+  padding-inline: var(--hero-pad);
 }
 .hero h1 {
   max-width: 11em;
@@ -930,7 +929,7 @@ a.tile:focus-visible { outline-offset: 4px; }
 
   .hero__stage { min-height: max(520px, calc(100svh - var(--header-h) - var(--inset))); }
   .hero__media img { object-position: 74% 30%; }
-  .hero h1 { font-size: min(calc((100vw - 2 * var(--gutter) - 8px) / 9.6), 4.25rem); }
+  .hero h1 { font-size: min(calc((100vw - 2 * var(--gutter) - 2 * var(--hero-pad) - 8px) / 9.6), 4.25rem); }
 
   .not-found__inner { grid-template-columns: minmax(0, 1fr); align-items: start; }
 }
