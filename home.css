@@ -565,6 +565,8 @@ html:not(.js) .p__why { display: none; }
 .figs dt { font-family: var(--mono); font-size: 13px; line-height: 1.25; text-transform: uppercase; }
 .figs dd.d { max-width: 34ch; color: var(--mute-dark); font-size: 15px; line-height: 1.4; }
 .figs dd.d a { color: var(--paper); }
+/* company figures sit in the proof band for context and say so right under the number */
+.figs dd.ctx-tag { order: -1; font-family: var(--mono); font-size: 12px; line-height: 1.25; text-transform: uppercase; color: var(--signal); }
 .ctx { max-width: 80ch; margin-top: 14px; color: var(--mute-dark); font-size: 15px; line-height: 1.45; }
 .ctx b { margin-right: 6px; color: var(--paper); font-family: var(--mono); font-size: 12px; font-weight: 500; text-transform: uppercase; }
 .out { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px; margin-top: 20px; }
