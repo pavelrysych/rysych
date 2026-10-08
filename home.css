@@ -435,7 +435,39 @@ button {
 .p__why svg { transition: transform 250ms var(--ease); }
 .digall.is-all svg { transform: rotate(180deg); }
 
-.p { border-bottom: 1px solid var(--ink); }
+.p { border-bottom: 1px solid var(--ink); --case-w: 86px; }
+.p__head { position: relative; }
+/* the case page is one click from every row: a link that sits beside the Why? toggle, over the row's own background */
+.p__case {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  right: var(--gut);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: var(--case-w);
+  padding: 8px 10px;
+  border: 1.5px solid currentColor;
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  transform: translateY(-50%);
+}
+.p__case:focus-visible { outline: 3px solid var(--signal); outline-offset: 2px; background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.p.is-open .p__case { color: var(--paper); }
+.p.is-open .p__case:focus-visible { background: var(--paper); color: var(--ink); border-color: var(--paper); }
+@media (hover: hover) {
+  .p__case:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+  .p.is-open .p__case:hover { background: var(--paper); color: var(--ink); border-color: var(--paper); }
+  html:not(.js) .p:has(.p__btn:hover) .p__case:not(:hover) { color: var(--paper); }
+}
 .p__btn {
   position: relative;
   display: grid;
@@ -474,7 +506,7 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-right: var(--gut);
+  margin-right: calc(var(--gut) + var(--case-w) + 8px);
   padding: 8px 10px;
   border: 1.5px solid currentColor;
   font-family: var(--mono);
@@ -889,7 +921,8 @@ html:not(.js) .p__why { display: none; }
   .p__xray { padding: 0; }
   .p__fig { flex-flow: row wrap; align-items: baseline; gap: 2px 8px; padding: 0; }
   .p__fig b { font-size: 20px; }
-  .p__why { margin-right: 0; justify-self: end; }
+  .p__why { margin-right: calc(var(--case-w) + 8px); justify-self: end; }
+  .p__case { top: 12px; transform: none; }
 
   .duo { grid-template-columns: minmax(0, 1fr); aspect-ratio: auto; }
   .duo__phone { aspect-ratio: 1; border-right: 0; border-bottom: 1px solid var(--ink); }
@@ -917,4 +950,13 @@ html:not(.js) .p__why { display: none; }
   *,
   *::before,
   *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+/* the narrowest phones: years, Why? and Case share one line, so the arrows step aside */
+@media (max-width: 380px) {
+  .p { --case-w: 62px; }
+  .p__why,
+  .p__case { gap: 0; }
+  .p__why svg,
+  .p__case svg { display: none; }
 }
