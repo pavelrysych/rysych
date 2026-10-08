@@ -69,6 +69,31 @@
         ],
         "createdAt": "2026-10-04T16:37:29.413Z",
         "reason": "user-requested (2026-10-04: \"make the logos a marquee on mobile\"): the company logo strip runs as a slow marquee only at 760px and under, with a duplicated aria-hidden echo, edge fades, and no motion under prefers-reduced-motion; desktop keeps a static row"
+      },
+      {
+        "rule": "overused-font",
+        "value": "geist mono",
+        "createdAt": "2026-10-08T15:13:52.270Z",
+        "reason": "sanctioned: Pavel chose the brutalist borehole concept (2026-10-08) whose type system is Archivo + Geist Mono; Geist was already a sanctioned exception"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "404.html"
+        ],
+        "createdAt": "2026-10-08T15:48:19.990Z",
+        "reason": "false positive: 404 depth labels are block children of the bordered depth column; the visible text sits 20px+ from the rule (checked at 1440 and 390)"
+      },
+      {
+        "rule": "tight-leading",
+        "value": "*",
+        "files": [
+          "index.html",
+          "work/*/index.html"
+        ],
+        "createdAt": "2026-10-08T15:48:20.202Z",
+        "reason": "sanctioned: the borehole type ramp sets display lines (hero name, Why -2, Core summary; 22-46px Archivo condensed) at 1.08 by design; body and reading text are 1.45-1.55"
       }
     ]
   }

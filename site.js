@@ -14,6 +14,12 @@ document.querySelectorAll('.mobile-nav').forEach((menu) => {
       menu.querySelector('summary')?.focus();
     }
   });
+
+  // Tabbing out of the open menu closes it, so its slab never covers the control that takes focus.
+  // Taps are left to the pointerdown handler below: their relatedTarget is null.
+  menu.addEventListener('focusout', (event) => {
+    if (menu.open && event.relatedTarget && !menu.contains(event.relatedTarget)) menu.open = false;
+  });
 });
 
 // A tap anywhere outside the open menu closes it.
@@ -94,11 +100,22 @@ document.querySelectorAll('video[data-poster]').forEach((video) => {
   }, { rootMargin: '800px 0px' }).observe(video);
 });
 
-document.querySelectorAll('video[data-case-autoplay]').forEach((video) => {
+// The looping films can be paused by hand as well as by the reduced-motion setting (WCAG 2.2.2).
+// The choice is remembered from page to page; paused films stay on their posters and download nothing.
+const autoplayFilms = document.querySelectorAll('video[data-case-autoplay]');
+const filmSyncs = new Set();
+let userPaused = false;
+try {
+  userPaused = window.localStorage.getItem('motion') === 'paused';
+} catch {
+  // storage blocked: films start playing, and the switch still works for this page
+}
+
+autoplayFilms.forEach((video) => {
   const lazy = video.hasAttribute('data-case-lazy');
   let nearViewport = !lazy;
   const syncPlayback = () => {
-    const shouldPlay = !motionPreference.matches && nearViewport && !document.hidden;
+    const shouldPlay = !userPaused && !motionPreference.matches && nearViewport && !document.hidden;
     video.autoplay = shouldPlay;
     if (!shouldPlay) {
       video.pause();
@@ -128,10 +145,44 @@ document.querySelectorAll('video[data-case-autoplay]').forEach((video) => {
   } else {
     nearViewport = true;
   }
+  filmSyncs.add(syncPlayback);
   syncPlayback();
   motionPreference.addEventListener('change', syncPlayback);
   document.addEventListener('visibilitychange', syncPlayback);
 });
+
+// The switch sits in the header of pages that have looping films; pages without them get no dead control.
+// Under reduced motion the films never move, so the switch steps aside too.
+if (autoplayFilms.length && siteHeader) {
+  const icon = (name, path) => `<svg class="motion-toggle__${name}" width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="${path}" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="square"/></svg>`;
+  const toggle = document.createElement('button');
+  toggle.type = 'button';
+  toggle.className = 'motion-toggle';
+  toggle.innerHTML = `${icon('pause', 'M5 3v10M11 3v10')}${icon('play', 'M4.5 2.5v11L13 8z')}<span class="motion-toggle__label"><span class="motion-toggle__verb">Pause</span><span class="motion-toggle__word"> motion</span></span>`;
+  const verb = toggle.querySelector('.motion-toggle__verb');
+  const render = () => {
+    toggle.classList.toggle('is-paused', userPaused);
+    verb.textContent = userPaused ? 'Play' : 'Pause';
+  };
+  const syncToggle = () => {
+    toggle.hidden = motionPreference.matches;
+  };
+  toggle.addEventListener('click', () => {
+    userPaused = !userPaused;
+    try {
+      if (userPaused) window.localStorage.setItem('motion', 'paused');
+      else window.localStorage.removeItem('motion');
+    } catch {
+      // storage blocked: the choice holds for this page only
+    }
+    render();
+    filmSyncs.forEach((sync) => sync());
+  });
+  render();
+  syncToggle();
+  motionPreference.addEventListener('change', syncToggle);
+  siteHeader.insertBefore(toggle, siteHeader.querySelector('.mobile-nav'));
+}
 
 document.querySelectorAll('video[data-portrait-scrub]').forEach((video) => {
   const surface = video.closest('.hero__image');

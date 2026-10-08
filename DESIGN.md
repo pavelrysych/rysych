@@ -1,381 +1,293 @@
 ---
 name: rysych.com
-description: Portfolio of Pavel Rysych, Product Design Leader. A quiet white product page where images of the work and its numbers do the talking.
+description: Portfolio of Pavel Rysych, Product Design Leader. A brutalist borehole - every project is dug from the surface everyone sees down to the one decision underneath, then proved.
 colors:
-  ink: "#1d1d1f"
-  ink-hover: "#3a3a3c"
-  ink-soft: "#424245"
-  muted: "#636366"
-  dot: "#d2d2d7"
-  tile: "#f5f5f7"
-  tile-pressed: "#ebebef"
+  ink: "#000000"
   paper: "#ffffff"
-  dark-muted: "#a1a1a6"
-  tile-black: "#000000"
+  heat-1: "#ffefe9"
+  heat-2: "#ffd0bf"
+  signal: "#ff3b00"
+  mute: "#4a4a4a"
+  mute-dark: "#c4c4c4"
+  rule-dark: "#5a5a5a"
+  stage: "#ececec"
 typography:
   display:
-    fontFamily: "Geist, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
-    fontSize: "clamp(2.75rem, 5vw, 4.5rem)"
-    fontWeight: 600
-    lineHeight: 1.02
-    letterSpacing: "-0.04em"
+    fontFamily: "Archivo, system-ui, -apple-system, Segoe UI, sans-serif"
+    fontSize: "clamp(48px, 8.6vw, 148px)"
+    fontWeight: 860
+    lineHeight: 0.86
+    letterSpacing: "-0.006em"
+    fontVariation: "'wdth' 62"
+  core:
+    fontFamily: "Archivo, system-ui, -apple-system, Segoe UI, sans-serif"
+    fontSize: "clamp(40px, 5.7vw, 92px)"
+    fontWeight: 860
+    lineHeight: 0.9
+    letterSpacing: "-0.012em"
+    fontVariation: "'wdth' 62"
+  index-name:
+    fontFamily: "Archivo, system-ui, -apple-system, Segoe UI, sans-serif"
+    fontSize: "clamp(38px, 4.9vw, 80px)"
+    fontWeight: 850
+    lineHeight: 0.88
+    letterSpacing: "-0.005em"
+    fontVariation: "'wdth' 62"
   headline:
-    fontFamily: "Geist, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
-    fontSize: "clamp(2rem, 4.2vw, 3.5rem)"
-    fontWeight: 600
-    lineHeight: 1.1
-    letterSpacing: "-0.04em"
-  section-title:
-    fontFamily: "Geist, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
-    fontSize: "clamp(1.75rem, 2.6vw, 2.25rem)"
-    fontWeight: 600
+    fontFamily: "Archivo, system-ui, -apple-system, Segoe UI, sans-serif"
+    fontSize: "clamp(36px, 4.6vw, 76px)"
+    fontWeight: 850
+    lineHeight: 0.92
+    letterSpacing: "-0.005em"
+    fontVariation: "'wdth' 62"
+  why-2:
+    fontFamily: "Archivo, system-ui, -apple-system, Segoe UI, sans-serif"
+    fontSize: "clamp(27px, 2.95vw, 46px)"
+    fontWeight: 640
     lineHeight: 1.08
-    letterSpacing: "-0.035em"
-  title:
-    fontFamily: "Geist, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
-    fontSize: "clamp(1.625rem, 2.6vw, 2.25rem)"
-    fontWeight: 600
-    lineHeight: 1.15
-    letterSpacing: "-0.035em"
-  figure:
-    fontFamily: "Geist, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
-    fontSize: "clamp(2rem, 3.2vw, 2.75rem)"
-    fontWeight: 600
-    lineHeight: 1.05
-    letterSpacing: "-0.04em"
-    fontFeature: "tnum"
-  highlight-number:
-    fontFamily: "Geist, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
-    fontSize: "clamp(34px, 5.3cqi, 64px)"
-    fontWeight: 400
-    lineHeight: 1
-    letterSpacing: "-0.045em"
-  highlight-number-xl:
-    fontFamily: "Geist, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
-    fontSize: "clamp(40px, 7cqi, 88px)"
-    fontWeight: 400
-    lineHeight: 1
-    letterSpacing: "-0.045em"
-  highlight-number-long:
-    fontFamily: "Geist, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
-    fontSize: "clamp(30px, 4.2cqi, 50px)"
-    fontWeight: 400
-    lineHeight: 1
-    letterSpacing: "-0.045em"
-  highlight-name:
-    fontFamily: "Geist, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
-    fontSize: "clamp(24px, 2.75cqi, 34px)"
-    fontWeight: 600
-    lineHeight: 1.05
-    letterSpacing: "-0.035em"
-  item-title:
-    fontFamily: "Geist, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
-    fontSize: "20px"
-    fontWeight: 600
+    letterSpacing: "-0.016em"
+    fontVariation: "'wdth' 84"
+  why-1:
+    fontFamily: "Archivo, system-ui, -apple-system, Segoe UI, sans-serif"
+    fontSize: "clamp(22px, 2.15vw, 33px)"
+    fontWeight: 520
     lineHeight: 1.3
-    letterSpacing: "-0.025em"
-  quote:
-    fontFamily: "Geist, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
-    fontSize: "clamp(1.125rem, 1.5vw, 1.3125rem)"
-    fontWeight: 500
-    lineHeight: 1.45
-    letterSpacing: "-0.015em"
-  lede:
-    fontFamily: "Geist, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
-    fontSize: "clamp(1.0625rem, 1.3vw, 1.1875rem)"
-    fontWeight: 400
-    lineHeight: 1.55
+    letterSpacing: "-0.01em"
+    fontVariation: "'wdth' 96"
+  chapter:
+    fontFamily: "Archivo, system-ui, -apple-system, Segoe UI, sans-serif"
+    fontSize: "clamp(30px, 3.1vw, 50px)"
+    fontWeight: 760
+    lineHeight: 1
+    letterSpacing: "-0.012em"
+    fontVariation: "'wdth' 78"
   body:
-    fontFamily: "Geist, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
-    fontSize: "17px"
+    fontFamily: "Archivo, system-ui, -apple-system, Segoe UI, sans-serif"
+    fontSize: "clamp(16px, 1.15vw, 18px)"
+    fontWeight: 400
+    lineHeight: 1.45
+  reading:
+    fontFamily: "Archivo, system-ui, -apple-system, Segoe UI, sans-serif"
+    fontSize: "clamp(17px, 1.2vw, 19px)"
     fontWeight: 400
     lineHeight: 1.55
-    letterSpacing: "-0.003em"
+  figure:
+    fontFamily: "Geist Mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+    fontSize: "clamp(40px, 4.6vw, 76px)"
+    fontWeight: 600
+    lineHeight: 1
+    letterSpacing: "-0.03em"
     fontFeature: "tnum"
-  body-long:
-    fontFamily: "Geist, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
-    fontSize: "18px"
-    fontWeight: 400
-    lineHeight: 1.65
+  depth-numeral:
+    fontFamily: "Geist Mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+    fontSize: "clamp(20px, 1.9vw, 30px)"
+    fontWeight: 500
+    lineHeight: 1
+    fontFeature: "tnum"
   label:
-    fontFamily: "Geist, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
-    fontSize: "14px"
-    fontWeight: 400
-    lineHeight: 1.5
+    fontFamily: "Geist Mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+    fontSize: "12px"
+    fontWeight: 500
+    lineHeight: 1.2
+  control:
+    fontFamily: "Geist Mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+    fontSize: "13px"
+    fontWeight: 600
+    lineHeight: 1.2
 rounded:
-  pill: "999px"
-  frame: "28px"
-  tile: "24px"
-  media: "20px"
-  screen: "16px"
+  none: "0px"
 spacing:
-  max: "1200px"
-  gutter: "clamp(20px, 5vw, 64px)"
-  section: "clamp(88px, 10vw, 144px)"
-  header: "64px"
-  highlight-gap: "16px"
-  highlight-gap-tablet: "12px"
-  highlight-gap-phone: "10px"
-  highlight-blocks: "clamp(56px, 7vw, 104px)"
+  gut: "clamp(16px, 2.4vw, 36px)"
+  ruler: "clamp(96px, 9.4vw, 148px)"
+  ruler-case: "clamp(112px, 10.5vw, 168px)"
+  inset: "clamp(16px, 2vw, 32px)"
+  row-y: "clamp(28px, 3.6vw, 56px)"
+  stratum-y: "clamp(16px, 2vw, 26px)"
 components:
-  button-primary:
+  button-outline:
+    textColor: "{colors.ink}"
+    typography: "{typography.control}"
+    rounded: "{rounded.none}"
+    padding: "0 16px"
+    height: "44px"
+  button-outline-hover:
     backgroundColor: "{colors.ink}"
     textColor: "{colors.paper}"
-    rounded: "{rounded.pill}"
-    padding: "0 22px"
-    height: "48px"
-  button-primary-hover:
-    backgroundColor: "{colors.ink-hover}"
-    textColor: "{colors.paper}"
-  button-primary-large:
-    backgroundColor: "{colors.ink}"
-    textColor: "{colors.paper}"
-    rounded: "{rounded.pill}"
-    padding: "0 26px"
-    height: "52px"
-  button-on-photo:
+  button-signal:
+    backgroundColor: "{colors.signal}"
+    textColor: "{colors.ink}"
+    typography: "{typography.control}"
+    rounded: "{rounded.none}"
+    padding: "0 16px"
+    height: "44px"
+  stratum-surface:
     backgroundColor: "{colors.paper}"
     textColor: "{colors.ink}"
-    rounded: "{rounded.pill}"
-    padding: "0 26px"
-    height: "52px"
-  button-secondary:
-    backgroundColor: "{colors.tile}"
+  stratum-why-1:
+    backgroundColor: "{colors.heat-1}"
     textColor: "{colors.ink}"
-    rounded: "{rounded.pill}"
-    padding: "0 26px"
-    height: "52px"
-  button-secondary-hover:
-    backgroundColor: "{colors.tile-pressed}"
+    typography: "{typography.why-1}"
+  stratum-why-2:
+    backgroundColor: "{colors.heat-2}"
     textColor: "{colors.ink}"
-  icon-button:
-    backgroundColor: "{colors.tile}"
+    typography: "{typography.why-2}"
+  core-band:
+    backgroundColor: "{colors.signal}"
     textColor: "{colors.ink}"
-    rounded: "{rounded.pill}"
-    size: "52px"
-  icon-button-hover:
+    typography: "{typography.core}"
+  proof-band:
     backgroundColor: "{colors.ink}"
     textColor: "{colors.paper}"
-  nav-link:
-    textColor: "{colors.ink-soft}"
-    typography: "{typography.label}"
-    padding: "8px 0"
-  nav-link-hover:
+    typography: "{typography.figure}"
+  index-row:
+    backgroundColor: "{colors.paper}"
     textColor: "{colors.ink}"
-  highlight-tile:
-    backgroundColor: "{colors.tile}"
-    rounded: "{rounded.tile}"
-    padding: "clamp(16px, 2.2cqi, 28px)"
-  highlight-tile-hover:
-    backgroundColor: "{colors.tile-pressed}"
-  highlight-tile-loud:
+    typography: "{typography.index-name}"
+  index-row-open:
     backgroundColor: "{colors.ink}"
-    textColor: "{colors.tile}"
-  highlight-name:
-    textColor: "{colors.ink}"
-    typography: "{typography.highlight-name}"
-  highlight-panel-dark:
-    backgroundColor: "{colors.ink}"
-    textColor: "{colors.tile}"
-    padding: "16px"
-  highlight-panel-grey:
-    backgroundColor: "{colors.tile}"
-    padding: "16px"
-  tile:
-    backgroundColor: "{colors.tile}"
-    rounded: "{rounded.tile}"
-    padding: "clamp(24px, 3vw, 36px)"
-  media-tile:
-    backgroundColor: "{colors.tile}"
-    rounded: "{rounded.frame}"
-    padding: "clamp(10px, 1.6vw, 20px)"
+    textColor: "{colors.paper}"
+  index-thumb:
+    rounded: "{rounded.none}"
+    width: "clamp(64px, 6.6vw, 104px)"
 ---
 
 # Design System: rysych.com
 
 ## Overview
 
-**Creative North Star: "The Quiet Launch Page"**
+**Creative North Star: "The Borehole"**
 
-A white page written like a Californian product launch, by a designer. Images of the work carry the page, the way Apple and Airbnb let a product picture say what a paragraph would; the numbers sit quietly beside them, and the system steps back so both can. Everything is ink on white, with one light-grey tile colour that holds product images, and a single primary pill that tells the reader what to do next. References the user named: Stripe and Airbnb, Apple product pages, and designer personal sites (rauno.me, emilkowal.ski, paco.me).
+Meaning over surface. Every project is drilled vertically, like a core sample: the surface everyone sees (the product, at full size), two layers of "Why?", the one sentence at the core, and the proof underneath. A mono depth column on the left logs each layer (0, −1, −2, −3 Core, = Proof), and the page reads as a ruled log rather than a gallery. The deeper the layer, the hotter its ground and the larger, heavier and narrower its type, so the eye is pulled down to the core without being told to look there.
 
-Density is generous and calm: wide sections (88 to 144px apart), a 1200px measure, one quiet section-title size, and almost no copy under headings. Headings are set tight and heavy in Geist; supporting lines are grey. Depth comes from tone (white against light grey), never from lines, glows or glass. Motion is a single quiet entrance on the first screen, a slow film scale on tile hover, and small 200ms state changes everywhere else.
-
-The first viewport is a photograph of Pavel, set as one large rounded card inset from the window, on a misty hillside, with the landscape mirrored so he stands on the right and the person kept in his real orientation. The three-line promise, one grey-white line of subtitle and one white "Get in touch" pill sit over the hills; the header floats transparent over the sky. This system replaced the retired "Glass Departures Board" world entirely (graphite, smoke, oxide LED, Urbanist, glass panels).
+The world is brutalist and exact: pure black ink on white paper, one signal red, 1px ink rules between every stratum, square corners everywhere, no shadows, no gradients for atmosphere. Density is high but ordered; every band sits on the same left ruler. Pavel himself is dug the same way on the homepage hero, down to "Make the important decision obvious." The product visuals are the one place colour and motion are allowed to be lavish: real screens and looping product films, framed in hard 1px boxes.
 
 **Key Characteristics:**
-- Pure white ground, near-black ink, one reading grey, one light-grey tile; no accent hue.
-- Images instead of words: each project is an Apple-style highlights slide, its visual in the centre and its numbers, each with an icon, around it.
-- Geist variable at 600 with tight negative tracking for every heading; 400 body at 17px with tabular figures.
-- Pills for actions: one primary pill per view, light grey for secondary; header links are plain text.
-- Underlined text links; a ↗ arrow appears only when the link leaves the site.
-- No divider lines, no glows, no glass panels, no eyebrows.
+- A left depth column (the ruler) on every band, with a mono numeral and label.
+- A heat scale from paper to signal red that encodes depth, then a black proof band.
+- Archivo variable for words, narrowing from 96% to 62% width as depth increases; Geist Mono for depths, labels, controls and figures.
+- Full-width 1px ink rules between strata; square corners; flat surfaces.
+- Live product films as the Surface of each project, large, and as small thumbnails on closed rows.
 
 ## Colors
 
-A monochrome Apple-light palette: ink, a softened ink, a reading grey, and two steps of light-grey tile on white; the work section adds one dark slide (ink panel, black tiles, a light grey for notes).
+Two absolutes and one signal, with a heat ramp between paper and signal that means depth and nothing else.
 
 ### Primary
-- **Graphite Ink** (`ink`): All headings, tile names and proof figures, the black email and next-case pills, the selected carousel dot, the focus ring and text selection. It is the only "colour" that asks for action.
-- **Pressed Graphite** (`ink-hover`): The black pill's hover state only.
+- **Signal Red** (signal): the core. The ground of every Core band, the open-row "Close" toggle, the CV link, pressed/active states (paused motion toggle, copied email, "Dig all" when everything is open), the "Live" tag, `::selection`, and highlights inside the How I work sums. Type on it is always black (5.9:1); never small white type on signal.
+
+### Secondary
+- **Heat One** (heat-1): the −1 "Why?" stratum ground and its key swatch.
+- **Heat Two** (heat-2): the −2 "Why?" stratum ground; muted text on it uses Mute (6.3:1).
 
 ### Neutral
-- **Soft Ink** (`ink-soft`): Long-read paragraphs, table cells and header nav links; text that should read as text, not as headline.
-- **Reading Grey** (`muted`): The one grey. Section ledes, tile roles and years, proof labels, the resting tile arrow, How I work sentences, quote attributions, captions, footer.
-- **Dot Grey** (`dot`): Inactive carousel dots and the scrollbar thumb. Never used as a line.
-- **Product Tile** (`tile`): The light-grey surface for product moments: every highlight tile, case media tiles, the outcomes tile, the next-case tile, secondary pills, the Menu pill, carousel arrows and contact icon buttons.
-- **Pressed Tile** (`tile-pressed`): Hover on secondary pills, the video placeholder, and the oversized 404 numeral.
-- **Dark Slide** (`ink` panel, `tile-black` tiles, `dark-muted` notes): the Mechanism highlight block only, plus the one loud ink tile in each other block and Subskim's black "Live" tile. Hover on an ink tile is #2c2c2e, on a black tile #161618; focus rings inside the dark panel are #f5f5f7. The MetaMap block is the inverse: a `tile` panel with white tiles.
-- **Paper** (`paper`): The page, the text on black pills, the white hero pill, and the mobile menu sheet.
+- **Ink** (ink): all type on paper, every rule and frame, and the ground of the Proof band, the open index row, the contact bedrock, the case title band, table heads and the mobile menu slab.
+- **Paper** (paper): page ground, Surface stratum, and type on ink.
+- **Mute** (mute): secondary text on paper and heat grounds (intro, figure captions, fact labels, quote roles; 8.9:1 on paper).
+- **Mute Dark** (mute-dark): secondary text on ink (proof descriptions, context lines, footer; 12:1).
+- **Rule Dark** (rule-dark): hairlines inside ink bands (proof figure grid, the seam between two open rows, mobile menu rows).
+- **Stage** (stage): the light stage a black phone stands on, and the ground behind case plates.
+
+Film stages may carry the product's own background colour inline (black, #0d0d0d, #d2d7db) so a film never letterboxes on the wrong ground; these are per-visual values, not palette tokens.
 
 ### Named Rules
-**The No-Accent Rule.** There is no brand hue. Emphasis comes from weight, size and the primary pill. A coloured link, badge or highlight is off-system. Colour on the page belongs to the photographs and product images, never to the interface.
+**The Heat Means Depth Rule.** Paper, heat-1, heat-2, signal, ink are a sequence: Surface, −1, −2, Core, Proof. Never use a heat colour as decoration outside that order.
 
-**The Tone-Not-Line Rule.** Surfaces are separated by tone (white against `tile`), never by a border, hairline or divider. If two things need separating, add space or put one in a tile.
+**The Black On Red Rule.** Signal red always carries ink type. White type never sits on signal.
 
 ## Typography
 
-**Display Font:** Geist variable, self-hosted (`/assets/fonts/geist-variable.woff2`, weights 100 to 900, OFL), with `-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif`
-**Body Font:** Geist (same file)
+**Display Font:** Archivo variable (wght 100–900, wdth 62–125%), self-hosted, with system-ui fallback
+**Label/Mono Font:** Geist Mono variable, self-hosted, with ui-monospace fallback
 
-**Character:** One neutral grotesk doing everything, Apple-style: heavy, tightly tracked headlines over light, slightly loose body. Geist is a sanctioned exception to the overused-font detector, recorded in `.impeccable/config.json`.
+**Character:** A variable grotesque that compresses as it sinks, against a neutral mono that logs depths and numbers like an instrument readout.
 
 ### Hierarchy
-- **Display** (400, `clamp(2.75rem, 5vw, 4.5rem)`, 1.04, −0.035em): The hero promise only, white on the photograph with a soft text shadow, max 11em so it always sets in three lines ("and the design teams" never breaks; under 900px the size follows the viewport width).
-- **Headline** (600, `clamp(2rem, 4.2vw, 3.5rem)`, 1.1): The case-page deck sentence, max 24ch.
-- **Section Title** (600, `clamp(1.75rem, 2.6vw, 2.25rem)`, -0.035em): Every homepage section head, the contact sign-off included. One quiet size; no section head is louder than another.
-- **Title** (600, `clamp(1.625rem, 2.6vw, 2.25rem)`, 1.15): Case chapter headings and the case quotes title.
-- **Figure** (600, `clamp(2rem, 3.2vw, 2.75rem)`, 1.05, tabular): Proof numbers in the case outcomes tile.
-- **Item Title** (600, 20px, 1.3, -0.025em): How I work item titles.
-- **Highlight Name** (600, `clamp(24px, 2.75cqi, 34px)`, 1.05, -0.035em): the project name in each highlight block.
-- **Highlight Number** (400, `clamp(34px, 5.3cqi, 64px)`; the loud tile `clamp(40px, 7cqi, 88px)`; long values `clamp(30px, 4.2cqi, 50px)`; 1, -0.045em, no wrap): the number in a highlight tile, sized to the block's own width (container units), over a 600 label and a grey note.
-- **Quote** (500, `clamp(1.125rem, 1.5vw, 1.3125rem)`, 1.45): Testimonial text; 21px in the phone carousel.
-- **Lede** (400, `clamp(1.0625rem, 1.3vw, 1.1875rem)`, Reading Grey): The single grey line under How I work (max 52ch) and Contact (max 56ch). Nowhere else on the homepage.
-- **Body** (400, 17px, 1.55; 16px under 560px): Default text. Tabular figures on everywhere.
-- **Body Long** (400, 18px, 1.65, Soft Ink, max 64ch): Case-study reading paragraphs; 17px on phones.
-- **Label** (400 to 600, 13 to 15px, Reading Grey): Roles and years, proof labels, fact terms, captions, footer. Sentence case, never uppercase, never letter-spaced.
+- **Display** (860, clamp(48px, 8.6vw, 148px), 0.86, 62% width, uppercase): the contact headline on the bedrock band.
+- **Core** (860, clamp(40px, 5.7vw, 92px), 0.9, 62% width, max 14em; long cores 17em at clamp(32px, 4.2vw, 68px)): the one sentence on the red band; the 404 title uses the same setting.
+- **Index name** (850, clamp(38px, 4.9vw, 80px), 0.88, 62% width, uppercase): project names in the work index and the case title band (clamp(52px, 7vw, 96px)).
+- **Headline** (850, clamp(36px, 4.6vw, 76px), 0.92, 62% width, uppercase): homepage section heads.
+- **Why −2** (640, clamp(27px, 2.95vw, 46px), 1.08, 84% width, 31ch) and **Why −1** (520, clamp(22px, 2.15vw, 33px), 1.3, 96% width, 32ch): the two layers above the core.
+- **Promise** (650, clamp(32px, 3.9vw, 60px), 1, 80% width): the hero's −1 line.
+- **Chapter** (760, clamp(30px, 3.1vw, 50px), 1, 78% width): case-page chapter headings; the opening lead statement is lighter (560, clamp(24px, 2.4vw, 38px), 92% width).
+- **Body** (400, clamp(16px, 1.15vw, 18px), 1.45); **Reading** (clamp(17px, 1.2vw, 19px), 1.55, max 64ch) in case chapters; quotes 450 at clamp(18px, 1.45vw, 23px).
+- **Figure** (Geist Mono 600, clamp(40px, 4.6vw, 76px), 1, tabular): proof numbers; row figures clamp(22px, 2vw, 32px).
+- **Depth numeral** (Geist Mono 500, clamp(20px, 1.9vw, 30px), tabular) over a **Label** (Geist Mono 12px, uppercase).
+- **Control** (Geist Mono 600, 13px, uppercase): buttons, nav, captions, tags, figure numbers ("fig. 3").
 
 ### Named Rules
-**The Heavy-Head Rule.** Every heading is Geist 600 with negative tracking (-0.02em to -0.04em, tighter as it grows). Light display weights belong to the retired world.
+**The Sinking Type Rule.** Deeper layers get larger, heavier and narrower: width steps 96% → 84% → 62% as weight steps 520 → 640 → 860. Do not set a shallow layer heavier than a deeper one.
 
-**The Bare-Head Rule.** Nothing sits above a heading (no eyebrows, kickers, slash labels or chapter tags), and on the homepage nothing sits under one either, except a single grey lede line in How I work and Contact. The case pages' chapter labels exist in markup and are hidden.
+**The Mono Is The Instrument Rule.** Depths, labels, controls, years and figures are Geist Mono; sentences are Archivo. Never set a sentence in mono or a figure in Archivo.
 
 ## Layout
 
-A centred 1200px measure with a fluid gutter (`clamp(20px, 5vw, 64px)`), sections separated by space alone (`clamp(88px, 10vw, 144px)`). A sticky 64px header (60px under 900px) sits over everything.
+The page is a stack of full-width strata. Each stratum is a two-column grid: the ruler (clamp(96px, 9.4vw, 148px) on the homepage, clamp(112px, 10.5vw, 168px) on case pages, wide enough for "2021–2023" or "The proposition") holding the depth label with a 1px right rule, then the body with an inset (clamp(16px, 2vw, 32px)) and the page gutter (clamp(16px, 2.4vw, 36px)) on the right. Every stratum ends in a 1px rule. Depth numerals and labels are sticky while their stratum scrolls; the numeral reserves the label's room so they never overlap.
 
-- **Homepage order:** hero, Selected work, quotes, How I work (`#about`), contact with the footer.
-- **Hero:** a photograph card (`hero-hills`, landscape mirrored, person unmirrored), on the page measure like every block below it (`min(1200px, 100% - 2 × gutter)`, so its edges line up with the header, the logos and the work) with a `clamp(20px, 2.2vw, 32px)` radius, filling the rest of the first viewport under the white header (`max(520px, min(100svh - header - 16px, 860px))`). The promise and one pill sit bottom-left inside the card at `clamp(20px, 4.5vw, 64px)` from its edge, over the hills, with a low dark scrim (bottom 70% of the height) behind them; the person stands on the right. Under 900px the photo is positioned on the person (`74% 30%`); under 560px the pill stretches across the measure.
-- **Selected work:** five highlight blocks in reverse-chronological order (Subskim, Admirals, Mechanism Ventures, MetaMap, Fundraise Up), `clamp(56px, 7vw, 104px)` apart. Above 900px each block is a 12-column × 6-row grid with its own aspect ratio and grid areas: the project's visual sits in the middle columns at its own shape (Subskim's phone tall, Admirals' film wide, Mechanism's collage tall, MetaMap's builder wide, Fundraise Up's checkout square), its numbers in tiles around it, and a name tile (name, role · years, arrow) that moves each time. One loud tile per block, always somewhere new. The tone changes from block to block: white, white, a dark #1d1d1f panel for Mechanism, a grey panel with white tiles for MetaMap, white. Sizes use container units (`.hl { container-type: inline-size }`). 901–1180px hides the Subskim feature notes; 901–1060px hides the name-tile arrows and the ×2.8 note. At 900px and under the grid is 6 columns with content rows and each visual keeps its own aspect; at 560px and under it is 2 columns: name, visual, then the numbers in pairs or full rows.
-- **Quotes:** three in a row on desktop; at 760px and under they become a one-at-a-time carousel with arrows and dots, rotating every 7s until a person picks one. The section title is visually hidden.
-- **How I work:** section title, one grey lede, then three items in three columns; one column (max 560px) under 1080px.
-- **Contact:** section title, one grey lede, then the email pill, copy button, Download CV pill and social circles in one wrapping row; on phones the email pill and CV pill each take the full width.
-- **Case pages:** hero (back link, logo, deck sentence, outcomes tile), a full-width media tile, a facts row (four columns, two under 1050px), then the long read: an indented reading column (200px empty lead column, 150px under 1050px, none under 760px) with a 64ch measure.
-- **Breakpoints:** 1080, 900, 760, 560px (case pages also break at 1050px).
+The header aligns to the same ruler: name over the depth column, title where the words start, links on the right. The hero is a two-column grid with Pavel's portrait (clamp(220px, 23vw, 360px)) spanning the Surface and −1 strata, and the Core band running full width beneath. The work index rows are a single grid: years in the ruler, a 4:3 live thumbnail, the name, role, headline figure, and the Why? toggle. Surface strata put the visual first and large (16:9 by default; 24rem portrait and 34rem square variants), copy at 19rem beside it. Case pages run the long read as a ruled log: one continuous vertical rule at the ruler edge, every chapter, plate and table a stratum with its label in the depth column (fig. counters on plates); chapter headings float left at 40% beside the text above 1100px.
+
+Breakpoints: 1100px (header title drops; row regrids to two lines), 860px (surfaces, quotes and principles go to one column), 760px (nav becomes the Menu box), 640px (the ruler collapses to 0, depth labels sit inline above their stratum, rows stack beside the thumbnail). No horizontal scroll from 320px.
 
 ### Named Rules
-**The Space-Is-The-Divider Rule.** Sections and groups are separated by the section rhythm and gaps alone. No rules, no hairlines, no alternating stripes or bands.
-
-**The Picture-First Rule.** Where the page can show the work, it shows it: a product image does the job a paragraph used to. Around the image sit only the project's own outcomes, each in its own tile with an icon, a label and at most one grey line of scope, verbatim from the case.
+**The One Ruler Rule.** Every band, the header and the footer align to the same depth column. Content never starts left of the ruler on desktop.
 
 ## Elevation & Depth
 
-Flat and tonal. Depth is white against light grey; shadows are rare, soft and only where something genuinely floats above the page: the frosted header once the page scrolls, the open mobile menu sheet, and the play button over a film. Over the hero photograph, a low dark scrim and a soft text shadow keep white type legible. No glows and no hard offset shadows.
-
-### Shadow Vocabulary
-- **Header lift** (`box-shadow: 0 8px 24px -20px rgba(0, 0, 0, 0.35)`): appears on the sticky header after 8px of scroll, over a `rgba(255,255,255,0.8)` backdrop with `saturate(180%) blur(20px)`. On the homepage the header has neither until it scrolls.
-- **Menu sheet** (`box-shadow: 0 24px 48px -16px rgba(0, 0, 0, 0.25), 0 2px 8px rgba(0, 0, 0, 0.06)`): the phone menu.
-- **Play button** (`box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.45)`): the black play disc over a film poster.
-- **Promise shadow** (`text-shadow: 0 1px 24px rgba(0, 0, 0, 0.18)`): the hero promise over the photograph only.
+Flat. Depth is literal and vertical: it is expressed by order, the heat scale and type weight, never by shadow or blur. The only inset box-shadow in the system is a 1px rule-dark hairline that separates two open (black) rows; it is a rule, not elevation. The Mechanism venture cards lay a 30% black scrim over the film so the white logo reads.
 
 ### Named Rules
-**The Float-Only Rule.** A shadow means the thing floats over content (header, menu, play control). Cards and tiles never carry shadows; a project tile lifts by scaling its film, a figure tile by stepping to Pressed Tile.
+**The No Shadow Rule.** Nothing floats. Separation is a 1px ink rule or a change of ground.
 
 ## Shapes
 
-Soft, continuous, Apple-like rounding; everything interactive is a full pill or circle.
-
-- **Pill** (999px): every button, the Menu pill, carousel arrows (circles), social and copy buttons (circles).
-- **Frame** (28px): the grey media tiles that hold case screens and films, the next-case tile and the Fundraise Up form tile; also the focus outline around a highlight tile.
-- **Tile** (24px): every highlight tile (the dark and grey panels are 24px + gap, so their corners nest), the outcomes tile, the audience table, the Mechanism venture cards.
-- **Media** (20px): the value-shift strip and the mobile menu sheet.
-- **Screen** (16px): screenshots and films inside a media tile. Inner radius is always smaller than its tile so the corners nest.
-- **Borders:** none. Focus is a 2px ink outline with a 3px offset (4px around a highlight tile; white over the hero photo, #f5f5f7 inside the dark panel).
-- **Phones (560px and under):** case screenshots and films drop their tile and radius and run edge to edge; captions keep the gutter. Highlight tiles keep their tile and radius.
-
-**The Continuous Corner Rule.** Large rounded blocks (hero card, highlight tiles and panels, case tiles, media frames, venture cards, the phone menu) use Apple-style continuous corners: a superellipse (n=4) 9-slice mask inlined in home.css as `--squircle`, applied with `-webkit-mask-box-image` at about 1.8x the radius it replaces (46px for 24px tiles, 30px for screens inside tiles, 36-58px for the hero). Browsers without mask-box-image (Firefox) keep the plain radius. Pills and circles stay true capsules and circles. Edge-to-edge media on phones drop the mask.
+Square everywhere (0px radius): frames, buttons, tags, thumbnails, swatches, tables, play controls. Borders are 1px ink for frames and rules, 1.5px currentColor for controls, 4px ink above the How I work total. The single rounded form is the real phone bezel around the Subskim screen (black, clamp(24px, 3.2vw, 46px) corner), because it depicts a physical device.
 
 ## Components
 
 ### Buttons
-Quiet and certain: the primary pill says "this", a grey pill says "also".
-- **Shape:** full pill (999px), 48px tall, 52px large for the hero, contact and next-case actions.
-- **Primary:** Graphite Ink with white text, 500 weight, `0 22px` padding (`0 26px` large). One per view.
-- **On the photograph:** the hero's primary pill inverts to Paper with ink text (hover `#e8e8ed`); it is the only action in the first viewport.
-- **Hover / Active:** Pressed Graphite on hover (pointer devices only); `scale(0.98)` on press; 200ms on the system ease `cubic-bezier(0.22, 1, 0.36, 1)`.
-- **Secondary:** Product Tile with ink text, Pressed Tile on hover (the Download CV pill).
-- **Icon buttons:** 52px circles (44px for carousel arrows) in Product Tile that turn black with white icon on hover: copy-email, LinkedIn, Instagram, Threads. The copy button swaps its icon for a check for 2s and announces the result.
-- **Email pill:** the address itself is the large black pill, with the copy circle beside it.
+- **Shape:** square (0px), 1.5px currentColor border, min-height 44px, 0 16px padding, Geist Mono 13px 600 uppercase.
+- **Outline:** inverts on hover and focus (ground becomes the current text colour, text becomes paper); on ink bands the border is paper and the hover is paper ground with ink text.
+- **Signal:** red ground, ink text (CV download, active toggles); hovers to paper.
+- **Links:** underlined 1px, 0.18em offset; hover thickens to 3px. Focus is a 3px currentColor outline at 3px offset, signal red where the ground is ink-on-ink.
 
-### Text Links
-- **Style:** ink, 500, underlined 1px at 5px offset with the underline at 30% ink; underline goes full ink on hover. In How I work they sit at 15px under each item.
-- **External:** a 16px ↗ arrow follows the label and nudges up-right on hover; internal links carry no icon. The case-page back link is grey with a ← mask and no underline until hover.
+### Borehole Row (signature)
+- **Closed:** a full-width row on paper: years in the ruler, a small 4:3 live film thumbnail in a 1px frame, the uppercase compressed name, role, one headline figure with a mono caption, and a boxed "Why?" with a down arrow.
+- **Hover / Focus / Open:** the row turns ink with paper text; open, the toggle turns signal red, reads "Close" and the arrow rotates 180deg. The first project is open by default; "Dig all five" opens every row and turns red.
+- **Dig:** opening reveals the strata one under another (clip from the top plus 12px drop, 480ms, 90ms stagger, `cubic-bezier(0.16, 1, 0.3, 1)`); skipped under reduced motion. Without script every row is already dug; closed rows use `hidden="until-found"` so find-in-page still opens them.
 
-### Navigation
-- **Desktop:** the name alone (16px/600, -0.02em) left; four plain text links right (Work, About, CV, Contact) in Soft Ink at 14px/500, `clamp(20px, 2.4vw, 32px)` apart, turning ink on hover. No pill, no button, no subtitle. The same header on every page.
-- **Homepage:** the same white header as every page; the hero card starts below it.
-- **Phones (900px and under):** a grey "Menu" pill that turns black and reads "Close" when open, dropping a white 20px sheet of 17px links with the menu-sheet shadow; Escape or an outside tap closes it.
+### Surface Stratum
+The product visual, large, in a 1px ink frame with a mono "fig. n" caption beneath. Films are muted looping lazy-autoplay videos with posters on a stage of their own colour. Subskim pairs the real phone screen on the light stage with the live-site film and a red "Live" tag.
 
-### Highlight Tiles (signature)
-Every tile in a block belongs to that one project and links into its case; all are Product Tiles (24px, continuous corners) or, for the loud number, Graphite Ink tiles with white type.
-- **Visual tile:** the project's film, phone screen or checkout, at its own shape in the middle of the grid; a mouse-only duplicate link (`tabindex="-1"`, `aria-hidden`) so keyboard users meet each case once per tile that says something.
-- **Name tile:** the h3 (600, `clamp(24px, 2.75cqi, 34px)`), "role · years" in grey with the years kept together, and a small round arrow; it moves around the block.
-- **Number tile:** a Lucide icon (inline SVG, stroke 1.75, ink or white), the Highlight Number, a 600 label and an optional grey note verbatim from the case ("For context, not credit" where the case says so). A visually hidden " · Project" keeps link text meaningful.
-- **Word tile:** for Subskim, which has no numbers, a feature name (AI import, Renewal calendar, Monthly review, Solo + AI) takes the number's place.
-- **Sentence tile:** one case sentence set large in grey with its key figures in ink (Admirals' annual losses).
-- **Hover:** tiles step to Pressed Tile (dark tiles step a shade lighter); films scale 1.03. **Focus:** the 2px ink outline 4px outside the tile (#f5f5f7 inside the dark panel); a focused tile drops its squircle mask so the ring shows.
-- **Icons:** Lucide (ISC licence), inlined, one per number tile, never decorative elsewhere.
+### Why Strata
+Heat-1 and heat-2 grounds, one sentence each at the Why −1 / Why −2 settings.
 
-### How I Work Items
-Three short items: a 20px title, one or two grey 16px sentences (max 34ch), and an underlined link into the relevant chapter of a case. No icons, no numbers, no tiles.
+### Core Band
+Signal ground, the one core sentence at the Core setting, then the verbatim source quote with the core phrase marked in an ink box with paper text, and a "My part" line with a boxed mono tag.
 
-### Cards / Containers
-- **Corner Style:** 24px for content tiles, 28px for media tiles.
-- **Background:** Product Tile on white; never white-on-white with a border.
-- **Shadow Strategy:** none (see Elevation).
-- **Internal Padding:** `clamp(24px, 3vw, 36px)` for content tiles; `clamp(10px, 1.6vw, 20px)` for media tiles so the screen fills the tile.
-- **Outcomes tile:** a grid of 2 to 5 proof figures (Figure type) with term and detail below each.
+### Proof Band
+Ink ground: a ruled grid of figures (mono number first, uppercase mono term, mute-dark description), an optional context line with a mono lead ("For context, not credit"), and the outline "Read the … case" button.
 
-### Company strip
-Under the hero card, the five company logos in one row (justified on desktop; at 760px and under a slow 26s marquee with faded edges, which falls back to a centred wrapping row under reduced motion), grey at 50% opacity (Mechanism 80% for its hairline mark), each scaled to one optical size and linking to its case; full opacity on hover.
+### Header and Footer
+Header: mono 13px uppercase, 1px bottom rule, name over the ruler, links right; below 760px a boxed "Menu" opens an ink slab of 52px rows. A boxed motion toggle stops every looping film and turns signal red while paused. Footer: mono 13px on the ink bedrock, aligned past the ruler, with a 1px rule-dark top rule.
 
-### Card previews
-Visual tiles that play film use short silent loops (H.264, 0.25–1.1 MB) with a first-frame poster: Admirals the live site, MetaMap the second half of the Mati film, Mechanism a 640x1000 2x2 of the venture films with their white logos, Fundraise Up the monthly-giving checkout animation, and a small "Live" tile with the 14s scroll through subskim.com beside Subskim's phone screen. They load and play only near the viewport, stay on the poster under reduced motion, and never show controls (`data-quiet`).
+### Case Page
+An ink title band (years in the ruler, name at index-name scale, boxed "All projects"), a facts strip ruled by 1px gaps over ink, the borehole, then the ruled log. Chapter labels sit sticky in the depth column; tables have an ink head row and hard rules; customer quotes sit in a 1px-gap ruled grid. The page ends with the next project's closed index row, which links to its case.
 
-### Venture Card (Mechanism case)
-Each Mechanism venture as mechanism.com shows it: its looping film (lazy, muted, plays in view, poster under reduced motion) filling a 5:4 tile at 24px radius, a 30% black veil, and the venture's white logo centred at about half the width. The homepage Mechanism block centres a tall 2x2 collage of the same four films (`tile-mechanism.mp4`).
-
-### Hero Photograph (signature)
-Pavel on a green hillside in mountain fog: the landscape is mirrored, the person is cut out and flipped back in place so he keeps his real orientation. Served as WebP at 800/1280/2000w with a JPEG fallback, preloaded; while it loads the stage shows the photo's own sky-to-hills tones. The header (ink on the light sky) floats over it; the promise is white Display type; the one action is the white pill. It settles in once on load (fade with a 1.04 to 1 scale over 1.6s, copy rising 14px over 900ms) and stays still under reduced motion.
+### How I Work
+The five cores stacked as a sum ("+" in the depth column, each core linked to its project, the word "decision" marked in signal) closing on a 4px rule and a "= Core" red band; then three principles in a ruled three-column strip.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** set every heading in Geist 600 with negative tracking, and every supporting line in Reading Grey.
-- **Do** give each view exactly one primary pill (black on white, white on the photograph); make every other action a grey pill or an underlined text link.
-- **Do** show each project as its own highlights slide: its visual in the centre, its own numbers with icons around it, a different arrangement and loud tile for every project; every tile links into that case.
-- **Do** use the one section-title size (`clamp(1.75rem, 2.6vw, 2.25rem)`) for every homepage section head.
-- **Do** put case screens and films inside a Product Tile (28px) with a nested 16px screen radius, and let them run edge to edge on phones.
-- **Do** show testimonials three in a row on desktop and as a carousel on phones.
-- **Do** keep state changes at 200ms on `cubic-bezier(0.22, 1, 0.36, 1)` and wrap hover styles in `(hover: hover)`.
+- **Do** put every new band on the depth column with a mono numeral and label, and end it with a 1px ink rule.
+- **Do** follow the order Surface (paper) → −1 (heat-1) → −2 (heat-2) → Core (signal) → Proof (ink).
+- **Do** show the product visual first and large in the Surface, framed 1px ink, with a "fig. n" mono caption.
+- **Do** use the site.js lazy-autoplay film markup (muted, loop, playsinline, poster, data-quiet) for any looping film, so the motion toggle and reduced motion govern it.
+- **Do** keep type on signal red black, and secondary text mute on paper/heat and mute-dark on ink.
+- **Do** quote the core and proof copy verbatim from the case; figures are set in Geist Mono with tabular numerals.
 
 ### Don't:
-- **Don't** draw divider lines, borders or hairlines anywhere; separate with space or tone.
-- **Don't** add glows, glass panels, gradients or coloured light; the retired departures-board world is gone. The frosted sticky header is the one translucent surface.
-- **Don't** introduce an accent hue; the palette is ink, greys, light-grey, white or black tiles.
-- **Don't** put eyebrows, kickers, slash labels or chapter tags above headings, or intro paragraphs under homepage section heads beyond the one-line ledes.
-- **Don't** describe in a paragraph what an image of the work can show.
-- **Don't** make header links into pills or buttons; they are plain text.
-- **Don't** add a ↗ icon to internal links; it marks leaving the site.
-- **Don't** put shadows on cards or tiles; shadows only mark things that float.
-- **Don't** use light display weights, uppercase tracked labels or a second typeface.
+- **Don't** round corners, add shadows, glows or decorative gradients; the phone bezel is the only curve.
+- **Don't** use heat-1, heat-2 or signal outside their depth roles, or introduce a second accent hue.
+- **Don't** set white text on signal red.
+- **Don't** place a mono kicker above a heading; labels live in the depth column (on phones, inline at the top of their stratum).
+- **Don't** replace live product films with old stills where a film exists.
