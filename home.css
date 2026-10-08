@@ -243,8 +243,8 @@ button {
   user-select: none;
 }
 .mobile-nav summary::-webkit-details-marker { display: none; }
-.mobile-nav summary:hover,
 .mobile-nav[open] summary { background: var(--ink); color: var(--paper); }
+@media (hover: hover) { .mobile-nav summary:hover { background: var(--ink); color: var(--paper); } }
 .mobile-nav summary:focus-visible { outline-color: var(--signal); }
 .mobile-nav nav {
   position: absolute;
@@ -292,12 +292,12 @@ button {
 .motion-toggle__play,
 .motion-toggle.is-paused .motion-toggle__pause { display: none; }
 .motion-toggle.is-paused .motion-toggle__play { display: block; }
-.motion-toggle:hover,
 .motion-toggle:focus-visible { background: var(--ink); color: var(--paper); }
+@media (hover: hover) { .motion-toggle:hover { background: var(--ink); color: var(--paper); } }
 .motion-toggle:focus-visible { outline-color: var(--signal); }
 .motion-toggle.is-paused { background: var(--signal); border-color: var(--signal); color: var(--ink); }
-.motion-toggle.is-paused:hover,
 .motion-toggle.is-paused:focus-visible { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+@media (hover: hover) { .motion-toggle.is-paused:hover { background: var(--ink); border-color: var(--ink); color: var(--paper); } }
 
 /* ---------- Strata: the shared grammar ---------- */
 
@@ -385,7 +385,10 @@ button {
 .hero__pic img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 71% 42%; }
 .hero__pic figcaption { position: absolute; left: 0; bottom: 0; padding: 4px 8px; border-top: 1px solid var(--ink); border-right: 1px solid var(--ink); background: var(--paper); }
 .hero h1 { font-size: clamp(24px, 2.3vw, 36px); font-weight: 650; font-stretch: 88%; line-height: 1.08; letter-spacing: -0.01em; text-wrap: balance; }
-.hero__intro { max-width: 62ch; margin-top: 8px; color: var(--mute); text-wrap: pretty; }
+/* who he is, in two lines a recruiter checks first: the current role and record, then years, place and format */
+.hero__role { margin-top: 8px; font-weight: 560; line-height: 1.35; text-wrap: balance; }
+.hero__facts { margin-top: 4px; }
+.hero__intro { max-width: 62ch; margin-top: 10px; color: var(--mute); text-wrap: pretty; }
 .hero__s0 .body { padding-bottom: clamp(16px, 1.8vw, 24px); }
 .promise { max-width: 22ch; font-size: clamp(32px, 3.9vw, 60px); font-weight: 650; font-stretch: 80%; line-height: 1; letter-spacing: -0.018em; text-wrap: balance; }
 .hero__core .body { padding-block: clamp(14px, 1.6vw, 22px) clamp(14px, 1.8vw, 24px); }
@@ -424,8 +427,8 @@ button {
   white-space: nowrap;
 }
 .digall[hidden] { display: none; }
-.digall:hover,
 .digall:focus-visible { background: var(--ink); color: var(--paper); }
+@media (hover: hover) { .digall:hover { background: var(--ink); color: var(--paper); } }
 .digall:focus-visible { outline-color: var(--signal); }
 .digall.is-all { background: var(--signal); border-color: var(--signal); color: var(--ink); }
 .digall svg,
@@ -434,6 +437,7 @@ button {
 
 .p { border-bottom: 1px solid var(--ink); }
 .p__btn {
+  position: relative;
   display: grid;
   grid-template-columns: var(--ruler) auto minmax(0, 1fr) minmax(0, 13rem) minmax(0, 12.5rem) auto;
   align-items: center;
@@ -480,12 +484,15 @@ button {
   white-space: nowrap;
 }
 .p__shut { display: none; }
-.p__btn:hover,
 .p__btn:focus-visible,
 .p.is-open .p__btn { background: var(--ink); color: var(--paper); }
-.p__btn:hover small,
 .p__btn:focus-visible small,
 .p.is-open .p__btn small { color: var(--mute-dark); }
+/* only a real pointer hovers: on touch a tapped row would keep the hover and look dug after Close */
+@media (hover: hover) {
+  .p__btn:hover { background: var(--ink); color: var(--paper); }
+  .p__btn:hover small { color: var(--mute-dark); }
+}
 .p__btn:focus-visible { outline: 3px solid var(--signal); outline-offset: -3px; }
 /* two dug rows meet black on black: a dark hairline keeps them apart */
 .p.is-open .p__btn { box-shadow: inset 0 1px 0 var(--rule-dark); }
@@ -495,6 +502,36 @@ button {
 .p.is-open .p__shut { display: inline; }
 /* without script every row is already dug, so the toggle has nothing to say */
 html:not(.js) .p__why { display: none; }
+
+/* X-ray: point at a closed row, or tab to it, and it shows what lies under it. The row turns
+   the core's red and the name gives way to the core, copied verbatim from the row's Core stratum
+   by home.js and sized to fit the name's cell. A state, not a motion: the box sits over the cell
+   out of flow, so the row never changes height. --under fades what the box covers; it only goes
+   transparent, so the name stays in the button's accessible name. The X-ray itself is aria-hidden. */
+.p__xray {
+  position: absolute;
+  inset: 0;
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 16px 10px clamp(14px, 1.6vw, 26px);
+  overflow: hidden;
+  visibility: var(--xray, hidden);
+}
+.p__xlabel { flex: none; overflow: hidden; font-family: var(--mono); font-size: 12px; font-weight: 500; line-height: 1.2; text-overflow: ellipsis; text-transform: uppercase; white-space: nowrap; }
+.p__xcore { flex: none; font-size: clamp(40px, 5.7vw, 92px); font-weight: 860; font-stretch: 62%; line-height: 0.9; letter-spacing: -0.012em; text-wrap: balance; }
+.index .p__name { opacity: var(--under, 1); }
+.js .p:not(.is-open) .p__btn:focus-visible { --xray: visible; --under: 0; background: var(--signal); color: var(--ink); outline-color: var(--ink); }
+.js .p:not(.is-open) .p__btn:focus-visible small { color: var(--ink); }
+.js .p:not(.is-open) .p__btn:focus-visible .p__why { border-color: var(--ink); background: var(--ink); color: var(--paper); }
+@media (hover: hover) {
+  .js .p:not(.is-open) .p__btn:hover { --xray: visible; --under: 0; background: var(--signal); color: var(--ink); }
+  .js .p:not(.is-open) .p__btn:hover small { color: var(--ink); }
+  .js .p:not(.is-open) .p__btn:hover .p__why { border-color: var(--ink); background: var(--ink); color: var(--paper); }
+}
 
 /* the dig. Before the script runs, closed rows stay shut so nothing jumps;
    once it runs they become hidden="until-found", which find-in-page can still open. */
@@ -666,8 +703,8 @@ html:not(.js) .p__why { display: none; }
 .copy.is-copied { background: var(--signal); border-color: var(--signal); color: var(--ink); }
 .copy.is-copied .copy__idle { visibility: hidden; }
 .copy.is-copied .copy__done { visibility: visible; }
-.copy:hover:not(.is-copied),
 .copy:focus-visible:not(.is-copied) { background: var(--paper); color: var(--ink); }
+@media (hover: hover) { .copy:hover:not(.is-copied) { background: var(--paper); color: var(--ink); } }
 .links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: clamp(20px, 2.4vw, 32px); }
 .links a {
   display: inline-flex;
@@ -753,6 +790,9 @@ html:not(.js) .p__why { display: none; }
   .p__role { grid-area: role; align-self: start; padding: 0 16px 10px clamp(14px, 1.6vw, 26px); }
   .p__fig { grid-area: fig; }
   .p__why { grid-area: why; }
+  /* the role sits under the name here, so the X-ray takes the whole name block and covers both */
+  .p__xray { grid-column: name; grid-row: name-start / role-end; }
+  .index .p__role { opacity: var(--under, 1); }
 }
 
 @media (max-width: 860px) {
@@ -846,6 +886,7 @@ html:not(.js) .p__why { display: none; }
   .p__thumb { width: clamp(56px, 18vw, 76px); margin: 0; }
   .p__name { padding: 2px 0 0; font-size: clamp(38px, 11.6vw, 56px); }
   .p__role { padding: 0; }
+  .p__xray { padding: 0; }
   .p__fig { flex-flow: row wrap; align-items: baseline; gap: 2px 8px; padding: 0; }
   .p__fig b { font-size: 20px; }
   .p__why { margin-right: 0; justify-self: end; }

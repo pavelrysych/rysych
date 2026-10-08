@@ -89,6 +89,62 @@
     window.addEventListener('hashchange', fromHash);
     if (window.location.hash) fromHash();
     sync();
+
+    // X-ray: a closed row shows its core where its name stands while it is pointed at or tabbed to.
+    // The words are copied from the row's own Core stratum, so they stay verbatim; home.css decides
+    // when the box shows, and this only builds it and sizes the sentence to the name's cell.
+    const xrays = rows.map((row) => {
+      const name = row.querySelector('.p__name');
+      const core = row.querySelector('.dig .t-core .core-line');
+      const depth = row.querySelector('.dig .t-core .depth');
+      if (!name || !core) return null;
+      const box = document.createElement('span');
+      box.className = 'p__xray';
+      box.setAttribute('aria-hidden', 'true');
+      const label = document.createElement('span');
+      label.className = 'p__xlabel';
+      const where = depth ? [...depth.children].map((part) => part.textContent.trim()).join(' ') : 'Core';
+      label.textContent = `${name.textContent.trim()} / ${where}`;
+      const text = document.createElement('span');
+      text.className = 'p__xcore';
+      text.textContent = core.textContent.trim();
+      box.append(label, text);
+      name.after(box);
+      return { box, label, text };
+    }).filter(Boolean);
+
+    // the largest size, up to the Core setting, at which the sentence fits the cell without overflowing
+    const fit = ({ box, label, text }) => {
+      text.style.removeProperty('font-size');
+      const cs = getComputedStyle(box);
+      const width = box.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+      const height = box.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom) - label.offsetHeight - (parseFloat(cs.rowGap) || 0);
+      if (width <= 0 || height <= 0) return;
+      const fits = () => text.offsetHeight <= height && text.scrollWidth <= text.clientWidth;
+      if (fits()) return;
+      let lo = 10;
+      let hi = parseFloat(getComputedStyle(text).fontSize);
+      for (let i = 0; i < 9; i += 1) {
+        const mid = (lo + hi) / 2;
+        text.style.fontSize = `${mid}px`;
+        if (fits()) lo = mid;
+        else hi = mid;
+      }
+      text.style.fontSize = `${Math.floor(lo)}px`;
+    };
+    const fitAll = () => xrays.forEach(fit);
+    if ('ResizeObserver' in window) {
+      const watch = new ResizeObserver((entries) => entries.forEach((entry) => {
+        const xray = xrays.find((x) => x.box === entry.target);
+        if (xray) fit(xray);
+      }));
+      xrays.forEach((x) => watch.observe(x.box));
+    } else {
+      window.addEventListener('resize', fitAll);
+      fitAll();
+    }
+    // the faces swap in after first paint and change every measure
+    document.fonts?.ready.then(fitAll);
   });
 
   /* ---------- Copy email: works even where mailto has no mail app behind it ---------- */

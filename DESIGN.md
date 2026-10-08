@@ -251,7 +251,9 @@ Square everywhere (0px radius): frames, buttons, tags, thumbnails, swatches, tab
 
 ### Borehole Row (signature)
 - **Closed:** a full-width row on paper: years in the ruler, a small 4:3 live film thumbnail in a 1px frame, the uppercase compressed name, role, one headline figure with a mono caption, and a boxed "Why?" with a down arrow.
-- **Hover / Focus / Open:** the row turns ink with paper text; open, the toggle turns signal red, reads "Close" and the arrow rotates 180deg. The first project is open by default; "Dig all five" opens every row and turns red.
+- **X-ray (hover on real pointers, and keyboard focus):** a closed row turns signal red and its name is covered by its core: a mono label "<PROJECT> / −3 CORE" and the core sentence at Core weight, shrunk to fit; row height never changes. Touch screens get no hover state.
+- **Open:** the row turns ink with paper text, the toggle turns signal red, reads "Close" and the arrow rotates 180deg. Every row is closed on load (the whole career fits under the hero); "Dig all five" opens every row and turns red; /#slug opens that row.
+- **Hero credentials:** under the H1 in 0 Surface, "Head of Design at Admirals; before that Mechanism Ventures, MetaMap, Fundraise Up" and a mono line "9+ years · Tbilisi, GMT+4 · remote or relocation". The homepage header carries only the name.
 - **Dig:** opening reveals the strata one under another (clip from the top plus 12px drop, 480ms, 90ms stagger, `cubic-bezier(0.16, 1, 0.3, 1)`); skipped under reduced motion. Without script every row is already dug; closed rows use `hidden="until-found"` so find-in-page still opens them.
 
 ### Surface Stratum
