@@ -510,6 +510,8 @@ html:not(.js) .p__why { display: none; }
 }
 .surface--tall { grid-template-columns: minmax(0, 24rem) minmax(0, 1fr); }
 .surface--square { grid-template-columns: minmax(0, 34rem) minmax(0, 1fr); }
+/* lower-resolution films (Admirals 1120w, MetaMap 960w) stay near their native size so they stay sharp */
+.surface--compact { grid-template-columns: minmax(0, 34rem) minmax(0, 1fr); }
 .shot { border: 1px solid var(--ink); background: var(--paper); }
 .shot figcaption { padding: 7px 10px; border-top: 1px solid var(--ink); text-wrap: pretty; }
 .shot__stage {
@@ -765,6 +767,7 @@ html:not(.js) .p__why { display: none; }
   .surface--square { grid-template-columns: minmax(0, 1fr); }
   .surface--tall .shot { max-width: 26rem; }
   .surface--square .shot { max-width: 34rem; }
+  .surface--compact .shot { max-width: 34rem; }
 
   .lead,
   .quotes { grid-template-columns: minmax(0, 1fr); margin-left: 0; border-left: 0; }

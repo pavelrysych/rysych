@@ -85,6 +85,7 @@
 
 /* 0 · Surface: the case's own hero film or screen, as large as the column allows */
 .case-surface { grid-template-columns: minmax(0, 1fr) minmax(0, 18rem); }
+.case-surface.surface--compact { grid-template-columns: minmax(0, 34rem) minmax(0, 1fr); }
 .case-logo { width: auto; height: clamp(20px, 1.6vw, 24px); margin-bottom: clamp(14px, 1.6vw, 22px); }
 /* a two-line lockup (Mechanism: "mechanism" over a tracked "VENTURES") needs the height to keep its small line legible */
 .case-logo--lockup { height: clamp(30px, 2.6vw, 38px); }
